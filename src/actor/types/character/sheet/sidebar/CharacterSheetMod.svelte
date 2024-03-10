@@ -1,5 +1,5 @@
 <script>
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import { getContext } from 'svelte';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import DocumentIntegerInput from '~/documents/components/input/DocumentIntegerInput.svelte';
@@ -43,7 +43,7 @@
       $document.system.mod[key].mod.equipment,
       $document.system.mod[key].mod.effect,
       $document.system.mod[key].mod.ability,
-      $document.system.mod[key].mod.static
+      $document.system.mod[key].mod.static,
    );
 </script>
 

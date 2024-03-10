@@ -1,5 +1,5 @@
 <script>
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import { getContext } from 'svelte';
    import ScrollingContainer from '~/helpers/svelte-components/ScrollingContainer.svelte';
    import TextInput from '~/helpers/svelte-components/input/TextInput.svelte';

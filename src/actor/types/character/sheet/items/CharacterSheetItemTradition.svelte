@@ -1,5 +1,5 @@
 <script>
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
 
    // Reference to the item
    export let item = void 0;

@@ -1,4 +1,4 @@
-import { clamp } from '~/helpers/Utility';
+import clamp from '~/utility/Clamp';
 import TitanCheck from '~/check/Check.js';
 import calculateAttackCheckResults from '~/check/types/attack-check/CalculateAttackCheckResults';
 

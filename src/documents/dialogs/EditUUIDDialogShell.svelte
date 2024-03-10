@@ -1,5 +1,5 @@
 <script>
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import { getContext } from 'svelte';
    import TextArea from '~/helpers/svelte-components/input/TextArea.svelte';
    import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
@@ -24,7 +24,7 @@
          });
       }
       ui.notifications.info(
-         localize('editedUUIDForDocument%x').replace('%x', document.name)
+         localize('editedUUIDForDocument%x').replace('%x', document.name),
       );
       application.close();
       return;

@@ -1,4 +1,5 @@
-import { localize, getSetting } from '~/helpers/Utility.js';
+import { getSetting } from '~/helpers/Utility.js';
+import localize from '~/utility/Localize.js';
 import ConfirmRegenerateUUIDDialog from '~/documents/dialogs/ConfirmRegenerateUUIDDialog';
 import EditUUIDDialog from '~/documents/dialogs/EditUUIDDialog';
 

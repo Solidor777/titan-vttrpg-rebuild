@@ -1,7 +1,8 @@
 <script>
    import { getContext } from 'svelte';
-   import { localize, getActor } from '~/helpers/Utility.js';
+   import { getActor } from '~/helpers/Utility.js';
    import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import localize from '~/utility/Localize.js';
 
    // Context variables
    const document = getContext('DocumentStore');
@@ -15,7 +16,7 @@
             // Update the actor
             await character.applyHealing(
                $document.flags.titan.healingApplied.total,
-               { report: false }
+               { report: false },
             );
 
             // Update the chat document
@@ -42,7 +43,7 @@
       <i class="fas fa-heart" />
       {localize('heal%xDamage').replace(
          '%x',
-         $document.flags.titan.healingApplied.total
+         $document.flags.titan.healingApplied.total,
       )}
    </EfxButton>
 </div>

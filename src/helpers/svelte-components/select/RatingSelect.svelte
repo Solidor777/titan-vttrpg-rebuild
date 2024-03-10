@@ -1,5 +1,5 @@
 <script>
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import Select from '~/helpers/svelte-components/select/Select.svelte';
 
    // Value

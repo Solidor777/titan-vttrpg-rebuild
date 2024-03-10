@@ -1,5 +1,6 @@
 import { TJSDialog } from '@typhonjs-fvtt/runtime/svelte/application';
-import { localize, getSetting } from '~/helpers/Utility.js';
+import { getSetting } from '~/helpers/Utility.js';
+import localize from '~/utility/Localize.js';
 import AttackCheckDialogShell from '~/check/types/attack-check/AttackCheckDialogShell.svelte';
 export default class AttackCheckDialog extends TJSDialog {
    constructor(actor, weapon, attack, options) {

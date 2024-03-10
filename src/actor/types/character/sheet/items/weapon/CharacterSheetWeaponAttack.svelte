@@ -1,5 +1,5 @@
 <script>
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import { getContext } from 'svelte';
    import { ATTACK_TRAIT_DESCRIPTIONS } from '~/item/types/weapon/AttackTraits';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
@@ -33,7 +33,7 @@
             'expertise',
             item,
             attack,
-            item.system.multiAttack
+            item.system.multiAttack,
          );
 
       // Cut the dice in half if multi attacking
@@ -62,7 +62,7 @@
             'expertise',
             item,
             attack,
-            item.system.multiAttack
+            item.system.multiAttack,
          );
 
       // Cut the expertise in half if multi attacking
@@ -82,7 +82,7 @@
             on:click={() =>
                $document.typeComponent.rollAttackCheck(
                   { itemId: item._id, attackIdx: attackIdx },
-                  false
+                  false,
                )}
          >
             <i
@@ -122,7 +122,7 @@
                   'damage',
                   item,
                   attack,
-                  item.system.multiAttack
+                  item.system.multiAttack,
                )
             }${
                attack.plusExtraSuccessDamage

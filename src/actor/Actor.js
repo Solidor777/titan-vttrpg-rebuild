@@ -1,4 +1,5 @@
-import { localize, confirmDeletingItems } from '~/helpers/Utility';
+import localize from '~/utility/Localize.js';
+import { confirmDeletingItems } from '~/helpers/Utility';
 import { Hashing } from '@typhonjs-fvtt/runtime/util';
 import TitanPlayerComponent from '~/actor/types/player/Player.js';
 import TitanNPCComponent from '~/actor/types/npc/NPC.js';

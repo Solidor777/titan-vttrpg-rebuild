@@ -1,5 +1,5 @@
 <script>
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import { getContext } from 'svelte';
 
    // Document reference
@@ -31,7 +31,7 @@
          <!--Type Label -->
          <div class="sub-label">
             {`${localize(
-               $document.flags.titan.parameters.attribute
+               $document.flags.titan.parameters.attribute,
             )} (${localize($document.flags.titan.parameters.skill)})`}
          </div>
 
@@ -42,7 +42,7 @@
                   ? `${localize('melee')}`
                   : `${localize('accuracy')}`
             } ${$document.flags.titan.parameters.attackerRating} ${localize(
-               'versus'
+               'versus',
             )} ${localize('defense')} ${
                $document.flags.titan.parameters.targetDefense
             }`}

@@ -1,7 +1,7 @@
 <svelte:options accessors={true} />
 
 <script>
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import { getContext } from 'svelte';
    import { Hashing } from '@typhonjs-fvtt/runtime/util';
    import TextInput from '~/helpers/svelte-components/input/TextInput.svelte';

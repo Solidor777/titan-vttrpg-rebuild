@@ -1,6 +1,7 @@
 <script>
    import { getContext } from 'svelte';
-   import { localize, getSetting } from '~/helpers/Utility.js';
+   import { getSetting } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import CharacterSheetResource from '~/actor/types/character/sheet/sidebar/CharacterSheetResource.svelte';
 
    // Setup context variables
@@ -16,7 +17,7 @@
             key={'stamina'}
             icon={'fas fa-heart'}
             resourceTooltip={`${localize('stamina.max')} * ${getSetting(
-               'staminaBaseMultiplier'
+               'staminaBaseMultiplier',
             )}`}
          />
       </div>
@@ -28,7 +29,7 @@
             key={'wounds'}
             icon={'fas fa-face-head-bandage'}
             resourceTooltip={`${localize('wounds.max')} * ${getSetting(
-               'woundsBaseMultiplier'
+               'woundsBaseMultiplier',
             )}`}
          />
       </div>
@@ -41,7 +42,7 @@
             key={'resolve'}
             icon={'fas fa-bolt'}
             resourceTooltip={`${localize('resolve.max')} * ${getSetting(
-               'resolveBaseMultiplier'
+               'resolveBaseMultiplier',
             )}`}
          />
       </div>

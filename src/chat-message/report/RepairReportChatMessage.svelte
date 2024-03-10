@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import { localize } from '~/helpers/utility';
+   import localize from '~/utility/Localize.js';
    import ChatResource from '~/chat-message/ChatResource.svelte';
    import ReportDoubleHeader from './components/ReportDoubleHeader.svelte';
 
@@ -19,7 +19,7 @@
       icon={'fas fa-burst'}
       label={localize('repaired%xArmor').replace(
          '%x',
-         chatContext.armorRepaired
+         chatContext.armorRepaired,
       )}
    />
 

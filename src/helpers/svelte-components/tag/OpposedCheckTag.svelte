@@ -1,5 +1,5 @@
 <script>
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
 
    export let opposedCheck = void 0;
 </script>
@@ -15,7 +15,7 @@
    <div class="label">
       {#if opposedCheck.skill && opposedCheck.skill !== 'none'}
          {`${localize(opposedCheck.attribute)} (${localize(
-            `${opposedCheck.skill}`
+            `${opposedCheck.skill}`,
          )})`}
       {:else}
          {localize(opposedCheck.attribute)}

@@ -1,5 +1,5 @@
 <script>
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import { getContext } from 'svelte';
    import ToggleButton from '~/helpers/svelte-components/button/ToggleButton.svelte';
 

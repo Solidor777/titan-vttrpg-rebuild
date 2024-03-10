@@ -1,7 +1,7 @@
 <script>
    import { getContext } from 'svelte';
    import { slide } from 'svelte/transition';
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import StatTag from '~/helpers/svelte-components/tag/StatTag.svelte';
    import RichText from '~/helpers/svelte-components/RichText.svelte';
@@ -54,16 +54,16 @@
                   check={item.system.castingCheck}
                   diceMod={$document.typeComponent.getCastingCheckMod(
                      'dice',
-                     item
+                     item,
                   )}
                   expertiseMod={$document.typeComponent.getCastingCheckMod(
                      'expertise',
-                     item
+                     item,
                   )}
                   on:click={() =>
                      $document.typeComponent.rollCastingCheck(
                         { itemId: id },
-                        false
+                        false,
                      )}
                />
             </div>

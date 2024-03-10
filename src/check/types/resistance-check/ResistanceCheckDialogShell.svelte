@@ -1,7 +1,7 @@
 <svelte:options accessors={true} />
 
 <script>
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import { getContext } from 'svelte';
    import ResistanceSelect from '~/helpers/svelte-components/select/ResistanceSelect.svelte';
    import CheckDifficultySelect from '~/helpers/svelte-components/select/CheckDifficultySelect.svelte';

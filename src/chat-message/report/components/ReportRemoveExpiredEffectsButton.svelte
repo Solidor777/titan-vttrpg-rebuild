@@ -1,7 +1,8 @@
 <script>
    import { getContext } from 'svelte';
-   import { localize, getActor, getSetting } from '~/helpers/Utility.js';
+   import { getActor } from '~/helpers/Utility.js';
    import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import localize from '~/utility/Localize.js';
 
    // Context variables
    const document = getContext('DocumentStore');
@@ -9,7 +10,7 @@
       // Update the actor
       const character = getActor(
          $document.speaker.actor,
-         $document.speaker.token
+         $document.speaker.token,
       )?.character;
       if (character) {
          character.removeExpiredEffects(true);

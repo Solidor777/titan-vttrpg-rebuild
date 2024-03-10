@@ -1,7 +1,7 @@
 <script>
    import { getContext } from 'svelte';
    import { slide } from 'svelte/transition';
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import ScrollingContainer from '~/helpers/svelte-components/ScrollingContainer.svelte';
    import TopFilter from '~/helpers/svelte-components/TopFilter.svelte';
    import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';

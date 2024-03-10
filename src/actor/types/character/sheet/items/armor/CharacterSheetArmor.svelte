@@ -1,7 +1,7 @@
 <script>
    import { getContext } from 'svelte';
    import { slide } from 'svelte/transition';
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import RichText from '~/helpers/svelte-components/RichText.svelte';
    import CharacterSheetCheckButton from '~/actor/types/character/sheet/CharacterSheetCheckButton.svelte';
@@ -60,17 +60,17 @@
                      diceMod={$document.typeComponent.getItemCheckMod(
                         'dice',
                         item,
-                        item.system.check[0]
+                        item.system.check[0],
                      )}
                      expertiseMod={$document.typeComponent.getItemCheckMod(
                         'expertise',
                         item,
-                        item.system.check[0]
+                        item.system.check[0],
                      )}
                      on:click={() =>
                         $document.typeComponent.rollItemCheck(
                            { itemId: item._id, checkIdx: 0 },
-                           false
+                           false,
                         )}
                   />
                </div>

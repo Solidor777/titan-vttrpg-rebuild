@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import DocumentName from '~/documents/components/input/DocumentNameInput.svelte';
    import CharacterSheetAttributes from '~/actor/types/character/sheet/header/CharacterSheetAttributes.svelte';
    import CharacterSheetResistances from '~/actor/types/character/sheet/header/CharacterSheetResistances.svelte';

@@ -1,4 +1,4 @@
-import { localize } from '~/helpers/Utility.js';
+import localize from '~/utility/Localize.js';
 import { Hashing } from '@typhonjs-fvtt/runtime/util';
 import { addRulesElement, removeRulesElement } from '~/item/component/rules-element/RulesElementComponent';
 import TitanTypeComponent from '~/helpers/TypeComponent';

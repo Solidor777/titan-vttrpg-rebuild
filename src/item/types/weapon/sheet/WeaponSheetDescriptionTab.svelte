@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import Tabs from '~/helpers/svelte-components/Tabs.svelte';
    import WeaponSheetAttackNotesTab from './WeaponSheetAttackNotesTab.svelte';
    import WeaponSheetItemDescriptionTab from './WeaponSheetItemDescriptionTab.svelte';

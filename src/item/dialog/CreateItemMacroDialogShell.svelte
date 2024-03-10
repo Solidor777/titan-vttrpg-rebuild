@@ -1,5 +1,5 @@
 <script>
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import { getContext } from 'svelte';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
@@ -133,7 +133,7 @@
                name,
                img,
                idMethod,
-               attackIdx
+               attackIdx,
             );
             break;
          }
@@ -143,7 +143,7 @@
                item,
                name,
                img,
-               idMethod
+               idMethod,
             );
             break;
          }
@@ -154,7 +154,7 @@
                name,
                img,
                idMethod,
-               itemCheckIdx
+               itemCheckIdx,
             );
             break;
          }
@@ -164,7 +164,7 @@
                item,
                name,
                img,
-               idMethod
+               idMethod,
             );
             break;
          }
@@ -173,7 +173,7 @@
             macro = await game.titan.macros.getToggleDocumentSheetMacro(
                name,
                img,
-               uuid
+               uuid,
             );
             break;
          }

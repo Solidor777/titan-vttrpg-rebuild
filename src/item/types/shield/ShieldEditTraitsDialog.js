@@ -1,5 +1,6 @@
 import { TJSDialog } from '@typhonjs-fvtt/runtime/svelte/application';
-import { localize, getSetting } from '~/helpers/Utility.js';
+import { getSetting } from '~/helpers/Utility.js';
+import localize from '~/utility/Localize.js';
 import EditAttackTraitsDialogShell from '~/item/types/shield/ShieldEditTraitsDialogShell.svelte';
 export default class ShieldEditTraitsDialog extends TJSDialog {
    constructor(document) {

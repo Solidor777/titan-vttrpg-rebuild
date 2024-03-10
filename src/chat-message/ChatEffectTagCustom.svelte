@@ -1,10 +1,7 @@
 <script>
-   import {
-      getDarkSVGClass,
-      isHTMLBlank,
-      localize,
-   } from '~/helpers/Utility.js';
+   import { getDarkSVGClass, isHTMLBlank } from '~/helpers/Utility.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
+   import localize from '~/utility/Localize.js';
 
    export let label = void 0;
    export let custom = void 0;

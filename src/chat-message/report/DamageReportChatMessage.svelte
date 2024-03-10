@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import { localize } from '~/helpers/utility';
+   import localize from '~/utility/Localize.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import ChatResource from '~/chat-message/ChatResource.svelte';
    import ReportHeader from '~/chat-message/report/components/ReportHeader.svelte';
@@ -24,7 +24,7 @@
       <div class="message">
          {localize('resisted%xDamage').replace(
             '%x',
-            chatContext.damageResisted
+            chatContext.damageResisted,
          )}
       </div>
    {:else if chatContext.ignoreArmor}
@@ -36,7 +36,7 @@
       <div class="message">
          {localize('suffered%xWounds').replace(
             '%x',
-            chatContext.woundsSuffered
+            chatContext.woundsSuffered,
          )}
       </div>
    {/if}

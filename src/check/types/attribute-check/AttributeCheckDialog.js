@@ -1,5 +1,6 @@
 import { TJSDialog } from '@typhonjs-fvtt/runtime/svelte/application';
-import { localize, getSetting } from '~/helpers/Utility.js';
+import localize from '~/utility/Localize.js';
+import { getSetting } from '~/helpers/Utility.js';
 import AttributeCheckDialogShell from '~/check/types/attribute-check/AttributeCheckDialogShell.svelte';
 export default class AttributeCheckDialog extends TJSDialog {
    constructor(actor, options) {

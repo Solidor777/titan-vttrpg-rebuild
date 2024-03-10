@@ -1,7 +1,7 @@
 <script>
    import { getContext } from 'svelte';
    import { slide } from 'svelte/transition';
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import DocumentSelect from '~/documents/components/select/DocumentSelect.svelte';
    import IconButton from '~/helpers/svelte-components/button/IconButton.svelte';
    import onRulesElementOperationChanged from './RulesElementUpdateOperation';

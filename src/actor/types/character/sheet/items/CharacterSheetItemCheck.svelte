@@ -1,6 +1,7 @@
 <script>
    import { getContext } from 'svelte';
-   import { localize, getSetting } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
+   import { getSetting } from '~/helpers/Utility.js';
    import OpposedCheckTag from '~/helpers/svelte-components/tag/OpposedCheckTag.svelte';
    import ResistedByTag from '~/helpers/svelte-components/tag/ResistedByTag.svelte';
    import IconStatTag from '~/helpers/svelte-components/tag/IconStatTag.svelte';
@@ -26,7 +27,7 @@
    function rollItemCheck() {
       return $document.typeComponent.rollItemCheck(
          { itemId: item._id, checkIdx: checkIdx },
-         false
+         false,
       );
    }
 
@@ -94,7 +95,7 @@
             <AttributeTag
                attribute={check.attribute}
                label={`${localize(check.attribute)} (${localize(
-                  check.skill
+                  check.skill,
                )}) ${check.difficulty}:${check.complexity}`}
             />
          </div>

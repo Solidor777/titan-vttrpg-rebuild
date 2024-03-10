@@ -1,5 +1,5 @@
 import SvelteDocumentSheet from '~/documents/DocumentSheet';
-import { localize } from '../../helpers/Utility';
+import localize from '~/utility/Localize.js';
 
 export default class TitanActorSheet extends SvelteDocumentSheet {
    /**

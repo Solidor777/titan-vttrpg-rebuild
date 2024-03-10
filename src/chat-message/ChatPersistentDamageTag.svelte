@@ -1,5 +1,5 @@
 <script>
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
 
    export let persistentDamage = void 0;

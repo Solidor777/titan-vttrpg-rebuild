@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import { slide } from 'svelte/transition';
    import IconButton from '~/helpers/svelte-components/button/IconButton.svelte';
    import SpellSheetSidebarAspects from './SpellSheetSidebarAspects.svelte';
@@ -31,7 +31,7 @@
          <!--Label-->
          <div class="label-button">
             {localize($document.system.castingCheck.attribute)} ({localize(
-               $document.system.castingCheck.skill
+               $document.system.castingCheck.skill,
             )}) {$document.system.castingCheck.difficulty}:{$document.system
                .castingCheck.complexity}
          </div>
@@ -59,7 +59,7 @@
          <!--Label-->
          <div class="label-normal">
             {localize($document.system.castingCheck.attribute)} ({localize(
-               $document.system.castingCheck.skill
+               $document.system.castingCheck.skill,
             )}) {$document.system.castingCheck.difficulty}:{$document.system
                .castingCheck.complexity}
          </div>

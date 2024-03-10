@@ -1,5 +1,4 @@
 import {
-   clamp,
    confirmDeletingItems,
    documentSort,
    getBestPlayerOwner,
@@ -9,7 +8,6 @@ import {
    getSumOfValuesInObject,
    isFirstOwner,
    isHTMLBlank,
-   localize,
    shouldGetCheckOptions,
    sortObjectsIntoContainerByFunction,
 } from '~/helpers/Utility.js';
@@ -47,6 +45,8 @@ import {
    getItemCheckMod,
    getAttributeCheckMod
 } from '~/rules-element/ConditionalCheckModifier';
+import clamp from '~/utility/Clamp';
+import localize from '~/utility/Localize.js';
 
 export default class TitanCharacterComponent extends TitanTypeComponent {
 

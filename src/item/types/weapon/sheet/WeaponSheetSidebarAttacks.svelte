@@ -1,7 +1,7 @@
 <script>
    import { getContext } from 'svelte';
    import { slide } from 'svelte/transition';
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import { ATTACK_TRAIT_DESCRIPTIONS } from '~/item/types/weapon/AttackTraits.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import Tag from '~/helpers/svelte-components/tag/Tag.svelte';
@@ -101,7 +101,7 @@
                   <AttributeTag
                      attribute={attack.attribute}
                      label={`${localize(attack.attribute)} (${localize(
-                        attack.skill
+                        attack.skill,
                      )})`}
                   />
                </div>

@@ -1,7 +1,7 @@
 <script>
    import { getContext } from 'svelte';
    import { slide } from 'svelte/transition';
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import ValueTag from '~/helpers/svelte-components/tag/ValueTag.svelte';
    import RichText from '~/helpers/svelte-components/RichText.svelte';

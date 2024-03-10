@@ -1,7 +1,7 @@
 <script>
    import { getContext } from 'svelte';
    import { slide } from 'svelte/transition';
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import { ATTACK_TRAIT_DESCRIPTIONS } from '~/item/types/weapon/AttackTraits.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import IconButton from '~/helpers/svelte-components/button/IconButton.svelte';
@@ -232,13 +232,13 @@
                               editFunction={() => {
                                  $document.typeComponent.editCustomAttackTrait(
                                     idx,
-                                    traitIdx
+                                    traitIdx,
                                  );
                               }}
                               deleteFunction={() => {
                                  $document.typeComponent.deleteCustomAttackTrait(
                                     idx,
-                                    traitIdx
+                                    traitIdx,
                                  );
                               }}
                               labelTooltip={trait.description}

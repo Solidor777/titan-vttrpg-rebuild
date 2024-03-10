@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import { slide } from 'svelte/transition';
    import SpellSheetEnableAspectButton from './SpellSheetEnableAspectButton.svelte';
    import DocumentSelect from '~/documents/components/select/DocumentSelect.svelte';
@@ -134,21 +134,21 @@
                         <ToggleOptionButton
                            label={localize(option)}
                            enabled={$document.system.aspect[idx].option.indexOf(
-                              option
+                              option,
                            ) !== -1}
                            on:click={() => {
                               const optionIdx =
                                  $document.system.aspect[idx].option.indexOf(
-                                    option
+                                    option,
                                  );
                               if (optionIdx === -1) {
                                  $document.system.aspect[idx].option.push(
-                                    option
+                                    option,
                                  );
                               } else {
                                  $document.system.aspect[idx].option.splice(
                                     optionIdx,
-                                    1
+                                    1,
                                  );
                               }
                               $document.update({

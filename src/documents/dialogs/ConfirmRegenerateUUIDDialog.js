@@ -1,4 +1,4 @@
-import { localize } from '~/helpers/Utility.js';
+import localize from '~/utility/Localize.js';
 import ConfirmationDialog from '~/helpers/dialogs/ConfirmationDialog';
 import { regenerateUUID } from '~/helpers/Utility';
 export default class ConfirmRegenerateUUIDDialog extends ConfirmationDialog {

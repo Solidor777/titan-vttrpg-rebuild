@@ -1,9 +1,9 @@
 <script>
    import {
-      localize,
       applyDamageToTargets,
       applyHealingToTargets,
    } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
 

@@ -1,4 +1,4 @@
-import { localize } from '~/helpers/Utility';
+import localize from '~/utility/Localize.js';
 import deepFreeze from '~/utility/DeepFreeze';
 
 const TITAN_CONDITIONS = deepFreeze([

@@ -1,5 +1,5 @@
 <script>
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import { getContext } from 'svelte';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import DocumentImagePicker from '~/documents/components/DocumentImagePicker.svelte';

@@ -1,5 +1,6 @@
 import { TJSDialog } from '@typhonjs-fvtt/runtime/svelte/application';
-import { localize, getSetting } from '~/helpers/Utility.js';
+import { getSetting } from '~/helpers/Utility.js';
+import localize from '~/utility/Localize.js';
 import EditUUIDDialogShell from '~/documents/dialogs/EditUUIDDialogShell.svelte';
 export default class EditUUIDDialog extends TJSDialog {
    constructor(document) {

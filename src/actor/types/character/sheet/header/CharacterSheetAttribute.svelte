@@ -1,5 +1,5 @@
 <script>
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import { getContext } from 'svelte';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import DocumentIntegerInput from '~/documents/components/input/DocumentIntegerInput.svelte';
@@ -18,7 +18,7 @@
       equipment,
       effect,
       ability,
-      staticMod
+      staticMod,
    ) {
       // Base label
       let retVal = `<p>${localize('base')}: ${baseValue}</p>`;
@@ -51,7 +51,7 @@
       $document.system.attribute[key].mod.equipment,
       $document.system.attribute[key].mod.effect,
       $document.system.attribute[key].mod.ability,
-      $document.system.attribute[key].mod.static
+      $document.system.attribute[key].mod.static,
    );
 </script>
 
@@ -62,7 +62,7 @@
          on:click={() =>
             $document.typeComponent.rollAttributeCheck(
                { attribute: key },
-               false
+               false,
             )}
       >
          {localize(key)}

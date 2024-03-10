@@ -1,7 +1,7 @@
 <script>
    import { getContext } from 'svelte';
    import { slide } from 'svelte/transition';
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import RarityTag from '~/helpers/svelte-components/tag/RarityTag.svelte';
    import ValueTag from '~/helpers/svelte-components/tag/ValueTag.svelte';
@@ -63,7 +63,7 @@
                      on:click={() =>
                         $document.typeComponent.rollAttackCheck(
                            { itemId: item._id, attackIdx: 0 },
-                           false
+                           false,
                         )}
                   />
                {/if}

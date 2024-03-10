@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import { localize } from '~/helpers/utility';
+   import localize from '~/utility/Localize.js';
    import ChatEffects from '~/chat-message/ChatEffects.svelte';
    import ReportRemoveExpiredEffectsButton from '~/chat-message/report/components/ReportRemoveExpiredEffectsButton.svelte';
    import ReportConfirmApplyHealingButton from '~/chat-message/report/components/ReportConfirmApplyHealingButton.svelte';
@@ -78,7 +78,7 @@
             <div>
                {localize('healed%xDamage').replace(
                   '%x',
-                  chatContext.healingApplied.total
+                  chatContext.healingApplied.total,
                )}
             </div>
          </div>
@@ -98,7 +98,7 @@
             <div>
                {localize('took%xDamage').replace(
                   '%x',
-                  chatContext.damageApplied.total
+                  chatContext.damageApplied.total,
                )}
             </div>
          </div>

@@ -1,34 +1,34 @@
 <svelte:options accessors={true} />
 
 <script>
-   import { ApplicationShell } from "@typhonjs-fvtt/runtime/svelte/component/core";
-   import { setContext } from "svelte";
-   import { getContext } from "svelte";
-   import { localize } from "~/helpers/Utility.js";
-   import Tabs from "~/helpers/svelte-components/Tabs.svelte";
-   import ItemSheetChecksTab from "~/item/component/check/ItemSheetChecksTab.svelte";
-   import ItemSheetDescriptionTab from "~/item/sheet/ItemSheetDescriptionTab.svelte";
-   import ItemSheetSidebar from "~/item/sheet/ItemSheetSidebar.svelte";
-   import CommoditySheetHeader from "./CommoditySheetHeader.svelte";
+   import { ApplicationShell } from '@typhonjs-fvtt/runtime/svelte/component/core';
+   import { setContext } from 'svelte';
+   import { getContext } from 'svelte';
+   import localize from '~/utility/Localize.js';
+   import Tabs from '~/helpers/svelte-components/Tabs.svelte';
+   import ItemSheetChecksTab from '~/item/component/check/ItemSheetChecksTab.svelte';
+   import ItemSheetDescriptionTab from '~/item/sheet/ItemSheetDescriptionTab.svelte';
+   import ItemSheetSidebar from '~/item/sheet/ItemSheetSidebar.svelte';
+   import CommoditySheetHeader from './CommoditySheetHeader.svelte';
 
    // Setup context variables
    export let elementRoot;
    export let documentStore;
    export let applicationStateStore;
-   setContext("DocumentStore", documentStore);
-   setContext("ApplicationStateStore", applicationStateStore);
-   const appState = getContext("ApplicationStateStore");
+   setContext('DocumentStore', documentStore);
+   setContext('ApplicationStateStore', applicationStateStore);
+   const appState = getContext('ApplicationStateStore');
 
    // Tabs
    const tabs = [
       {
-         label: localize("description"),
-         id: "description",
+         label: localize('description'),
+         id: 'description',
          component: ItemSheetDescriptionTab,
       },
       {
-         label: localize("checks"),
-         id: "checks",
+         label: localize('checks'),
+         id: 'checks',
          component: ItemSheetChecksTab,
       },
    ];
@@ -55,7 +55,7 @@
 </ApplicationShell>
 
 <style lang="scss">
-   @import "../../../../Styles/Mixins.scss";
+   @import '../../../../Styles/Mixins.scss';
 
    .item-sheet {
       @include flex-column;

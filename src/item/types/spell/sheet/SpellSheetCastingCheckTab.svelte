@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import { slide } from 'svelte/transition';
    import ScrollingContainer from '~/helpers/svelte-components/ScrollingContainer.svelte';
    import DocumentCheckboxInput from '~/documents/components/input/DocumentCheckboxInput.svelte';

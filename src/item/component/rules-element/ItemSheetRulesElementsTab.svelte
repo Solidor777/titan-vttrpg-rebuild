@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import { slide } from 'svelte/transition';
    import ScrollingContainer from '~/helpers/svelte-components/ScrollingContainer.svelte';
    import TopFilter from '~/helpers/svelte-components/TopFilter.svelte';
@@ -113,7 +113,7 @@
                <li transition:slide|local>
                   <svelte:component
                      this={selectComponent(
-                        $document.system.rulesElement[idx].operation
+                        $document.system.rulesElement[idx].operation,
                      )}
                      {idx}
                      {element}

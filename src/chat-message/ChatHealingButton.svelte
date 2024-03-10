@@ -1,5 +1,6 @@
 <script>
-   import { localize, applyHealingToTargets } from '~/helpers/Utility.js';
+   import { applyHealingToTargets } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import { getContext } from 'svelte';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';

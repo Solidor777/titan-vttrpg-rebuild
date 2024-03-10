@@ -1,4 +1,4 @@
-import { localize } from '~/helpers/Utility.js';
+import localize from '~/utility/Localize.js';
 import { Hashing } from '@typhonjs-fvtt/runtime/util';
 import TitanAbility from '~/item/types/ability/Ability.js';
 import TitanArmor from '~/item/types/armor/Armor.js';

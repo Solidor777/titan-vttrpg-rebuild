@@ -1,5 +1,5 @@
 <script>
-   import { localize } from '~/helpers/utility';
+   import localize from '~/utility/Localize.js';
    import ReportHeader from '~/chat-message/report/components/ReportHeader.svelte';
 </script>
 

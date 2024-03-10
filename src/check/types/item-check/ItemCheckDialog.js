@@ -1,5 +1,6 @@
 import { TJSDialog } from '@typhonjs-fvtt/runtime/svelte/application';
-import { localize, getSetting } from '~/helpers/Utility.js';
+import { getSetting } from '~/helpers/Utility.js';
+import localize from '~/utility/Localize.js';
 import ItemCheckDialogShell from '~/check/types/item-check/ItemCheckDialogShell.svelte';
 export default class ItemCheckDialog extends TJSDialog {
    constructor(actor, item, check, options) {

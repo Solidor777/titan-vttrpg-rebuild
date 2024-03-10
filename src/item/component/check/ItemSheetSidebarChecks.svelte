@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import { slide } from 'svelte/transition';
    import ResistanceTag from '~/helpers/svelte-components/tag/ResistanceTag.svelte';
    import StatTag from '~/helpers/svelte-components/tag/StatTag.svelte';
@@ -119,7 +119,7 @@
                         {#if check.opposedCheck.skill !== 'none'}
                            <AttributeTag
                               label={`${localize(
-                                 check.opposedCheck.attribute
+                                 check.opposedCheck.attribute,
                               )} (${localize(check.opposedCheck.skill)})`}
                               attribute={check.opposedCheck.attribute}
                            />

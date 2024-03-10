@@ -1,5 +1,5 @@
 <script>
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import { getContext } from 'svelte';
    import AttributeTag from '~/helpers/svelte-components/tag/AttributeTag.svelte';
    import IconStatTag from '~/helpers/svelte-components/tag/IconStatTag.svelte';
@@ -34,7 +34,7 @@
       <AttributeTag
          attribute={item.system.castingCheck.attribute}
          label={`${localize(item.system.castingCheck.attribute)} (${localize(
-            item.system.castingCheck.skill
+            item.system.castingCheck.skill,
          )}) ${item.system.castingCheck.difficulty}:${
             item.system.castingCheck.complexity
          }`}

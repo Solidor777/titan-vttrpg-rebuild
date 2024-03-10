@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
 
    // Aspect
@@ -23,7 +23,7 @@
       if (aspect.isDamage) {
          $document.flags.titan.results.damage += Math.max(
             aspect.initialValue,
-            1
+            1,
          );
       }
 
@@ -31,7 +31,7 @@
       if (aspect.isHealing) {
          $document.flags.titan.results.healing += Math.max(
             aspect.initialValue,
-            1
+            1,
          );
       }
 
@@ -54,7 +54,7 @@
       if (aspect.isDamage) {
          $document.flags.titan.results.damage -= Math.max(
             aspect.initialValue,
-            1
+            1,
          );
       }
 
@@ -62,7 +62,7 @@
       if (aspect.isHealing) {
          $document.flags.titan.results.healing -= Math.max(
             aspect.initialValue,
-            1
+            1,
          );
       }
 
@@ -119,7 +119,7 @@
       </div>
       <div class="cost">
          {localize('cost')}: {`${aspectCost} ${localize(
-            'extraSuccesses.short'
+            'extraSuccesses.short',
          )}`}
       </div>
    </div>

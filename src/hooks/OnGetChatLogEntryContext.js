@@ -1,5 +1,6 @@
-import { localize, getActor, getSetting, isCheck } from '~/helpers/Utility.js';
+import { getActor, getSetting, isCheck } from '~/helpers/Utility.js';
 import recalculateCheckResults from '~/check/chat-message/RecalculateCheckResults';
+import localize from '~/utility/Localize.js';
 
 export default function onGetChatLogEntryContext(html, options) {
    // Get the settings for ato spending resolve

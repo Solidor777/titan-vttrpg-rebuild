@@ -1,5 +1,5 @@
 <script>
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
 
    const labelIcons = {
       damage: 'fas fa-burst',

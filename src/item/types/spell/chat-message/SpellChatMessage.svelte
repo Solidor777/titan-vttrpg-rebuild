@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import RichText from '~/helpers/svelte-components/RichText.svelte';
    import RarityTag from '~/helpers/svelte-components/tag/RarityTag.svelte';
@@ -27,7 +27,7 @@
          <AttributeTag
             attribute={item.system.castingCheck.attribute}
             label={`${localize(item.system.castingCheck.attribute)} (${localize(
-               item.system.castingCheck.skill
+               item.system.castingCheck.skill,
             )}) ${item.system.castingCheck.difficulty}:${
                item.system.castingCheck.complexity
             }`}

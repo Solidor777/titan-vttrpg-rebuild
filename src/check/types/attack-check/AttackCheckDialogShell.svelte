@@ -1,8 +1,9 @@
 <svelte:options accessors={true} />
 
 <script>
-   import { localize, getCombatTargets } from '~/helpers/Utility.js';
+   import { getCombatTargets } from '~/helpers/Utility.js';
    import { getContext } from 'svelte';
+   import localize from '~/utility/Localize.js';
    import AttributeSelect from '~/helpers/svelte-components/select/AttributeSelect.svelte';
    import SkillSelect from '~/helpers/svelte-components/select/SkillSelect.svelte';
    import IntegerInput from '~/helpers/svelte-components/input/IntegerInput.svelte';
@@ -44,7 +45,7 @@
                'accuracy',
                weapon,
                attack,
-               multiAttack
+               multiAttack,
             ),
       attackerMelee:
          options.attackerMelee ??
@@ -53,7 +54,7 @@
                'melee',
                weapon,
                attack,
-               multiAttack
+               multiAttack,
             ),
       attribute: options.attribute ?? attack.attribute,
       diceMod:
@@ -67,7 +68,7 @@
             'expertise',
             weapon,
             attack,
-            multiAttack
+            multiAttack,
          ),
       itemId: options.itemId,
       multiAttack: multiAttack,

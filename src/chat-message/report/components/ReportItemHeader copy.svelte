@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import { localize } from '~/helpers/utility';
+   import localize from '~/utility/Localize.js';
 
    // Document reference
    const document = getContext('DocumentStore');

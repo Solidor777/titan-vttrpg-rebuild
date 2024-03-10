@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
    import DocumentIntegerInput from '~/documents/components/input/DocumentIntegerInput.svelte';
@@ -20,7 +20,7 @@
       effect,
       ability,
       staticMod,
-      mod
+      mod,
    ) {
       // Base label
       let retVal = `<p>${localize('base')}: ${baseValue}</p>`;
@@ -80,14 +80,14 @@
    $: diceMod = $document.typeComponent.getAttributeCheckMod(
       'dice',
       $document.system.skill[key].defaultAttribute,
-      key
+      key,
    );
 
    let expertiseMod = 0;
    $: expertiseMod = $document.typeComponent.getAttributeCheckMod(
       'expertise',
       $document.system.skill[key].defaultAttribute,
-      key
+      key,
    );
 
    $: trainingTotalValueTooltip = getTotalValueTooltip(
@@ -96,7 +96,7 @@
       $document.system.skill[key].training.mod.effect,
       $document.system.skill[key].training.mod.ability,
       $document.system.skill[key].training.mod.static,
-      0
+      0,
    );
 
    $: expertiseTotalValueTooltip = getTotalValueTooltip(
@@ -105,14 +105,14 @@
       $document.system.skill[key].expertise.mod.effect,
       $document.system.skill[key].expertise.mod.ability,
       $document.system.skill[key].expertise.mod.static,
-      expertiseMod
+      expertiseMod,
    );
 
    $: totalDiceTooltip = getTotalDiceTooltip(
       $document.system.attribute[$document.system.skill[key].defaultAttribute]
          .value,
       $document.system.skill[key].training.value,
-      diceMod
+      diceMod,
    );
 </script>
 
@@ -124,7 +124,7 @@
             on:click={() =>
                $document.typeComponent.rollAttributeCheck(
                   { skill: key },
-                  false
+                  false,
                )}
          >
             <div class="button-content">

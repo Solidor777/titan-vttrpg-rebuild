@@ -4,7 +4,7 @@
    import { ApplicationShell } from '@typhonjs-fvtt/runtime/svelte/component/core';
    import { setContext } from 'svelte';
    import { getContext } from 'svelte';
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import Tabs from '~/helpers/svelte-components/Tabs.svelte';
    import ItemSheetChecksTab from '~/item/component/check/ItemSheetChecksTab.svelte';
    import ItemSheetRulesElementsTab from '~/item/component/rules-element/ItemSheetRulesElementsTab.svelte';

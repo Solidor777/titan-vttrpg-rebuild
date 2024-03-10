@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import DocumentIntegerInput from '~/documents/components/input/DocumentIntegerInput.svelte';
    import Meter from '~/helpers/svelte-components/Meter.svelte';
@@ -20,11 +20,11 @@
       equipment,
       effect,
       ability,
-      staticMod
+      staticMod,
    ) {
       // Base label
       let retVal = `<p>${resourceTooltip}</p><p>${localize(
-         'base'
+         'base',
       )}: ${maxBase}</p>`;
 
       // Equipment
@@ -55,7 +55,7 @@
       $document.system.resource[key].mod.equipment,
       $document.system.resource[key].mod.effect,
       $document.system.resource[key].mod.ability,
-      $document.system.resource[key].mod.static
+      $document.system.resource[key].mod.static,
    );
 </script>
 
@@ -67,9 +67,7 @@
       </div>
 
       <!--Label-->
-      <span
-         class="label"
-         use:tooltip={{ content: localize(`${key}.desc`) }}
+      <span class="label" use:tooltip={{ content: localize(`${key}.desc`) }}
          >{localize(key)}</span
       >
 

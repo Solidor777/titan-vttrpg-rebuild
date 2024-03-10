@@ -1,11 +1,11 @@
 <script>
    import {
-      localize,
       applyRendToTargets,
       applyRepairsToTargets,
    } from '~/helpers/Utility.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import localize from '~/utility/Localize.js';
 
    export let rend = void 0;
    export let magical = false;

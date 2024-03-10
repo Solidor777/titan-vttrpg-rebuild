@@ -1,13 +1,5 @@
 import { Hashing } from '@typhonjs-fvtt/runtime/util';
 
-export function clamp(value, min, max) {
-   return Math.min(Math.max(value, min), max);
-}
-
-export function localize(string) {
-   return game.i18n.localize(`LOCAL.${string}.label`);
-}
-
 export function format(string, data) {
    return game.i18n.format(`LOCAL.${string}.label`, data);
 }

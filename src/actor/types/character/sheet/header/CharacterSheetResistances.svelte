@@ -1,6 +1,5 @@
 <script>
    import { getContext } from 'svelte';
-   import { localize } from '~/helpers/Utility.js';
    import CharacterSheetResistance from '~/actor/types/character/sheet/header/CharacterSheetResistance.svelte';
 
    // Setup context variables

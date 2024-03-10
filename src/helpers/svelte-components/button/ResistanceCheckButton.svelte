@@ -1,5 +1,5 @@
 <script>
-   import { localize } from '~/helpers/Utility.js';
+   import localize from '~/utility/Localize.js';
    import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
 
    // Resistance to roll

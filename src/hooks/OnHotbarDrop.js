@@ -1,6 +1,6 @@
 import CreateItemMacroDialog from '~/item/dialog/CreateItemMacroDialog';
 
-export default function onHotbarDrop(data, slot) {
+export default function onHotbarDrop(bar, data, slot) {
    // Ensure the object is an item
    if (data.type !== 'Item') {
       return;
@@ -39,6 +39,7 @@ export default function onHotbarDrop(data, slot) {
       return false;
    }
 
+   // If the item supports a macro dialog, create one
    switch (macroItem.type) {
       case 'weapon': {
          if (macroItem.system.attack.length > 0) {
@@ -64,6 +65,8 @@ export default function onHotbarDrop(data, slot) {
       }
    }
 
+   // This is a separate function because if onHotbarDrop does not return immediately,
+   // the default macro will be created
    createToggleDocumentSheetMacro(macroItem.name, macroItem.img, data.uuid, slot);
    return false;
 }

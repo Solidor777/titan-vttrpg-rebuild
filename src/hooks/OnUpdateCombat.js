@@ -1,4 +1,5 @@
 import { isModifierActive } from '~/helpers/Utility';
+import warn from '~/utility/Warn';
 
 export default async function onUpdateCombat(combat, data, diff) {
    // Ensure that this is the result of advancing in turn order
@@ -10,7 +11,7 @@ export default async function onUpdateCombat(combat, data, diff) {
       const previousCombatant = combat.combatants?.get(combat.previous?.combatantId);
       const previousInitiative = isNewCombat ? 0 : previousCombatant ? previousCombatant.initiative : currentInitiative;
       if (currentInitiative === null || previousInitiative === null) {
-         console.warn('TITAN | Current or Previous combatant had an Initiative of null. Initiative based effects will not function.');
+         warn('TITAN | Current or Previous combatant had an Initiative of null. Initiative based effects will not function.');
       }
       else {
          const isNewRound = currentInitiative > previousInitiative;

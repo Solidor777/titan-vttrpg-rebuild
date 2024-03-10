@@ -8,7 +8,6 @@
 
    // Document reference
    const document = getContext('DocumentStore');
-   console.log($document.flags.titan.results.damageTaken);
 </script>
 
 <div class="check-chat-message">

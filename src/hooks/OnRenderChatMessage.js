@@ -1,8 +1,9 @@
 import { TJSDocument } from '@typhonjs-fvtt/runtime/svelte/store/fvtt/document';
 import { getSetting } from '~/helpers/Utility';
 import ChatMessageShell from '~/chat-message/ChatMessageShell.svelte';
+import deepFreeze from '~/utility/DeepFreeze';
 
-const CHAT_MESSAGE_TYPES = Object.freeze(new Set([
+const CHAT_MESSAGE_TYPES = deepFreeze(new Set([
    'attributeCheck',
    'skillCheck',
    'resistanceCheck',
@@ -30,7 +31,7 @@ const CHAT_MESSAGE_TYPES = Object.freeze(new Set([
    'repairReport'
 ]));
 
-export function onRenderChatMessage(message, html) {
+export default function onRenderChatMessage(message, html) {
    // Check if this is a valid titan chat message
    const chatContext = message?.flags?.titan;
    if (CHAT_MESSAGE_TYPES.has(chatContext?.type)) {
@@ -38,12 +39,12 @@ export function onRenderChatMessage(message, html) {
       const content = html.find('.chat-message').prevObject;
       content.addClass('titan');
 
-      // Adder the owner class
+      // Adder the owner class if the current user owns the message
       if (message.isOwner) {
          content.addClass('owner');
       }
 
-      // Add the dark mode class
+      // Add the dark mode class if dark mode is enabled
       if (getSetting('darkModeChatMessages') !== 'disabled') {
          content.addClass('titan-dark-mode');
       }
@@ -57,18 +58,13 @@ export function onRenderChatMessage(message, html) {
          }
       });
    }
+
+   // If this is not a titan message, but dark mode is enabled for all messages, 
+   // add the dark mode class anyway
    else if (getSetting('darkModeChatMessages') === 'all') {
-      // Add the titan class
       const content = html.find('.chat-message').prevObject;
       content.addClass('titan-dark-mode');
    }
-}
 
-export function onPreDeleteChatMessage(message) {
-   // Check if this is a valid titan chat message
-   const flagData = message.getFlag('titan', 'data');
-   if (typeof flagData === 'object' && typeof message?._svelteComponent?.$destroy === 'function') {
-      // If so, delete the svelte component
-      message._svelteComponent.$destroy();
-   }
+   return;
 }

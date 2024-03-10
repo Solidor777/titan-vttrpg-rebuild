@@ -2,7 +2,7 @@ import { localize, getSetting } from '~/helpers/Utility.js';
 import ConfirmRegenerateUUIDDialog from '~/documents/dialogs/ConfirmRegenerateUUIDDialog';
 import EditUUIDDialog from '~/documents/dialogs/EditUUIDDialog';
 
-export default function registerActorContextOptions(html, options) {
+export default function onGetActorDirectoryEntryContext(html, options) {
    // Only present these options for the gm
    if (game.user.isGM) {
       // Regenerate UUID

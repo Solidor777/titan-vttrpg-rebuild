@@ -1,0 +1,43 @@
+{
+   "id": "titan-rebuild",
+   "name": "titan-rebuild",
+   "title": "Titan VTTRPG - Rebuild",
+   "description": "A success based roll system designed for virtual tabletop.",
+   "version": "1.0.0",
+   "compatibility": {
+      "minimum": "11.315",
+      "verified": "11.315",
+      "maximum": "11"
+   },
+   "manifestPlusVersion": "1.2.0",
+   "authors": [
+      {
+         "name": "Solidor",
+         "discord": "Solidor#1916",
+         "flags": {}
+      }
+   ],
+   "scripts": [],
+   "esmodules": [
+      "index.js"
+   ],
+   "styles": [
+      "style.css"
+   ],
+   "languages": [
+      {
+         "lang": "en",
+         "name": "English",
+         "path": "lang/en.json"
+      }
+   ],
+   "socket": true,
+   "gridDistance": 1,
+   "gridUnits": "sp",
+   "url": "https://github.com/Solidor777/Titan-VTTRPG",
+   "bugs": "https://github.com/Solidor777/Titan-VTTRPG/issues",
+   "readme": "https://github.com/Solidor777/Titan-VTTRPG/releases/download/latest/README.md",
+   "changelog": "https://github.com/Solidor777/Titan-VTTRPG/releases/download/latest/CHANGELOG.md",
+   "manifest": "https://github.com/Solidor777/Titan-VTTRPG/releases/download/latest/system.json",
+   "download": "https://github.com/Solidor777/Titan-VTTRPG/releases/download/latest/titan.zip"
+}

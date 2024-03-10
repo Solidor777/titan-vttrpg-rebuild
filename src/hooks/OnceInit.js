@@ -21,6 +21,8 @@ export default function onceInit() {
 
    // Register system settings
    registerSystemSettings();
+
+   // Register initiative settings
    registerInitiativeFormula();
 
    // Register Document Classes
@@ -31,6 +33,8 @@ export default function onceInit() {
 
    // Initialize titan specific game settings
    game.titan = {};
+
+   // Add titan macros class
    game.titan.macros = new TitanMacros();
 
    // Register Sheet Classes

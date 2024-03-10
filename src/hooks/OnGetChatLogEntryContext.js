@@ -2,6 +2,7 @@ import { localize, getActor, getSetting, isCheck } from '~/helpers/Utility.js';
 import recalculateCheckResults from '~/check/chat-message/RecalculateCheckResults';
 
 export default function onGetChatLogEntryContext(html, options) {
+   // Get the settings for ato spending resolve
    const autoSpendResolveReRollFailures = getSetting('autoSpendResolveReRollFailures');
    const autoSpendResolveDoubleExpertise = getSetting('autoSpendResolveDoubleExpertise');
    const autoSpendResolveDoubleTraining = getSetting('autoSpendResolveDoubleTraining');
@@ -16,7 +17,7 @@ export default function onGetChatLogEntryContext(html, options) {
       },
    ];
 
-   // Re-roll Failures
+   // Re-roll Failures without spending resolve
    if (game.user.isGM || !autoSpendResolveReRollFailures) {
       reRollFailureOptions.unshift({
          name: localize("reRollFailures"),
@@ -36,7 +37,7 @@ export default function onGetChatLogEntryContext(html, options) {
       },
    ];
 
-   // Double Expertise
+   // Double Expertise without spending resolve
    if (game.user.isGM || !autoSpendResolveDoubleExpertise) {
       doubleExpertiseOptions.unshift({
          name: localize("doubleExpertise"),
@@ -56,7 +57,7 @@ export default function onGetChatLogEntryContext(html, options) {
       },
    ];
 
-   // Double Training
+   // Double Training without spending resolve
    if (game.user.isGM || !autoSpendResolveDoubleTraining) {
       doubleTrainingOptions.push({
          name: localize("doubleTraining"),
@@ -75,7 +76,7 @@ function getChatContext(li) {
    // Get the message from the list item
    const message = game.messages.get(li.data("messageId"));
 
-   // Check if this user owns the speaker
+   // Check if this message is visible and the user owns the speaker
    if (message?.isContentVisible && message.constructor.getSpeakerActor(message.speaker)?.isOwner) {
 
       // Check if the message is a titan message

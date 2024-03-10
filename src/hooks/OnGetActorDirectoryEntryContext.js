@@ -23,35 +23,45 @@ export default function onGetActorDirectoryEntryContext(html, options) {
    }
 }
 
+// Utility function for getting an actor
 function getActor(li) {
    const actorID = li.data('document-id');
    return game.actors.get(actorID);
 }
 
+
+// Returns whether we can edit the UUID of this actor
+// Return true if the actor exists
 function canEditUUID(li) {
    return getActor(li) ? true : false;
 }
 
+// Randomly regenerations the UUID of an actor
 async function regenerateUUID(li) {
-   const item = getActor(li);
-   if (item) {
+   const actor = getActor(li);
+   if (actor) {
+      // If the system is set confirm the UUID regeneration, then bring up a macro
       if (getSetting('confirmRegenerateUUID')) {
-         const dialog = new ConfirmRegenerateUUIDDialog(item);
+         const dialog = new ConfirmRegenerateUUIDDialog(actor);
          dialog.render(true);
       }
 
+      // Otherwise, immediately regeneration the UUID
       else {
-         regenerateUUID(item);
+         regenerateUUID(actor);
       }
    }
 
    return;
 }
 
+// Manually edit the UUID of the actor
 async function editUUID(li) {
-   const item = getActor(li);
-   if (item) {
-      const dialog = new EditUUIDDialog(item);
+
+   // Create a dialog for manually editing the UUID
+   const actor = getActor(li);
+   if (actor) {
+      const dialog = new EditUUIDDialog(actor);
       dialog.render(true);
    }
 

@@ -1,6 +1,7 @@
 import { localize } from '~/helpers/Utility';
+import deepFreeze from '~/utility/DeepFreeze';
 
-const TITAN_CONDITIONS = [
+const TITAN_CONDITIONS = deepFreeze([
    {
       id: 'blinded',
       label: 'LOCAL.blinded.label',
@@ -56,20 +57,23 @@ const TITAN_CONDITIONS = [
       label: 'LOCAL.unconscious.label',
       icon: 'icons/svg/unconscious.svg'
    },
-];
+]);
 
 export default function setupConditions() {
-   // Sort conditions
+   // Sort conditions by name
    const conditions = TITAN_CONDITIONS.sort((a, b) => {
-      const textA = game.i18n.localize(a.label);
-      const textB = game.i18n.localize(b.label);
+      const textA = localize(a.label);
+      const textB = localize(b.label);
       return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
    });
 
    // For each condition
    for (const condition of conditions) {
+
       // Set the description
       const description = localize(`${condition.id}.desc`);
+
+      // Set the flags for visual active effects
       condition.flags = {
          titan: {
             description: description,
@@ -79,5 +83,8 @@ export default function setupConditions() {
       };
    }
 
+   // Update the conditions
    CONFIG.statusEffects = conditions;
+
+   return;
 }

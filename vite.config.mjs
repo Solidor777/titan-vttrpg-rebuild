@@ -39,7 +39,7 @@ export default () => {
       resolve: {
          conditions: ['import', 'browser'],
          alias: {
-            '~/': `${path.resolve(__dirname, 'src')}/$`,
+            '~/': `${path.resolve(__dirname, 'src')}/`,
          }
       },
 
@@ -50,6 +50,10 @@ export default () => {
       css: {
          // Creates a standard configuration for PostCSS with autoprefixer & postcss-preset-env.
          postcss: postcssConfig({ compress: s_COMPRESS, sourceMap: s_SOURCEMAPS })
+      },
+
+      define: {
+         'process.env.NODE_ENV': '"production"'
       },
 
       // About server options:

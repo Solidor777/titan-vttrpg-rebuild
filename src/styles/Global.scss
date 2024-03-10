@@ -1,0 +1,245 @@
+.titan-dark-mode {
+   // Panel styling
+   --panel-1-background: #373949;
+   --panel-2-background: #424557;
+   --panel-3-background: #2e303c;
+   --panel-1-color: rgba(255, 255, 255, 0.83);
+   --panel-2-color: rgba(255, 255, 255, 0.83);
+   --panel-3-color: rgba(255, 255, 255, 0.83);
+   --color-text-dark-primary: rgba(255, 255, 255, 0.83);
+   --color-text-dark-secondary: rgba(255, 255, 255, 0.83);
+   --color-text-dark-header: rgba(255, 255, 255, 0.83);
+   --color-text-dark-inactive: rgba(255, 255, 255, 0.83);
+   --color-border-highlight: rgba(255, 255, 255, 0.83);
+   --static-value-background: rgb(70, 70, 70);
+
+   .content-link {
+      --color-text-dark-primary: #191813;
+      color: var(--color-text-dark-primary);
+
+      i {
+         color: var(--color-text-dark-primary);
+      }
+   }
+
+   // Input styling
+   --input-color: #1d1e26;
+   --input-background: #c5bcf8;
+   --border-color: rgba(255, 255, 255, 0.83);
+
+   // Button styling
+   --button-border-color: #15171b;
+   --button-background: #f2b58c;
+   --button-border-style: solid;
+   --button-background-disabled: rgb(208, 208, 208);
+   --button-background-highlight: rgb(255, 233, 174);
+   --button-color: #15171b;
+   --icon-button-border-color: black;
+   --icon-button-background: #f2b58c;
+   --icon-button-highlight: rgb(255, 233, 174);
+   --icon-button-color: #15171b;
+
+   select {
+      color: var(--input-color);
+      background: var(--input-background);
+   }
+
+   // Resource colors
+   --stamina-color: #37da88;
+   --wounds-color: #c55858;
+   --resolve-color: #3fb6dd;
+
+   // Resistance colors
+   --reflexes-color: #eff49a;
+   --resilience-color: #f2c88c;
+   --willpower-color: #f28cbf;
+
+   // Attribute colors
+   --body-color: #f29d8c;
+   --mind-color: #95f28c;
+   --soul-color: #b5f2e8;
+
+   // Label styles
+   --label-background: #a6ccf2;
+   --label-color: #1d1e26;
+
+   // Meter styling
+   --meter-background: rgb(30, 30, 30);
+   --font-color: rgba(255, 255, 255, 0.83);
+
+   .window-content {
+      background: #262836;
+      color: var(--color-text-dark-primary);
+
+      .content-link {
+         --color-text-dark-primary: #191813;
+         color: var(--color-text-dark-primary);
+
+         i {
+            --color-text-dark-primary: #191813;
+            color: var(--color-text-dark-primary);
+         }
+      }
+   }
+
+   &.chat-message {
+      background: #424557;
+
+      &.whisper {
+         background: #20203e;
+      }
+
+      &.blind {
+         background: #2e1b2e;
+      }
+   }
+
+   .svg {
+      filter: brightness(0);
+   }
+
+   .prosemirror {
+      .editor-menu {
+         --color-text-dark-primary: #191813;
+         button:not(.pm-dropdown) {
+            &:not(.active) {
+               color: rgba(255, 255, 255, 0.83);
+            }
+            &.active {
+               --color-text-dark-primary: #191813;
+               color: var(--color-text-dark-primary);
+            }
+            &:hover {
+               --color-text-dark-primary: #191813;
+               color: var(--color-text-dark-primary);
+            }
+         }
+      }
+
+      &.editing-source {
+         textarea {
+            color: rgba(255, 255, 255, 0.83);
+         }
+      }
+
+      --color-hover-bg: rgb(255, 233, 174);
+   }
+
+   h1,
+   h2,
+   h3,
+   h4 {
+      border-color: var(--border-color);
+   }
+
+   &.window-app {
+      .journal-entry-content {
+         background: #262836;
+
+         .title {
+            color: var(--input-color);
+            background: var(--input-background);
+         }
+      }
+
+      .journal-header .title {
+         color: var(--input-color);
+         background: var(--input-background);
+      }
+
+      .journal-sidebar {
+         background: #191a21;
+      }
+
+      .directory {
+         input {
+            color: var(--input-color);
+            background: var(--input-background);
+         }
+
+         ::placeholder {
+            color: var(--input-color);
+         }
+
+         .action-buttons {
+            button {
+               border-color: var(--button-border-color);
+               background: var(--button-background);
+               color: var(--button-color);
+               margin: 0;
+
+               &:disabled {
+                  cursor: default;
+                  background: var(--button-background-disabled);
+               }
+
+               &:hover {
+                  &:not(:disabled) {
+                     background: radial-gradient(var(--button-background-highlight), var(--button-background));
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   .anonymous-replaced {
+      color: #15171b;
+   }
+}
+
+.rich-text {
+   &.not-owner {
+      .secret {
+         display: none;
+      }
+   }
+
+   font-family: 'Open Sans';
+}
+
+#chat-log .titan-dark-mode.emote.message .message-content {
+   text-align: center;
+   color: var(--panel-1-color);
+   font-style: italic;
+}
+
+.dark-svg {
+   filter: brightness(0);
+}
+
+.token-link .fa-link {
+   color: darkorange;
+   text-shadow: 0 0 8px darkorange;
+}
+
+.token-link .fa-unlink {
+   color: brown;
+   text-shadow: 0 0 8px brown;
+}
+
+.token-link-highlight {
+   text-shadow: 0 0 4px darkorange;
+   color: darkorange;
+}
+
+.token-link-warning {
+   text-shadow: 0 0 4px brown;
+   color: brown;
+}
+
+.message-content {
+   font-family: 'Open Sans';
+}
+
+.editor {
+   font-family: 'Open Sans';
+}
+
+.journal-page-header {
+   font-family: 'Open Sans';
+}
+
+.journal-page-content {
+   font-family: 'Open Sans';
+}

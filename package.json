@@ -1,14 +1,11 @@
 {
-   "name": "test.titan",
+   "name": "titan-rebuild",
    "version": "1.0.0",
    "description": "Provides a bare-bones Foundry System for TITAN.",
    "license": "MIT",
    "private": true,
    "type": "module",
    "author": "Solidor",
-   "contributors": [
-      "Michael Leahy <support@typhonjs.io> (https://github.com/typhonrt)"
-   ],
    "imports": {
       "#runtime/*": "@typhonjs-fvtt/runtime/*",
       "#standard/*": "@typhonjs-fvtt/svelte-standard/*"

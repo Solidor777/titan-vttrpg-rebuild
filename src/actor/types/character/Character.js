@@ -40,7 +40,7 @@ import getSetting from '~/utility-functions/GetSetting.js';
 import isCurrentUserFirstOwner from '~/utility-functions/IsCurrentUserFirstOwner.js';
 import isHTMLBlank from '~/utility-functions/IsHTMLBlank.js';
 import getCombatTargets from '~/utility-functions/GetCombatTargets.js';
-import numberSort from '~/utility-functions/NumberSort.js';
+import sort from '~/utility-functions/Sort.js';
 import sortObjectsIntoContainerByFunctionValue from '~/utility-functions/SortObjectsIntoContainerByFunctionValue.js';
 import getSumOfObjectValues from '~/utility-functions/GetSumOfObjectValues.js';
 import getOwners from '~/utility-functions/GetOwners.js';
@@ -283,7 +283,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
 
    _sortEffects() {
       // Sort effects by duration type
-      const effectItems = this._getActiveEffectItems().sort((a, b) => numberSort(a.sort, b.sort));
+      const effectItems = this._getActiveEffectItems().sort((a, b) => sort(a.sort, b.sort));
       const sortedEffects = sortObjectsIntoContainerByFunctionValue(effectItems, (effect) => {
          return effect.typeComponent?.isExpired() ? 'expired' : effect.system.duration.type;
       });

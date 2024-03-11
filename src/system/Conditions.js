@@ -1,4 +1,5 @@
 import localize from '~/utility-functions/Localize.js';
+import sort from '~/utility-functions/Sort.js';
 
 export default function setupConditions() {
    // Create list of conditions
@@ -61,11 +62,7 @@ export default function setupConditions() {
    ];
 
    // Sort conditions by name
-   conditions.sort((a, b) => {
-      const textA = localize(a.label);
-      const textB = localize(b.label);
-      return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
-   });
+   conditions.sort((a, b) => sort(localize(a.label), localize(b.label)));
 
    // For each condition
    for (const condition of conditions) {

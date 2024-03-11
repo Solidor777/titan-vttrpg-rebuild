@@ -1,4 +1,4 @@
-export default function numberSort(a, b) {
+export default function sort(a, b) {
    if (a < b) {
       return -1;
    }

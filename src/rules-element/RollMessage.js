@@ -1,7 +1,8 @@
 import { Hashing } from '@typhonjs-fvtt/runtime/util';
-import { isHTMLBlank, sortObjectsIntoContainerByKey } from '~/helpers/Utility';
-import { camelize } from '~/helpers/Utility';
+import sortObjectsIntoContainerByKeyValue from '~/utility-functions/SortObjectsIntoContainerByKeyValue.js';
+import camelize from '~/utility-functions/Camelize.js';
 import { appendUnique } from '../helpers/Utility';
+import isHTMLBlank from '~/utility-functions/IsHTMLBlank.js';
 
 export function getRollMessageTemplate(uuid, type) {
    return {
@@ -20,13 +21,13 @@ export function applyRollMessageElements(elements) {
       const messages = {};
 
       // Sort elements by check type
-      const checkTypes = sortObjectsIntoContainerByKey(elements, 'checkType');
+      const checkTypes = sortObjectsIntoContainerByKeyValue(elements, 'checkType');
       for (const [checkType, checkTypeElements] of Object.entries(checkTypes)) {
          const checkTypeMessages = {};
 
 
          // Sort elements by selector
-         const selectors = sortObjectsIntoContainerByKey(checkTypeElements, 'selector');
+         const selectors = sortObjectsIntoContainerByKeyValue(checkTypeElements, 'selector');
 
          // For each selector
          for (const [selector, selectorElements] of Object.entries(selectors)) {
@@ -49,7 +50,7 @@ export function applyRollMessageElements(elements) {
             else {
                const selectorMessages = {};
                // Sort elements by key
-               const keys = sortObjectsIntoContainerByKey(selectorElements, 'key');
+               const keys = sortObjectsIntoContainerByKeyValue(selectorElements, 'key');
                let camelizeKeys = false;
                switch (selector) {
                   case 'customTrait':

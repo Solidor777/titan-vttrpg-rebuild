@@ -1,5 +1,5 @@
 <script>
-   import localize from '~/utility/Localize.js';
+   import localize from '~/utility-functions/Localize.js';
    import { getContext } from 'svelte';
    import AttributeTag from '~/helpers/svelte-components/tag/AttributeTag.svelte';
    import IconStatTag from '~/helpers/svelte-components/tag/IconStatTag.svelte';

@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import localize from '~/utility/Localize.js';
+   import localize from '~/utility-functions/Localize.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import IconButton from '~/helpers/svelte-components/button/IconButton.svelte';
 

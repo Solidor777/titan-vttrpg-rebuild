@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import localize from '~/utility/Localize.js';
+   import localize from '~/utility-functions/Localize.js';
    import DocumentImagePicker from '~/documents/components/DocumentImagePicker.svelte';
    import DocumentName from '~/documents/components/input/DocumentNameInput.svelte';
    import DocumentIntegerInput from '~/documents/components/input/DocumentIntegerInput.svelte';

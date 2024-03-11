@@ -1,4 +1,4 @@
-import { getSetting } from '~/helpers/Utility';
+import getSetting from '~/utility-functions/GetSetting.js';
 
 export default function onRenderJournalSheet(journalSheet, html) {
    // If dark mode journals are enabled, add the titan dark mode class

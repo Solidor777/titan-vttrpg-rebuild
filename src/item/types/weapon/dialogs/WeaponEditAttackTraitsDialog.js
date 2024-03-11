@@ -1,5 +1,5 @@
 import { TJSDialog } from '@typhonjs-fvtt/runtime/svelte/application';
-import { getSetting } from '~/helpers/Utility';
+import getSetting from '~/utility-functions/GetSetting.js';
 import WeaponEditAttackTraitsDialogShell from '~/item/types/weapon/dialogs/WeaponEditAttackTraitsDialogShell.svelte';
 export default class WeaponEditAttackTraitsDialog extends TJSDialog {
    constructor(document, attackIdx) {

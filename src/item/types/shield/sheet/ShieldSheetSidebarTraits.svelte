@@ -1,7 +1,7 @@
 <script>
    import { getContext } from 'svelte';
    import { slide } from 'svelte/transition';
-   import localize from '~/utility/Localize.js';
+   import localize from '~/utility-functions/Localize.js';
    import { SHIELD_TRAIT_DESCRIPTIONS } from '~/item/types/shield/ShieldTraits.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';

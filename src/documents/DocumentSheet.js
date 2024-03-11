@@ -1,8 +1,8 @@
 import { SvelteApplication } from '@typhonjs-fvtt/runtime/svelte/application';
 import { TJSDocument } from '@typhonjs-fvtt/runtime/svelte/store/fvtt/document';
 import { writable } from 'svelte/store';
-import { getSetting } from '~/helpers/Utility.js';
-import localize from '~/utility/Localize.js';
+import getSetting from '~/utility-functions/GetSetting.js';
+import localize from '~/utility-functions/Localize.js';
 import DocumentShell from '~/documents/DocumentShell.svelte';
 export default class SvelteDocumentSheet extends SvelteApplication {
 

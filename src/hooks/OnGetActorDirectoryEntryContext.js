@@ -1,17 +1,19 @@
-import { getSetting } from '~/helpers/Utility.js';
-import localize from '~/utility/Localize.js';
+import getSetting from '~/utility-functions/GetSetting.js';
+import localize from '~/utility-functions/Localize.js';
 import ConfirmRegenerateUUIDDialog from '~/documents/dialogs/ConfirmRegenerateUUIDDialog';
 import EditUUIDDialog from '~/documents/dialogs/EditUUIDDialog';
+import regenerateUUID from '~/utility-functions/RegenerateUUID.js';
 
 export default function onGetActorDirectoryEntryContext(html, options) {
-   // Only present these options for the gm
+   // Only present these options for the document owner
    if (game.user.isGM) {
+
       // Regenerate UUID
       options.push({
          name: localize('regenerateUUID'),
          icon: '<i class="fas fa-id-card"></i>',
          condition: canEditUUID,
-         callback: regenerateUUID
+         callback: onRegenerateUUID,
       });
 
       // Edit UUID
@@ -38,10 +40,11 @@ function canEditUUID(li) {
 }
 
 // Randomly regenerations the UUID of an actor
-async function regenerateUUID(li) {
+async function onRegenerateUUID(li) {
    const actor = getActor(li);
    if (actor) {
-      // If the system is set confirm the UUID regeneration, then bring up a macro
+
+      // If the system is set confirm the UUID regeneration, then bring up a dialog
       if (getSetting('confirmRegenerateUUID')) {
          const dialog = new ConfirmRegenerateUUIDDialog(actor);
          dialog.render(true);

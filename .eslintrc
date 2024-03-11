@@ -16,6 +16,9 @@
    "env": {
       "jquery": true
    },
+   "plugins": [
+      "unused-imports"
+   ],
    // Prevents overwriting any built in globals particularly from `@typhonjs-fvtt/eslint-config-foundry.js`, but also
    // node & browser environments. `event / window.event` shadowing is allowed due to being a common variable name and
    // an uncommonly used browser feature.
@@ -56,12 +59,15 @@
          }
       ],
       "semi": 2,
-      "no-unused-vars": [
+      "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
+      "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-vars": [
          "warn",
          {
             "vars": "all",
+            "varsIgnorePattern": "^_",
             "args": "after-used",
-            "ignoreRestSiblings": false
+            "argsIgnorePattern": "^_"
          }
       ],
       "no-fallthrough": [

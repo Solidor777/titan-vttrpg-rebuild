@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import localize from '~/utility/Localize.js';
+   import localize from '~/utility-functions/Localize.js';
    import ChatEffects from '~/chat-message/ChatEffects.svelte';
    import ReportRemoveExpiredEffectsButton from '~/chat-message/report/components/ReportRemoveExpiredEffectsButton.svelte';
    import ReportHeader from '~/chat-message/report/components/ReportHeader.svelte';

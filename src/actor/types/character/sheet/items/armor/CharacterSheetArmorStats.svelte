@@ -1,5 +1,5 @@
 <script>
-   import localize from '~/utility/Localize.js';
+   import localize from '~/utility-functions/Localize.js';
    import { ARMOR_TRAIT_DESCRIPTIONS } from '~/item/types/armor/ArmorTraits.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import IconStatTag from '~/helpers/svelte-components/tag/IconStatTag.svelte';

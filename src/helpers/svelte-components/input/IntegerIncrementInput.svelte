@@ -1,6 +1,6 @@
 <script>
    import { createEventDispatcher } from 'svelte';
-   import { isModifierActive } from '~/helpers/utility.js';
+   import isModifierActive from '~/utility-functions/IsModifierActive.js';
    import MinIconButton from '~/helpers/svelte-components/button/MinIconButton.svelte';
 
    // The value of the input

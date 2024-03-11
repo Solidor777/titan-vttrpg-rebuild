@@ -1,4 +1,4 @@
-import { getSetting } from '~/helpers/Utility';
+import getSetting from '~/utility-functions/GetSetting.js';
 
 export default function registerInitiativeFormula() {
    // Register initiative formula 

@@ -1,5 +1,5 @@
 <script>
-   import localize from '~/utility/Localize.js';
+   import localize from '~/utility-functions/Localize.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
 
    export let fastHealing = void 0;

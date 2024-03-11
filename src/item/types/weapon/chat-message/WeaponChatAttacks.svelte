@@ -1,5 +1,5 @@
 <script>
-   import localize from '~/utility/Localize.js';
+   import localize from '~/utility-functions/Localize.js';
    import { ATTACK_TRAIT_DESCRIPTIONS } from '~/item/types/weapon/AttackTraits.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import StatTag from '~/helpers/svelte-components/tag/StatTag.svelte';

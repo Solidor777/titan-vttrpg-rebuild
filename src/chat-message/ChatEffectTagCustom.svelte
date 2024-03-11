@@ -1,7 +1,8 @@
 <script>
-   import { getDarkSVGClass, isHTMLBlank } from '~/helpers/Utility.js';
+   import checkAddDarkSVGClass from '~/utility-functions/CheckAddDarkSVGClass.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
-   import localize from '~/utility/Localize.js';
+   import localize from '~/utility-functions/Localize.js';
+   import isHTMLBlank from '~/utility-functions/IsHTMLBlank.js';
 
    export let label = void 0;
    export let custom = void 0;
@@ -17,7 +18,7 @@
 
 <div class="tag" use:tooltip={{ content: formattedTooltip }}>
    <!--Image-->
-   <img src={img} alt="img" class={getDarkSVGClass(img)} />
+   <img src={img} alt="img" class={checkAddDarkSVGClass(img)} />
 
    <!--Label-->
    <div>

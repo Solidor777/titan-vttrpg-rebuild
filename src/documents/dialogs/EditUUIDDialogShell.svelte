@@ -1,5 +1,5 @@
 <script>
-   import localize from '~/utility/Localize.js';
+   import localize from '~/utility-functions/Localize.js';
    import { getContext } from 'svelte';
    import TextArea from '~/helpers/svelte-components/input/TextArea.svelte';
    import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';

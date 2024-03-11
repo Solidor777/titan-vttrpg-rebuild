@@ -1,4 +1,4 @@
-import clamp from '~/utility/Clamp';
+import clamp from '~/utility-functions/Clamp.js';
 import calculateCheckResults from '~/check/CalculateCheckResults.js';
 
 export default class TitanCheck {

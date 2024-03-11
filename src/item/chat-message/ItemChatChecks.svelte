@@ -1,6 +1,6 @@
 <script>
-   import { getSetting } from '~/helpers/Utility.js';
-   import localize from '~/utility/Localize.js';
+   import getSetting from '~/utility-functions/GetSetting.js';
+   import localize from '~/utility-functions/Localize.js';
    import OpposedCheckTag from '~/helpers/svelte-components/tag/OpposedCheckTag.svelte';
    import ResistedByTag from '~/helpers/svelte-components/tag/ResistedByTag.svelte';
    import AttributeTag from '~/helpers/svelte-components/tag/AttributeTag.svelte';

@@ -1,6 +1,6 @@
 import { TJSDialog } from '@typhonjs-fvtt/runtime/svelte/application';
-import { getSetting } from '~/helpers/Utility.js';
-import localize from '~/utility/Localize.js';
+import getSetting from '~/utility-functions/GetSetting.js';
+import localize from '~/utility-functions/Localize.js';
 import CreateItemMacroDialogShell from '~/item/dialog/CreateItemMacroDialogShell.svelte';
 export default class CreateItemMacroDialog extends TJSDialog {
    constructor(item, slot, uuid) {

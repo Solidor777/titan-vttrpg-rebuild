@@ -1,7 +1,7 @@
 <script>
    import { getContext } from 'svelte';
-   import { getSetting } from '~/helpers/Utility.js';
-   import localize from '~/utility/Localize.js';
+   import getSetting from '~/utility-functions/GetSetting.js';
+   import localize from '~/utility-functions/Localize.js';
    import CharacterSheetResource from '~/actor/types/character/sheet/sidebar/CharacterSheetResource.svelte';
 
    // Setup context variables

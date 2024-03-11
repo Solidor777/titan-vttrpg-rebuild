@@ -1,4 +1,4 @@
-import localize from '~/utility/Localize.js';
+import localize from '~/utility-functions/Localize.js';
 import SvelteDocumentSheet from '~/documents/DocumentSheet';
 export default class TitanItemSheet extends SvelteDocumentSheet {
 

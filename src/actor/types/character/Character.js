@@ -1,16 +1,3 @@
-import {
-   confirmDeletingItems,
-   documentSort,
-   getBestPlayerOwner,
-   getCombatTargets,
-   getOwners,
-   getSetting,
-   getSumOfValuesInObject,
-   isFirstOwner,
-   isHTMLBlank,
-   shouldGetCheckOptions,
-   sortObjectsIntoContainerByFunction,
-} from '~/helpers/Utility.js';
 import { applyFlatModifierElements } from '~/rules-element/FlatModifier.js';
 import { applyMulBaseElements } from '~/rules-element/MulBase.js';
 import { applyFastHealingElements } from '~/rules-element/FastHealing';
@@ -45,8 +32,19 @@ import {
    getItemCheckMod,
    getAttributeCheckMod
 } from '~/rules-element/ConditionalCheckModifier';
-import clamp from '~/utility/Clamp';
-import localize from '~/utility/Localize.js';
+import clamp from '~/utility-functions/Clamp.js';
+import localize from '~/utility-functions/Localize.js';
+import shouldGetCheckOptions from '~/utility-functions/ShouldGetCheckOptions.js';
+import shouldConfirmDeletingItems from '~/utility-functions/ShouldConfirmDeletingItems.js';
+import getSetting from '~/utility-functions/GetSetting.js';
+import isCurrentUserFirstOwner from '~/utility-functions/IsCurrentUserFirstOwner.js';
+import isHTMLBlank from '~/utility-functions/IsHTMLBlank.js';
+import getCombatTargets from '~/utility-functions/GetCombatTargets.js';
+import numberSort from '~/utility-functions/NumberSort.js';
+import sortObjectsIntoContainerByFunctionValue from '~/utility-functions/SortObjectsIntoContainerByFunctionValue.js';
+import getSumOfObjectValues from '~/utility-functions/GetSumOfObjectValues.js';
+import getOwners from '~/utility-functions/GetOwners.js';
+import getBestPlayerOwner from '~/utility-functions/GetBestPlayerOwner.js';
 
 export default class TitanCharacterComponent extends TitanTypeComponent {
 
@@ -285,8 +283,8 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
 
    _sortEffects() {
       // Sort effects by duration type
-      const effectItems = this._getActiveEffectItems().sort((a, b) => documentSort(a, b));
-      const sortedEffects = sortObjectsIntoContainerByFunction(effectItems, (effect) => {
+      const effectItems = this._getActiveEffectItems().sort((a, b) => numberSort(a.sort, b.sort));
+      const sortedEffects = sortObjectsIntoContainerByFunctionValue(effectItems, (effect) => {
          return effect.typeComponent?.isExpired() ? 'expired' : effect.system.duration.type;
       });
 
@@ -670,7 +668,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
    }
 
    async _checkUpdateActiveEffects() {
-      if (isFirstOwner(this.parent)) {
+      if (isCurrentUserFirstOwner(this.parent)) {
          // If we are not currently activating effects
          if (this.isUpdatingActiveEffects !== true) {
 
@@ -1578,7 +1576,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
          if (expiredEffects && expiredEffects.length > 0) {
 
             // Check if the removeal was confirmed
-            if (confirmed || !confirmDeletingItems()) {
+            if (confirmed || !shouldConfirmDeletingItems()) {
                for (const effect of expiredEffects) {
                   await this._internalDeleteItem(effect);
                }
@@ -1830,7 +1828,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
    async onTurnStart() {
       const actor = this.parent;
       // Operations that should only be performed once
-      if (isFirstOwner(this.parent)) {
+      if (isCurrentUserFirstOwner(this.parent)) {
          // Initialize variables
          const chatContext = {};
          let shouldUpdateActor = false;
@@ -1908,7 +1906,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
    async onTurnEnd() {
       const actor = this.parent;
       // Operations that should only be performed once
-      if (isFirstOwner(actor)) {
+      if (isCurrentUserFirstOwner(actor)) {
          // Initialize variables
          const chatContext = {};
 
@@ -2123,7 +2121,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
          if (fastHealing) {
             const selectorFastHealing = fastHealing[selector];
             if (selectorFastHealing) {
-               turnStaminaMod += getSumOfValuesInObject(selectorFastHealing);
+               turnStaminaMod += getSumOfObjectValues(selectorFastHealing);
                chatContext.fastHealing = foundry.utils.deepClone(selectorFastHealing);
             }
          }
@@ -2135,7 +2133,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
          if (persistentDamage) {
             const selectorPersistentDamage = persistentDamage[selector];
             if (selectorPersistentDamage) {
-               turnStaminaMod -= getSumOfValuesInObject(selectorPersistentDamage);
+               turnStaminaMod -= getSumOfObjectValues(selectorPersistentDamage);
                chatContext.persistentDamage = foundry.utils.deepClone(selectorPersistentDamage);
             }
          }
@@ -2469,7 +2467,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
          if (item) {
 
             // Check if the deletion is confirmed
-            if (confirmed || !confirmDeletingItems()) {
+            if (confirmed || !shouldConfirmDeletingItems()) {
                // Perform type specific deleting
                switch (item.type) {
                   case 'armor': {

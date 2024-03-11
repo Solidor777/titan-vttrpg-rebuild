@@ -1,5 +1,5 @@
 import { Hashing } from '@typhonjs-fvtt/runtime/util';
-import { sortObjectsIntoContainerByKey } from '~/helpers/Utility';
+import sortObjectsIntoContainerByKeyValue from '~/utility-functions/SortObjectsIntoContainerByKeyValue.js';
 
 export function getMulBaseTemplate(uuid, type) {
    return {
@@ -18,19 +18,19 @@ export function applyMulBaseElements(elements) {
       const systemData = this.parent.system;
 
       // Sort elements by selector
-      const selectors = sortObjectsIntoContainerByKey(elements, 'selector');
+      const selectors = sortObjectsIntoContainerByKeyValue(elements, 'selector');
 
       // For each selector
       for (const [selector, selectorElements] of Object.entries(selectors)) {
 
          // Sort elements by key
-         const keys = sortObjectsIntoContainerByKey(selectorElements, 'key');
+         const keys = sortObjectsIntoContainerByKeyValue(selectorElements, 'key');
 
          // For each key
          for (const [key, keyElements] of Object.entries(keys)) {
 
             // Sort elements by type
-            const types = sortObjectsIntoContainerByKey(keyElements, 'type');
+            const types = sortObjectsIntoContainerByKeyValue(keyElements, 'type');
 
             // Get the stat data
             const stat = (selector === 'training' || selector === 'expertise') ? systemData.skill[key][selector] : systemData[selector][key];

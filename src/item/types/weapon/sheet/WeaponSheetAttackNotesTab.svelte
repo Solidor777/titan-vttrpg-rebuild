@@ -1,6 +1,6 @@
 <script>
    import ItemSheetDescriptionTab from '~/item/sheet/ItemSheetDescriptionTab.svelte';
-   import localize from '~/utility/Localize.js';
+   import localize from '~/utility-functions/Localize.js';
 </script>
 
 <ItemSheetDescriptionTab

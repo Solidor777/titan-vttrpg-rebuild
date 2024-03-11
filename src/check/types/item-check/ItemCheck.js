@@ -1,4 +1,4 @@
-import clamp from '~/utility/Clamp';
+import clamp from '~/utility-functions/Clamp.js';
 import calculateItemCheckResults from '~/check/types/item-check/CalculateItemCheckResults';
 import TitanCheck from '~/check/Check.js';
 

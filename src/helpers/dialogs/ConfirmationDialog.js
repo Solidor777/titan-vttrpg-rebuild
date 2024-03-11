@@ -1,5 +1,5 @@
 import { TJSDialog } from '@typhonjs-fvtt/runtime/svelte/application';
-import { getSetting } from '~/helpers/Utility.js';
+import getSetting from '~/utility-functions/GetSetting.js';
 import { Hashing } from '@typhonjs-fvtt/runtime/util';
 import ConfirmationDialogShell from './ConfirmationDialogShell.svelte';
 export default class ConfirmationDialog extends TJSDialog {

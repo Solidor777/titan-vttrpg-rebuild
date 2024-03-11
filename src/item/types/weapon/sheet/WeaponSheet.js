@@ -1,4 +1,4 @@
-import { isHTMLBlank } from '~/helpers/Utility';
+import isHTMLBlank from '~/utility-functions/IsHTMLBlank.js';
 import TitanItemSheet from '~/item/sheet/ItemSheet.js';
 import WeaponSheetShell from '~/item/types/weapon/sheet/WeaponSheetShell.svelte';
 import createWeaponSheetState from '~/item/types/weapon/sheet/WeaponSheetState.js';

@@ -2,7 +2,7 @@
 
 <script>
    import { getContext } from 'svelte';
-   import localize from '~/utility/Localize.js';
+   import localize from '~/utility-functions/Localize.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import IntegerInput from '~/helpers/svelte-components/input/IntegerInput.svelte';
    import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';

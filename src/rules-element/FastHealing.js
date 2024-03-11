@@ -1,5 +1,5 @@
 import { Hashing } from '@typhonjs-fvtt/runtime/util';
-import { sortObjectsIntoContainerByKey } from '~/helpers/Utility';
+import sortObjectsIntoContainerByKeyValue from '~/utility-functions/SortObjectsIntoContainerByKeyValue.js';
 
 export function getFastHealingTemplate(uuid, type) {
    return {
@@ -15,13 +15,13 @@ export function applyFastHealingElements(elements) {
    if (elements.length > 0) {
       const fastHealing = {};
       // Sort elements by selector
-      const selectors = sortObjectsIntoContainerByKey(elements, 'selector');
+      const selectors = sortObjectsIntoContainerByKeyValue(elements, 'selector');
 
       // For each selector
       for (const [selector, selectorElements] of Object.entries(selectors)) {
          fastHealing[selector] = {};
          // Sort elements by type
-         const types = sortObjectsIntoContainerByKey(selectorElements, 'type');
+         const types = sortObjectsIntoContainerByKeyValue(selectorElements, 'type');
 
          // For each type
          for (const [type, typeElements] of Object.entries(types)) {

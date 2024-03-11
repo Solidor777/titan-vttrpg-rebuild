@@ -1,7 +1,7 @@
 <script>
-   import { applyDamageToTargets } from '~/helpers/Utility.js';
+   import applyDamageToTargets from '~/utility-functions/ApplyDamageToTargets.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
-   import localize from '~/utility/Localize.js';
+   import localize from '~/utility-functions/Localize.js';
    import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
 
    export let damage = void 0;

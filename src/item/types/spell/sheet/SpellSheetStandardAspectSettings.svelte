@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import localize from '~/utility/Localize.js';
+   import localize from '~/utility-functions/Localize.js';
    import { slide } from 'svelte/transition';
    import SpellSheetEnableAspectButton from './SpellSheetEnableAspectButton.svelte';
    import DocumentSelect from '~/documents/components/select/DocumentSelect.svelte';

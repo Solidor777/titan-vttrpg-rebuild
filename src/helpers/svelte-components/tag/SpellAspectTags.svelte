@@ -38,17 +38,9 @@
                size: getAspectSize(aspect),
                standardAspect: false,
             };
-         })
+         }),
       )
-      .sort((a, b) => {
-         if (a.size > b.size) {
-            return 1;
-         }
-         if (a.size < b.size) {
-            return -1;
-         }
-         return 0;
-      });
+      .sort((a, b) => sort(a.sort, b.sort));
 </script>
 
 <div class="aspects">

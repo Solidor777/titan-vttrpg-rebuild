@@ -1,8 +1,8 @@
 <svelte:options accessors={true} />
 
 <script>
-   import clamp from '~/utility/Clamp';
-   import localize from '~/utility/Localize.js';
+   import clamp from '~/utility-functions/Clamp.js';
+   import localize from '~/utility-functions/Localize.js';
    import { getContext } from 'svelte';
    import AttributeSelect from '~/helpers/svelte-components/select/AttributeSelect.svelte';
    import SkillSelect from '~/helpers/svelte-components/select/SkillSelect.svelte';

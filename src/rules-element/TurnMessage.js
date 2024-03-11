@@ -1,5 +1,6 @@
 import { Hashing } from '@typhonjs-fvtt/runtime/util';
-import { isHTMLBlank, sortObjectsIntoContainerByKey } from '~/helpers/Utility';
+import sortObjectsIntoContainerByKeyValue from '~/utility-functions/SortObjectsIntoContainerByKeyValue.js';
+import isHTMLBlank from '~/utility-functions/IsHTMLBlank.js';
 
 export function getTurnMessageTemplate(uuid, type) {
    return {
@@ -15,7 +16,7 @@ export function applyTurnMessageElements(elements) {
    if (elements.length > 0) {
       const turnMessage = {};
       // Sort elements by selector
-      const selectors = sortObjectsIntoContainerByKey(elements, 'selector');
+      const selectors = sortObjectsIntoContainerByKeyValue(elements, 'selector');
 
       // For each selector
       for (const [selector, selectorElements] of Object.entries(selectors)) {

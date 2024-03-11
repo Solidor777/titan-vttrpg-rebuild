@@ -1,5 +1,5 @@
-import localize from '~/utility/Localize.js';
-import deepFreeze from '~/utility/DeepFreeze';
+import localize from '~/utility-functions/Localize.js';
+import deepFreeze from '~/utility-functions/DeepFreeze';
 
 const TITAN_CONDITIONS = deepFreeze([
    {

@@ -1,6 +1,7 @@
 <script>
    import { getContext } from 'svelte';
    import { slide } from 'svelte/transition';
+   import numberSort from '~/utility-functions/NumberSort.js';
 
    // Component class for the item
    export let itemComponent = void 0;
@@ -71,15 +72,7 @@
             item.name.toLowerCase().indexOf(filter.toLowerCase()) !== -1
          );
       })
-      .sort((a, b) => {
-         if (a.sort < b.sort) {
-            return -1;
-         }
-         if (a.sort > b.sort) {
-            return 1;
-         }
-         return 0;
-      });
+      .sort((a, b) => numberSort(a.sort, b.sort));
 </script>
 
 <!--Item List-->

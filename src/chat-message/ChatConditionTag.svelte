@@ -1,5 +1,5 @@
 <script>
-   import { getDarkSVGClass } from '~/helpers/Utility.js';
+   import checkAddDarkSVGClass from '~/utility-functions/CheckAddDarkSVGClass.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
 
    export let label = void 0;
@@ -9,7 +9,7 @@
 
 <div class="tag" use:tooltip={{ content: description }}>
    <!--Image-->
-   <img src={img} alt="img" class={getDarkSVGClass(img)} />
+   <img src={img} alt="img" class={checkAddDarkSVGClass(img)} />
 
    <!--Label-->
    <div>

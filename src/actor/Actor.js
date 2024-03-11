@@ -1,5 +1,5 @@
-import localize from '~/utility/Localize.js';
-import { confirmDeletingItems } from '~/helpers/Utility';
+import localize from '~/utility-functions/Localize.js';
+import shouldConfirmDeletingItems from '~/utility-functions/ShouldConfirmDeletingItems.js';
 import { Hashing } from '@typhonjs-fvtt/runtime/util';
 import TitanPlayerComponent from '~/actor/types/player/Player.js';
 import TitanNPCComponent from '~/actor/types/npc/NPC.js';
@@ -105,7 +105,7 @@ export default class TitanActor extends Actor {
          }
 
          // Check if the deletion is confirmed
-         if (confirmed || !confirmDeletingItems()) {
+         if (confirmed || !shouldConfirmDeletingItems()) {
 
             // Delete the item
             if (this._sheet) {

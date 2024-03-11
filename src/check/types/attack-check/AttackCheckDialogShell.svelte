@@ -1,9 +1,9 @@
 <svelte:options accessors={true} />
 
 <script>
-   import { getCombatTargets } from '~/helpers/Utility.js';
    import { getContext } from 'svelte';
-   import localize from '~/utility/Localize.js';
+   import getCombatTargets from '~/utility-functions/GetCombatTargets.js';
+   import localize from '~/utility-functions/Localize.js';
    import AttributeSelect from '~/helpers/svelte-components/select/AttributeSelect.svelte';
    import SkillSelect from '~/helpers/svelte-components/select/SkillSelect.svelte';
    import IntegerInput from '~/helpers/svelte-components/input/IntegerInput.svelte';

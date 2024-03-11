@@ -1,7 +1,7 @@
 <svelte:options accessors={true} />
 
 <script>
-   import localize from '~/utility/Localize.js';
+   import localize from '~/utility-functions/Localize.js';
    import { getContext } from 'svelte';
    import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
    import Select from '~/helpers/svelte-components/select/Select.svelte';

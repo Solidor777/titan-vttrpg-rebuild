@@ -1,4 +1,4 @@
-import localize from '~/utility/Localize.js';
+import localize from '~/utility-functions/Localize.js';
 import calculateCheckResults from "~/check/CalculateCheckResults.js";
 
 export default function calculateCastingCheckResults(inResults, parameters) {

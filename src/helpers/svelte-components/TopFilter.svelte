@@ -1,5 +1,5 @@
 <script>
-   import localize from '~/utility/Localize.js';
+   import localize from '~/utility-functions/Localize.js';
    import TextInput from '~/helpers/svelte-components/input/TextInput.svelte';
 
    // Filter Items

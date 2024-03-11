@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import localize from '~/utility/Localize.js';
+   import localize from '~/utility-functions/Localize.js';
    import ChatResource from '~/chat-message/ChatResource.svelte';
    import ReportDoubleHeader from './components/ReportDoubleHeader.svelte';
 

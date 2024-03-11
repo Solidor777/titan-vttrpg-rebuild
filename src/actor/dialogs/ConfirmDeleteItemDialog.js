@@ -1,4 +1,4 @@
-import localize from '~/utility/Localize.js';
+import localize from '~/utility-functions/Localize.js';
 import ConfirmationDialog from '~/helpers/dialogs/ConfirmationDialog';
 export default class ConfirmDeleteItemDialog extends ConfirmationDialog {
    constructor(actor, item) {

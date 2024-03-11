@@ -1,7 +1,7 @@
 <script>
    import { getContext } from 'svelte';
    import { slide } from 'svelte/transition';
-   import localize from '~/utility/Localize.js';
+   import localize from '~/utility-functions/Localize.js';
    import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
    import DocumentAddCustomTraitDialog from '~/documents/DocumentAddCustomTraitDialog';
    import EditDeleteTag from '~/helpers/svelte-components/tag/EditDeleteTag.svelte';

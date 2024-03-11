@@ -14,7 +14,9 @@ import TitanTokenDocument from '~/documents/TokenDocument.js';
 import TitanMacros from '~/system/Macros';
 import registerSystemSettings from '~/system/SystemSettings.js';
 import registerInitiativeFormula from '~/system/Initiative.js';
-import log from '~/utility/Log';
+import log from '~/utility-functions/Log';
+import warn from '~/utility-functions/Warn.js';
+import error from '~/utility-functions/Error.js';
 
 export default function onceInit() {
    log('Starting Titan VTTRPG System');
@@ -36,6 +38,9 @@ export default function onceInit() {
 
    // Add titan macros class
    game.titan.macros = new TitanMacros();
+   game.titan.warn = warn;
+   game.titan.log = log;
+   game.titan.error = error;
 
    // Register Sheet Classes
    Actors.registerSheet('titan', TitanPlayerSheet, {

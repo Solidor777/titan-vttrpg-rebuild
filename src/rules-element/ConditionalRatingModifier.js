@@ -1,6 +1,6 @@
 import { Hashing } from '@typhonjs-fvtt/runtime/util';
-import { sortObjectsIntoContainerByKey } from '~/helpers/Utility';
-import { camelize } from '~/helpers/Utility';
+import sortObjectsIntoContainerByKeyValue from '~/utility-functions/SortObjectsIntoContainerByKeyValue.js';
+import camelize from '~/utility-functions/Camelize.js';
 
 export function getConditionalRatingModifierTemplate(uuid, type) {
    return {
@@ -18,7 +18,7 @@ export function applyConditionalRatingModifierElements(elements) {
    if (elements.length > 0) {
       const conditionalRatingModifiers = {};
       // Sort elements by rating
-      const ratings = sortObjectsIntoContainerByKey(elements, 'rating');
+      const ratings = sortObjectsIntoContainerByKeyValue(elements, 'rating');
 
       // For each rating
       for (const [rating, ratingElements] of Object.entries(ratings)) {
@@ -28,7 +28,7 @@ export function applyConditionalRatingModifierElements(elements) {
             const ratingMap = conditionalRatingModifiers[rating];
 
             // Sort elements by selector
-            const selectors = sortObjectsIntoContainerByKey(ratingElements, 'selector');
+            const selectors = sortObjectsIntoContainerByKeyValue(ratingElements, 'selector');
 
             // For each selector
             for (const [selector, selectorElements] of Object.entries(selectors)) {
@@ -38,7 +38,7 @@ export function applyConditionalRatingModifierElements(elements) {
                   ratingMap.multiAttack = {};
 
                   // Sort elements by type
-                  const types = sortObjectsIntoContainerByKey(selectorElements, 'type');
+                  const types = sortObjectsIntoContainerByKeyValue(selectorElements, 'type');
                   for (const [type, typeElements] of Object.entries(types)) {
                      ratingMap.multiAttack[type] = 0;
                      for (const element of typeElements) {
@@ -63,7 +63,7 @@ export function applyConditionalRatingModifierElements(elements) {
                   }
 
                   // Sort elements by key
-                  const keys = sortObjectsIntoContainerByKey(selectorElements, 'key');
+                  const keys = sortObjectsIntoContainerByKeyValue(selectorElements, 'key');
 
                   // For each key
                   for (const [key, keyElements] of Object.entries(keys)) {
@@ -74,7 +74,7 @@ export function applyConditionalRatingModifierElements(elements) {
                         const keyMap = selectorMap[formattedKey];
 
                         // Sort elements by type
-                        const types = sortObjectsIntoContainerByKey(keyElements, 'type');
+                        const types = sortObjectsIntoContainerByKeyValue(keyElements, 'type');
 
                         // For each type
                         for (const [type, typeElements] of Object.entries(types)) {

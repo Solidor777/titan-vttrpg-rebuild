@@ -1,8 +1,8 @@
 <script>
    import { getContext } from 'svelte';
-   import { getActor } from '~/helpers/Utility.js';
+   import getActor from '~/utility-functions/GetActor.js';
    import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
-   import localize from '~/utility/Localize.js';
+   import localize from '~/utility-functions/Localize.js';
 
    // Context variables
    const document = getContext('DocumentStore');

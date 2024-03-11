@@ -1,6 +1,6 @@
 import { Hashing } from '@typhonjs-fvtt/runtime/util';
-import { sortObjectsIntoContainerByKey } from '~/helpers/Utility';
-import { camelize } from '~/helpers/Utility';
+import sortObjectsIntoContainerByKeyValue from '~/utility-functions/SortObjectsIntoContainerByKeyValue.js';
+import camelize from '~/utility-functions/Camelize.js';
 
 export function getConditionalCheckModifierTemplate(uuid, type) {
    return {
@@ -20,7 +20,7 @@ export function applyConditionalCheckModifierElements(elements) {
       const conditionalCheckModifiers = {};
 
       // Sort elements by modifier type
-      const modifierTypes = sortObjectsIntoContainerByKey(elements, 'modifierType');
+      const modifierTypes = sortObjectsIntoContainerByKeyValue(elements, 'modifierType');
 
       // For each modifier type
       for (const [modifierType, modifierTypeElements] of Object.entries(modifierTypes)) {
@@ -28,7 +28,7 @@ export function applyConditionalCheckModifierElements(elements) {
          conditionalCheckModifiers[modifierType] = modifierTypeMap;
 
          // Sort elements by check type
-         const checkTypes = sortObjectsIntoContainerByKey(modifierTypeElements, 'checkType');
+         const checkTypes = sortObjectsIntoContainerByKeyValue(modifierTypeElements, 'checkType');
 
          // For each check type
          for (const [checkType, checkTypeElements] of Object.entries(checkTypes)) {
@@ -36,7 +36,7 @@ export function applyConditionalCheckModifierElements(elements) {
             modifierTypeMap[checkType] = checkTypeMap;
 
             // Sort elements by selector
-            const selectors = sortObjectsIntoContainerByKey(checkTypeElements, 'selector');
+            const selectors = sortObjectsIntoContainerByKeyValue(checkTypeElements, 'selector');
 
             // For each selector
             for (const [selector, selectorElements] of Object.entries(selectors)) {
@@ -64,7 +64,7 @@ export function applyConditionalCheckModifierElements(elements) {
                      }
 
                      // Sort elements by key
-                     const keys = sortObjectsIntoContainerByKey(selectorElements, 'key');
+                     const keys = sortObjectsIntoContainerByKeyValue(selectorElements, 'key');
 
                      // For each key
                      for (const [key, keyElements] of Object.entries(keys)) {

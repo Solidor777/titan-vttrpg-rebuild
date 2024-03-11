@@ -3,7 +3,6 @@ import EquipmentSheetShell from '~/item/types/equipment/sheet/EquipmentSheetShel
 import createEquipmentSheetState from '~/item/types/equipment/sheet/EquipmentSheetState.js';
 
 export default class TitanEquipmentSheet extends TitanItemSheet {
-
    /**
     * Default Application options
     *
@@ -23,6 +22,6 @@ export default class TitanEquipmentSheet extends TitanItemSheet {
 
    constructor(object) {
       super(object);
-      this.reactive.state = createEquipmentSheetState();
+      this.applicationState = createEquipmentSheetState();
    }
 }

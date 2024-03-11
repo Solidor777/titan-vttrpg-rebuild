@@ -22,6 +22,6 @@ export default class TitanCommoditySheet extends TitanItemSheet {
 
    constructor(object) {
       super(object);
-      this.reactive.state = createCommoditySheetState();
+      this.applicationState = createCommoditySheetState();
    }
 }

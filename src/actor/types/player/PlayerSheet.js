@@ -20,8 +20,15 @@ export default class TitanPlayerSheet extends TitanCharacterSheet {
       });
    }
 
-   constructor(object) {
-      super(object);
-      this.reactive.state = createPlayerSheetState();
+   _createReactiveState() {
+      return createPlayerSheetState();
+   }
+
+   // Add the player sheet class
+   _getSheetClasses() {
+      const retVal = super._getSheetClasses();
+      retVal.push('titan-player-sheet');
+
+      return retVal;
    }
 }

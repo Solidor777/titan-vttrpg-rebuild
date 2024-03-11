@@ -22,17 +22,17 @@ export default class TitanSpellSheet extends TitanItemSheet {
 
    constructor(object) {
       super(object);
-      this.reactive.state = createSpellSheetState();
+      this.applicationState = createSpellSheetState();
    }
 
    addCustomAspect() {
-      this.reactive.state.addCustomAspect();
+      this.applicationState.addCustomAspect();
 
       return;
    }
 
    async removeCustomAspect(idx) {
-      this.reactive.state.removeCustomAspect(idx);
+      this.applicationState.removeCustomAspect(idx);
 
       return;
    }

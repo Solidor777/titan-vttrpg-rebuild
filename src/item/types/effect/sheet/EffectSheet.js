@@ -1,6 +1,7 @@
 import TitanItemSheet from '~/item/sheet/ItemSheet';
 import EffectSheetShell from '~/item/types/effect/sheet/EffectSheetShell.svelte';
 import createEffectSheetState from '~/item/types/effect/sheet/EffectSheetState';
+
 export default class TitanEffectSheet extends TitanItemSheet {
    /**
     * Default Application options
@@ -21,6 +22,6 @@ export default class TitanEffectSheet extends TitanItemSheet {
 
    constructor(object) {
       super(object);
-      this.reactive.state = createEffectSheetState();
+      this.applicationState = createEffectSheetState();
    }
 }

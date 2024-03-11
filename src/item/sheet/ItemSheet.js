@@ -1,8 +1,8 @@
 import localize from '~/utility-functions/Localize.js';
-import SvelteDocumentSheet from '~/documents/DocumentSheet';
-export default class TitanItemSheet extends SvelteDocumentSheet {
+import TitanDocumentSheet from '~/documents/DocumentSheet';
+export default class TitanItemSheet extends TitanDocumentSheet {
 
-   item = this.reactive.document;
+   item = this.document;
 
    _getHeaderButtons() {
       const buttons = super._getHeaderButtons();
@@ -11,7 +11,7 @@ export default class TitanItemSheet extends SvelteDocumentSheet {
          class: 'send-to-chat',
          icon: 'fas fa-comment',
          label: localize('sendToChat'),
-         onclick: () => this.reactive.document.sendToChat(),
+         onclick: () => this.document.sendToChat(),
       });
 
       if (this.item.pack) {
@@ -35,13 +35,13 @@ export default class TitanItemSheet extends SvelteDocumentSheet {
    }
 
    addCheck() {
-      this.reactive.state.addCheck();
+      this.applicationState.addCheck();
 
       return;
    }
 
    async removeCheck(idx) {
-      this.reactive.state.removeCheck(idx);
+      this.applicationState.removeCheck(idx);
 
       return;
    }

@@ -24,14 +24,14 @@ export default class TitanWeaponSheet extends TitanItemSheet {
 
    constructor(object) {
       super(object);
-      this.reactive.state = createWeaponSheetState(isHTMLBlank(object.system.attackNotes) ? 'itemDescription' : 'attackNotes');
+      this.applicationState = createWeaponSheetState(isHTMLBlank(object.system.attackNotes) ? 'itemDescription' : 'attackNotes');
    }
 
    addAttack() {
-      this.reactive.state.addAttack();
+      this.applicationState.addAttack();
    }
 
    removeAttack(idx) {
-      this.reactive.state.removeAttack(idx);
+      this.applicationState.removeAttack(idx);
    }
 }

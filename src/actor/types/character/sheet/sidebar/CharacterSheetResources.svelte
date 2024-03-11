@@ -22,6 +22,7 @@
          />
       </div>
    {/if}
+
    <!--Wounds-->
    {#if $document.system.resource.wounds.maxBase > 0}
       <div class="resource wounds">

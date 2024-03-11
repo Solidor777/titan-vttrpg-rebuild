@@ -1,29 +1,38 @@
-import SvelteDocumentSheet from '~/documents/DocumentSheet';
+import TitanDocumentSheet from '~/documents/DocumentSheet';
 import localize from '~/utility-functions/Localize.js';
 
-export default class TitanActorSheet extends SvelteDocumentSheet {
+export default class TitanActorSheet extends TitanDocumentSheet {
+   constructor(document, options = {}) {
+      super(document, options);
+      this.actor = this.document;
+   }
+
    /**
     * Default Application options
     *
     * @returns {object} options - Application options.
     * @see https://foundryvtt.com/api/Application.html#options
     */
-
-   actor = this.reactive.document;
-
    static get defaultOptions() {
       return foundry.utils.mergeObject(super.defaultOptions, {
-         width: 750,
-         height: 800,
+         // baseApplication: 'ActorSheet',
+         token: null
       });
+   }
+
+   // Add the actor sheet class
+   _getSheetClasses() {
+      const retVal = super._getSheetClasses();
+      retVal.push('titan-actor-sheet');
+
+      return retVal;
    }
 
    _onConfigureToken(event) {
       if (event) {
          event.preventDefault();
       }
-      const actor = this.reactive.document;
-      const token = actor.token ?? actor.prototypeToken;
+      const token = this.actor.token ?? this.actor.prototypeToken;
       return new CONFIG.Token.prototypeSheetClass(token, {
          left: Math.max(this.position.left - 570, 10),
          top: this.position.top,
@@ -32,7 +41,7 @@ export default class TitanActorSheet extends SvelteDocumentSheet {
 
    _getHeaderButtons() {
       const buttons = super._getHeaderButtons();
-      const actor = this.reactive.document;
+      const actor = this.document;
 
       const isGM = game.user.isGM;
       if (isGM || (actor.isOwner && game.user.can('TOKEN_CONFIGURE'))) {
@@ -50,7 +59,7 @@ export default class TitanActorSheet extends SvelteDocumentSheet {
                buttons.unshift({
                   label: "",
                   class: "token-link",
-                  icon: actor.prototypeToken.actorLink ? "fas fa-link" : "fas fa-unlink",
+                  icon: actor.prototypeToken?.actorLink ? "fas fa-link" : "fas fa-unlink",
                   onclick: (html) => tokenLinkToggle(html, actor)
                });
             }

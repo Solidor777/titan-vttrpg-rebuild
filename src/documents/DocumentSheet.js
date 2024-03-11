@@ -3,75 +3,97 @@ import { TJSDocument } from '@typhonjs-fvtt/runtime/svelte/store/fvtt/document';
 import { writable } from 'svelte/store';
 import getSetting from '~/utility-functions/GetSetting.js';
 import localize from '~/utility-functions/Localize.js';
-import DocumentShell from '~/documents/DocumentShell.svelte';
-export default class SvelteDocumentSheet extends SvelteApplication {
+export default class TitanDocumentSheet extends SvelteApplication {
 
-   // Document store that monitors updates to any assigned document.
-   documentStore = new TJSDocument(void 0, { delete: this.close.bind(this) });
-
-   // Application store that monitors updates to any assigned document.
-   applicationStateStore = new writable({});
-
-   // Holds the document unsubscription function.
-   storeUnsubscribe;
-
+   // Constructor for the document sheet
    constructor(document, options = {}) {
+      // Initialize options objects
+      options.svelte ??= {};
+
+      // Set base properties for the sheet
       super(foundry.utils.mergeObject(
          options,
          {
             id: `document-sheet-${document.id}`,
             title: document.name,
-            classes: getSetting('darkModeSheets') === true ? ['titan', 'titan-dark-mode'] : ['titan']
+            svelte: {
+               props: {
+                  document: null,
+                  applicationState: null,
+               }
+            }
          }
       ));
 
-      // Define document store property
-      Object.defineProperty(this.reactive, 'document', {
-         get: () => this.documentStore.get(),
-         set: (document) => {
-            this.documentStore.set(document);
-         },
-      });
-      this.reactive.document = document;
+      // Add the sheet classes
+      this.options.classes.push(...this._getSheetClasses());
 
-      // Define state store property
-      Object.defineProperty(this.reactive, 'state', {
-         get: () => this.applicationStateStore,
-         set: (state) => {
-            this.applicationStateStore = state;
-         },
-      });
+      // Initialize the reactive  document
+      this.document = document;
+      this.options.svelte.props.document = this._createReactiveDocument(document, { delete: this.close.bind(this) });
+
+      // Initialize the reactive state
+      this.applicationState = this._createReactiveState();
+      this.options.svelte.props.applicationState = this.applicationState;
+
+      // Holds the subscription / unsubscription functions
+      this.documentUnsubscribe = void 0;
    }
 
-   // Default Application options
+   /**
+    * Default Application options
+    *
+    * @returns {object} options - Application options.
+    * @see https://foundryvtt.com/api/Application.html#options
+    */
    static get defaultOptions() {
       return foundry.utils.mergeObject(super.defaultOptions, {
-         width: 800,
-         height: 600,
          resizable: true,
          minimizable: true,
          dragDrop: [{ dragSelector: '.directory-list .item', dropSelector: null }],
          svelte: {
-            class: DocumentShell,
             target: document.body,
-            props: function () {
-               return {
-                  documentStore: this.documentStore,
-                  applicationStateStore: this.applicationStateStore
-               };
-            },
          },
       });
    }
 
+
+   // Overridable function for getting the sheet classes
+   _getSheetClasses() {
+      const retVal = ['titan', 'titan-document-sheet'];
+
+      // Add dark mode class if dark mode enabled
+      if (getSetting('darkModeSheets')) {
+         retVal.push('titan-dark-mode');
+      }
+
+      return retVal;
+   }
+
+   // Overridable function for creating the reactive document
+   _createReactiveDocument(document, options = {}) {
+      return new TJSDocument(document, options);
+   }
+
+   // Overridable function for creating the reactive state
+   _createReactiveState(options = {}) {
+      return new writable(options);
+   }
+
+   // Get the header buttons for the sheet
    _getHeaderButtons() {
       const buttons = super._getHeaderButtons();
-      buttons.unshift({
-         class: 'configure-sheet',
-         icon: 'fas fa-cog',
-         title: localize('openSheetConfigurator'),
-         onclick: (ev) => this._onConfigureSheet(ev),
-      });
+
+      // Sheet configuration button for actors not in a compendium
+      if (!this.document.pack) {
+         buttons.unshift({
+            class: 'configure-sheet',
+            icon: 'fas fa-cog fa-fw',
+            title: localize('openSheetConfigurator'),
+            onclick: (ev) => this._onConfigureSheet(ev),
+         });
+      }
+
       return buttons;
    }
 
@@ -80,8 +102,9 @@ export default class SvelteDocumentSheet extends SvelteApplication {
       return true;
    }
    _canDragDrop() {
-      return this.reactive.document.isOwner || game.user.isGM;
+      return this.document.isOwner || game.user.isGM;
    }
+
    _onDragOver() { }
 
    _onDragStart(event) {
@@ -115,11 +138,11 @@ export default class SvelteDocumentSheet extends SvelteApplication {
       }
    }
    async _onDrop(event) {
-      if (this.reactive.document.documentName !== 'Actor') {
+      if (this.document.documentName !== 'Actor') {
          return;
       }
       const data = TextEditor.getDragEventData(event);
-      const actor = this.reactive.document;
+      const actor = this.document;
 
       /**
        * A hook event that fires when some useful data is dropped onto an ActorSheet.
@@ -255,28 +278,26 @@ export default class SvelteDocumentSheet extends SvelteApplication {
          event.preventDefault();
       }
       // eslint-disable-next-line no-undef
-      new DocumentSheetConfig(this.reactive.document, {
+      new DocumentSheetConfig(this.document, {
          top: this.position.top + 40,
-         left: this.position.left + (this.position.width - SvelteDocumentSheet.defaultOptions.width) / 2,
+         left: this.position.left + (this.position.width - TitanDocumentSheet.defaultOptions.width) / 2,
       }).render(true);
    }
 
    async close(options = {}) {
       await super.close(options);
 
-      if (this.storeUnsubscribe) {
-         this.storeUnsubscribe();
-         this.storeUnsubscribe = void 0;
+      // Unsubscribe from the document if still subscribed
+      if (this.documentUnsubscribe) {
+         this.documentUnsubscribe();
+         this.documentUnsubscribe = void 0;
       }
+
+      return;
    }
 
-   /**
-    * Handles any changes to document.
-    *
-    * @param {foundry.abstract.Document}  doc -
-    *
-    * @param {object}                     options -
-    */
+
+   // Updates the document name
    async handleDocumentUpdate(doc, options) {
       const { action } = options;
       if ((action === void 0 || action === 'update' || action === 'subscribe') && doc) {
@@ -285,8 +306,9 @@ export default class SvelteDocumentSheet extends SvelteApplication {
    }
 
    render(force = false, options = {}) {
-      if (!this.storeUnsubscribe) {
-         this.storeUnsubscribe = this.documentStore.subscribe(this.handleDocumentUpdate.bind(this));
+      // Subscribe to the document if not already subscribed
+      if (!this.documentUnsubscribe) {
+         this.documentUnsubscribe = this.options.svelte.props.document.subscribe(this.handleDocumentUpdate.bind(this));
       }
 
       super.render(force, options);

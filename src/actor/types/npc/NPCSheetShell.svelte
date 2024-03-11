@@ -17,10 +17,10 @@
 
    // Setup context variables
    export let elementRoot;
-   export let documentStore;
-   export let applicationStateStore;
-   setContext('DocumentStore', documentStore);
-   setContext('ApplicationStateStore', applicationStateStore);
+   export let document;
+   export let applicationState;
+   setContext('DocumentStore', document);
+   setContext('ApplicationStateStore', applicationState);
    const appState = getContext('ApplicationStateStore');
 
    // Tabs

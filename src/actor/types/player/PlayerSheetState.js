@@ -2,7 +2,7 @@
 import { writable } from 'svelte/store';
 
 export default function createPlayerSheetState() {
-   const { set, update, subscribe } = writable({
+   const { set, update, subscribe, unsubscribe } = writable({
       scrollTop: {
          abilities: 0,
          inventory: 0,
@@ -62,6 +62,7 @@ export default function createPlayerSheetState() {
       set,
       update,
       subscribe,
-      deleteItem
+      deleteItem,
+      unsubscribe
    };
 }

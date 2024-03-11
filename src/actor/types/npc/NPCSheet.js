@@ -3,6 +3,7 @@ import TitanCharacterSheet from '~/actor/types/character/sheet/CharacterSheet.js
 import createNPCSheetState from '~/actor/types/npc/NPCSheetState';
 
 export default class TitanNPCSheet extends TitanCharacterSheet {
+
    /**
     * Default Application options
     *
@@ -20,8 +21,15 @@ export default class TitanNPCSheet extends TitanCharacterSheet {
       });
    }
 
-   constructor(object) {
-      super(object);
-      this.reactive.state = createNPCSheetState();
+   _createReactiveState() {
+      return createNPCSheetState();
+   }
+
+   // Add the npc sheet class
+   _getSheetClasses() {
+      const retVal = super._getSheetClasses();
+      retVal.push('titan-npc-sheet');
+
+      return retVal;
    }
 }

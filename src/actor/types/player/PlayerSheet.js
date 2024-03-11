@@ -15,7 +15,6 @@ export default class TitanPlayerSheet extends TitanCharacterSheet {
          height: 845,
          svelte: {
             class: PlayerSheetShell,
-            target: document.body
          },
       });
    }
@@ -30,5 +29,11 @@ export default class TitanPlayerSheet extends TitanCharacterSheet {
       retVal.push('titan-player-sheet');
 
       return retVal;
+   }
+
+   // Constructor for the document sheet
+   constructor(document, options = {}) {
+      super(document, options);
+      console.log(this);
    }
 }

@@ -31,22 +31,36 @@ export default class TitanActorSheet extends TitanDocumentSheet {
       if (event) {
          event.preventDefault();
       }
-      const token = this.actor.token ?? this.actor.prototypeToken;
-      return new CONFIG.Token.prototypeSheetClass(token, {
-         left: Math.max(this.position.left - 570, 10),
+
+      // If this actor is unlinked, use the token confiurator.
+      if (this.token) {
+         return this.token.sheet.render(true, {
+            left: Math.max(this.position.left - 450, 10),
+            top: this.position.top,
+         });
+      }
+
+      // If this actor is linked, used the prototype token configurator.
+      return new CONFIG.Token.prototypeSheetClass(this.actor.prototypeToken, {
+         left: Math.max(this.position.left - 450, 10),
          top: this.position.top,
       }).render(true);
    }
 
+   get token() {
+      return this.options?.token || this.actor.token || null;
+   }
+
    _getHeaderButtons() {
       const buttons = super._getHeaderButtons();
-      const actor = this.document;
 
+      // Cache whether the user is a GM
       const isGM = game.user.isGM;
-      if (isGM || (actor.isOwner && game.user.can('TOKEN_CONFIGURE'))) {
-         // Token configure button
+
+      // Token configure button
+      if (isGM || (this.actor.isOwner && game.user.can('TOKEN_CONFIGURE'))) {
          buttons.unshift({
-            label: actor.token ? localize('token') : localize('prototypeToken'),
+            label: this.actor.token ? localize('token') : localize('prototypeToken'),
             class: 'configure-token',
             icon: 'fas fa-user-circle',
             onclick: (ev) => this._onConfigureToken(ev),
@@ -54,29 +68,29 @@ export default class TitanActorSheet extends TitanDocumentSheet {
 
          if (isGM) {
             // If no token
-            if (!actor.token) {
+            if (!this.actor.token) {
                buttons.unshift({
                   label: "",
                   class: "token-link",
-                  icon: actor.prototypeToken?.actorLink ? "fas fa-link" : "fas fa-unlink",
-                  onclick: (html) => tokenLinkToggle(html, actor)
+                  icon: this.actor.prototypeToken?.actorLink ? "fas fa-link" : "fas fa-unlink",
+                  onclick: (html) => tokenLinkToggle(html, this.actor)
                });
             }
 
             // If token
             else {
                // If actor linked
-               if (actor.token.actorLink === true) {
+               if (this.actor.token.actorLink === true) {
                   buttons.unshift({
                      label: "",
                      class: "token-link-highlight",
                      icon: "fas fa-link",
-                     onclick: (html) => tokenUnlinkToken(html, actor)
+                     onclick: (html) => tokenUnlinkToken(html, this.actor)
                   });
                }
 
                // If actor not linked
-               else if (actor.token.actorLink === false) {
+               else if (this.actor.token.actorLink === false) {
                   buttons.unshift({
                      label: "",
                      class: "token-link-warning",
@@ -107,6 +121,7 @@ export default class TitanActorSheet extends TitanDocumentSheet {
       return this.actor.collection
          .importFromCompendium(this.actor.compendium, this.actor.id);
    }
+
 }
 
 function tokenLinkToggle(html, actor) {

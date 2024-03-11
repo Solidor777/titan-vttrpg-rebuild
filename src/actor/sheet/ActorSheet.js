@@ -15,8 +15,7 @@ export default class TitanActorSheet extends TitanDocumentSheet {
     */
    static get defaultOptions() {
       return foundry.utils.mergeObject(super.defaultOptions, {
-         // baseApplication: 'ActorSheet',
-         token: null
+         baseApplication: 'ActorSheet',
       });
    }
 

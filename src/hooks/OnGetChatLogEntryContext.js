@@ -1,4 +1,3 @@
-import { isCheck } from '~/helpers/Utility.js';
 import getActor from '~/utility-functions/GetActor.js';
 import localize from '~/utility-functions/Localize.js';
 import getSetting from '~/utility-functions/GetSetting.js';
@@ -283,4 +282,19 @@ async function doubleTraining(li, spendResolve) {
    }
 
    return;
+}
+
+function isCheck(chatMessageType) {
+   switch (chatMessageType) {
+      case 'attackCheck':
+      case 'attributeCheck':
+      case 'resistanceCheck':
+      case 'castingCheck':
+      case 'itemCheck': {
+         return true;
+      }
+      default: {
+         return false;
+      }
+   }
 }

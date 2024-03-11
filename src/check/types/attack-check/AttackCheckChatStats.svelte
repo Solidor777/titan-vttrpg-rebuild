@@ -1,9 +1,9 @@
 <script>
-   import { appendUniqueWithFilter } from '~/helpers/Utility.js';
    import { getContext } from 'svelte';
    import { ATTACK_TRAIT_DESCRIPTIONS } from '~/item/types/weapon/AttackTraits.js';
    import localize from '~/utility-functions/Localize.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
+   import appendUniqueWithFilter from '~/utility-functions/AppendUniqueWithFilter.js';
    import IconStatTag from '~/helpers/svelte-components/tag/IconStatTag.svelte';
    import IconTag from '~/helpers/svelte-components/tag/IconTag.svelte';
    import StatTag from '~/helpers/svelte-components/tag/StatTag.svelte';

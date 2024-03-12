@@ -14,8 +14,8 @@ export default class TitanDocumentSheet extends SvelteApplication {
       super(foundry.utils.mergeObject(
          options,
          {
-            id: `document-sheet-${document.id}`,
             title: document.name,
+            token: null,
             svelte: {
                props: {
                   document: null,
@@ -24,6 +24,9 @@ export default class TitanDocumentSheet extends SvelteApplication {
             }
          }
       ));
+
+      // Get sheet id
+      this.options.id = this._getSheetID(document);
 
       // Add the sheet classes
       this.options.classes.push(...this._getSheetClasses());
@@ -60,6 +63,9 @@ export default class TitanDocumentSheet extends SvelteApplication {
       });
    }
 
+   _getSheetID(document) {
+      return `document-sheet-${document.id}`;
+   }
 
    // Overridable function for getting the sheet classes
    _getSheetClasses() {
@@ -304,15 +310,13 @@ export default class TitanDocumentSheet extends SvelteApplication {
    }
 
    async close(options = {}) {
-      await super.close(options);
-
       // Unsubscribe from the document if still subscribed
       if (this.documentUnsubscribe) {
          this.documentUnsubscribe();
          this.documentUnsubscribe = void 0;
       }
 
-      return;
+      return super.close(options);
    }
 
 

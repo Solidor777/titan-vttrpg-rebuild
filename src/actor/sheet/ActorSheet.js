@@ -16,7 +16,12 @@ export default class TitanActorSheet extends TitanDocumentSheet {
    static get defaultOptions() {
       return foundry.utils.mergeObject(super.defaultOptions, {
          baseApplication: 'ActorSheet',
+         token: null
       });
+   }
+
+   _getSheetID(document) {
+      return `actor-sheet-${document.isToken ? document.parent?.id : document.id}`;
    }
 
    // Add the actor sheet class
@@ -35,16 +40,14 @@ export default class TitanActorSheet extends TitanDocumentSheet {
    _getHeaderButtons() {
       const buttons = super._getHeaderButtons();
 
-      console.log(this);
       // If the active user can edit this actor's tokens...
       const canEditToken = game.user.isGM || (this.actor.isOwner && game.user.can('TOKEN_CONFIGURE'));
       if (canEditToken) {
          const token = this.token;
-         console.log(token);
 
          // Configure token button
          buttons.unshift({
-            label: token ? localize('token') : localize('prototypeToken'),
+            title: localize('editToken'),
             class: 'configure-token',
             icon: 'fas fa-user-circle',
             onclick: (event) => this._onConfigureToken(event),
@@ -52,10 +55,11 @@ export default class TitanActorSheet extends TitanDocumentSheet {
 
          // Toggle token link for actors still in the directory
          if (token === null) {
+            const tokenLinked = this.actor.prototypeToken?.actorLink;
             buttons.unshift({
-               label: "",
-               class: "token-link",
-               icon: this.actor.prototypeToken?.actorLink ? "fas fa-link" : "fas fa-unlink",
+               title: localize(tokenLinked ? 'tokenIsLinkedToActor' : 'tokenIsUnlinkedFromActor'),
+               class: 'token-link',
+               icon: tokenLinked ? 'fas fa-link' : 'fas fa-unlink',
                onclick: (event) => this._toggleTokenLink(event)
             });
          }
@@ -65,9 +69,9 @@ export default class TitanActorSheet extends TitanDocumentSheet {
             // Unlink button for linked tokens
             if (token.actorLink === true) {
                buttons.unshift({
-                  label: "",
-                  class: "token-link-highlight",
-                  icon: "fas fa-link",
+                  title: localize('tokenIsLinkedToActor'),
+                  class: 'token-link-highlight',
+                  icon: 'fas fa-link',
                   onclick: (event) => this._unlinkToken(event)
                });
             }
@@ -75,9 +79,9 @@ export default class TitanActorSheet extends TitanDocumentSheet {
             // Warning icon for unlinked tokens
             else {
                buttons.unshift({
-                  label: "",
-                  class: "token-link-warning",
-                  icon: "fas fa-unlink",
+                  title: localize('tokenIsUnlinkedFromActor'),
+                  class: 'token-link-warning',
+                  icon: 'fas fa-unlink',
                   onclick: () => { }
                });
             }
@@ -123,11 +127,13 @@ export default class TitanActorSheet extends TitanDocumentSheet {
       // If linked, replace the linked icon with the unlinked icon
       if (isLinked) {
          button.html(button.html().replace('fa-link', 'fa-unlink'));
+         button.html(button.html().replace(localize('tokenIsLinkedToActor'), localize('tokenIsUnlinkedFromActor')));
       }
 
       // If not linked, replaced the unlinked icon with the linked icon
       else {
          button.html(button.html().replace('fa-unlink', 'fa-link'));
+         button.html(button.html().replace(localize('tokenIsUnlinkedFromActor'), localize('tokenIsLinkedToActor')));
       }
 
       // Update the actor
@@ -143,15 +149,16 @@ export default class TitanActorSheet extends TitanDocumentSheet {
       const button = $(event.target);
 
       // Unlink the actor
-      await this.actor.token.update({ actorLink: false });
+      const token = this.token;
+      await token.update({ actorLink: false });
 
       // Update the text of the button 
       button.html(button.html().replace('Linked', 'Unlinked'));
 
-      // Close thise actor sheet and open the new actor sheet
-      const newToken = this.actor.token;
-      await this.actor.close();
-      return await newToken.actor.sheet.render(true);
+      // Close this actor and open the new actor sheet
+      const newToken = this.token;
+      await this.close();
+      return newToken.actor.sheet.render(true);
    }
 
    // Import function
@@ -160,6 +167,11 @@ export default class TitanActorSheet extends TitanDocumentSheet {
          event.preventDefault();
       }
       return this.actor.collection.importFromCompendium(this.actor.compendium, this.actor.id);
+   }
+
+   async close(options = {}) {
+      this.options.token = null;
+      return super.close(options);
    }
 
 }

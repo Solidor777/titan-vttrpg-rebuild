@@ -14,11 +14,6 @@ import path from 'path';
 // the dev server.
 const s_PACKAGE_ID = 'systems/titan-rebuild';
 
-// A short additional string to add to Svelte CSS hash values to make yours unique. This reduces the amount of
-// duplicated framework CSS overlap between many TRL packages enabled on Foundry VTT at the same time. 'ese' is chosen
-// by shortening 'essential-svelte-esm'.
-const s_SVELTE_HASH_ID = 'ese';
-
 const s_COMPRESS = false;  // Set to true to compress the module bundle.
 const s_SOURCEMAPS = true; // Generate sourcemaps for the bundle (recommended).
 
@@ -53,7 +48,11 @@ export default () => {
       },
 
       define: {
-         'process.env.NODE_ENV': '"production"'
+         process: {
+            env: {
+               NODE_ENV: 'production',
+            }
+         }
       },
 
       // About server options:
@@ -76,8 +75,8 @@ export default () => {
             [`^(?!/${s_PACKAGE_ID}/)`]: 'http://localhost:30000',
 
             // Enable socket.io from main Foundry server.
-            '/socket.io': { target: 'ws://localhost:30000', ws: true }
-         }
+            '/socket.io': { target: 'ws://localhost:30000', ws: true },
+         },
       },
       build: {
          outDir: __dirname,
@@ -101,13 +100,6 @@ export default () => {
       },
       plugins: [
          svelte({
-            compilerOptions: {
-               // Provides a custom hash adding the string defined in `s_SVELTE_HASH_ID` to scoped Svelte styles;
-               // This is reasonable to do as the framework styles in TRL compiled across `n` different packages will
-               // be the same. Slightly modifying the hash ensures that your package has uniquely scoped styles for all
-               // TRL components and makes it easier to review styles in the browser debugger.
-               cssHash: ({ hash, css }) => `svelte-${s_SVELTE_HASH_ID}-${hash(css)}`
-            },
             preprocess: preprocess()
          }),
 

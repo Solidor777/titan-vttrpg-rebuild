@@ -34,6 +34,5 @@ export default class TitanPlayerSheet extends TitanCharacterSheet {
    // Constructor for the document sheet
    constructor(document, options = {}) {
       super(document, options);
-      console.log(this);
    }
 }

@@ -48,6 +48,8 @@ export default class TitanDocumentSheet extends SvelteApplication {
     */
    static get defaultOptions() {
       return foundry.utils.mergeObject(super.defaultOptions, {
+         width: 650,
+         height: 650,
          baseApplication: 'DocumentSheet',
          resizable: true,
          minimizable: true,
@@ -96,6 +98,11 @@ export default class TitanDocumentSheet extends SvelteApplication {
       }
 
       return buttons;
+   }
+
+   // Getter for the object of this sheet
+   get object() {
+      return this.document;
    }
 
    // Drag Drop Handling
@@ -286,10 +293,14 @@ export default class TitanDocumentSheet extends SvelteApplication {
          event.preventDefault();
       }
       // eslint-disable-next-line no-undef
-      new DocumentSheetConfig(this.document, {
+      return new DocumentSheetConfig(this.document, _this._getDialogOffset()).render(true);
+   }
+
+   _getDialogOffset() {
+      return {
          top: this.position.top + 40,
-         left: this.position.left + (this.position.width - TitanDocumentSheet.defaultOptions.width) / 2,
-      }).render(true);
+         left: this.position.left + (this.position.width - this.options.width) / 2,
+      };
    }
 
    async close(options = {}) {
@@ -306,7 +317,7 @@ export default class TitanDocumentSheet extends SvelteApplication {
 
 
    // Updates the document name
-   async handleDocumentUpdate(doc, options) {
+   async updateDocumentTitle(doc, options) {
       const { action } = options;
       if ((action === void 0 || action === 'update' || action === 'subscribe') && doc) {
          this.reactive.title = doc?.isToken ? `[Token] ${doc?.name}` : doc?.name ?? 'No Document Assigned';
@@ -316,7 +327,7 @@ export default class TitanDocumentSheet extends SvelteApplication {
    render(force = false, options = {}) {
       // Subscribe to the document if not already subscribed
       if (!this.documentUnsubscribe) {
-         this.documentUnsubscribe = this.options.svelte.props.document.subscribe(this.handleDocumentUpdate.bind(this));
+         this.documentUnsubscribe = this.options.svelte.props.document.subscribe(this.updateDocumentTitle.bind(this));
       }
 
       super.render(force, options);

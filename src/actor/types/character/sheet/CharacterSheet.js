@@ -3,8 +3,8 @@ import CharacterSheetInventoryAddItemDialog from "~/actor/types/character/sheet/
 
 export default class TitanCharacterSheet extends TitanActorSheet {
    addInventoryItem() {
-      if (this.document.isOwner) {
-         const dialog = new CharacterSheetInventoryAddItemDialog(this.document);
+      if (this.actor.isOwner) {
+         const dialog = new CharacterSheetInventoryAddItemDialog(this.actor);
          dialog.render(true);
       }
       return;

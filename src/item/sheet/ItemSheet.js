@@ -2,7 +2,7 @@ import localize from '~/utility-functions/Localize.js';
 import TitanDocumentSheet from '~/documents/DocumentSheet';
 export default class TitanItemSheet extends TitanDocumentSheet {
 
-   item = this.document;
+   item = this.actor;
 
    _getHeaderButtons() {
       const buttons = super._getHeaderButtons();
@@ -11,7 +11,7 @@ export default class TitanItemSheet extends TitanDocumentSheet {
          class: 'send-to-chat',
          icon: 'fas fa-comment',
          label: localize('sendToChat'),
-         onclick: () => this.document.sendToChat(),
+         onclick: () => this.actor.sendToChat(),
       });
 
       if (this.item.pack) {

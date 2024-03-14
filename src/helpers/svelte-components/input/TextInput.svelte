@@ -11,5 +11,6 @@
 
    input {
       @include input;
+      --text-alignment: 'left';
    }
 </style>

@@ -3,7 +3,7 @@
    import localize from '~/utility-functions/Localize.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import DocumentIntegerInput from '~/documents/components/input/DocumentIntegerInput.svelte';
-   import DocumentName from '~/documents/components/input/DocumentNameInput.svelte';
+   import DocumentNameInput from '~/documents/components/input/DocumentNameInput.svelte';
    import CharacterSheetAttributes from '~/actor/types/character/sheet/header/CharacterSheetAttributes.svelte';
    import CharacterSheetResistances from '~/actor/types/character/sheet/header/CharacterSheetResistances.svelte';
    import ModTag from '~/helpers/svelte-components/tag/ModTag.svelte';
@@ -18,7 +18,7 @@
    <div class="main-header">
       <!--Character name Sheet-->
       <div class="actor-name">
-         <DocumentName />
+         <DocumentNameInput />
       </div>
 
       <!--Inspiration Toggle-->

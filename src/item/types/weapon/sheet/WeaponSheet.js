@@ -17,13 +17,12 @@ export default class TitanWeaponSheet extends TitanItemSheet {
          height: 650,
          svelte: {
             class: WeaponSheetShell,
-            target: document.body
          }
       });
    }
 
    _createReactiveState() {
-      return createWeaponSheetState(isHTMLBlank(object.system.attackNotes) ? 'itemDescription' : 'attackNotes');
+      return createWeaponSheetState(isHTMLBlank(this.document.system.attackNotes) ? 'itemDescription' : 'attackNotes');
    }
 
    addAttack() {

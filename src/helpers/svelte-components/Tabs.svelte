@@ -47,6 +47,7 @@
       @include flex-column;
       @include border;
       flex-grow: 1;
+      height: 100%;
 
       .tab-list {
          @include flex-row;
@@ -89,9 +90,9 @@
 
       .tab-content {
          @include flex-column;
+         @include flex-group-top;
+         flex-grow: 1;
          flex: 2;
-         height: 100%;
-         width: 100%;
       }
    }
 </style>

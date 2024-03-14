@@ -31,7 +31,8 @@
    @import '../../../../Styles/Mixins.scss';
    .tab {
       @include flex-row;
-      @include flex-group-center;
+      @include flex-group-top;
+      flex-grow: 1;
       height: 100%;
       width: 100%;
    }

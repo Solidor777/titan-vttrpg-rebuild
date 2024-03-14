@@ -6,8 +6,8 @@
    import SpellSheetSidebarAspects from './SpellSheetSidebarAspects.svelte';
 
    // Application statee reference
-   const appState = getContext('ApplicationStateStore');
-   const document = getContext('DocumentStore');
+   const appState = getContext('applicationState');
+   const document = getContext('document');
 
    function areAspectsEnabled(aspects) {
       for (let idx = 0; idx < aspects.length; idx++) {
@@ -88,7 +88,7 @@
          @include attribute-colors;
          @include label;
          width: 100%;
-         padding: 0.25rem;
+         padding: var(--padding-standard);
          font-weight: bold;
          min-height: 3rem;
 

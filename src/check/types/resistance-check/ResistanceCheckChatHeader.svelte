@@ -28,7 +28,7 @@
          @include border;
          @include resistance-colors;
          @include font-size-large;
-         padding: 0.5rem;
+         padding: var(--padding-large);
          font-weight: bold;
       }
    }

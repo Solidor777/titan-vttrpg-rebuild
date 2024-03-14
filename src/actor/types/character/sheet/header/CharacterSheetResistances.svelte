@@ -3,7 +3,7 @@
    import CharacterSheetResistance from '~/actor/types/character/sheet/header/CharacterSheetResistance.svelte';
 
    // Setup context variables
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <div class="resistances">
@@ -29,8 +29,8 @@
 
          &:not(:first-child) {
             @include border-top;
-            padding-top: 0.25rem;
-            margin-top: 0.25rem;
+            padding-top: var(--padding-standard);
+            margin-top: var(--padding-standard);
          }
       }
    }

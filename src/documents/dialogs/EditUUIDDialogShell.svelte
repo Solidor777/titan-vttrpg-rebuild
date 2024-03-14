@@ -90,7 +90,7 @@
 
          .name {
             @include font-size-large;
-            margin-left: 0.5rem;
+            margin-left: var(--padding-large);
          }
       }
 
@@ -107,10 +107,10 @@
          .button {
             @include flex-row;
             width: 100%;
-            margin-top: 0.5rem;
+            margin-top: var(--padding-large);
 
             &:not(:first-child) {
-               margin-left: 0.25rem;
+               margin-left: var(--padding-standard);
             }
          }
       }

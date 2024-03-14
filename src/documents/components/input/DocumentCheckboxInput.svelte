@@ -6,7 +6,7 @@
    export let value;
 
    // Document reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    export let disabled = false;
 </script>

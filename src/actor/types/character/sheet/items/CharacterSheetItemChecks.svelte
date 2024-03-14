@@ -36,8 +36,8 @@
 
          &:not(:first-child) {
             @include border-top;
-            margin-top: 0.5rem;
-            padding-top: 00.5rem;
+            margin-top: var(--padding-standard);
+            padding-top: var(--padding-standard);
          }
       }
    }

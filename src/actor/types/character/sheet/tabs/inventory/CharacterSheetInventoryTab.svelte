@@ -14,7 +14,7 @@
    import CharacterSheetTabHeaderButton from '~/actor/types/character/sheet/tabs/CharacterSheetTabHeaderButton.svelte';
 
    // Application reference
-   const appState = getContext('ApplicationStateStore');
+   const appState = getContext('applicationState');
    const application = getContext('#external').application;
 
    const itemComponents = {
@@ -154,7 +154,7 @@
          @include flex-group-top;
          @include border-bottom;
          @include panel-1;
-         padding: 0.25rem;
+         padding: var(--padding-standard);
          width: 100%;
 
          .row {
@@ -163,18 +163,18 @@
             width: 100%;
 
             &:not(:first-child) {
-               margin-top: 0.25rem;
+               margin-top: var(--padding-standard);
             }
 
             .reset {
                --icon-button-font-size: var(--font-size-small);
                --icon-button-radius: 1.75rem;
-               margin-left: 0.25rem;
+               margin-left: var(--padding-standard);
             }
 
             .label {
                font-weight: bold;
-               margin-right: 0.25rem;
+               margin-right: var(--padding-standard);
             }
 
             .input {
@@ -183,12 +183,12 @@
 
             .option {
                &:not(:first-child) {
-                  margin-left: 0.25rem;
+                  margin-left: var(--padding-standard);
                }
             }
 
             .add-entry-button {
-               margin-left: 0.25rem;
+               margin-left: var(--padding-standard);
             }
          }
       }
@@ -198,7 +198,7 @@
          @include flex-group-top;
          width: 100%;
          height: 100%;
-         margin-top: 0.5rem;
+         margin-top: var(--padding-large);
       }
    }
 </style>

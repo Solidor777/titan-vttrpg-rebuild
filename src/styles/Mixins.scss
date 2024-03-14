@@ -88,6 +88,14 @@
    border-color: var(--button-border-color);
 }
 
+@mixin padding-standard {
+   padding: var(--padding-standard);
+}
+
+@mixin padding-large {
+   padding: var(--padding-standard);
+}
+
 @mixin button {
    box-sizing: border-box;
    display: flex;
@@ -334,11 +342,11 @@
 }
 
 @mixin tag-margin {
-   margin: 0.5rem 0.25rem 0 0.25rem;
+   margin: var(--padding-large) var(--padding-standard) 0 var(--padding-standard);
 }
 
 @mixin tag-margin-small {
-   margin: 0.25rem 0.125rem 0 0.125rem;
+   margin: rc 0.125rem 0 0.125rem;
 }
 
 @mixin font-size-normal {

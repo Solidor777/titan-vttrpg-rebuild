@@ -11,7 +11,7 @@
    import ItemCheckResolveButton from '~/helpers/svelte-components/button/ItemCheckResolveButton.svelte';
 
    // Reference to the docuement
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    // Reference to the item
    export let item = void 0;
@@ -171,7 +171,7 @@
          @include flex-row;
 
          .resolve-cost-button {
-            margin-left: 0.5rem;
+            margin-left: var(--padding-large);
          }
       }
 

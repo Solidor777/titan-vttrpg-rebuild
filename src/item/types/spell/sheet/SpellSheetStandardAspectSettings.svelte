@@ -11,7 +11,7 @@
    export let aspectOptions = void 0;
 
    // Setup context variables
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    // Determines whether an aspect should have a details div
    function hasDetails() {
@@ -182,7 +182,7 @@
 
          @include font-size-small;
          @include panel-3;
-         padding: 0 0.25rem 0.25rem;
+         padding: 0 var(--padding-standard) var(--padding-standard);
          width: calc(100% - 30px);
 
          .row {
@@ -192,15 +192,15 @@
             width: 100%;
 
             &:first-child:not(.tags) {
-               margin-top: 0.25rem;
+               margin-top: var(--padding-standard);
             }
 
             &:not(:first-child) {
                @include border-top;
-               margin-top: 0.25rem;
+               margin-top: var(--padding-standard);
 
                &:not(.tags) {
-                  padding-top: 0.25rem;
+                  padding-top: var(--padding-standard);
                }
             }
 
@@ -214,7 +214,7 @@
                }
 
                .input {
-                  margin-left: 0.25rem;
+                  margin-left: var(--padding-standard);
                }
             }
 

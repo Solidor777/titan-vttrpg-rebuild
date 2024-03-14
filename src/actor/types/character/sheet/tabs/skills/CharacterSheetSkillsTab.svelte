@@ -6,10 +6,10 @@
    import CharacterSheetSkill from './CharacterSheetSkill.svelte';
 
    // Document reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    // Application reference
-   const appState = getContext('ApplicationStateStore');
+   const appState = getContext('applicationState');
    const application = getContext('#external').application;
 
    // Filtered Skill list
@@ -63,14 +63,14 @@
             @include flex-group-center;
             @include list;
             width: 100%;
-            margin-bottom: 0.25rem;
-            padding: 0 0.25rem;
+            margin-bottom: var(--padding-standard);
+            padding: 0 var(--padding-standard);
 
             li {
                @include flex-row;
                @include flex-group-center;
                width: 100%;
-               margin-top: 0.5rem;
+               margin-top: var(--padding-large);
             }
          }
       }

@@ -2,7 +2,7 @@
    import { getContext } from 'svelte';
    import CheckChatDie from './CheckChatDie.svelte';
 
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <div class="container">

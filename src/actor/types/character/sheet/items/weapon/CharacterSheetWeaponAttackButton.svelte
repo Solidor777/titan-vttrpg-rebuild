@@ -2,7 +2,7 @@
    import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
    import { getContext } from 'svelte';
    // Reference to the docuement
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    // Check
    export let item = void 0;
@@ -19,7 +19,7 @@
             'expertise',
             item,
             attack,
-            item.system.multiAttack
+            item.system.multiAttack,
          );
 
       // Cut the dice in half if multi attacking
@@ -48,7 +48,7 @@
             'expertise',
             item,
             attack,
-            item.system.multiAttack
+            item.system.multiAttack,
          );
 
       // Cut the expertise in half if multi attacking
@@ -102,11 +102,11 @@
          @include flex-group-center;
          height: 100%;
          line-height: normal;
-         padding: 0.25rem;
+         padding: var(--padding-standard);
          @include font-size-normal;
 
          i {
-            margin-right: 0.25rem;
+            margin-right: var(--padding-standard);
          }
 
          .pool {
@@ -114,8 +114,8 @@
             @include flex-group-center;
             @include border-left;
             @include border-color-button;
-            padding-left: 0.25rem;
-            margin-left: 0.25rem;
+            padding-left: var(--padding-standard);
+            margin-left: var(--padding-standard);
          }
 
          .expertise {
@@ -123,8 +123,8 @@
             @include flex-group-center;
             @include border-left;
             @include border-color-button;
-            padding-left: 0.25rem;
-            margin-left: 0.25rem;
+            padding-left: var(--padding-standard);
+            margin-left: var(--padding-standard);
          }
       }
    }

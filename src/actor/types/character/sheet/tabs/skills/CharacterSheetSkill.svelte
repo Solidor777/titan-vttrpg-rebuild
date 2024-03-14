@@ -11,7 +11,7 @@
    export let key;
 
    // Setup context variables
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    // Calculate the tooltip for the total value of training or expertise
    function getTotalValueTooltip(
@@ -283,7 +283,7 @@
       @include panel-3;
 
       width: 100%;
-      padding: 0.5rem;
+      padding: var(--padding-large);
 
       .column {
          @include flex-column;
@@ -301,7 +301,7 @@
                @include flex-row;
                @include flex-group-center;
                i {
-                  margin-right: 0.25rem;
+                  margin-right: var(--padding-standard);
                }
             }
          }
@@ -311,7 +311,7 @@
             @include flex-group-center;
             height: 100%;
             width: 100%;
-            margin-top: 0.25rem;
+            margin-top: var(--padding-standard);
 
             .label {
                @include flex-row;
@@ -324,7 +324,7 @@
             .select {
                @include flex-row;
                @include flex-group-center;
-               margin-left: 0.25rem;
+               margin-left: var(--padding-standard);
                height: 100%;
             }
          }
@@ -337,8 +337,8 @@
 
             &:not(:first-child) {
                @include border-top;
-               padding-top: 0.25rem;
-               margin-top: 0.25rem;
+               padding-top: var(--padding-standard);
+               margin-top: var(--padding-standard);
             }
 
             .label {
@@ -347,10 +347,10 @@
                @include font-size-small;
                height: 100%;
                font-weight: bold;
-               margin-right: 0.25rem;
+               margin-right: var(--padding-standard);
 
                i {
-                  margin-right: 0.25rem;
+                  margin-right: var(--padding-standard);
                }
             }
 
@@ -359,7 +359,7 @@
                @include flex-group-center;
                height: 100%;
                width: 1.75rem;
-               margin-left: 0.25rem;
+               margin-left: var(--padding-standard);
             }
 
             .value {
@@ -368,14 +368,14 @@
                font-weight: normal;
                height: 100%;
                width: 1.75rem;
-               margin-left: 0.25rem;
+               margin-left: var(--padding-standard);
             }
 
             .symbol {
                @include flex-row;
                @include flex-group-center;
                height: 100%;
-               margin-left: 0.25rem;
+               margin-left: var(--padding-standard);
             }
          }
 
@@ -386,7 +386,7 @@
             @include label;
             @include font-size-small;
 
-            padding: 0.25rem;
+            padding: var(--padding-standard);
 
             .label {
                @include flex-row;
@@ -395,7 +395,7 @@
                font-weight: bold;
 
                i {
-                  margin-right: 0.25rem;
+                  margin-right: var(--padding-standard);
                }
             }
 

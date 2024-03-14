@@ -75,16 +75,16 @@
       @include font-size-small;
       @include persistent-damage;
       font-weight: bold;
-      padding: 0.25rem;
+      padding: var(--padding-standard);
 
       i {
-         margin-right: 0.25rem;
+         margin-right: var(--padding-standard);
       }
 
       .label {
          @include border-right;
-         padding-right: 0.25rem;
-         margin-right: 0.25rem;
+         padding-right: var(--padding-standard);
+         margin-right: var(--padding-standard);
       }
    }
 </style>

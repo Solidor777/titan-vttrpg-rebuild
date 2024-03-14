@@ -8,7 +8,7 @@
    import DocumentIntegerInput from '../../../../documents/components/input/DocumentIntegerInput.svelte';
 
    // Get Context variables
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <!--Header-->
@@ -80,7 +80,7 @@
       @include flex-group-left;
       @include panel-1;
       width: 100%;
-      padding: 0.25rem 0.5rem;
+      padding: var(--padding-standard) var(--padding-large);
 
       .portrait {
          width: 5rem;
@@ -91,7 +91,7 @@
          @include flex-column;
          @include flex-group-top-left;
          width: calc(100% - 5.5rem);
-         margin-left: 0.5rem;
+         margin-left: var(--padding-large);
 
          .name {
             @include flex-row;
@@ -102,7 +102,7 @@
          .secondary-stats {
             @include flex-row;
             @include flex-group-left;
-            margin-top: 0.5rem;
+            margin-top: var(--padding-large);
             width: 100%;
 
             .stat {
@@ -111,8 +111,8 @@
 
                &:not(:first-child) {
                   @include border-left;
-                  margin-left: 0.5rem;
-                  padding-left: 0.5rem;
+                  margin-left: var(--padding-large);
+                  padding-left: var(--padding-large);
                }
 
                &.text {
@@ -128,7 +128,7 @@
                   @include flex-row;
                   @include flex-group-left;
                   font-weight: bold;
-                  margin-right: 0.25rem;
+                  margin-right: var(--padding-standard);
                }
 
                .input {

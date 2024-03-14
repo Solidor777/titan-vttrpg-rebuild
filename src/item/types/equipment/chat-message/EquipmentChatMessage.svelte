@@ -9,7 +9,7 @@
    import Tag from '~/helpers/svelte-components/tag/Tag.svelte';
 
    // Chat context reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
    const item = $document.flags.titan;
 </script>
 
@@ -78,15 +78,15 @@
             width: 100%;
 
             &:not(.rich-text) {
-               padding-bottom: 0.5rem;
+               padding-bottom: var(--padding-large);
 
                &:not(.tags) {
-                  padding-top: 0.5rem;
+                  padding-top: var(--padding-large);
                }
             }
 
             &:last-child {
-               padding-bottom: 0.25rem;
+               padding-bottom: var(--padding-standard);
             }
 
             &:not(:first-child) {

@@ -19,9 +19,9 @@
    export let elementRoot;
    export let document = void 0;
    export let applicationState = void 0;
-   setContext('DocumentStore', document);
-   setContext('ApplicationStateStore', applicationState);
-   const appState = getContext('ApplicationStateStore');
+   setContext('document', document);
+   setContext('applicationState', applicationState);
+   const appState = getContext('applicationState');
 
    // Tabs
    const tabs = [
@@ -69,9 +69,7 @@
       <!--Sheet Body-->
       <div class="body">
          <!--Header -->
-         <div class="header">
-            <PlayerSheetHeader />
-         </div>
+         <PlayerSheetHeader />
 
          <!--Tab Content-->
          <div class="tabs">
@@ -88,30 +86,20 @@
       @include flex-row;
       @include font-size-normal;
       display: flex;
-      flex: 1;
+      flex-grow: 1;
 
       .sidebar {
-         @include flex-row;
-         width: 13rem;
          min-width: 13rem;
-         margin-right: 0.5rem;
+         margin-right: var(--padding-large);
       }
 
       .body {
-         display: flex;
-         flex: 1;
          @include flex-column;
-
-         .header {
-            @include flex-column;
-            width: 100%;
-         }
+         flex-grow: 1;
 
          .tabs {
-            @include flex-column;
-            margin-top: 0.5rem;
-            height: 100%;
-            width: 100%;
+            margin-top: var(--padding-large);
+            flex-grow: 1;
          }
       }
    }

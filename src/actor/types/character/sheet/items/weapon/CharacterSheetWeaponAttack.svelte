@@ -11,7 +11,7 @@
    import IconTag from '~/helpers/svelte-components/tag/IconTag.svelte';
 
    // Context references
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    // Reference to the weapon id
    export let item = void 0;
@@ -236,7 +236,7 @@
          }
 
          i {
-            margin-right: 0.25rem;
+            margin-right: var(--padding-standard);
          }
       }
 

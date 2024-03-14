@@ -7,8 +7,8 @@
    import SpellSheetSidebarCastingCheck from './SpellSheetSidebarCastingCheck.svelte';
 
    // Application statee reference
-   const appState = getContext('ApplicationStateStore');
-   const document = getContext('DocumentStore');
+   const appState = getContext('applicationState');
+   const document = getContext('document');
 </script>
 
 <div class="sidebar">
@@ -41,14 +41,14 @@
       @include panel-2;
       width: 100%;
       height: 100%;
-      padding-bottom: 0.25rem;
+      padding-bottom: var(--padding-standard);
 
       .section {
          @include flex-column;
          @include flex-group-top;
 
          &:not(:first-child) {
-            margin-top: 0.5rem;
+            margin-top: var(--padding-large);
          }
 
          &:not(:first-child) {

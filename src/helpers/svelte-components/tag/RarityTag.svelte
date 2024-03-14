@@ -17,7 +17,7 @@
       @include border;
       @include label;
       @include rarity-colors;
-      padding: 0.25rem;
+      padding: var(--padding-standard);
       font-weight: bold;
    }
 </style>

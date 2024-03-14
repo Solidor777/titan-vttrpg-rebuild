@@ -3,7 +3,7 @@
    import IconButton from '~/helpers/svelte-components/button/IconButton.svelte';
    import recalculateCheckResults from './RecalculateCheckResults';
 
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
    async function resetExpertise() {
       // Remove the expertise from the dice
       $document.flags.titan.results.dice.forEach((dice) => {

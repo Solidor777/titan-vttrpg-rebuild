@@ -7,7 +7,7 @@
    export let idx = void 0;
 
    // Chat context
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    $: aspect = $document.flags.titan.results.scalingAspect[idx];
    $: aspectCost = aspect.scalingCost ?? aspect.cost ?? 0;
@@ -181,16 +181,16 @@
          width: 100%;
          flex-wrap: wrap;
          font-weight: bold;
-         margin-right: 0.5rem;
+         margin-right: var(--padding-large);
 
          .label-inner {
             @include flex-row;
             @include flex-group-center;
             height: 100%;
-            margin-bottom: 0.25rem;
+            margin-bottom: var(--padding-standard);
 
             i {
-               margin-right: 0.25rem;
+               margin-right: var(--padding-standard);
             }
          }
       }
@@ -206,7 +206,7 @@
             height: 2rem;
 
             &:not(:first-child) {
-               margin-left: 0.25rem;
+               margin-left: var(--padding-standard);
             }
 
             .button-inner {

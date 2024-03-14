@@ -7,7 +7,7 @@
    import SpellSheetStandardAspectSettings from './SpellSheetStandardAspectSettings.svelte';
 
    // Setup context variables
-   const appState = getContext('ApplicationStateStore');
+   const appState = getContext('applicationState');
 
    // Aspect Options
    const aspectOptions = foundry.utils.deepClone(SpellAspects);
@@ -87,7 +87,7 @@
                @include flex-row;
                @include flex-group-center;
                width: 100%;
-               margin-top: 0.5rem;
+               margin-top: var(--padding-large);
             }
          }
       }

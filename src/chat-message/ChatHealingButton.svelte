@@ -8,7 +8,7 @@
    export let healing = void 0;
 
    // Document reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <!--Apply healing button-->

@@ -11,7 +11,7 @@
    const application = getContext('#external').application;
 
    // Get the contained document
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    let src = getProperty($document, path);
    function onEditImage() {

@@ -8,8 +8,8 @@
    import IconButton from '~/helpers/svelte-components/button/IconButton.svelte';
 
    // Document reference
-   const document = getContext('DocumentStore');
-   const appState = getContext('ApplicationStateStore');
+   const document = getContext('document');
+   const appState = getContext('applicationState');
 
    // Initialize expanded state
    $document.system.check.forEach((entry, idx) => {
@@ -155,7 +155,7 @@
 
          &:not(:first-child) {
             @include border-top;
-            margin-top: 0.5rem;
+            margin-top: var(--padding-large);
          }
 
          .header {
@@ -165,7 +165,7 @@
             @include attribute-colors;
             @include label;
             width: 100%;
-            padding: 0.25rem;
+            padding: var(--padding-standard);
 
             .label {
                @include flex-row;
@@ -186,7 +186,7 @@
                   i {
                      @include flex-row;
                      @include flex-group-center;
-                     margin-right: 0.25rem;
+                     margin-right: var(--padding-standard);
                   }
                }
 
@@ -198,7 +198,7 @@
             }
 
             .value {
-               margin-top: 0.25rem;
+               margin-top: var(--padding-standard);
             }
          }
 
@@ -207,20 +207,21 @@
             @include flex-group-center;
             @include border-bottom-sides;
             @include panel-3;
-            width: calc(100% - 0.5rem);
+            width: calc(100% - var(--padding-large));
             flex-wrap: wrap;
-            padding: 0 0.5rem 0.5rem 0.5rem;
+            padding: 0 var(--padding-large) var(--padding-large)
+               var(--padding-large);
 
             .stat {
                @include flex-row;
                @include flex-group-center;
-               margin-top: 0.5rem;
+               margin-top: var(--padding-large);
             }
 
             .labeled-stat {
                @include flex-column;
                @include flex-group-top;
-               margin-top: 0.5rem;
+               margin-top: var(--padding-large);
 
                .label {
                   @include flex-row;
@@ -232,7 +233,7 @@
                .value {
                   @include flex-row;
                   @include flex-group-center;
-                  margin-top: 0.25rem;
+                  margin-top: var(--padding-standard);
                }
             }
          }

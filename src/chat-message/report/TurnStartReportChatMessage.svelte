@@ -12,7 +12,7 @@
    import RichText from '../../helpers/svelte-components/RichText.svelte';
 
    // Document reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
    const chatContext = $document.flags.titan;
 </script>
 
@@ -161,22 +161,22 @@
       font-weight: bold;
 
       .tag {
-         margin-top: 0.5rem;
+         margin-top: var(--padding-large);
       }
 
       .section {
          @include flex-row;
          @include flex-group-center;
-         margin-top: 0.5rem;
+         margin-top: var(--padding-large);
          flex-wrap: wrap;
-         padding-bottom: 0.5rem;
+         padding-bottom: var(--padding-large);
 
          &:not(:last-child) {
             @include border-bottom;
          }
 
          .fas {
-            margin-right: 0.25rem;
+            margin-right: var(--padding-standard);
          }
       }
 
@@ -188,8 +188,8 @@
          .message {
             @include panel-1;
             @include border;
-            margin-top: 0.5rem;
-            padding: 0.25rem;
+            margin-top: var(--padding-large);
+            padding: var(--padding-standard);
          }
       }
 
@@ -197,7 +197,7 @@
          @include flex-row;
          @include flex-group-center;
          width: 100%;
-         margin-top: 0.5rem;
+         margin-top: var(--padding-large);
       }
    }
 </style>

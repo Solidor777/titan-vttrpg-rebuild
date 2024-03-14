@@ -6,7 +6,7 @@
    import WeaponSheetItemDescriptionTab from './WeaponSheetItemDescriptionTab.svelte';
 
    // Setup context variables
-   const appState = getContext('ApplicationStateStore');
+   const appState = getContext('applicationState');
 
    // Tabs
    const tabs = [

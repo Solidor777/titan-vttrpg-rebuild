@@ -11,8 +11,8 @@
    import IconStatTag from '~/helpers/svelte-components/tag/IconStatTag.svelte';
 
    // Setup context variables
-   const document = getContext('DocumentStore');
-   const appState = getContext('ApplicationStateStore');
+   const document = getContext('document');
+   const appState = getContext('applicationState');
    const traitDescriptions = ATTACK_TRAIT_DESCRIPTIONS;
 
    // Initialize expanded state
@@ -159,7 +159,7 @@
 
          &:not(:first-child) {
             @include border-top;
-            margin-top: 0.5rem;
+            margin-top: var(--padding-large);
          }
 
          .header {
@@ -169,7 +169,7 @@
             @include panel-1;
             font-weight: bold;
             width: 100%;
-            padding: 0.25rem;
+            padding: var(--padding-standard);
 
             .label {
                @include flex-row;
@@ -184,7 +184,7 @@
                i {
                   @include flex-row;
                   @include flex-group-center;
-                  margin-right: 0.25rem;
+                  margin-right: var(--padding-standard);
                }
             }
 
@@ -201,12 +201,14 @@
             @include border-bottom-sides;
             @include panel-3;
             @include font-size-small;
-            width: calc(100% - 0.5rem);
+            width: calc(100% - var(--padding-large));
             flex-wrap: wrap;
-            padding: 0 0.25rem 0.5rem 0.25rem;
+            padding: 0 var(--padding-standard) var(--padding-large)
+               var(--padding-standard);
 
             .stat {
-               margin: 0.5rem 0.25rem 0 0.25rem;
+               margin: var(--padding-large) var(--padding-standard) 0
+                  var(--padding-standard);
             }
          }
       }

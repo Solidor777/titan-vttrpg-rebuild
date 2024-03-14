@@ -1,7 +1,7 @@
 <script>
    import { getContext } from 'svelte';
    import { TJSProseMirror } from '@typhonjs-fvtt/svelte-standard/component';
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
    export let value = void 0;
 </script>
 

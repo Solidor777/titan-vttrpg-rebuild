@@ -8,7 +8,7 @@
    import ChatOverkillDamageButton from '../ChatOverkillDamageButton.svelte';
 
    // Document reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
    const chatContext = $document.flags.titan;
 </script>
 
@@ -109,10 +109,10 @@
          @include flex-row;
          @include flex-group-center;
          flex-wrap: wrap;
-         padding-bottom: 0.5rem;
+         padding-bottom: var(--padding-large);
 
          &:not(.tags) {
-            margin-top: 0.5rem;
+            margin-top: var(--padding-large);
          }
 
          &:not(:last-child) {

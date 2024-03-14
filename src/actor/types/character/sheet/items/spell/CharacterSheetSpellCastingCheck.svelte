@@ -8,7 +8,7 @@
    export let item = void 0;
 
    // Context references
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    // Calculate dice pool
    let dicePool = 0;

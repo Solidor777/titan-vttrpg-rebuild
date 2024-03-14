@@ -10,7 +10,7 @@
    import ChatEffectTagCustom from '~/chat-message/ChatEffectTagCustom.svelte';
 
    // Document reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <div class="effects">

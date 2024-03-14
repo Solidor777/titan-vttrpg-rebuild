@@ -5,7 +5,7 @@
    import CheckChatResetExpertiseButton from './CheckChatResetExpertiseButton.svelte';
 
    // Document reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <div class="results">
@@ -154,7 +154,7 @@
       @include font-size-normal;
       font-weight: bold;
       width: 100%;
-      padding: 0.5rem;
+      padding: var(--padding-large);
 
       .result {
          @include flex-row;
@@ -175,23 +175,23 @@
          @include flex-row;
          @include flex-group-center;
          &:not(:first-child) {
-            margin-top: 0.25rem;
+            margin-top: var(--padding-standard);
          }
 
          i {
-            margin-right: 0.25rem;
+            margin-right: var(--padding-standard);
          }
 
          .button {
-            margin-left: 0.25rem;
+            margin-left: var(--padding-standard);
             --icon-button-radius: 1.5rem;
             --icon-button-font-size: 0.9rem;
          }
 
          .border-right {
             @include border-right;
-            margin-right: 0.5rem;
-            padding-right: 0.5rem;
+            margin-right: var(--padding-large);
+            padding-right: var(--padding-large);
          }
       }
    }

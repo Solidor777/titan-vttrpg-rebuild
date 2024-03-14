@@ -12,7 +12,7 @@
    import ItemCheckChatItemTraits from '~/check/types/item-check/ItemCheckChatItemTraits.svelte';
 
    // Document reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    // Scaling aspects list
    $: scalingAspect =
@@ -114,7 +114,7 @@
          width: 100%;
 
          &:not(:first-child):not(.tags) {
-            margin-top: 0.5rem;
+            margin-top: var(--padding-large);
          }
       }
    }

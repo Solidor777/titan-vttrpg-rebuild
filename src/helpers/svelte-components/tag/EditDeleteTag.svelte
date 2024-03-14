@@ -51,12 +51,12 @@
       @include border;
       @include label;
       font-weight: bold;
-      padding: 0.25rem;
+      padding: var(--padding-standard);
 
       a {
          @include border-left;
-         margin-left: 0.25rem;
-         padding-left: 0.25rem;
+         margin-left: var(--padding-standard);
+         padding-left: var(--padding-standard);
       }
    }
 </style>

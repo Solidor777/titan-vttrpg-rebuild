@@ -43,22 +43,22 @@
       @include font-size-small;
       @include effect-initiative;
       font-weight: bold;
-      padding: 0.25rem;
+      padding: var(--padding-standard);
 
       .time {
          @include border-left;
-         margin-left: 0.25rem;
-         padding-left: 0.25rem;
+         margin-left: var(--padding-standard);
+         padding-left: var(--padding-standard);
       }
 
       img {
          width: 1.5rem;
          border: none;
-         margin-right: 0.25rem;
+         margin-right: var(--padding-standard);
       }
 
       i {
-         margin-left: 0.25rem;
+         margin-left: var(--padding-standard);
       }
    }
 </style>

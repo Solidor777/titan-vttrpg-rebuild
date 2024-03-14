@@ -2,7 +2,7 @@
    import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
    import { getContext } from 'svelte';
    // Reference to the docuement
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    // Check
    export let check = {
@@ -78,10 +78,10 @@
          @include font-size-normal;
          height: 100%;
          line-height: normal;
-         padding: 0.25rem;
+         padding: var(--padding-standard);
 
          i {
-            margin-right: 0.25rem;
+            margin-right: var(--padding-standard);
          }
 
          .stat {
@@ -89,8 +89,8 @@
             @include flex-group-center;
             @include border-left;
             @include border-color-button;
-            padding-left: 0.25rem;
-            margin-left: 0.25rem;
+            padding-left: var(--padding-standard);
+            margin-left: var(--padding-standard);
          }
       }
    }

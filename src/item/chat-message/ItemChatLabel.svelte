@@ -15,7 +15,7 @@
       @include flex-group-left;
       @include border;
       @include panel-1;
-      padding: 0.25rem;
+      padding: var(--padding-standard);
 
       img {
          border: none;
@@ -27,7 +27,7 @@
          @include flex-row;
          @include flex-group-center;
          @include font-size-large;
-         margin: 0 0.25rem;
+         margin: 0 var(--padding-standard);
          height: 100%;
          font-weight: bold;
       }

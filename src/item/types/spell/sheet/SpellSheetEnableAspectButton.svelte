@@ -52,12 +52,12 @@
       .aspect-label {
          @include flex-row;
          @include flex-group-left;
-         margin-left: 0.5rem;
+         margin-left: var(--padding-large);
 
          .icon {
             @include flex-row;
             @include flex-group-right;
-            margin-left: 0.5rem;
+            margin-left: var(--padding-large);
          }
       }
 
@@ -65,7 +65,7 @@
          @include flex-row;
          @include flex-group-right;
          font-weight: bold;
-         margin-right: 0.5rem;
+         margin-right: var(--padding-large);
 
          .value {
             @include flex-row;
@@ -75,7 +75,7 @@
 
             height: 1.5rem;
             width: 1.5rem;
-            margin-left: 0.25rem;
+            margin-left: var(--padding-standard);
          }
       }
    }

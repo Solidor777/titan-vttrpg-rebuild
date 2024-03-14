@@ -8,7 +8,7 @@
    import DocumentIntegerInput from '~/documents/components/input/DocumentIntegerInput.svelte';
 
    // Setup context variables
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    export let operationOptions = void 0;
    export let idx = void 0;
@@ -82,11 +82,12 @@
          @include flex-group-left;
          flex-wrap: wrap;
          width: 100%;
-         margin-bottom: 0.5rem;
+         margin-bottom: var(--padding-large);
 
          .field {
             @include flex-row;
-            margin: 0.5rem 0.25rem 0 0.25rem;
+            margin: var(--padding-large) var(--padding-standard) 0
+               var(--padding-standard);
 
             &.select {
                @include flex-group-left;
@@ -103,7 +104,7 @@
          @include flex-column;
          @include flex-group-top;
          height: 100%;
-         margin: 0.5rem 0.25rem 0 0;
+         margin: var(--padding-large) var(--padding-standard) 0 0;
       }
    }
 </style>

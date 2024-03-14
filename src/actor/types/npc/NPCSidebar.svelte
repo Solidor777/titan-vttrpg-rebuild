@@ -43,7 +43,7 @@
       @include panel-1;
       height: 100%;
       width: 100%;
-      padding: 0.25rem;
+      padding: var(--padding-standard);
 
       .section {
          @include flex-column;
@@ -52,8 +52,8 @@
 
          &:not(:first-child) {
             @include border-top;
-            margin-top: 0.25rem;
-            padding-top: 0.25rem;
+            margin-top: var(--padding-standard);
+            padding-top: var(--padding-standard);
          }
       }
    }

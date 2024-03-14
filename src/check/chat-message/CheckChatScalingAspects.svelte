@@ -3,7 +3,7 @@
    import CheckChatScalingAspect from './CheckChatScalingAspect.svelte';
 
    // Document reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <div class="aspects">
@@ -23,7 +23,7 @@
       @include flex-group-top;
       @include border;
       @include label;
-      padding: 0.5rem;
+      padding: var(--padding-large);
       width: 100%;
 
       .aspect {
@@ -34,8 +34,8 @@
 
          &:not(:first-child) {
             @include border-top;
-            margin-top: 0.25rem;
-            padding-top: 0.25rem;
+            margin-top: var(--padding-standard);
+            padding-top: var(--padding-standard);
          }
       }
    }

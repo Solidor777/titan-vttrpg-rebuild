@@ -33,8 +33,8 @@
    export let documentStore = void 0;
 
    // Setup
-   setContext('DocumentStore', documentStore);
-   const document = getContext('DocumentStore');
+   setContext('document', documentStore);
+   const document = getContext('document');
 
    // Selector for the chat message type
    function selectComponent() {

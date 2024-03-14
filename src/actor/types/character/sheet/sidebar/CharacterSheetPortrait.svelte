@@ -5,7 +5,7 @@
    import DocumentImagePicker from '~/documents/components/DocumentImagePicker.svelte';
    import IconButton from '~/helpers/svelte-components/button/IconButton.svelte';
 
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <div class="portrait">

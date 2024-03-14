@@ -10,7 +10,7 @@
    import CharacterSheetInspiration from '~/actor/types/character/sheet/header/CharacterSheetInspiration.svelte';
 
    // Setup context variables
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <div class="header">
@@ -70,10 +70,7 @@
    .header {
       @include panel-1;
       @include border;
-      @include flex-column;
-      @include flex-group-top;
-      width: 100%;
-      padding: 0.25rem;
+      padding: var(--padding-standard);
 
       .main-header {
          @include flex-row;
@@ -84,19 +81,19 @@
             @include flex-row;
             @include flex-group-left;
             flex: auto;
-            margin-right: 0.25rem;
+            margin-right: var(--padding-standard);
          }
 
          .inspiration {
             @include flex-row;
             @include flex-group-center;
-            margin-right: 0.25rem;
+            margin-right: var(--padding-standard);
          }
 
          .xp {
             @include flex-row;
             @include flex-group-center;
-            margin-right: 0.25rem;
+            margin-right: var(--padding-standard);
 
             .available {
                @include flex-row;
@@ -107,13 +104,13 @@
 
             .symbol {
                @include flex-row;
-               margin: 0.25rem;
+               margin: var(--padding-standard);
             }
 
             .earned {
                @include flex-row;
                @include flex-group-center;
-               margin-right: 0.5rem;
+               margin-right: var(--padding-large);
                width: 2.5rem;
             }
 
@@ -130,8 +127,8 @@
          @include flex-group-center;
          @include border-top;
          width: 100%;
-         margin-top: 0.25rem;
-         padding-top: 0.25rem;
+         margin-top: var(--padding-standard);
+         padding-top: var(--padding-standard);
 
          .section {
             @include flex-row;
@@ -140,8 +137,8 @@
 
             &:not(:first-child) {
                @include border-left;
-               margin-left: 0.25rem;
-               padding-left: 0.25rem;
+               margin-left: var(--padding-standard);
+               padding-left: var(--padding-standard);
             }
          }
       }

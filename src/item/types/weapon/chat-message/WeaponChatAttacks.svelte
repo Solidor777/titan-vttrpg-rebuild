@@ -120,8 +120,8 @@
 
          &:not(:first-child) {
             @include border-top;
-            margin-top: 0.5rem;
-            padding-top: 0.5rem;
+            margin-top: var(--padding-large);
+            padding-top: var(--padding-large);
          }
 
          .row {

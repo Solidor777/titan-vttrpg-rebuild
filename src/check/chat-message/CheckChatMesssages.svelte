@@ -3,7 +3,7 @@
    import RichText from '../../helpers/svelte-components/RichText.svelte';
 
    // Document reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <div class="messages">
@@ -26,10 +26,10 @@
       @include border;
       @include panel-1;
       @include flex-row;
-      padding: 0.25rem;
+      padding: var(--padding-standard);
 
       &:not(:first-child) {
-         margin-top: 0.5rem;
+         margin-top: var(--padding-large);
       }
    }
 </style>

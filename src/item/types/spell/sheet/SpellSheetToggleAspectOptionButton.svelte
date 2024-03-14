@@ -6,7 +6,7 @@
    export let label = void 0;
 
    // Setup
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    // Copy of the document data
    let data;
@@ -38,9 +38,9 @@
 
    .toggle {
       --button-font-size: var(--font-size-small);
-      --button-padding: 0 0.25rem;
+      --button-padding: 0 var(--padding-standard);
       --button-border-radius: 10px;
-      margin: 0.25rem;
+      margin: var(--padding-standard);
 
       &.enabled-true {
          --button-background: var(--active-background);

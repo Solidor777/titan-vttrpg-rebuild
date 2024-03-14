@@ -12,7 +12,7 @@
    export let resourceTooltip = void 0;
 
    // Setup context variables
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    // Calculate the tooltip for the max value
    function getTotalValueTooltip(
@@ -131,7 +131,7 @@
          height: 100%;
 
          &:not(:first-child) {
-            margin-top: 0.25rem;
+            margin-top: var(--padding-standard);
          }
 
          .label {
@@ -154,7 +154,7 @@
 
          .symbol {
             @include flex-row;
-            margin-right: 0.25rem;
+            margin-right: var(--padding-standard);
          }
 
          .value {

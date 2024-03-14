@@ -74,11 +74,11 @@
          --button-border-radius: 10px;
 
          &:not(:first-child) {
-            padding-left: 0.25rem;
+            padding-left: var(--padding-standard);
          }
 
          &:not(:last-child) {
-            padding-right: 0.25rem;
+            padding-right: var(--padding-standard);
          }
       }
 

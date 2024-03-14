@@ -32,8 +32,8 @@
 
 <style lang="scss">
    .meter {
-      margin-left: 0.25rem;
-      margin-right: 0.25rem;
+      margin-left: var(--padding-standard);
+      margin-right: var(--padding-standard);
       display: flex;
       height: 1.5rem;
       width: 100%;
@@ -47,7 +47,8 @@
          height: 100%;
          border-radius: 20px;
          background: var(--meter-color);
-         box-shadow: inset 0 2px 9px var(--meter-shadow-1),
+         box-shadow:
+            inset 0 2px 9px var(--meter-shadow-1),
             inset 0 -2px 6px var(--meter-shadow-2);
          overflow: hidden;
       }

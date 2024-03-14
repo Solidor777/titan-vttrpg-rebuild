@@ -7,7 +7,7 @@
    export let idx = void 0;
 
    // Document reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    function getLabel(base, expertiseApplied) {
       if (expertiseApplied > 0) {
@@ -49,7 +49,7 @@
 
          // Recalculate the results
          $document.flags.titan.results = recalculateCheckResults(
-            $document.flags.titan
+            $document.flags.titan,
          );
 
          // Update the document
@@ -65,7 +65,7 @@
 
    $: label = getLabel(
       $document.flags.titan.results.dice[idx].base,
-      $document.flags.titan.results.dice[idx].expertiseApplied
+      $document.flags.titan.results.dice[idx].expertiseApplied,
    );
    $: dieClass = getDieClass($document.flags.titan.results.dice[idx].final);
    $: disabled =
@@ -96,7 +96,7 @@
       @include flex-group-center;
       @include font-size-large;
       @include label;
-      padding: 0.25rem;
+      padding: var(--padding-standard);
       font-weight: bold;
       height: 2.5rem;
       min-width: 2.5rem;

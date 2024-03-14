@@ -8,7 +8,7 @@
    import AttributeTag from '~/helpers/svelte-components/tag/AttributeTag.svelte';
 
    // Application statee reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
    const labelIcons = {
       damage: 'fas fa-burst',
       healing: 'fas fa-heart',
@@ -140,7 +140,7 @@
       @include flex-group-top;
 
       width: 100%;
-      margin: 0.25rem 0;
+      margin: var(--padding-standard) 0;
 
       .label {
          @include flex-row;
@@ -149,7 +149,7 @@
          font-weight: bold;
 
          i {
-            margin-right: 0.25rem;
+            margin-right: var(--padding-standard);
          }
       }
 
@@ -169,7 +169,7 @@
          @include flex-column;
          @include flex-group-top;
          @include font-size-small;
-         margin-top: 0.5rem;
+         margin-top: var(--padding-large);
 
          .label {
             @include flex-row;
@@ -180,7 +180,7 @@
          .value {
             @include flex-row;
             @include flex-group-center;
-            margin-top: 0.25rem;
+            margin-top: var(--padding-standard);
          }
       }
    }

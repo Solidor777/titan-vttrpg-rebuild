@@ -8,8 +8,8 @@
    import SpellSheetCustomAspectSettings from './SpellSheetCustomAspectSettings.svelte';
 
    // Setup context variables
-   const document = getContext('DocumentStore');
-   const appState = getContext('ApplicationStateStore');
+   const document = getContext('document');
+   const appState = getContext('applicationState');
 
    // Initialize expanded state
    $document.system.customAspect.forEach((entry, idx) => {
@@ -111,7 +111,7 @@
 
             li {
                width: 100%;
-               margin-top: 0.5rem;
+               margin-top: var(--padding-large);
             }
          }
 
@@ -119,14 +119,14 @@
             @include flex-row;
             @include flex-group-center;
             width: 100%;
-            margin-top: 0.5rem;
+            margin-top: var(--padding-large);
 
             .button-content {
                @include flex-row;
                @include flex-group-center;
 
                i {
-                  margin-right: 0.25rem;
+                  margin-right: var(--padding-standard);
                }
             }
          }

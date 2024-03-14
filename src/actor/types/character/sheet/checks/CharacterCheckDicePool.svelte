@@ -6,7 +6,7 @@
    export let skill = void 0;
 
    // Reference to the docuement
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <!--Dice Pool-->
@@ -32,10 +32,10 @@
       @include flex-group-center;
       @include border;
       @include attribute-colors;
-      padding: 0.25rem;
+      padding: var(--padding-standard);
 
       .label {
-         margin-right: 0.25rem;
+         margin-right: var(--padding-standard);
       }
    }
 </style>

@@ -2,7 +2,7 @@
    import { getContext } from 'svelte';
 
    // Document reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
    const chatContext = $document.flags.titan;
 
    export let icon = void 0;
@@ -43,7 +43,7 @@
          @include panel-1;
          @include border;
          width: 5rem;
-         margin-bottom: 0.5rem;
+         margin-bottom: var(--padding-large);
       }
 
       .label {
@@ -52,18 +52,18 @@
          @include panel-1;
          @include border;
          width: 100%;
-         padding: 0.25rem;
+         padding: var(--padding-standard);
 
          .main {
             @include flex-row;
             @include flex-group-center;
             @include font-size-large;
             width: 100%;
-            margin: 0.25rem 0 0.25rem;
+            margin: var(--padding-standard) 0 var(--padding-standard);
             flex-wrap: wrap;
 
             i {
-               margin-right: 0.25rem;
+               margin-right: var(--padding-standard);
             }
          }
 

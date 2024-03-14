@@ -1,7 +1,7 @@
 <script>
    import { getContext } from 'svelte';
    import localize from '~/utility-functions/Localize.js';
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    // Chat context reference
    const chatContext = $document.flags.titan;
@@ -32,8 +32,8 @@
          @include flex-row;
          @include flex-group-center;
          @include border;
-         margin: 0.25rem;
-         padding: 0.25rem;
+         margin: var(--padding-standard);
+         padding: var(--padding-standard);
          background: var(--label-background);
       }
    }

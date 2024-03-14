@@ -4,7 +4,7 @@
    import Tag from '~/helpers/svelte-components/tag/Tag.svelte';
 
    // Document reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <div class="stats">

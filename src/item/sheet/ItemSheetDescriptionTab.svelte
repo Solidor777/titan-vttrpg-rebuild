@@ -8,7 +8,7 @@
    export let fieldName = 'system.description';
 
    // Setup context variables
-   const appState = getContext('ApplicationStateStore');
+   const appState = getContext('applicationState');
 </script>
 
 <div class="tab">
@@ -41,7 +41,7 @@
       .description {
          @include flex-column;
          @include flex-group-top;
-         padding: 0.5rem;
+         padding: var(--padding-large);
          width: 100%;
          height: 100%;
 
@@ -55,7 +55,7 @@
          .body {
             @include flex-row;
             @include flex-group-left;
-            margin-top: 0.25rem;
+            margin-top: var(--padding-standard);
             flex-wrap: wrap;
             width: 100%;
             flex-grow: 2;

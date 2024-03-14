@@ -4,7 +4,7 @@
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import IconButton from '~/helpers/svelte-components/button/IconButton.svelte';
 
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <div class="button" use:tooltip={{ content: localize('inspiration.desc') }}>

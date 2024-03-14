@@ -46,17 +46,17 @@
          @include font-size-normal;
          height: 100%;
          line-height: normal;
-         padding: 0.25rem;
+         padding: var(--padding-standard);
 
          i {
-            margin-right: 0.25rem;
+            margin-right: var(--padding-standard);
          }
 
          .divider {
             @include border-left;
             border-color: var(--button-border-color);
-            margin-left: 0.25rem;
-            padding-left: 0.25rem;
+            margin-left: var(--padding-standard);
+            padding-left: var(--padding-standard);
          }
       }
    }

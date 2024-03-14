@@ -11,7 +11,7 @@
    export let onClick = void 0;
 
    // Setup context variables
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    // Calculate the tooltip for the max value
    function getTotalValueTooltip(
@@ -123,11 +123,11 @@
          --button-font-weight: normal;
 
          .fas {
-            margin-right: 0.25rem;
+            margin-right: var(--padding-standard);
          }
 
          .label {
-            margin-right: 0.5rem;
+            margin-right: var(--padding-large);
          }
       }
 
@@ -137,7 +137,7 @@
          height: 100%;
 
          :not(:first-child) {
-            margin-left: 0.25rem;
+            margin-left: var(--padding-standard);
          }
 
          .input {

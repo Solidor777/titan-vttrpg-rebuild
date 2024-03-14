@@ -1,7 +1,7 @@
 <script>
    import { getContext } from 'svelte';
    import DocumentTextInput from '~/documents/components/input/DocumentTextInput.svelte';
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <div class="document-name">
@@ -13,7 +13,7 @@
       width: 100%;
       height: 100%;
       --input-height: 2rem;
-      --input-padding: 0.25rem;
+      --input-padding: var(--padding-standard);
       --font-size: var(--font-size-extra-large);
    }
 </style>

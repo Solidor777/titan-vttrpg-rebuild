@@ -11,7 +11,7 @@
    export let modifierIncrement = 10;
 
    // Document reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <IntegerIncrementInput

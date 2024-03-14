@@ -10,7 +10,7 @@
    import AttackCheckChatDamageButtons from '~/check/types/attack-check/AttackCheckChatDamageButtons.svelte';
 
    // Document reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <div class="check-chat-message">
@@ -95,7 +95,7 @@
          &:not(:first-child):not(.tags):not(.rich-text):not(
                .rich-text + section
             ) {
-            margin-top: 0.5rem;
+            margin-top: var(--padding-large);
          }
       }
    }

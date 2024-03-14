@@ -2,7 +2,7 @@
    import { getContext } from 'svelte';
 
    // Setup context variables
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    export let text = void 0;
    $: displayText = TextEditor.enrichHTML(text, {
@@ -21,6 +21,6 @@
    .rich-text {
       overflow: hidden;
       text-align: left;
-      margin: 0rem 0.25rem;
+      margin: 0rem var(--padding-standard);
    }
 </style>

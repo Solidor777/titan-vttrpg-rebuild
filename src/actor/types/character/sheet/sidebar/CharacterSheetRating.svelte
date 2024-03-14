@@ -9,7 +9,7 @@
    export let icon = void 0;
 
    // Setup context variables
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    // Calculate the tooltip for the max value
    function getTotalValueTooltip(
@@ -106,7 +106,7 @@
          height: 100%;
 
          .fas {
-            margin-right: 0.25rem;
+            margin-right: var(--padding-standard);
          }
       }
 
@@ -116,7 +116,7 @@
          height: 100%;
 
          :not(:first-child) {
-            margin-left: 0.25rem;
+            margin-left: var(--padding-standard);
          }
 
          .input {

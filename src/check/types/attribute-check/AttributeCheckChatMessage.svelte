@@ -7,7 +7,7 @@
    import ChatDamageButtons from '~/chat-message/ChatDamageButtons.svelte';
 
    // Document reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <div class="check-chat-message">
@@ -59,7 +59,7 @@
          width: 100%;
 
          &:not(:first-child):not(.tags) {
-            margin-top: 0.5rem;
+            margin-top: var(--padding-large);
          }
       }
    }

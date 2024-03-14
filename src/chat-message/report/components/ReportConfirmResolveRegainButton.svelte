@@ -5,7 +5,7 @@
    import localize from '~/utility-functions/Localize.js';
 
    // Context variables
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    async function confirmRegainResolve() {
       // Get the actor

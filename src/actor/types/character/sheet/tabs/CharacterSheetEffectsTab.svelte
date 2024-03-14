@@ -9,10 +9,10 @@
    import IconButton from '~/helpers/svelte-components/button/IconButton.svelte';
 
    // Application reference
-   const appState = getContext('ApplicationStateStore');
+   const appState = getContext('applicationState');
 
    // Document reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <div class="tab">
@@ -88,7 +88,7 @@
          @include flex-group-top;
          @include border-bottom;
          @include panel-1;
-         padding: 0.25rem;
+         padding: var(--padding-standard);
          width: 100%;
 
          .row {
@@ -97,12 +97,12 @@
             width: 100%;
 
             &:not(:first-child) {
-               margin-top: 0.25rem;
+               margin-top: var(--padding-standard);
             }
 
             .label {
                font-weight: bold;
-               margin-right: 0.25rem;
+               margin-right: var(--padding-standard);
             }
 
             .input {
@@ -110,7 +110,7 @@
             }
 
             .button {
-               margin-left: 0.25rem;
+               margin-left: var(--padding-standard);
             }
          }
       }
@@ -125,7 +125,7 @@
             @include flex-column;
             @include flex-group-top;
             width: 100%;
-            margin-top: 0.5rem;
+            margin-top: var(--padding-large);
          }
       }
    }

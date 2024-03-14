@@ -6,7 +6,7 @@
    export let item = void 0;
 
    // Reference to the docuement
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <!-- svelte-ignore missing-declaration -->

@@ -15,6 +15,6 @@
       @include border;
       @include label;
       font-weight: bold;
-      padding: 0.25rem;
+      padding: var(--padding-standard);
    }
 </style>

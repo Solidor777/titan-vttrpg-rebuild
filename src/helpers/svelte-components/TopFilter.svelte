@@ -22,11 +22,11 @@
       @include panel-1;
       @include font-size-normal;
       width: 100%;
-      padding: 0.25rem;
+      padding: var(--padding-standard);
 
       .label {
          font-weight: bold;
-         margin-right: 0.25rem;
+         margin-right: var(--padding-standard);
       }
    }
 </style>

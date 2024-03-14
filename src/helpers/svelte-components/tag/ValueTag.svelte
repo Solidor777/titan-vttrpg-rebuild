@@ -21,13 +21,13 @@
       @include flex-group-center;
       @include border;
       @include label;
-      padding: 0.25rem;
+      padding: var(--padding-standard);
 
       .label {
          @include border-right;
          font-weight: bold;
-         padding-right: 0.25rem;
-         margin: 0 0.25rem;
+         padding-right: var(--padding-standard);
+         margin: 0 var(--padding-standard);
       }
    }
 </style>

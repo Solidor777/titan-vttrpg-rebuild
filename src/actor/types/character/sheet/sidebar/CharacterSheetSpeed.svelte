@@ -9,7 +9,7 @@
    export let key;
 
    // The Character Data
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    // Calculate the tooltip for the max value
    function getTotalValueTooltip(
@@ -104,7 +104,7 @@
       .label {
          @include flex-row;
          @include flex-group-center;
-         margin-left: 0.25rem;
+         margin-left: var(--padding-standard);
          height: 100%;
       }
 
@@ -126,7 +126,7 @@
          }
 
          :not(:first-child) {
-            margin-left: 0.25rem;
+            margin-left: var(--padding-standard);
          }
 
          .input {

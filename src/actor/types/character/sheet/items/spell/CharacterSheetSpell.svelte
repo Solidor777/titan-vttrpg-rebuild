@@ -18,7 +18,7 @@
    import Tag from '~/helpers/svelte-components/tag/Tag.svelte';
 
    // Reference to the docuement
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    // Reference to the weapon id
    export let id = void 0;
@@ -173,7 +173,7 @@
          @include flex-space-between;
          @include border;
          @include panel-1;
-         padding: 0.25rem;
+         padding: var(--padding-standard);
          width: 100%;
          font-weight: bold;
 
@@ -182,7 +182,7 @@
             @include flex-group-center;
 
             .button {
-               margin-left: 0.25rem;
+               margin-left: var(--padding-standard);
             }
          }
 
@@ -193,7 +193,7 @@
 
             .button {
                &:not(:first-child) {
-                  margin-left: 0.25rem;
+                  margin-left: var(--padding-standard);
                }
             }
          }
@@ -205,16 +205,16 @@
          @include panel-3;
          @include border-bottom-sides;
          width: calc(100% - 1rem);
-         padding: 0 0.25rem;
+         padding: 0 var(--padding-standard);
 
          .section {
             width: 100%;
 
             &:not(.rich-text) {
-               padding-bottom: 0.5rem;
+               padding-bottom: var(--padding-large);
 
                &:not(.tags) {
-                  padding-top: 0.5rem;
+                  padding-top: var(--padding-large);
                }
             }
 

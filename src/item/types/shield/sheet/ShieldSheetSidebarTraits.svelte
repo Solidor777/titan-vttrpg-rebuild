@@ -10,7 +10,7 @@
    import EditDeleteTag from '~/helpers/svelte-components/tag/EditDeleteTag.svelte';
 
    // Application statee reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
    const traitDescriptions = SHIELD_TRAIT_DESCRIPTIONS;
 </script>
 
@@ -97,12 +97,12 @@
          @include flex-row;
          @include flex-group-center;
 
-         margin-top: 0.5rem;
+         margin-top: var(--padding-large);
          --button-font-size: var(--font-size-small);
          --button-line-height: 1.25rem;
 
          &:not(:first-child) {
-            margin-left: 0.25rem;
+            margin-left: var(--padding-standard);
          }
 
          .button-contents {
@@ -115,7 +115,7 @@
             }
 
             i {
-               margin-right: 0.25rem;
+               margin-right: var(--padding-standard);
             }
          }
       }

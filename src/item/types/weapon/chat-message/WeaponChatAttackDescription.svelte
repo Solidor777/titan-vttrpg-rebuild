@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    // Chat context reference
    const chatContext = $document.flags.titan;
@@ -13,7 +13,7 @@
    .description {
       @include flex-row;
       @include flex-group-left;
-      padding: 0 0.5rem 0 0.5rem;
+      padding: 0 var(--padding-large) 0 var(--padding-large);
       @include font-size-normal;
       width: 100%;
    }

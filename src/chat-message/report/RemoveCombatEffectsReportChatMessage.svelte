@@ -30,12 +30,12 @@
       .message {
          @include flex-row;
          @include flex-group-center;
-         margin-top: 0.5rem;
+         margin-top: var(--padding-large);
          flex-wrap: wrap;
-         padding-bottom: 0.5rem;
+         padding-bottom: var(--padding-large);
 
          i {
-            margin-right: 0.25rem;
+            margin-right: var(--padding-standard);
          }
 
          &:not(:last-child) {

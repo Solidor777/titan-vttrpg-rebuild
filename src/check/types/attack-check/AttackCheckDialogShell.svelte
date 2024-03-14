@@ -345,8 +345,8 @@
 
          &:not(:first-child) {
             border-top: solid;
-            padding-top: 0.25rem;
-            margin-top: 0.25rem;
+            padding-top: var(--padding-standard);
+            margin-top: var(--padding-standard);
             border-width: var(--border-width);
          }
 
@@ -355,12 +355,12 @@
             font-weight: bold;
             height: 100%;
             width: 100%;
-            margin-right: 0.5rem;
+            margin-right: var(--padding-large);
          }
 
          .input {
             @include flex-group-center;
-            margin-left: 0.5rem;
+            margin-left: var(--padding-large);
             height: 100%;
             width: 100%;
             --input-height: 1.8rem;
@@ -369,21 +369,21 @@
 
          .summary {
             @include flex-group-center;
-            margin-top: 0.5rem;
+            margin-top: var(--padding-large);
             font-weight: bold;
             @include font-size-normal;
             height: 100%;
             width: 100%;
-            margin-right: 0.5rem;
+            margin-right: var(--padding-large);
          }
 
          .button {
             @include flex-row;
             width: 100%;
-            margin-top: 0.5rem;
+            margin-top: var(--padding-large);
 
             &:not(:first-child) {
-               margin-left: 0.25rem;
+               margin-left: var(--padding-standard);
             }
          }
       }

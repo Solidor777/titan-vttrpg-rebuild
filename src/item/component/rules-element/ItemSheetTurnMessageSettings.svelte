@@ -8,7 +8,7 @@
    import DocumentBoundEditorInput from '~/documents/components/input/DocumentBoundEditorInput.svelte';
 
    // Setup context variables
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    export let operationOptions = void 0;
    export let idx = void 0;
@@ -88,12 +88,13 @@
             @include flex-row;
             @include flex-group-left;
             width: 100%;
-            margin-bottom: 0.5rem;
+            margin-bottom: var(--padding-large);
             flex-wrap: wrap;
 
             .field {
                @include flex-row;
-               margin: 0.5rem 0.25rem 0 0.25rem;
+               margin: var(--padding-large) var(--padding-standard) 0
+                  var(--padding-standard);
 
                &.select {
                   @include flex-group-left;
@@ -104,13 +105,13 @@
          .delete-button {
             @include flex-column;
             @include flex-group-top;
-            margin: 0.25rem 0.25rem 0 0;
+            margin: var(--padding-standard) var(--padding-standard) 0 0;
          }
       }
 
       .message {
          @include flex-column;
-         margin-top: 0.25rem;
+         margin-top: var(--padding-standard);
          width: 100%;
          min-height: 10rem;
          height: 100%;

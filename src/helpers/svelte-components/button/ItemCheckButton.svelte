@@ -42,10 +42,10 @@
          @include font-size-normal;
          height: 100%;
          line-height: normal;
-         padding: 0.25rem;
+         padding: var(--padding-standard);
 
          i {
-            margin-right: 0.25rem;
+            margin-right: var(--padding-standard);
          }
       }
    }

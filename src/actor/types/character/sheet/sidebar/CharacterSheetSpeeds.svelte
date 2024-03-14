@@ -3,7 +3,7 @@
    import CharacterSheetSpeed from '~/actor/types/character/sheet/sidebar/CharacterSheetSpeed.svelte';
 
    // Setup context variables
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <!--Speeds-->
@@ -30,8 +30,8 @@
 
          &:not(:first-child) {
             @include border-top;
-            margin-top: 0.25rem;
-            padding-top: 0.25rem;
+            margin-top: var(--padding-standard);
+            padding-top: var(--padding-standard);
          }
       }
    }

@@ -23,7 +23,7 @@
       height: 100%;
 
       :not(:first-child) {
-         margin-left: 0.25rem;
+         margin-left: var(--padding-standard);
       }
    }
 </style>

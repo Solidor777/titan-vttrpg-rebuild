@@ -4,7 +4,7 @@
    import DocumentEditorInput from '~/documents/components/input/DocumentEditorInput.svelte';
 
    // Application reference
-   const appState = getContext('ApplicationStateStore');
+   const appState = getContext('applicationState');
 </script>
 
 <div class="tab">

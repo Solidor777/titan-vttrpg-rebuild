@@ -18,7 +18,7 @@
 
    .toggle {
       --button-font-size: var(--font-size-small);
-      --button-padding: 0.25rem;
+      --button-padding: var(--padding-standard);
       --button-line-height: normal;
       --button-border-radius: 10px;
 

@@ -3,7 +3,7 @@
    import localize from '~/utility-functions/Localize.js';
 
    // Chat context reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
    const chatContext = $document.flags.titan;
 </script>
 
@@ -20,6 +20,6 @@
       @include border;
       @include rarity-colors;
       font-weight: bold;
-      padding: 0.25rem;
+      padding: var(--padding-standard);
    }
 </style>

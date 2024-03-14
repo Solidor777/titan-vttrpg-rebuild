@@ -3,7 +3,7 @@
    import { getContext } from 'svelte';
 
    // Reference to the docuement
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    export let check = {
       attribute: 'body',
@@ -159,7 +159,7 @@
       @include flex-group-top;
       @include attribute-colors;
       @include border;
-      padding: 0.25rem;
+      padding: var(--padding-standard);
 
       .row {
          @include flex-row;
@@ -167,7 +167,7 @@
          flex-wrap: wrap;
 
          &:not(:first-child) {
-            margin-top: 0.25rem;
+            margin-top: var(--padding-standard);
          }
 
          .skill-attribute {
@@ -179,7 +179,7 @@
          .label {
             @include flex-row;
             @include flex-group-center;
-            margin-right: 0.25rem;
+            margin-right: var(--padding-standard);
             font-weight: bold;
          }
 
@@ -189,15 +189,15 @@
 
             &:not(:first-child) {
                @include border-left;
-               margin-left: 0.25rem;
-               padding-left: 0.25rem;
+               margin-left: var(--padding-standard);
+               padding-left: var(--padding-standard);
             }
 
             .label {
-               margin-right: 0.25rem;
+               margin-right: var(--padding-standard);
 
                i {
-                  margin-right: 0.25rem;
+                  margin-right: var(--padding-standard);
                }
             }
          }

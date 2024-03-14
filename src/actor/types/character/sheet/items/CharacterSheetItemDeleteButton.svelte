@@ -3,7 +3,7 @@
    import IconButton from '~/helpers/svelte-components/button/IconButton.svelte';
 
    // Reference to the document
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    // Collapsed object
    export let itemId = void 0;

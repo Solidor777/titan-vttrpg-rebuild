@@ -9,8 +9,8 @@
    import DocumentIntegerInput from '~/documents/components/input/DocumentIntegerInput.svelte';
 
    // Setup context variables
-   const document = getContext('DocumentStore');
-   const appState = getContext('ApplicationStateStore');
+   const document = getContext('document');
+   const appState = getContext('applicationState');
 
    // Idx of the custom aspect being represented
    export let idx = void 0;
@@ -165,14 +165,14 @@
          @include flex-row;
          @include flex-space-between;
          @include panel-1;
-         padding: 0.25rem;
+         padding: var(--padding-standard);
          width: 100%;
 
          .label {
             @include flex-row;
             @include flex-group-center;
             width: 100%;
-            margin: 0 0.5rem;
+            margin: 0 var(--padding-large);
             --input-font-size: var(--font-size-large);
             --input-height: 2rem;
          }
@@ -184,18 +184,18 @@
          @include border-bottom-sides;
          @include panel-3;
          width: calc(100% - 1rem);
-         padding: 0.25rem;
+         padding: var(--padding-standard);
          @include font-size-small;
 
          .row {
             @include flex-row;
             @include flex-group-center;
-            padding-top: 0.5rem;
+            padding-top: var(--padding-large);
             width: 100%;
 
             &:not(:first-child) {
                @include border-top;
-               margin-top: 0.5rem;
+               margin-top: var(--padding-large);
             }
 
             .field {
@@ -204,12 +204,12 @@
 
                &:not(:first-child) {
                   @include border-left;
-                  margin-left: 0.5rem;
-                  padding-left: 0.5rem;
+                  margin-left: var(--padding-large);
+                  padding-left: var(--padding-large);
                }
 
                i {
-                  margin-right: 0.25rem;
+                  margin-right: var(--padding-standard);
                }
 
                .label {
@@ -224,7 +224,7 @@
                   @include font-size-normal;
 
                   &:not(.checkbox) {
-                     margin-left: 0.25rem;
+                     margin-left: var(--padding-standard);
                   }
 
                   &.number {

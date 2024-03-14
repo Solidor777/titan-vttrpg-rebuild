@@ -113,14 +113,14 @@
             @include panel-2;
             width: 100%;
             height: 2.5rem;
-            margin-bottom: 0.5rem;
-            padding: 0.25rem;
+            margin-bottom: var(--padding-large);
+            padding: var(--padding-standard);
             @include font-size-normal;
             font-weight: bold;
             page-break-inside: avoid;
 
             &:not(:first-child) {
-               margin-top: 0.5rem;
+               margin-top: var(--padding-large);
             }
 
             .label {
@@ -143,7 +143,7 @@
          @include flex-row;
          @include flex-group-center;
          width: 100%;
-         margin-top: 0.25rem;
+         margin-top: var(--padding-standard);
 
          .button {
             @include flex-row;
@@ -151,7 +151,7 @@
             width: 100%;
             --button-border-radius: 10px;
             &:not(:first-child) {
-               margin-left: 0.25rem;
+               margin-left: var(--padding-standard);
             }
          }
       }

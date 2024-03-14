@@ -196,8 +196,8 @@
 
          &:not(:first-child) {
             @include border-top;
-            margin-top: 0.5rem;
-            padding-top: 0.5rem;
+            margin-top: var(--padding-large);
+            padding-top: var(--padding-large);
          }
 
          .button {
@@ -205,7 +205,7 @@
             @include flex-group-center;
 
             &:not(:first-child) {
-               margin-top: 0.5rem;
+               margin-top: var(--padding-large);
             }
          }
 
@@ -216,7 +216,8 @@
             flex-wrap: wrap;
 
             .tag {
-               margin: 0.5rem 0.25rem 0 0.25rem;
+               margin: var(--padding-large) var(--padding-standard) 0
+                  var(--padding-standard);
             }
          }
       }

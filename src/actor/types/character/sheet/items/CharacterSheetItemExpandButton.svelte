@@ -34,7 +34,7 @@
 
    .button {
       @include flex-row;
-      margin-right: 0.5rem;
+      margin-right: var(--padding-large);
 
       .button-inner {
          @include flex-row;
@@ -45,7 +45,7 @@
          .name {
             @include flex-row;
             @include flex-group-center;
-            padding: 0.25rem 0;
+            padding: var(--padding-standard) 0;
             flex-wrap: wrap;
             width: 100%;
             line-height: normal;
@@ -53,7 +53,7 @@
 
          i {
             width: 1rem;
-            margin-left: 0.25rem;
+            margin-left: var(--padding-standard);
          }
       }
    }

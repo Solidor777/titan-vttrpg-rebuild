@@ -19,7 +19,7 @@
    export let isExpandedDefault = false;
 
    // Character reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    // Currently drag hovered state
    let isDragHovering = false;
@@ -125,7 +125,7 @@
          }
 
          &:not(:first-child) {
-            margin-top: 0.5rem;
+            margin-top: var(--padding-large);
          }
       }
    }

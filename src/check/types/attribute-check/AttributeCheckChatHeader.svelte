@@ -3,7 +3,7 @@
    import { getContext } from 'svelte';
 
    // Document reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <div class="label">
@@ -31,7 +31,7 @@
          @include border;
          @include attribute-colors;
          @include font-size-large;
-         padding: 0.5rem;
+         padding: var(--padding-large);
          font-weight: bold;
       }
    }

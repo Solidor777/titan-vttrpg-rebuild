@@ -6,7 +6,7 @@
    import ReportHeader from '~/chat-message/report/components/ReportHeader.svelte';
 
    // Document reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <div class="report">
@@ -38,7 +38,7 @@
          @include flex-row;
          @include flex-group-center;
          width: 100%;
-         margin-top: 0.5rem;
+         margin-top: var(--padding-large);
       }
    }
 </style>

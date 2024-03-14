@@ -6,7 +6,7 @@
    // Item Reference
    export let item = void 0;
    // Reference to the application
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <EfxButton on:click={() => $document.typeComponent.toggleMultiAttack(item._id)}>
@@ -32,7 +32,7 @@
       height: 100%;
 
       :not(:first-child) {
-         margin-left: 0.25rem;
+         margin-left: var(--padding-standard);
       }
    }
 </style>

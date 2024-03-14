@@ -31,7 +31,7 @@
 
          &:not(:first-child) {
             @include border-top;
-            padding-top: 0.5rem;
+            padding-top: var(--padding-large);
             margin-top: 0.55rem;
          }
       }

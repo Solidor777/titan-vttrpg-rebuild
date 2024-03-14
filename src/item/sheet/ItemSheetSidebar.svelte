@@ -6,8 +6,8 @@
    import ItemSheetSidebarTraits from '~/item/sheet/ItemSheetSidebarTraits.svelte';
 
    // Application statee reference
-   const appState = getContext('ApplicationStateStore');
-   const document = getContext('DocumentStore');
+   const appState = getContext('applicationState');
+   const document = getContext('document');
 </script>
 
 <div class="sidebar">
@@ -42,7 +42,7 @@
 
          &:not(:first-child) {
             @include border-top;
-            margin-top: 0.5rem;
+            margin-top: var(--padding-large);
          }
       }
    }

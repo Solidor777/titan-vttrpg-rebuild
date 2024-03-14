@@ -74,14 +74,14 @@
          @include flex-row;
          @include flex-group-center;
          @include font-size-normal;
-         padding: 0.25rem;
+         padding: var(--padding-standard);
       }
 
       .button {
          @include flex-row;
          @include flex-group-center;
          width: 100%;
-         margin-top: 0.25rem;
+         margin-top: var(--padding-standard);
          --button-border-radius: 10px;
       }
    }

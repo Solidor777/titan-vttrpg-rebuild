@@ -57,7 +57,7 @@
          @include panel-1;
          list-style: none;
          margin: 0;
-         padding: 0.25rem;
+         padding: var(--padding-standard);
          height: 100%;
          width: 100%;
          flex: 0;

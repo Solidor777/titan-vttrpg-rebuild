@@ -8,7 +8,7 @@
    export let equipped = void 0;
 
    // Reference to the application
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <ToggleButton

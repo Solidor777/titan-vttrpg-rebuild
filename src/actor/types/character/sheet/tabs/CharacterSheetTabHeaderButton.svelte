@@ -22,7 +22,7 @@
 
    .button {
       --button-font-size: var(--font-size-small);
-      --button-padding: 0.25rem;
+      --button-padding: var(--padding-standard);
       --button-line-height: normal;
       --button-border-radius: 10px;
 
@@ -31,7 +31,7 @@
          @include flex-group-center;
 
          i {
-            margin-right: 0.25rem;
+            margin-right: var(--padding-standard);
          }
       }
    }

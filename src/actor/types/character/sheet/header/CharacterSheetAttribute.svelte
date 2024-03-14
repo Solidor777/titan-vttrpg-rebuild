@@ -10,7 +10,7 @@
    export let key;
 
    // Setup context variables
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    // Calculate the tooltip for the total value
    function getTotalValueTooltip(
@@ -127,10 +127,10 @@
          @include flex-row;
          @include flex-group-center;
          height: 100%;
-         margin-left: 0.5rem;
+         margin-left: var(--padding-large);
 
          :not(:first-child) {
-            margin-left: 0.25rem;
+            margin-left: var(--padding-standard);
          }
 
          .input {

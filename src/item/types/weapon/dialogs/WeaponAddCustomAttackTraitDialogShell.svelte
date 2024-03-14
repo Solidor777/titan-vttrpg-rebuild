@@ -115,7 +115,7 @@
             @include flex-row;
             height: 100%;
             width: 100%;
-            margin-left: 0.25rem;
+            margin-left: var(--padding-standard);
          }
       }
 
@@ -124,7 +124,7 @@
          @include flex-group-top;
          width: 100%;
          height: 100%;
-         margin-top: 0.25rem;
+         margin-top: var(--padding-standard);
 
          .label {
             @include flex-row;
@@ -137,7 +137,7 @@
             @include flex-group-top;
             width: 100%;
             height: 100%;
-            margin-top: 0.25rem;
+            margin-top: var(--padding-standard);
          }
       }
 
@@ -145,14 +145,14 @@
          @include flex-row;
          @include flex-group-center;
          width: 100%;
-         margin-top: 0.25rem;
+         margin-top: var(--padding-standard);
 
          .button {
             @include flex-row;
             width: 100%;
             --button-border-radius: 10px;
             &:not(:first-child) {
-               margin-left: 0.25rem;
+               margin-left: var(--padding-standard);
             }
          }
       }

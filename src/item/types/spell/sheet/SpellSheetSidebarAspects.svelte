@@ -5,10 +5,10 @@
    import SpellSheetSidebarStandardAspect from './SpellSheetSidebarStandardAspect.svelte';
 
    // Application statee reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    $: enabledAspects = $document.system.aspect.filter(
-      (aspect) => aspect.enabled === true
+      (aspect) => aspect.enabled === true,
    );
 </script>
 
@@ -36,19 +36,19 @@
       @include list;
       @include border-bottom-sides;
       @include panel-3;
-      width: calc(100% - 0.5rem);
-      padding: 0 0.25rem;
+      width: calc(100% - var(--padding-large));
+      padding: 0 var(--padding-standard);
 
       li {
          @include flex-column;
          @include flex-group-top;
 
          width: 100%;
-         margin: 0.25rem 0;
+         margin: var(--padding-standard) 0;
 
          &:not(:first-child) {
             @include border-top;
-            padding-top: 0.25rem;
+            padding-top: var(--padding-standard);
          }
       }
    }

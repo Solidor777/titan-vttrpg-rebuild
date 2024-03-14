@@ -11,8 +11,8 @@
    import StatTag from '~/helpers/svelte-components/tag/StatTag.svelte';
 
    // Setup context variables
-   const document = getContext('DocumentStore');
-   const appState = getContext('ApplicationStateStore');
+   const document = getContext('document');
+   const appState = getContext('applicationState');
 </script>
 
 <div class="casting-check-tab">
@@ -158,15 +158,15 @@
          @include flex-row;
          @include flex-group-center;
          width: 100%;
-         margin-top: 0.5rem;
+         margin-top: var(--padding-large);
 
          &:not(:first-child) {
             @include border-top;
-            padding-top: 0.5rem;
+            padding-top: var(--padding-large);
          }
 
          &:last-child {
-            margin-bottom: 0.5rem;
+            margin-bottom: var(--padding-large);
          }
       }
 
@@ -175,7 +175,7 @@
          @include flex-group-top;
          @include border-bottom-sides;
          @include panel-3;
-         padding: 0.25rem;
+         padding: var(--padding-standard);
          width: calc(100% - 1rem);
 
          .stat {
@@ -188,7 +188,7 @@
                @include flex-group-center;
                height: 100%;
                font-weight: bold;
-               margin-right: 0.25rem;
+               margin-right: var(--padding-standard);
                @include font-size-small;
             }
 
@@ -209,14 +209,14 @@
          .divider {
             @include border-left;
             height: 100%;
-            margin-left: 0.5rem;
-            padding-right: 0.5rem;
+            margin-left: var(--padding-large);
+            padding-right: var(--padding-large);
          }
       }
 
       .aspect-costs {
          @include flex-column;
-         padding: 0.25rem;
+         padding: var(--padding-standard);
          height: 100%;
          width: 100%;
 
@@ -224,8 +224,8 @@
             @include flex-row;
             @include flex-group-center;
             @include border-bottom;
-            padding-bottom: 0.25rem;
-            margin-top: 0.5rem;
+            padding-bottom: var(--padding-standard);
+            margin-top: var(--padding-large);
             width: 100%;
             font-weight: bold;
          }

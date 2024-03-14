@@ -17,9 +17,9 @@
    export let elementRoot;
    export let documentStore;
    export let applicationStateStore;
-   setContext('DocumentStore', documentStore);
-   setContext('ApplicationStateStore', applicationStateStore);
-   const appState = getContext('ApplicationStateStore');
+   setContext('document', documentStore);
+   setContext('applicationState', applicationStateStore);
+   const appState = getContext('applicationState');
 
    // Tabs
    const tabs = [
@@ -86,12 +86,12 @@
             @include flex-row;
             width: 13rem;
             min-width: 13rem;
-            margin: 0.5rem 0.5rem 0 0;
+            margin: var(--padding-large) var(--padding-large) 0 0;
          }
 
          .tabs {
             @include flex-row;
-            margin-top: 0.5rem;
+            margin-top: var(--padding-large);
             width: 100%;
          }
       }

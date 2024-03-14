@@ -32,7 +32,7 @@
       @include attribute-colors;
       @include border;
       @include label;
-      padding: 0.25rem;
+      padding: var(--padding-standard);
 
       .label {
          @include flex-row;
@@ -40,8 +40,8 @@
 
          &:not(:first-child) {
             @include border-left;
-            margin-left: 0.25rem;
-            padding-left: 0.25rem;
+            margin-left: var(--padding-standard);
+            padding-left: var(--padding-standard);
          }
 
          &.main {

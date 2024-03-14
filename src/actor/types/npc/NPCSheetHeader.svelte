@@ -9,7 +9,7 @@
    import DocumentTextInput from '../../../documents/components/input/DocumentTextInput.svelte';
 
    // Setup context variables
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
    const options = [
       {
          label: localize('minion'),
@@ -93,10 +93,7 @@
    .header {
       @include panel-1;
       @include border;
-      @include flex-column;
-      @include flex-group-top;
-      width: 100%;
-      padding: 0.25rem;
+      padding: var(--padding-standard);
 
       .row {
          @include flex-row;
@@ -105,8 +102,8 @@
 
          &:not(:first-child) {
             @include border-top;
-            margin-top: 0.25rem;
-            padding-top: 0.25rem;
+            margin-top: var(--padding-standard);
+            padding-top: var(--padding-standard);
          }
       }
 
@@ -119,7 +116,7 @@
             @include flex-row;
             @include flex-group-left;
             flex: auto;
-            margin-right: 0.25rem;
+            margin-right: var(--padding-standard);
          }
       }
 
@@ -129,8 +126,8 @@
 
          &:not(:first-child) {
             @include border-left;
-            margin-left: 0.25rem;
-            padding-left: 0.25rem;
+            margin-left: var(--padding-standard);
+            padding-left: var(--padding-standard);
          }
 
          .label {
@@ -138,7 +135,7 @@
          }
 
          .input {
-            margin-left: 0.25rem;
+            margin-left: var(--padding-standard);
          }
 
          &.text {
@@ -151,7 +148,7 @@
       }
 
       .tag {
-         margin-left: 0.25rem;
+         margin-left: var(--padding-standard);
       }
 
       .stats {
@@ -159,8 +156,8 @@
          @include flex-group-center;
          @include border-top;
          width: 100%;
-         margin-top: 0.25rem;
-         padding-top: 0.25rem;
+         margin-top: var(--padding-standard);
+         padding-top: var(--padding-standard);
 
          .section {
             @include flex-row;
@@ -169,8 +166,8 @@
 
             &:not(:first-child) {
                @include border-left;
-               margin-left: 0.25rem;
-               padding-left: 0.25rem;
+               margin-left: var(--padding-standard);
+               padding-left: var(--padding-standard);
             }
          }
       }

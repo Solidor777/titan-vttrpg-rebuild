@@ -4,7 +4,7 @@
    import CharacterSheetRatingButton from './CharacterSheetRatingButton.svelte';
 
    // Setup context variables
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <div class="ratings">
@@ -57,8 +57,8 @@
 
          &:not(:first-child) {
             @include border-top;
-            margin-top: 0.25rem;
-            padding-top: 0.25rem;
+            margin-top: var(--padding-standard);
+            padding-top: var(--padding-standard);
          }
       }
    }

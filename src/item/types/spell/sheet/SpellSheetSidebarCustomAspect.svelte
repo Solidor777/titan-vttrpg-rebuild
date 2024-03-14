@@ -7,7 +7,7 @@
    export let idx = 0;
 
    // Application statee reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 
    $: aspect = $document.system.customAspect[idx];
 </script>
@@ -70,7 +70,7 @@
       @include flex-group-top;
 
       width: 100%;
-      margin: 0.25rem 0;
+      margin: var(--padding-standard) 0;
 
       .aspect-label {
          @include flex-row;
@@ -79,7 +79,7 @@
          font-weight: bold;
 
          i {
-            margin-right: 0.25rem;
+            margin-right: var(--padding-standard);
          }
       }
 
@@ -87,7 +87,7 @@
          @include flex-column;
          @include flex-group-top;
          @include font-size-small;
-         margin-top: 0.5rem;
+         margin-top: var(--padding-large);
 
          .label {
             @include flex-row;
@@ -98,7 +98,7 @@
          .value {
             @include flex-row;
             @include flex-group-center;
-            margin-top: 0.25rem;
+            margin-top: var(--padding-standard);
          }
       }
    }

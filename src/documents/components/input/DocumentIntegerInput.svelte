@@ -12,7 +12,7 @@
    export let disabled = false;
 
    // Document reference
-   const document = getContext('DocumentStore');
+   const document = getContext('document');
 </script>
 
 <IntegerInput

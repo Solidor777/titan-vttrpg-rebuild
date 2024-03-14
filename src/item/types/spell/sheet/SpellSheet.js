@@ -15,14 +15,19 @@ export default class TitanSpellSheet extends TitanItemSheet {
          height: 650,
          svelte: {
             class: SpellSheetShell,
-            target: document.body
          }
       });
    }
 
-   constructor(object) {
-      super(object);
-      this.applicationState = createSpellSheetState();
+   _createReactiveState() {
+      return createSpellSheetState();
+   }
+
+   _getSheetClasses() {
+      const retVal = super._getSheetClasses();
+      retVal.push('titan-spell-sheet');
+
+      return retVal;
    }
 
    addCustomAspect() {

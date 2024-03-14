@@ -2,7 +2,7 @@
    import { getContext } from 'svelte';
    import localize from '~/utility-functions/Localize.js';
    import DocumentImagePicker from '~/documents/components/DocumentImagePicker.svelte';
-   import DocumentName from '~/documents/components/input/DocumentNameInput.svelte';
+   import DocumentNameInput from '~/documents/components/input/DocumentNameInput.svelte';
    import DocumentRaritySelect from '~/documents/components/select/DocumentRaritySelect.svelte';
    import DocumentTextInput from '~/documents/components/input/DocumentTextInput.svelte';
    import DocumentIntegerInput from '../../../../documents/components/input/DocumentIntegerInput.svelte';
@@ -21,7 +21,7 @@
    <!--Name-->
    <div class="label-stats">
       <div class="name">
-         <DocumentName />
+         <DocumentNameInput />
       </div>
 
       <!--Secondary Stats-->

@@ -20,8 +20,8 @@ export default class TitanEquipmentSheet extends TitanItemSheet {
       });
    }
 
-   constructor(object) {
-      super(object);
-      this.applicationState = createEquipmentSheetState();
+
+   _createReactiveState() {
+      return createEquipmentSheetState();
    }
 }

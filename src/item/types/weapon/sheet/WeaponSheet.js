@@ -22,9 +22,8 @@ export default class TitanWeaponSheet extends TitanItemSheet {
       });
    }
 
-   constructor(object) {
-      super(object);
-      this.applicationState = createWeaponSheetState(isHTMLBlank(object.system.attackNotes) ? 'itemDescription' : 'attackNotes');
+   _createReactiveState() {
+      return createWeaponSheetState(isHTMLBlank(object.system.attackNotes) ? 'itemDescription' : 'attackNotes');
    }
 
    addAttack() {

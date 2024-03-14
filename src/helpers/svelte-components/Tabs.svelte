@@ -14,7 +14,7 @@
 <!--List of tabs-->
 <div class="tabs">
    <!--Tab List-->
-   <div class="tabs-list">
+   <div class="tab-list">
       <!--For each tab-->
       {#each tabs as tab}
          <button
@@ -45,14 +45,11 @@
 
    .tabs {
       @include flex-column;
-      @include flex-group-top;
       @include border;
-      height: 100%;
-      width: 100%;
+      flex-grow: 1;
 
-      .tabs-list {
+      .tab-list {
          @include flex-row;
-         @include flex-space-evenly;
          @include border-bottom;
          @include panel-1;
          list-style: none;

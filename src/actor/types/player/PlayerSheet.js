@@ -30,9 +30,4 @@ export default class TitanPlayerSheet extends TitanCharacterSheet {
 
       return retVal;
    }
-
-   // Constructor for the document sheet
-   constructor(document, options = {}) {
-      super(document, options);
-   }
 }

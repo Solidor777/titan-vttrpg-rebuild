@@ -20,8 +20,7 @@ export default class TitanShieldSheet extends TitanItemSheet {
       });
    }
 
-   constructor(object) {
-      super(object);
-      this.applicationState = createShieldSheetState();
+   _createReactiveState() {
+      return createShieldSheetState();
    }
 }

@@ -20,8 +20,7 @@ export default class TitanEffectSheet extends TitanItemSheet {
       });
    }
 
-   constructor(object) {
-      super(object);
-      this.applicationState = createEffectSheetState();
+   _createReactiveState() {
+      return createEffectSheetState();
    }
 }

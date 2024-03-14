@@ -92,8 +92,8 @@ export default class TitanDocumentSheet extends SvelteApplication {
    _getHeaderButtons() {
       const buttons = super._getHeaderButtons();
 
-      // Sheet configuration button for actors not in a compendium
-      if (!this.actor.pack) {
+      // Sheet configuration button for documents not in a compendium
+      if (!this.document.pack) {
          buttons.unshift({
             class: 'configure-sheet',
             icon: 'fas fa-cog fa-fw',
@@ -107,7 +107,7 @@ export default class TitanDocumentSheet extends SvelteApplication {
 
    // Getter for the object of this sheet
    get object() {
-      return this.actor;
+      return this.document;
    }
 
    _onConfigureSheet(event) {
@@ -115,7 +115,7 @@ export default class TitanDocumentSheet extends SvelteApplication {
          event.preventDefault();
       }
       // eslint-disable-next-line no-undef
-      return new DocumentSheetConfig(this.actor, _this._getDialogOffset()).render(true);
+      return new DocumentSheetConfig(this.document, _this._getDialogOffset()).render(true);
    }
 
    _getDialogOffset() {

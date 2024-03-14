@@ -50,11 +50,11 @@ export default function onRenderChatMessage(message, html) {
       }
 
       // Add the svelte component
-      const documentStore = new TJSDocument(message);
+      const document = new TJSDocument(message);
       message._svelteComponent = new ChatMessageShell({
          target: html[0],
          props: {
-            documentStore: documentStore,
+            documentStore: document,
          }
       });
    }

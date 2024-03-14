@@ -13,8 +13,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../Styles/Mixins.scss';
-
    .filter {
       @include flex-row;
       @include flex-group-center;

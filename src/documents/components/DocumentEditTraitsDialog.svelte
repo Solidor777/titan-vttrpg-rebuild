@@ -98,7 +98,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../styles/Mixins.scss';
    .document-edit-traits-dialog {
       ol {
          list-style: none;

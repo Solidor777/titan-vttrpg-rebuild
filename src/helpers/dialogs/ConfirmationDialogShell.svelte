@@ -53,8 +53,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../Styles/Mixins.scss';
-
    .add-item-dialog {
       @include flex-column;
       @include flex-group-top;

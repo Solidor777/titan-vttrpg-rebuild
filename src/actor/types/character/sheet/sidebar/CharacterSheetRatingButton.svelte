@@ -102,8 +102,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../../Styles/Mixins.scss';
-
    .mod {
       @include flex-row;
       @include flex-space-between;

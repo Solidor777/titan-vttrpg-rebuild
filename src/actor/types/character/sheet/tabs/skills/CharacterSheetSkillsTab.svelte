@@ -43,7 +43,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../../../Styles/Mixins.scss';
    .skill-tab {
       @include flex-column;
       @include flex-group-center;

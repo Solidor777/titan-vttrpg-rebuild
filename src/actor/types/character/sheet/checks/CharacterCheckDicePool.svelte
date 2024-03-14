@@ -25,8 +25,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../../Styles/Mixins.scss';
-
    .dice-pool {
       @include flex-row;
       @include flex-group-center;

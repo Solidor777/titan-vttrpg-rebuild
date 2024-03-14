@@ -17,8 +17,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../../Styles/Mixins.scss';
-
    .mods {
       @include flex-column;
       @include flex-group-top;

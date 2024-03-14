@@ -205,8 +205,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../../../Styles/Mixins.scss';
-
    .attack {
       @include flex-column;
       @include flex-group-top;

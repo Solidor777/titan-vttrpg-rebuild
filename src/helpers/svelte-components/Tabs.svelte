@@ -41,13 +41,10 @@
 </div>
 
 <style lang="scss">
-   @import '../../styles/Mixins.scss';
-
    .tabs {
       @include flex-column;
       @include border;
       flex-grow: 1;
-      height: 100%;
 
       .tab-list {
          @include flex-row;

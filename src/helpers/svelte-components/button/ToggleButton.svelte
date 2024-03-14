@@ -15,8 +15,6 @@
 </EfxButton>
 
 <style lang="scss">
-   @import '../../../Styles/Mixins.scss';
-
    .button-inner {
       @include flex-row;
       @include flex-group-center;

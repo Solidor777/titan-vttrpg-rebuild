@@ -60,8 +60,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../Styles/Mixins.scss';
-
    .aspects {
       @include flex-row;
       @include flex-group-center;

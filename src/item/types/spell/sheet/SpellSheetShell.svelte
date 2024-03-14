@@ -73,8 +73,6 @@
 </ApplicationShell>
 
 <style lang="scss">
-   @import '../../../../Styles/Mixins.scss';
-
    .item-sheet {
       @include flex-column;
       @include font-size-normal;

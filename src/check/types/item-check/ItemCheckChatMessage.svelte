@@ -104,8 +104,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../styles/Mixins.scss';
-
    .check-chat-message {
       @include flex-column;
       @include flex-group-top;

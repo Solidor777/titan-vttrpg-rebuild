@@ -307,8 +307,6 @@
 {/if}
 
 <style lang="scss">
-   @import '../../../Styles/Mixins.scss';
-
    .element {
       @include flex-column;
       @include flex-group-top-left;

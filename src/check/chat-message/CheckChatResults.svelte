@@ -144,8 +144,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../styles/Mixins.scss';
-
    .results {
       @include border;
       @include flex-column;

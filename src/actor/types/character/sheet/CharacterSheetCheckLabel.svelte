@@ -152,8 +152,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../Styles/Mixins.scss';
-
    .check-label {
       @include flex-column;
       @include flex-group-top;

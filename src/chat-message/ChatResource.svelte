@@ -14,8 +14,6 @@
 </div>
 
 <style lang="scss">
-   @import '../styles/Mixins.scss';
-
    .resource {
       @include flex-row;
       @include flex-group-center;

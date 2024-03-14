@@ -52,8 +52,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../styles/Mixins.scss';
-
    .button {
       @include flex-row;
       @include font-size-normal;

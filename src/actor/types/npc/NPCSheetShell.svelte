@@ -82,8 +82,6 @@
 </ApplicationShell>
 
 <style lang="scss">
-   @import '../../../Styles/Mixins.scss';
-
    .actor-sheet {
       @include flex-row;
       @include font-size-normal;
@@ -91,7 +89,6 @@
       flex-grow: 1;
 
       .sidebar {
-         min-width: 13rem;
          margin-right: var(--padding-large);
       }
 

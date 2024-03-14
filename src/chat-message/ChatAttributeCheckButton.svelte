@@ -39,8 +39,6 @@
 </div>
 
 <style lang="scss">
-   @import '../styles/Mixins.scss';
-
    .opposed-check-button {
       @include flex-row;
       width: 100%;

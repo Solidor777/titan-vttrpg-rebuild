@@ -180,8 +180,6 @@
 </ol>
 
 <style lang="scss">
-   @import '../../Styles/Mixins.scss';
-
    ol {
       @include list;
       @include flex-column;

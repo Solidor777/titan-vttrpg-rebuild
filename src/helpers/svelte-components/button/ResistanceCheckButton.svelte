@@ -49,8 +49,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../styles/Mixins.scss';
-
    .button {
       @include flex-row;
       width: 100%;

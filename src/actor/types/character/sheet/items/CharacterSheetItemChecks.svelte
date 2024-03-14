@@ -22,8 +22,6 @@
 {/if}
 
 <style lang="scss">
-   @import '../../../../../Styles/Mixins.scss';
-
    .checks {
       @include flex-column;
       @include flex-group-top;

@@ -84,9 +84,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../styles/Mixins.scss';
-   @import '../../../../styles/Variables.scss';
-
    .item-chat-message {
       @include flex-column;
       @include font-size-normal;

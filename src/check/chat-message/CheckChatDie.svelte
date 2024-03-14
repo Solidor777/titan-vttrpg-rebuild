@@ -88,8 +88,6 @@
 </button>
 
 <style lang="scss">
-   @import '../../styles/Mixins.scss';
-
    button {
       @include border;
       @include flex-row;

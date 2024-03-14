@@ -75,8 +75,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../../../Styles/Mixins.scss';
-
    .check {
       @include flex-row;
       @include flex-space-evenly;

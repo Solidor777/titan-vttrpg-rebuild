@@ -93,8 +93,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../../Styles/Mixins.scss';
-
    .speed {
       @include flex-row;
       @include flex-space-between;

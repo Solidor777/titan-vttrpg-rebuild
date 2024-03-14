@@ -78,8 +78,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../Styles/Mixins.scss';
-
    .header {
       @include border;
       @include flex-row;

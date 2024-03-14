@@ -4,8 +4,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../../Styles/Mixins.scss';
-
    .item-footer {
       @include flex-row;
       @include flex-space-evenly;

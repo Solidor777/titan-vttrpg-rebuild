@@ -100,8 +100,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../../Styles/Mixins.scss';
-
    .attribute {
       @include flex-row;
       @include flex-space-evenly;

@@ -82,7 +82,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../styles/mixins.scss';
    .stats {
       @include flex-row;
       @include flex-group-center;

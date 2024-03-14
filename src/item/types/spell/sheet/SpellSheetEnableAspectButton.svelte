@@ -41,8 +41,6 @@
 </EfxButton>
 
 <style lang="scss">
-   @import '../../../../Styles/Mixins.scss';
-
    .button-content {
       @include flex-row;
       @include flex-space-between;

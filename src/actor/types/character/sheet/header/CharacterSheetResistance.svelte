@@ -100,7 +100,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../../Styles/Mixins.scss';
    .resistance {
       @include flex-row;
       @include flex-space-evenly;

@@ -65,8 +65,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../Styles/Mixins.scss';
-
    .header {
       @include panel-1;
       @include border;

@@ -104,8 +104,6 @@
 </ol>
 
 <style lang="scss">
-   @import '../../../../styles/mixins.scss';
-
    ol {
       @include list;
       @include flex-column;

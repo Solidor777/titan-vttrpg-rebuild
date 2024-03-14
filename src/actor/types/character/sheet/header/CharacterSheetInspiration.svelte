@@ -17,8 +17,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../../Styles/Mixins.scss';
-
    .button {
       --icon-button-padding: 0;
       --icon-button-font-size: 1.5rem;

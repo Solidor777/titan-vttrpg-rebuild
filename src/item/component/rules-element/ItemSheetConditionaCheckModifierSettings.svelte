@@ -337,8 +337,6 @@
 {/if}
 
 <style lang="scss">
-   @import '../../../Styles/Mixins.scss';
-
    .element {
       @include flex-row;
       @include flex-space-between;

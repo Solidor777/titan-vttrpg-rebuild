@@ -11,8 +11,6 @@
 </button>
 
 <style lang="scss">
-   @import '../../../styles/Mixins.scss';
-
    button {
       @include button;
       position: relative;

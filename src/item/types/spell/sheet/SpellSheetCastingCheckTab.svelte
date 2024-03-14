@@ -145,8 +145,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../Styles/Mixins.scss';
-
    .casting-check-tab {
       @include flex-column;
       @include flex-group-top;

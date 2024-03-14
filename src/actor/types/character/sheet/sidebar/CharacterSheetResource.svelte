@@ -115,8 +115,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../../Styles/Mixins.scss';
-
    .resource {
       @include flex-column;
       @include flex-group-top;

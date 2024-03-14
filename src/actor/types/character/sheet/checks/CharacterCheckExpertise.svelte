@@ -24,8 +24,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../../Styles/Mixins.scss';
-
    .expertise {
       @include flex-row;
       @include flex-group-center;

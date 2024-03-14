@@ -9,7 +9,6 @@
 <div class="description">Temporary Attack Notes</div>
 
 <style lang="scss">
-   @import '../../../../styles/mixins.scss';
    .description {
       @include flex-row;
       @include flex-group-left;

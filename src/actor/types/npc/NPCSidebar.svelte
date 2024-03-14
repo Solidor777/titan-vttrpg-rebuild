@@ -34,8 +34,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../Styles/Mixins.scss';
-
    .sidebar {
       @include border;
       @include flex-column;
@@ -44,6 +42,7 @@
       height: 100%;
       width: 100%;
       padding: var(--padding-standard);
+      min-width: 13rem;
 
       .section {
          @include flex-column;

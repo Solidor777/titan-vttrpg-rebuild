@@ -112,7 +112,6 @@
 </div>
 
 <style lang="scss">
-   @import '../styles/Mixins.scss';
    .effects {
       @include flex-row;
       @include flex-group-center;

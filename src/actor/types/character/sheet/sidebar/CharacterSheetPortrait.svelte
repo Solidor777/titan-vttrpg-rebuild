@@ -66,8 +66,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../../Styles/Mixins.scss';
-
    .portrait {
       @include flex-row;
       @include flex-group-center;

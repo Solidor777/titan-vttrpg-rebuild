@@ -55,8 +55,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../Styles/Mixins.scss';
-
    .item-check-button {
       @include flex-row;
 

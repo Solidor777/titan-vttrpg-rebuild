@@ -15,8 +15,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../../Styles/Mixins.scss';
-
    .resistances {
       @include flex-column;
       @include flex-group-top;

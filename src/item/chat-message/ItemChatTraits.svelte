@@ -19,7 +19,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../styles/mixins.scss';
    .traits {
       @include flex-row;
       @include flex-group-center;

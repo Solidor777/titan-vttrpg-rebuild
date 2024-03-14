@@ -17,7 +17,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../styles/mixins.scss';
    .aspects {
       @include flex-column;
       @include flex-group-top;

@@ -28,7 +28,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../Styles/Mixins.scss';
    .tab {
       @include flex-row;
       @include flex-group-top;

@@ -106,8 +106,6 @@
 {/if}
 
 <style lang="scss">
-   @import '../../../../../Styles/Mixins.scss';
-
    ol {
       @include flex-column;
       @include flex-group-top;

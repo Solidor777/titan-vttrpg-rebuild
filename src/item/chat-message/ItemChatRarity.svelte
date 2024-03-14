@@ -12,8 +12,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../styles/mixins.scss';
-
    .tag {
       @include flex-row;
       @include flex-group-center;

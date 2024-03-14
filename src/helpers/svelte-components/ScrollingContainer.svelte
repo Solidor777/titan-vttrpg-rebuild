@@ -46,8 +46,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../styles/Mixins.scss';
-
    .container {
       @include flex-column;
       position: relative;

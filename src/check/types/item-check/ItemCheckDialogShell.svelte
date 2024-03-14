@@ -228,8 +228,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../styles/Mixins.scss';
-
    .check-dialog {
       @include flex-column;
       @include font-size-normal;

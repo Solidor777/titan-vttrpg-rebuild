@@ -16,8 +16,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../Styles/Mixins.scss';
-
    .rich-text {
       overflow: hidden;
       text-align: left;

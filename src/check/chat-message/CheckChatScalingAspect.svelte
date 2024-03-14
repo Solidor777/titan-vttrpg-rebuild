@@ -165,7 +165,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../styles/mixins.scss';
    .aspect {
       @include flex-row;
       @include flex-space-between;

@@ -3,8 +3,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../styles/mixins.scss';
-
    .footer {
       @include flex-row;
       @include flex-space-evenly;

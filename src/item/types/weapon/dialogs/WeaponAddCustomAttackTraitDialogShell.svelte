@@ -94,8 +94,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../Styles/Mixins.scss';
-
    .custom-trait-dialog {
       @include font-size-normal;
       @include flex-column;

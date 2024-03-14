@@ -42,8 +42,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../../Styles/Mixins.scss';
-
    .ratings {
       @include flex-column;
       @include flex-group-top;

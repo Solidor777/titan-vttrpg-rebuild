@@ -19,8 +19,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../../Styles/Mixins.scss';
-
    .tradition {
       @include flex-row;
       @include flex-group-center;

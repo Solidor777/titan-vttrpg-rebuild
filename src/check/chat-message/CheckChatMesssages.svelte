@@ -15,8 +15,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../styles/Mixins.scss';
-
    .messages {
       @include flex-column;
       @include flex-group-top-left;

@@ -59,7 +59,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../Styles/Mixins.scss';
    .stats {
       @include flex-row;
       @include flex-group-center;

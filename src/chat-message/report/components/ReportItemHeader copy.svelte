@@ -31,8 +31,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../styles/Mixins.scss';
-
    .header {
       @include flex-column;
       @include flex-group-top;

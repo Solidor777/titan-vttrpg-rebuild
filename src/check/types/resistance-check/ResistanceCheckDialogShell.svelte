@@ -101,8 +101,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../styles/Mixins.scss';
-
    .check-dialog {
       @include flex-column;
       justify-items: flex-end;

@@ -101,8 +101,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../styles/Mixins.scss';
-
    .input {
       @include flex-row;
       @include flex-group-center;

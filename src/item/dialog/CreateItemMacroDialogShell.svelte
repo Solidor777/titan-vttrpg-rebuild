@@ -280,8 +280,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../styles/Mixins.scss';
-
    .create-macro-dialog {
       @include flex-column;
       @include font-size-normal;

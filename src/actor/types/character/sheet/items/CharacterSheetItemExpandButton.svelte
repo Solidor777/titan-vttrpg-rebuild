@@ -30,8 +30,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../../Styles/Mixins.scss';
-
    .button {
       @include flex-row;
       margin-right: var(--padding-large);

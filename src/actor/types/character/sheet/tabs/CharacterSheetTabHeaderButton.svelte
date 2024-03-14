@@ -18,8 +18,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../../Styles/Mixins.scss';
-
    .button {
       --button-font-size: var(--font-size-small);
       --button-padding: var(--padding-standard);

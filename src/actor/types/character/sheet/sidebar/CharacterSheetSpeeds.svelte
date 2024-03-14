@@ -16,8 +16,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../../Styles/Mixins.scss';
-
    .speeds {
       @include flex-column;
       @include flex-group-top;

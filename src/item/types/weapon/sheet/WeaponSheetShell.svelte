@@ -49,9 +49,7 @@
 <ApplicationShell bind:elementRoot>
    <div class="item-sheet">
       <!--Header-->
-      <div class="header">
-         <WeaponSheetHeader />
-      </div>
+      <WeaponSheetHeader />
 
       <!--Content-->
       <div class="body">
@@ -69,30 +67,21 @@
 </ApplicationShell>
 
 <style lang="scss">
-   @import '../../../../Styles/Mixins.scss';
-
    .item-sheet {
       @include flex-column;
       @include font-size-normal;
-      display: flex;
-      flex: 1;
 
       .body {
          @include flex-row;
-         height: 100%;
-         width: 100%;
+         flex-grow: 1;
 
          .sidebar {
-            @include flex-row;
-            width: 13rem;
-            min-width: 13rem;
             margin: var(--padding-large) var(--padding-large) 0 0;
          }
 
          .tabs {
-            @include flex-row;
             margin-top: var(--padding-large);
-            width: 100%;
+            flex-grow: 1;
          }
       }
    }

@@ -118,8 +118,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../styles/Mixins.scss';
-
    .report {
       @include flex-column;
       @include flex-group-top;

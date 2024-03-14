@@ -153,8 +153,6 @@
 {/if}
 
 <style lang="scss">
-   @import '../../../../Styles/Mixins.scss';
-
    .aspect {
       @include flex-column;
       @include flex-group-top;

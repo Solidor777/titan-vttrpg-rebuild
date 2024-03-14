@@ -11,7 +11,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../Styles/Mixins.scss';
    .editor {
       @include flex-row;
       @include flex-group-left;

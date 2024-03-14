@@ -71,8 +71,6 @@
 />
 
 <style lang="scss">
-   @import '../../../styles/Mixins.scss';
-
    input {
       @include input;
 

@@ -161,8 +161,6 @@
 {/if}
 
 <style lang="scss">
-   @import '../../../../../../Styles/Mixins.scss';
-
    .item {
       @include flex-column;
       @include flex-group-top;

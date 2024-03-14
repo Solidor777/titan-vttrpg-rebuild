@@ -34,8 +34,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../Styles/Mixins.scss';
-
    .sidebar {
       @include flex-column;
       @include flex-group-top;
@@ -43,6 +41,7 @@
       @include panel-2;
       width: 100%;
       height: 100%;
+      min-width: 13rem;
 
       .section {
          @include flex-column;

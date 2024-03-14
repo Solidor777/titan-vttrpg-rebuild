@@ -66,7 +66,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../styles/mixins.scss';
    .label {
       @include flex-row;
       @include flex-group-left;

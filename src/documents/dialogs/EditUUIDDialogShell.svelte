@@ -72,8 +72,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../styles/Mixins.scss';
-
    .edit-uuid-dialog {
       @include flex-column;
       @include font-size-normal;

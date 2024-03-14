@@ -49,8 +49,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../Styles/Mixins.scss';
-
    .aspect {
       @include flex-row;
       @include flex-group-center;

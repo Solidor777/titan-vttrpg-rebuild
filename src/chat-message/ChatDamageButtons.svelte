@@ -62,8 +62,6 @@
 </div>
 
 <style lang="scss">
-   @import '../styles/Mixins.scss';
-
    .damage-buttons {
       @include flex-row;
       width: 100%;

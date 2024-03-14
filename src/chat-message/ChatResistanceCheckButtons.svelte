@@ -48,8 +48,6 @@
 </div>
 
 <style lang="scss">
-   @import '../styles/Mixins.scss';
-
    .buttons {
       @include flex-row;
       @include flex-group-center;

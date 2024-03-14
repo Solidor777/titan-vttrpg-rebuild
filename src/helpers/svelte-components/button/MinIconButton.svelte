@@ -12,7 +12,6 @@
 </button>
 
 <style lang="scss">
-   @import '../../../styles/Mixins.scss';
    button {
       @include icon-button;
       cursor: pointer;

@@ -274,8 +274,6 @@
 </div>
 
 <style lang="scss">
-   @import '../../../../../../Styles/Mixins.scss';
-
    .skill {
       @include flex-row;
       @include flex-space-between;

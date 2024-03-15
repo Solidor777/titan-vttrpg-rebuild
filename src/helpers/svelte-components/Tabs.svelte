@@ -1,6 +1,5 @@
 <script>
    import preventDefault from '~/helpers/svelte-actions/PreventDefault.js';
-   import { ripple } from '@typhonjs-fvtt/runtime/svelte/action/animate';
 
    // List of tabs
    export let tabs = [];

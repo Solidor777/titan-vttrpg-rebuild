@@ -29,10 +29,8 @@
 
 <style lang="scss">
    .tab {
-      @include flex-row;
-      @include flex-group-top;
-      flex-grow: 1;
-      height: 100%;
+      @include flex-column;
       width: 100%;
+      flex-grow: 1;
    }
 </style>

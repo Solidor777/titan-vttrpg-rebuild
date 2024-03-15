@@ -97,6 +97,7 @@
          flex-grow: 1;
 
          .tabs {
+            @include border;
             margin-top: var(--padding-large);
             flex-grow: 1;
          }

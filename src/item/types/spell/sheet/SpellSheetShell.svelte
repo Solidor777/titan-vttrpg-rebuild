@@ -92,10 +92,10 @@
          }
 
          .tabs {
-            @include flex-row;
-            --tab-font-size: var(--font-size-small);
+            @include border;
             margin-top: var(--padding-large);
-            width: 100%;
+            flex-grow: 1;
+            --tab-font-size: var(--font-size-small);
          }
       }
    }

@@ -74,9 +74,9 @@
          }
 
          .tabs {
-            @include flex-row;
+            @include border;
             margin-top: var(--padding-large);
-            width: 100%;
+            flex-grow: 1;
          }
       }
    }

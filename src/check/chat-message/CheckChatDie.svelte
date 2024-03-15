@@ -1,6 +1,5 @@
 <script>
    import preventDefault from '~/helpers/svelte-actions/PreventDefault.js';
-   import { ripple } from '@typhonjs-fvtt/runtime/svelte/action/animate';
    import { getContext } from 'svelte';
    import recalculateCheckResults from './RecalculateCheckResults';
 
@@ -78,7 +77,6 @@
 <button
    class={dieClass}
    on:mousedown={preventDefault}
-   use:ripple()
    {disabled}
    on:click={() => {
       applyExpertise();

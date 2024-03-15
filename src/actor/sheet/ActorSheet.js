@@ -175,39 +175,6 @@ export default class TitanActorSheet extends TitanDocumentSheet {
       return super.close(options);
    }
 
-   _onDragStart(event) {
-      {
-         const li = event.currentTarget;
-         if (event.target.classList.contains('content-link')) {
-            return;
-         }
-
-         // Create drag data
-         let dragData = false;
-
-         // Get drag data from items
-         if (li.dataset.itemId) {
-            const item = this.actor.items.get(li.dataset.itemId);
-            dragData = item.toDragData();
-         }
-
-         // Get drag data from active effects
-         if (li.dataset.effectId) {
-            const effect = this.actor.effects.get(li.dataset.effectId);
-            dragData = effect.toDragData();
-         }
-
-         // Abort if no drag data
-         if (!dragData) {
-            return;
-         }
-
-         // Set data transfer
-         event.dataTransfer.setData('text/plain', JSON.stringify(dragData));
-
-         return;
-      }
-   }
    async _onDrop(event) {
       // Ensure the current user is the actor's owner
       if (!this.actor.isOwner) {

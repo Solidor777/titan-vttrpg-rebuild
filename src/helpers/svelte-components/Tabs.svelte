@@ -7,8 +7,6 @@
 
    // The active tab
    export let activeTab = void 0;
-
-   export let efx = ripple();
 </script>
 
 <!--List of tabs-->
@@ -23,7 +21,6 @@
                activeTab = tab.id;
             }}
             on:mousedown={preventDefault}
-            use:efx
          >
             {tab.label}
          </button>
@@ -62,22 +59,9 @@
             --button-line-height: var(--tab-line-height);
             --button-font-size: var(--tab-font-size);
             @include button;
-            position: relative;
-            overflow: hidden;
-            clip-path: var(--tjs-icon-button-clip-path, none);
-            transform-style: preserve-3d;
             height: 100%;
             width: 100%;
             font-weight: normal;
-
-            :hover {
-               &:not(:disabled) {
-                  clip-path: var(
-                     --tjs-icon-button-clip-path-hover,
-                     var(--tjs-icon-button-clip-path, none)
-                  );
-               }
-            }
 
             &.active {
                background: var(--highlight-background);

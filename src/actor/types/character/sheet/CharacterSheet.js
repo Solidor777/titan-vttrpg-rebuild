@@ -1,4 +1,5 @@
 import TitanActorSheet from "~/actor/sheet/ActorSheet";
+import CharacterDocument from '~/actor/types/character/document/CharacterDocument.js';
 import CharacterSheetInventoryAddItemDialog from "~/actor/types/character/sheet/tabs/inventory/CharacterSheetInventoryAddItemDialog";
 
 export default class TitanCharacterSheet extends TitanActorSheet {
@@ -6,6 +7,7 @@ export default class TitanCharacterSheet extends TitanActorSheet {
       if (this.actor.isOwner) {
          const dialog = new CharacterSheetInventoryAddItemDialog(this.actor);
          dialog.render(true);
+         console.log(this.options.svelte.props.document);
       }
       return;
    }
@@ -24,4 +26,9 @@ export default class TitanCharacterSheet extends TitanActorSheet {
 
       return retVal;
    }
+
+   _createReactiveDocument(document, options = {}) {
+      return new CharacterDocument(document, options);
+   }
+
 }

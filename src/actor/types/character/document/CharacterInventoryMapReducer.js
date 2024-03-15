@@ -1,7 +1,7 @@
 import { DynMapReducer } from '@typhonjs-fvtt/runtime/svelte/store/reducer';
 import sort from '~/utility-functions/Sort.js';
 
-export default class CharacterInventoryMap extends DynMapReducer {
+export default class CharacterInventoryMapReducer extends DynMapReducer {
    initialize() {
       // Get the items of the currect type
       const inventoryTypes = ['armor', 'commodity', 'equipment', 'shield', 'weapon'];
@@ -12,7 +12,7 @@ export default class CharacterInventoryMap extends DynMapReducer {
       this.types = {};
       for (const type of inventoryTypes) {
          this.types[type] = this.derived.create([type]);
-         this.types[type].add((item) => item.type === type);
+         this.types[type].filters.add((item) => item.type === type);
       }
    }
 }

@@ -1,14 +1,3 @@
-// Manually apply z-ondex to mediate issue with blurry text
-.titan {
-   &.app * {
-      z-index: var(--z-index-app);
-   }
-
-   .app * {
-      z-index: var(--z-index-app);
-   }
-}
-
 .titan-dark-mode {
    // Panel styling
    --panel-1-background: #373949;

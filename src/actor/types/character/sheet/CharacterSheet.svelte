@@ -4,7 +4,7 @@
    import CharacterSheetTabs from '~/actor/types/character/sheet/tabs/CharacterSheetTabs.svelte';
    import CharacterSheetSidebar from '~/actor/types/character/sheet/sidebar/CharacterSheetSidebar.svelte';
 
-   // Composition options
+   // Header to allow this sheet to be used with players or NPCs
    export let header = void 0;
 </script>
 

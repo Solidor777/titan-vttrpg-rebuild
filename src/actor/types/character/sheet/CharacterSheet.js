@@ -24,9 +24,4 @@ export default class TitanCharacterSheet extends TitanActorSheet {
 
       return retVal;
    }
-
-   _createReactiveDocument(document, options = {}) {
-      return new CharacterDocument(document, options);
-   }
-
 }

@@ -133,6 +133,8 @@
    font-weight: var(--button-font-weight);
    padding: var(--button-padding);
    color: var(--button-color);
+   width: var(--button-width);
+   height: var(--button-height);
    line-height: var(--button-line-height);
    margin: 0;
 
@@ -168,6 +170,23 @@
    width: var(--icon-button-radius);
    height: var(--icon-button-radius);
    color: var(--icon-button-color);
+   margin: 0;
+
+   &:disabled {
+      cursor: default;
+      background: var(--button-background-disabled);
+   }
+
+   &:hover {
+      &:not(:disabled) {
+         cursor: pointer;
+         background: radial-gradient(var(--button-background-highlight), var(--button-background));
+      }
+   }
+
+   i {
+      margin-right: 0;
+   }
 }
 
 @mixin flex-row {

@@ -1,18 +1,18 @@
 <script>
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
 
    export let label = void 0;
    export let active = void 0;
 </script>
 
-<EfxButton on:click>
+<Button on:click>
    <div class="button-inner">
       <div class="label">
          {label}
       </div>
       <i class={active ? 'fas fa-square-check' : 'fas fa-square'} />
    </div>
-</EfxButton>
+</Button>
 
 <style lang="scss">
    .button-inner {

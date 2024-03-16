@@ -5,7 +5,7 @@
    import localize from '~/utility-functions/Localize.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import IntegerInput from '~/helpers/svelte-components/input/IntegerInput.svelte';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
    import CheckboxInput from '~/helpers/svelte-components/input/CheckboxInput.svelte';
 
    // The document
@@ -81,18 +81,18 @@
    <!--Buttons-->
    <div class="row">
       <div class="button">
-         <EfxButton on:click={applyTraitEdits}>
+         <Button on:click={applyTraitEdits}>
             {localize('applyEdits')}
-         </EfxButton>
+         </Button>
       </div>
 
       <div class="button">
-         <EfxButton
+         <Button
             on:click={() => {
                application.close();
             }}
             >{localize('cancel')}
-         </EfxButton>
+         </Button>
       </div>
    </div>
 </div>

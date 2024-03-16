@@ -1,7 +1,7 @@
 <script>
    import { getContext } from 'svelte';
    import getActor from '~/utility-functions/GetActor.js';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
    import localize from '~/utility-functions/Localize.js';
 
    // Context variables
@@ -39,13 +39,13 @@
 
 <!--Regain resolve button-->
 <div class="button">
-   <EfxButton on:click={() => confirmhealingApplied()}>
+   <Button on:click={() => confirmhealingApplied()}>
       <i class="fas fa-heart" />
       {localize('heal%xDamage').replace(
          '%x',
          $document.flags.titan.healingApplied.total,
       )}
-   </EfxButton>
+   </Button>
 </div>
 
 <style lang="scss">

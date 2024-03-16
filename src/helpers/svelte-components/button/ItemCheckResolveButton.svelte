@@ -1,5 +1,5 @@
 <script>
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
 
    // Check reference
    export let check = void 0;
@@ -8,7 +8,7 @@
 </script>
 
 <div class="item-check-button {check.attribute}">
-   <EfxButton on:click {disabled}>
+   <Button on:click {disabled}>
       <div class="button-inner">
          <i class="fa fa-dice" />
          <div>
@@ -19,7 +19,7 @@
             {check.resolveCost}
          </div>
       </div>
-   </EfxButton>
+   </Button>
 </div>
 
 <style lang="scss">

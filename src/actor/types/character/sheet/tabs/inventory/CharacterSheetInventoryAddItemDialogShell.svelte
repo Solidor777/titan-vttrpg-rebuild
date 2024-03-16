@@ -3,7 +3,7 @@
 <script>
    import localize from '~/utility-functions/Localize.js';
    import { getContext } from 'svelte';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
    import Select from '~/helpers/svelte-components/select/Select.svelte';
 
    // Character Sheet
@@ -50,23 +50,23 @@
 
    <!--Buttons-->
    <div class="button">
-      <EfxButton
+      <Button
          on:click={() => {
             actor.addItem(value);
             application.close();
          }}
       >
          {localize('addNewItem')}
-      </EfxButton>
+      </Button>
    </div>
 
    <div class="button">
-      <EfxButton
+      <Button
          on:click={() => {
             application.close();
          }}
          >{localize('cancel')}
-      </EfxButton>
+      </Button>
    </div>
 </div>
 

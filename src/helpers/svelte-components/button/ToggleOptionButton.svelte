@@ -1,16 +1,16 @@
 <script>
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
    export let enabled = void 0;
    export let label = void 0;
    export let disabled = false;
 </script>
 
 <div class="toggle enabled-{enabled === true}">
-   <EfxButton on:click {disabled}>
+   <Button on:click {disabled}>
       <div class="label">
          {label}
       </div>
-   </EfxButton>
+   </Button>
 </div>
 
 <style lang="scss">

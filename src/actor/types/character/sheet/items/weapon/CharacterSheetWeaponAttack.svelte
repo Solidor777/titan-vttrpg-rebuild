@@ -3,7 +3,7 @@
    import { getContext } from 'svelte';
    import { ATTACK_TRAIT_DESCRIPTIONS } from '~/item/types/weapon/AttackTraits';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
    import StatTag from '~/helpers/svelte-components/tag/StatTag.svelte';
    import Tag from '~/helpers/svelte-components/tag/Tag.svelte';
    import AttributeTag from '~/helpers/svelte-components/tag/AttributeTag.svelte';
@@ -78,7 +78,7 @@
    <!--Header-->
    <div class="header {attack.attribute}">
       {#if item.system.equipped}
-         <EfxButton
+         <Button
             on:click={() =>
                $document.typeComponent.rollAttackCheck(
                   { itemId: item._id, attackIdx: attackIdx },
@@ -89,7 +89,7 @@
                class="fas fa-{attack.type === 'melee' ? 'sword' : 'bow-arrow'}"
             />
             {attack.label}
-         </EfxButton>
+         </Button>
       {:else}
          <div class="label">
             <i

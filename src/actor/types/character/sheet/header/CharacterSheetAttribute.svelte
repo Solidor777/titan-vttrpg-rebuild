@@ -3,7 +3,7 @@
    import { getContext } from 'svelte';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import DocumentIntegerInput from '~/documents/components/input/DocumentIntegerInput.svelte';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
    import ModTag from '~/helpers/svelte-components/tag/ModTag.svelte';
 
    // The key / name of the attribute
@@ -58,7 +58,7 @@
 <div class="attribute" data-attribute={key}>
    <!--attribute Label-->
    <div class="button {key}" use:tooltip={{ content: localize(`${key}.desc`) }}>
-      <EfxButton
+      <Button
          on:click={() =>
             $document.typeComponent.rollAttributeCheck(
                { attribute: key },
@@ -66,7 +66,7 @@
             )}
       >
          {localize(key)}
-      </EfxButton>
+      </Button>
    </div>
 
    <!--Stats-->

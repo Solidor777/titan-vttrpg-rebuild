@@ -1,11 +1,11 @@
 <script>
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
    export let label = void 0;
    export let icon = void 0;
 </script>
 
 <div class="button">
-   <EfxButton on:click>
+   <Button on:click>
       <div class="label">
          {#if icon}
             <i class={`fas fa-${icon}`} />
@@ -14,7 +14,7 @@
             {label}
          </div>
       </div>
-   </EfxButton>
+   </Button>
 </div>
 
 <style lang="scss">

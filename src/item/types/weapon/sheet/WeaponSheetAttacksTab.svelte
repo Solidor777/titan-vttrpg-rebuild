@@ -2,7 +2,7 @@
    import { getContext } from 'svelte';
    import { slide } from 'svelte/transition';
    import localize from '~/utility-functions/Localize.js';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
    import ScrollingContainer from '~/helpers/svelte-components/ScrollingContainer.svelte';
    import TopFilter from '~/helpers/svelte-components/TopFilter.svelte';
    import WeaponSheetAttackSettings from './WeaponSheetAttackSettings.svelte';
@@ -58,7 +58,7 @@
 
          <!--Add Attack Button-->
          <div class="add-entry-button">
-            <EfxButton
+            <Button
                on:click={() => {
                   $document.typeComponent.addAttack();
                }}
@@ -73,7 +73,7 @@
                      {localize('addAttack')}
                   </div>
                </div>
-            </EfxButton>
+            </Button>
          </div>
       </div>
    </ScrollingContainer>

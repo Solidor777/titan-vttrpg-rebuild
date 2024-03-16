@@ -2,7 +2,6 @@
    import preventDefault from '~/helpers/svelte-actions/PreventDefault.js';
 
    export let icon = void 0;
-   export let efx = ripple();
    export let disabled = false;
 </script>
 

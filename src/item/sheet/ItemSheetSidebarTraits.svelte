@@ -2,7 +2,7 @@
    import { getContext } from 'svelte';
    import { slide } from 'svelte/transition';
    import localize from '~/utility-functions/Localize.js';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
    import DocumentAddCustomTraitDialog from '~/documents/DocumentAddCustomTraitDialog';
    import EditDeleteTag from '~/helpers/svelte-components/tag/EditDeleteTag.svelte';
 
@@ -13,7 +13,7 @@
 <div class="traits">
    <!--Add Custom Trait Button-->
    <div class="button">
-      <EfxButton
+      <Button
          on:click={() => {
             const dialog = new DocumentAddCustomTraitDialog($document);
             dialog.render(true);
@@ -25,7 +25,7 @@
                {localize('addCustomTrait')}
             </div>
          </div>
-      </EfxButton>
+      </Button>
    </div>
 
    <!--Traits-->

@@ -2,7 +2,7 @@
    import applyDamageToTargets from '~/utility-functions/ApplyDamageToTargets.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import localize from '~/utility-functions/Localize.js';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
 
    export let damage = void 0;
 </script>
@@ -13,14 +13,14 @@
       class="button"
       use:tooltip={{ content: localize('applyOverkillDamage') }}
    >
-      <EfxButton
+      <Button
          on:click={() =>
             applyDamageToTargets(damage, {
                ignoreArmor: true,
             })}
          ><i class="fas fa-explosion" />
          {localize('%xOverkillDamage').replace('%x', damage)}
-      </EfxButton>
+      </Button>
    </div>
 </div>
 

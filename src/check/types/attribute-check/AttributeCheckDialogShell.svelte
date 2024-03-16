@@ -8,7 +8,7 @@
    import SkillSelect from '~/helpers/svelte-components/select/SkillSelect.svelte';
    import CheckDifficultySelect from '~/helpers/svelte-components/select/CheckDifficultySelect.svelte';
    import IntegerInput from '~/helpers/svelte-components/input/IntegerInput.svelte';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
    import CheckboxInput from '~/helpers/svelte-components/input/CheckboxInput.svelte';
 
    // The actor document making this check
@@ -199,11 +199,11 @@
    <!--Buttons-->
    <div class="row">
       <div class="button">
-         <EfxButton on:click={onRoll}>{localize('roll')}</EfxButton>
+         <Button on:click={onRoll}>{localize('roll')}</Button>
       </div>
 
       <div class="button">
-         <EfxButton on:click={onCancel}>{localize('cancel')}</EfxButton>
+         <Button on:click={onCancel}>{localize('cancel')}</Button>
       </div>
    </div>
 </div>

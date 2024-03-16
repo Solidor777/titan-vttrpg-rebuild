@@ -1,6 +1,6 @@
 <script>
    import getCombatTargets from '~/utility-functions/GetCombatTargets.js';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
    import localize from '~/utility-functions/Localize.js';
 
    export let attribute = 'body';
@@ -27,7 +27,7 @@
 
 <!--Apply healing button-->
 <div class="opposed-check-button {attribute}">
-   <EfxButton on:click={() => rollOpposedCheck()}>
+   <Button on:click={() => rollOpposedCheck()}>
       {#if skill && skill !== 'none'}
          {`${localize(attribute)} 
          (${localize(`${skill}`)}) 
@@ -35,7 +35,7 @@
       {:else}
          {`${localize(attribute)} ${difficulty}:${complexity}`}
       {/if}
-   </EfxButton>
+   </Button>
 </div>
 
 <style lang="scss">

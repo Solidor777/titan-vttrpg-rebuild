@@ -2,7 +2,7 @@
    import applyDamageToTargets from '~/utility-functions/ApplyDamageToTargets.js';
    import applyHealingToTargets from '~/utility-functions/ApplyHealingToTargets.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
    import localize from '~/utility-functions/Localize.js';
 
    export let damage = void 0;
@@ -14,7 +14,7 @@
 <div class="damage-buttons">
    <!--Apply damage button-->
    <div class="button" use:tooltip={{ content: localize('applyDamage') }}>
-      <EfxButton
+      <Button
          on:click={() => {
             applyDamageToTargets(damage, {
                ineffective: ineffective,
@@ -22,7 +22,7 @@
             });
          }}
          ><i class="fas fa-burst" />
-      </EfxButton>
+      </Button>
    </div>
 
    <!--Cleave Button-->
@@ -31,7 +31,7 @@
          class="button"
          use:tooltip={{ content: localize('applyCleaveDamage') }}
       >
-         <EfxButton
+         <Button
             on:click={() => {
                applyDamageToTargets(cleave, {
                   ineffective: ineffective,
@@ -40,7 +40,7 @@
             }}
          >
             <i class="fas fa-scythe" />
-         </EfxButton>
+         </Button>
       </div>
    {/if}
 
@@ -49,7 +49,7 @@
       class="button"
       use:tooltip={{ content: localize('applyDamageIgnoreArmor') }}
    >
-      <EfxButton
+      <Button
          on:click={() => {
             applyDamageToTargets(damage, {
                ineffective: ineffective,
@@ -58,12 +58,12 @@
             });
          }}
          ><i class="fas fa-shield-slash" />
-      </EfxButton>
+      </Button>
    </div>
 
    <!--Apply half damage button-->
    <div class="button" use:tooltip={{ content: localize('applyHalfDamage') }}>
-      <EfxButton
+      <Button
          on:click={() => {
             applyDamageToTargets(Math.max(Math.floor(damage / 2), 1), {
                ineffective: ineffective,
@@ -72,14 +72,14 @@
          }}
       >
          <i class="fas fa-heart-half-stroke" />
-      </EfxButton>
+      </Button>
    </div>
 
    <!--Apply healing button-->
    <div class="button" use:tooltip={{ content: localize('applyHealing') }}>
-      <EfxButton on:click={() => applyHealingToTargets(damage)}>
+      <Button on:click={() => applyHealingToTargets(damage)}>
          <i class="fas fa-heart" />
-      </EfxButton>
+      </Button>
    </div>
 </div>
 

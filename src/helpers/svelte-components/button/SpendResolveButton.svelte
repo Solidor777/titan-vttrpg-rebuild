@@ -1,6 +1,6 @@
 <script>
    import localize from '~/utility-functions/Localize.js';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
 
    // Check reference
    export let cost = void 0;
@@ -9,14 +9,14 @@
 </script>
 
 <div class="item-check-button">
-   <EfxButton on:click {disabled}>
+   <Button on:click {disabled}>
       <div class="button-inner">
          <i class="fa fa-bolt" />
          <div>
             {localize('spend%xResolve').replace('%x', cost)}
          </div>
       </div>
-   </EfxButton>
+   </Button>
 </div>
 
 <style lang="scss">

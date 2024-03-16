@@ -1,5 +1,5 @@
 <script>
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
    import { getContext } from 'svelte';
    // Reference to the docuement
    const document = getContext('document');
@@ -59,7 +59,7 @@
 </script>
 
 <div class="button {attack.attribute}">
-   <EfxButton on:click>
+   <Button on:click>
       <div class="button-inner">
          <i class="fas fa-{attack.type === 'melee' ? 'sword' : 'bow-arrow'}" />
          <!--Pool-->
@@ -76,7 +76,7 @@
             </div>
          {/if}
       </div>
-   </EfxButton>
+   </Button>
 </div>
 
 <style lang="scss">

@@ -4,7 +4,7 @@
    import localize from '~/utility-functions/Localize.js';
    import ScrollingContainer from '~/helpers/svelte-components/ScrollingContainer.svelte';
    import TopFilter from '~/helpers/svelte-components/TopFilter.svelte';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
    import SpellSheetCustomAspectSettings from './SpellSheetCustomAspectSettings.svelte';
 
    // Setup context variables
@@ -58,7 +58,7 @@
 
          <!--Add Entry Button-->
          <div class="add-entry-button">
-            <EfxButton
+            <Button
                on:click={() => {
                   $document.typeComponent.addCustomAspect();
                }}
@@ -73,7 +73,7 @@
                      {localize('addCustomAspect')}
                   </div>
                </div>
-            </EfxButton>
+            </Button>
          </div>
       </div>
    </ScrollingContainer>

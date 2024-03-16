@@ -4,7 +4,7 @@
    import { slide } from 'svelte/transition';
    import ScrollingContainer from '~/helpers/svelte-components/ScrollingContainer.svelte';
    import TopFilter from '~/helpers/svelte-components/TopFilter.svelte';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
    import ItemSheetFlatModifierSettings from '~/item/component/rules-element/ItemSheetFlatModifierSettings.svelte';
    import ItemSheetMulBaseSettings from '~/item/component/rules-element/ItemSheetMulBaseSettings.svelte';
    import ItemSheetTurnMessageSettings from '~/item/component/rules-element/ItemSheetTurnMessageSettings.svelte';
@@ -126,7 +126,7 @@
 
       <!--Add Element Button-->
       <div class="add-entry-button">
-         <EfxButton
+         <Button
             on:click={() => {
                $document.typeComponent.addRulesElement();
             }}
@@ -141,7 +141,7 @@
                   {localize('addRulesElement')}
                </div>
             </div>
-         </EfxButton>
+         </Button>
       </div>
    </ScrollingContainer>
 </div>

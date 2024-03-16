@@ -4,7 +4,7 @@
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import DocumentIntegerInput from '~/documents/components/input/DocumentIntegerInput.svelte';
    import ModTag from '~/helpers/svelte-components/tag/ModTag.svelte';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
 
    export let key = void 0;
    export let icon = void 0;
@@ -62,7 +62,7 @@
    <!--Button-->
    <!-- svelte-ignore a11y-missing-attribute -->
    <div class="button" use:tooltip={{ content: localize(`${key}.desc`) }}>
-      <EfxButton
+      <Button
          on:keypress={() => {
             onClick();
          }}
@@ -75,7 +75,7 @@
          <div class="label">
             {localize(key)}
          </div>
-      </EfxButton>
+      </Button>
    </div>
 
    <!--Stats-->

@@ -1,7 +1,7 @@
 <script>
    import localize from '~/utility-functions/Localize.js';
    import { getContext } from 'svelte';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
 
    // Item Reference
    export let item = void 0;
@@ -9,7 +9,7 @@
    const document = getContext('document');
 </script>
 
-<EfxButton on:click={() => $document.typeComponent.toggleMultiAttack(item._id)}>
+<Button on:click={() => $document.typeComponent.toggleMultiAttack(item._id)}>
    <div class="button-inner">
       <i class={item.system.multiAttack ? 'fas fa-swords' : 'fas fa-sword'} />
       <div class="label">
@@ -21,7 +21,7 @@
             : 'fas fa-square'}
       />
    </div>
-</EfxButton>
+</Button>
 
 <style lang="scss">
    .button-inner {

@@ -13,7 +13,7 @@
    import DocumentSkillSelect from '~/documents/components/select/DocumentSkillSelect.svelte';
    import DocumentCheckboxInput from '~/documents/components/input/DocumentCheckboxInput.svelte';
    import DocumentRangeTypeSelect from '~/documents/components/select/DocumentRangeTypeSelect.svelte';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
    import EditDeleteTag from '~/helpers/svelte-components/tag/EditDeleteTag.svelte';
 
    // Attack idx
@@ -178,26 +178,26 @@
                <div class="traits-header">
                   <!--Edit Traits-->
                   <div class="button">
-                     <EfxButton
+                     <Button
                         on:click={() => {
                            $document.typeComponent.editAttackTraits(idx);
                         }}
                      >
                         <i class="fas fa-pen-to-square" />
                         {localize('editTraits')}
-                     </EfxButton>
+                     </Button>
                   </div>
 
                   <!--Custom Traits-->
                   <div class="button">
-                     <EfxButton
+                     <Button
                         on:click={() => {
                            $document.typeComponent.addCustomAttackTrait(idx);
                         }}
                      >
                         <i class="fas fa-circle-plus" />
                         {localize('addCustomTrait')}
-                     </EfxButton>
+                     </Button>
                   </div>
                </div>
                {#if attack.trait.length > 0 || attack.customTrait.length > 0}

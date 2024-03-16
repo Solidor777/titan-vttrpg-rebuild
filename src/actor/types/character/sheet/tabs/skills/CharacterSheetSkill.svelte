@@ -2,7 +2,7 @@
    import { getContext } from 'svelte';
    import localize from '~/utility-functions/Localize.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
    import DocumentIntegerInput from '~/documents/components/input/DocumentIntegerInput.svelte';
    import DocumentAttributeSelect from '~/documents/components/select/DocumentAttributeSelect.svelte';
    import ModTag from '~/helpers/svelte-components/tag/ModTag.svelte';
@@ -120,7 +120,7 @@
    <div class="column">
       <!--Roll Button-->
       <div class="button" use:tooltip={{ content: localize(`${key}.desc`) }}>
-         <EfxButton
+         <Button
             on:click={() =>
                $document.typeComponent.rollAttributeCheck(
                   { skill: key },
@@ -136,7 +136,7 @@
                   {localize(key)}
                </div>
             </div>
-         </EfxButton>
+         </Button>
       </div>
 
       <!--Default Attribute-->

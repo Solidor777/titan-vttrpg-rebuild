@@ -2,7 +2,7 @@
    import localize from '~/utility-functions/Localize.js';
    import { getContext } from 'svelte';
    import TextArea from '~/helpers/svelte-components/input/TextArea.svelte';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
 
    // document to edit the UUID for
    export let document = void 0;
@@ -60,13 +60,13 @@
    <!--Buttons-->
    <div class="buttons">
       <div class="button">
-         <EfxButton on:click={onApplyEdits}>
+         <Button on:click={onApplyEdits}>
             {localize('applyEdits')}
-         </EfxButton>
+         </Button>
       </div>
 
       <div class="button">
-         <EfxButton on:click={onCancel}>{localize('cancel')}</EfxButton>
+         <Button on:click={onCancel}>{localize('cancel')}</Button>
       </div>
    </div>
 </div>

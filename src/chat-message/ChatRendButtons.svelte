@@ -2,7 +2,7 @@
    import applyRendToTargets from '~/utility-functions/ApplyRendToTargets.js';
    import applyRepairsToTargets from '~/utility-functions/ApplyRepairsToTarget.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
    import localize from '~/utility-functions/Localize.js';
 
    export let rend = void 0;
@@ -12,7 +12,7 @@
 <div class="damage-buttons">
    <!--Apply Rend button-->
    <div class="button" use:tooltip={{ content: localize('rendArmor') }}>
-      <EfxButton
+      <Button
          on:click={() => {
             applyRendToTargets(rend, {
                magical: magical,
@@ -20,15 +20,15 @@
          }}
          ><i class="fas fa-hammer-crash" />
          <div>{localize('rend')}</div>
-      </EfxButton>
+      </Button>
    </div>
 
    <!--Repair Rend button-->
    <div class="button" use:tooltip={{ content: localize('repairArmor') }}>
-      <EfxButton on:click={() => applyRepairsToTargets(rend)}>
+      <Button on:click={() => applyRepairsToTargets(rend)}>
          <i class="fas fa-screwdriver-wrench" />
          <div>{localize('repair')}</div>
-      </EfxButton>
+      </Button>
    </div>
 </div>
 

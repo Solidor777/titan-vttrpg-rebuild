@@ -3,7 +3,7 @@
 <script>
    import localize from '~/utility-functions/Localize.js';
    import { getContext } from 'svelte';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
 
    // Character Sheet
    export let headers = void 0;
@@ -28,7 +28,7 @@
 
    <!--Confirm Button-->
    <div class="button">
-      <EfxButton
+      <Button
          on:click={() => {
             application.confirmed();
             if (typeof application.confirmationCallback === 'function') {
@@ -38,17 +38,17 @@
          }}
       >
          {confirmLabel}
-      </EfxButton>
+      </Button>
    </div>
 
    <!--Cancel button-->
    <div class="button">
-      <EfxButton
+      <Button
          on:click={() => {
             application.close();
          }}
          >{localize('cancel')}
-      </EfxButton>
+      </Button>
    </div>
 </div>
 

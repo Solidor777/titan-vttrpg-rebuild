@@ -1,6 +1,6 @@
 <script>
    import localize from '~/utility-functions/Localize.js';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
 
    // Resistance to roll
    export let resistance = 'reflexes';
@@ -38,14 +38,14 @@
 </script>
 
 <div class="button {resistance}">
-   <EfxButton
+   <Button
       on:click={() => {
          rollResistanceCheck();
       }}
       {disabled}
    >
       {`${localize(resistance)} ${difficulty}:${complexity}`}
-   </EfxButton>
+   </Button>
 </div>
 
 <style lang="scss">

@@ -1,7 +1,7 @@
 <script>
    import { getContext } from 'svelte';
    import localize from '~/utility-functions/Localize.js';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
 
    // Aspect
    export let idx = void 0;
@@ -127,31 +127,31 @@
    <div class="controls">
       <!--Reset Button-->
       <div class="control">
-         <EfxButton
+         <Button
             on:click={resetAspect}
             disabled={aspect.currentValue <= aspect.initialValue}
          >
             <div class="button-inner">
                <i class="fas fa-arrow-rotate-left" />
             </div>
-         </EfxButton>
+         </Button>
       </div>
 
       <!--Decrease Button-->
       <div class="control">
-         <EfxButton
+         <Button
             on:click={decreaseAspect}
             disabled={aspect.currentValue <= aspect.initialValue}
          >
             <div class="button-inner">
                <i class="fas fa-minus" />
             </div>
-         </EfxButton>
+         </Button>
       </div>
 
       <!--Increase Button-->
       <div class="control">
-         <EfxButton
+         <Button
             on:click={increaseAspect}
             disabled={$document.flags.titan.results.extraSuccessesRemaining <
                aspectCost}
@@ -159,7 +159,7 @@
             <div class="button-inner">
                <i class="fas fa-plus" />
             </div>
-         </EfxButton>
+         </Button>
       </div>
    </div>
 </div>

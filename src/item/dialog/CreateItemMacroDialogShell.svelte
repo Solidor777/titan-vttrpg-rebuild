@@ -2,7 +2,7 @@
    import localize from '~/utility-functions/Localize.js';
    import { getContext } from 'svelte';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
    import ImagePicker from '~/helpers/svelte-components/ImagePicker.svelte';
    import TextInput from '~/helpers/svelte-components/input/TextInput.svelte';
    import Select from '~/helpers/svelte-components/select/Select.svelte';
@@ -268,13 +268,13 @@
    <!--Buttons-->
    <div class="row">
       <div class="button">
-         <EfxButton on:click={onCreateMacro}>
+         <Button on:click={onCreateMacro}>
             {localize('createMacro')}
-         </EfxButton>
+         </Button>
       </div>
 
       <div class="button">
-         <EfxButton on:click={onCancel}>{localize('cancel')}</EfxButton>
+         <Button on:click={onCancel}>{localize('cancel')}</Button>
       </div>
    </div>
 </div>

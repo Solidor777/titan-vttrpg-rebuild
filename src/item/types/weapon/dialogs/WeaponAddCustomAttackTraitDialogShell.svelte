@@ -6,7 +6,7 @@
    import { Hashing } from '@typhonjs-fvtt/runtime/util';
    import TextInput from '~/helpers/svelte-components/input/TextInput.svelte';
    import TextArea from '~/helpers/svelte-components/input/TextArea.svelte';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
 
    // The weapon document owning the attack
    export let document = void 0;
@@ -71,24 +71,24 @@
    <div class="buttons">
       <!--Add Trait Button-->
       <div class="button">
-         <EfxButton
+         <Button
             on:click={() => {
                addTrait();
             }}
          >
             {localize('addTrait')}
-         </EfxButton>
+         </Button>
       </div>
 
       <!--Cancel Button-->
       <div class="button">
-         <EfxButton
+         <Button
             on:click={() => {
                application.close();
             }}
          >
             {localize('cancel')}
-         </EfxButton>
+         </Button>
       </div>
    </div>
 </div>

@@ -1,6 +1,6 @@
 <script>
    import localize from '~/utility-functions/Localize.js';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
 
    // Value to toggle
    export let enabled = void 0;
@@ -12,7 +12,7 @@
    export let cost = void 0;
 </script>
 
-<EfxButton on:click>
+<Button on:click>
    <div class="button-content">
       <!--Label-->
       <div class="aspect-label">
@@ -38,7 +38,7 @@
    </div>
 
    <div class="spacer" />
-</EfxButton>
+</Button>
 
 <style lang="scss">
    .button-content {

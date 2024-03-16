@@ -1,7 +1,7 @@
 <script>
    import { getContext } from 'svelte';
    import getActor from '~/utility-functions/GetActor.js';
-   import EfxButton from '~/helpers/svelte-components/button/EfxButton.svelte';
+   import Button from '~/helpers/svelte-components/button/Button.svelte';
    import localize from '~/utility-functions/Localize.js';
 
    // Context variables
@@ -29,10 +29,10 @@
 
 <!--Apply healing button-->
 <div class="button">
-   <EfxButton on:click={() => removeExpiredEffects()}>
+   <Button on:click={() => removeExpiredEffects()}>
       <i class="fas fa-clock" />
       {localize('removeExpiredEffects')}
-   </EfxButton>
+   </Button>
 </div>
 
 <style lang="scss">

@@ -5,7 +5,7 @@
    export let disabled = false;
 </script>
 
-<button on:click on:mousedown={preventDefault} use:efx {disabled}>
+<button on:click on:mousedown={preventDefault} {disabled}>
    <div><i class={icon} /></div>
 </button>
 

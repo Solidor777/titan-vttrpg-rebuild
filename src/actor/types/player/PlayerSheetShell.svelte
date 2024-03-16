@@ -22,7 +22,6 @@
    setContext('document', document);
    setContext('applicationState', applicationState);
    const appState = getContext('applicationState');
-   console.log(document.inventoryMap);
 
    // Tabs
    const tabs = [

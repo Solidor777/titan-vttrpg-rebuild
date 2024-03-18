@@ -20,7 +20,7 @@
 </script>
 
 {#if aspect}
-   <div class="aspect" transition:slide|local>
+   <div class='aspect' transition:slide|local>
       <!--Header-->
       <div class="header">
          <!--Expand Toggle-->

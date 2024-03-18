@@ -4,7 +4,7 @@
    import { ApplicationShell } from '@typhonjs-fvtt/runtime/svelte/component/core';
    import { setContext } from 'svelte';
    import PlayerSheetHeader from '~/actor/types/player/PlayerSheetHeader.svelte';
-   import CharacterSheetShell from '~/actor/types/character/sheet/CharacterSheet.svelte';
+   import CharacterSheetBase from '~/actor/types/character/sheet/CharacterSheetBase.svelte';
 
    // Setup context variables
    export let elementRoot;
@@ -15,5 +15,5 @@
 </script>
 
 <ApplicationShell bind:elementRoot>
-   <CharacterSheetShell header={PlayerSheetHeader} />
+   <CharacterSheetBase header={PlayerSheetHeader} />
 </ApplicationShell>

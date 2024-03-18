@@ -17,6 +17,7 @@
 
    <!--Sheet Body-->
    <div class="body">
+      
       <!--Header -->
       <div class="header">
          <svelte:component this={header} />

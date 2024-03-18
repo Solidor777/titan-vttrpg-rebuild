@@ -39,14 +39,10 @@
       @include flex-column;
       @include flex-group-top;
       @include panel-1;
-      height: 100%;
-      width: 100%;
       padding: var(--padding-standard);
       min-width: 13rem;
 
       .section {
-         @include flex-column;
-         @include flex-group-top;
          width: 100%;
 
          &:not(:first-child) {

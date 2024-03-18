@@ -39,8 +39,8 @@
 <style lang="scss">
    .tabs {
       @include flex-column;
-      flex-grow: 1;
       width: 100%;
+      height: 100%;
 
       .tab-list {
          @include flex-row;

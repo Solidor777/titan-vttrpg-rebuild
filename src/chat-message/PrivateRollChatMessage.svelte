@@ -1,5 +1,3 @@
-<svelte:options accessors={true} />
-
 <script>
    import localize from '~/utility-functions/Localize.js';
 </script>

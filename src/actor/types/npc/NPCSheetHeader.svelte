@@ -90,6 +90,7 @@
 <style lang="scss">
    .header {
       @include panel-1;
+      @include border;
       padding: var(--padding-standard);
 
       .row {

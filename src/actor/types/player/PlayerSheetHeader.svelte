@@ -66,6 +66,7 @@
 
 <style lang="scss">
    .header {
+      @include border;
       @include panel-1;
       padding: var(--padding-standard);
 

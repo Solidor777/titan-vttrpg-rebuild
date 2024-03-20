@@ -7,7 +7,7 @@
    import Tag from '~/helpers/svelte-components/tag/Tag.svelte';
    import ItemChatChecks from '~/item/chat-message/ItemChatChecks.svelte';
    import ItemChatLabel from '~/item/chat-message/ItemChatLabel.svelte';
-   import StatTag from '../../../../helpers/svelte-components/tag/StatTag.svelte';
+   import StatTag from '~/helpers/svelte-components/tag/StatTag.svelte';
 
    // Chat context reference
    const document = getContext('document');

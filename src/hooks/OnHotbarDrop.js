@@ -1,4 +1,4 @@
-import CreateItemMacroDialog from '~/item/dialog/CreateItemMacroDialog';
+import CreateItemMacroDialog from '~/document/types/item/dialog/CreateItemMacroDialog';
 
 export default function onHotbarDrop(bar, data, slot) {
    // Ensure the object is an item

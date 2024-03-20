@@ -1,5 +1,5 @@
 import localize from '~/helpers/utility-functions/Localize.js';
-import calculateCheckResults from "~/check/CalculateCheckResults.js";
+import calculateCheckResults from '~/check/CalculateCheckResults.js';
 
 export default function calculateCastingCheckResults(inResults, parameters) {
    const results = calculateCheckResults(inResults, parameters);

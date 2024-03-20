@@ -6,7 +6,7 @@
    import AttackCheckChatStats from '~/check/types/attack-check/AttackCheckChatStats.svelte';
    import RichText from '~/helpers/svelte-components/RichText.svelte';
    import CheckChatMesssages from '~/check/chat-message/CheckChatMesssages.svelte';
-   import ChatRendButtons from '~/chat-message/ChatRendButtons.svelte';
+   import ChatRendButtons from '~/document/types/chat-message/ChatRendButtons.svelte';
    import AttackCheckChatDamageButtons from '~/check/types/attack-check/AttackCheckChatDamageButtons.svelte';
 
    // Document reference

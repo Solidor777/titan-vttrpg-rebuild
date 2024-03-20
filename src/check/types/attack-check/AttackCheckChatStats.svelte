@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import { ATTACK_TRAIT_DESCRIPTIONS } from '~/item/types/weapon/AttackTraits.js';
+   import { ATTACK_TRAIT_DESCRIPTIONS } from '~/document/types/item/types/weapon/AttackTraits.js';
    import localize from '~/helpers/utility-functions/Localize.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import appendUniqueWithFilter from '~/helpers/utility-functions/AppendUniqueWithFilter.js';

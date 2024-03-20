@@ -3,10 +3,10 @@
    import CheckChatDiceContainer from '~/check/chat-message/CheckChatDiceContainer.svelte';
    import ItemCheckChatHeader from '~/check/types/item-check/ItemCheckChatHeader.svelte';
    import CheckChatResults from '~/check/chat-message/CheckChatResults.svelte';
-   import ChatDamageButtons from '~/chat-message/ChatDamageButtons.svelte';
-   import ChatHealingButton from '~/chat-message/ChatHealingButton.svelte';
-   import ChatAttributeCheckButton from '~/chat-message/ChatAttributeCheckButton.svelte';
-   import ChatResistanceCheckButtons from '~/chat-message/ChatResistanceCheckButtons.svelte';
+   import ChatDamageButtons from '~/document/types/chat-message/ChatDamageButtons.svelte';
+   import ChatHealingButton from '~/document/types/chat-message/ChatHealingButton.svelte';
+   import ChatAttributeCheckButton from '~/document/types/chat-message/ChatAttributeCheckButton.svelte';
+   import ChatResistanceCheckButtons from '~/document/types/chat-message/ChatResistanceCheckButtons.svelte';
    import ItemCheckChatItemTraits from '~/check/types/item-check/ItemCheckChatItemTraits.svelte';
    import CheckChatMesssages from '~/check/chat-message/CheckChatMesssages.svelte';
 

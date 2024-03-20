@@ -1,4 +1,4 @@
-import ConfirmRegenerateUUIDDialog from '~/documents/dialogs/ConfirmRegenerateUUIDDialog.js';
+import ConfirmRegenerateUUIDDialog from '~/document/dialogs/ConfirmRegenerateUUIDDialog.js';
 import getSetting from '~/helpers/utility-functions/GetSetting.js';
 
 // Randomly regenerate the UUID of an document

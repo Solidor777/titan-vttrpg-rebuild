@@ -1,6 +1,6 @@
 import { TJSDocument } from '@typhonjs-fvtt/runtime/svelte/store/fvtt/document';
 import getSetting from '~/helpers/utility-functions/GetSetting.js';
-import ChatMessageShell from '~/chat-message/ChatMessageShell.svelte';
+import ChatMessageShell from '~/document/types/chat-message/ChatMessageShell.svelte';
 import deepFreeze from '~/helpers/utility-functions/DeepFreeze';
 
 const CHAT_MESSAGE_TYPES = deepFreeze(new Set([

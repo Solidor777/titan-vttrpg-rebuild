@@ -1,4 +1,4 @@
-import EditUUIDDialog from '~/documents/dialogs/EditUUIDDialog.js';
+import EditUUIDDialog from '~/document/dialogs/EditUUIDDialog.js';
 
 // Manually edit the UUID of the document
 export default function onEditDocumentUUID(document) {

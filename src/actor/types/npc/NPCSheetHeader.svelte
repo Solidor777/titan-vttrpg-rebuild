@@ -6,7 +6,7 @@
    import CharacterSheetResistances from '~/actor/types/character/sheet/header/CharacterSheetResistances.svelte';
    import DocumentSelect from '~/documents/components/select/DocumentSelect.svelte';
    import StatTag from '~/helpers/svelte-components/tag/StatTag.svelte';
-   import DocumentTextInput from '../../../documents/components/input/DocumentTextInput.svelte';
+   import DocumentTextInput from '~/documents/components/input/DocumentTextInput.svelte';
 
    // Setup context variables
    const document = getContext('document');

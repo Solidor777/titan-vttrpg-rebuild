@@ -5,7 +5,7 @@
    import DocumentNameInput from '~/documents/components/input/DocumentNameInput.svelte';
    import DocumentRaritySelect from '~/documents/components/select/DocumentRaritySelect.svelte';
    import DocumentTextInput from '~/documents/components/input/DocumentTextInput.svelte';
-   import DocumentIntegerInput from '../../../../documents/components/input/DocumentIntegerInput.svelte';
+   import DocumentIntegerInput from '~/documents/components/input/DocumentIntegerInput.svelte';
 
    // Get Context variables
    const document = getContext('document');

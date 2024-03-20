@@ -5,7 +5,7 @@
    import ChatResource from '~/chat-message/ChatResource.svelte';
    import ReportHeader from '~/chat-message/report/components/ReportHeader.svelte';
    import Tag from '~/helpers/svelte-components/tag/Tag.svelte';
-   import ChatOverkillDamageButton from '../ChatOverkillDamageButton.svelte';
+   import ChatOverkillDamageButton from '~/chat-message/ChatOverkillDamageButton.svelte';
 
    // Document reference
    const document = getContext('document');

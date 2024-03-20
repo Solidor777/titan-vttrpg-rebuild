@@ -9,7 +9,7 @@
    import ReportHeader from '~/chat-message/report/components/ReportHeader.svelte';
    import ChatFastHealingTag from '~/chat-message/ChatFastHealingTag.svelte';
    import ChatPersistentDamageTag from '~/chat-message/ChatPersistentDamageTag.svelte';
-   import RichText from '../../helpers/svelte-components/RichText.svelte';
+   import RichText from '~/helpers/svelte-components/RichText.svelte';
 
    // Document reference
    const document = getContext('document');

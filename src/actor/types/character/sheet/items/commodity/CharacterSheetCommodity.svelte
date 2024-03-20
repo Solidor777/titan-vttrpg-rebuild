@@ -14,7 +14,7 @@
    import CharacterSheetItemChecks from '~/actor/types/character/sheet/items/CharacterSheetItemChecks.svelte';
    import Tag from '~/helpers/svelte-components/tag/Tag.svelte';
    import IntegerIncrementInput from '~/helpers/svelte-components/input/IntegerIncrementInput.svelte';
-   import StatTag from '../../../../../../helpers/svelte-components/tag/StatTag.svelte';
+   import StatTag from '~/helpers/svelte-components/tag/StatTag.svelte';
 
    // Reference to the armor id
    export let id = void 0;

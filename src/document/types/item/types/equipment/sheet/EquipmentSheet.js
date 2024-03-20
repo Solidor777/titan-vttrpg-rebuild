@@ -14,8 +14,9 @@ export default class TitanEquipmentSheet extends TitanItemSheet {
          width: 650,
          height: 650,
          svelte: {
-            class: EquipmentSheetShell,
-            target: document.body
+            props: {
+               shell: EquipmentSheetShell
+            }
          }
       });
    }

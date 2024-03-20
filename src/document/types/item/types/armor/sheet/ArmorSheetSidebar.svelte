@@ -32,8 +32,8 @@
       @include border;
       @include flex-column;
       @include flex-group-top;
-      @include border;
       @include panel-2;
+      min-width: 13rem;
       width: 100%;
       height: 100%;
 

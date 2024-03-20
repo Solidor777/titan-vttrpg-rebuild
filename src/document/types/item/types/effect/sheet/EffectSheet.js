@@ -14,8 +14,9 @@ export default class TitanEffectSheet extends TitanItemSheet {
          width: 650,
          height: 650,
          svelte: {
-            class: EffectSheetShell,
-            target: document.body
+            props: {
+               shell: EffectSheetShell
+            },
          }
       });
    }

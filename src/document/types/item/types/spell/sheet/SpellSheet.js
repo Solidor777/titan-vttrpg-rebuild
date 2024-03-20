@@ -14,7 +14,9 @@ export default class TitanSpellSheet extends TitanItemSheet {
          width: 650,
          height: 650,
          svelte: {
-            class: SpellSheetShell,
+            props: {
+               shell: SpellSheetShell
+            }
          }
       });
    }

@@ -1,4 +1,4 @@
-import TitanDocumentSheet from '~/document/DocumentSheet';
+import TitanDocumentSheet from '~/document/sheet/DocumentSheet';
 import localize from '~/helpers/utility-functions/Localize.js';
 
 export default class TitanActorSheet extends TitanDocumentSheet {

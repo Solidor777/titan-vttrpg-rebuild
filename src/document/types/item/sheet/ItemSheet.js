@@ -1,5 +1,5 @@
 import localize from '~/helpers/utility-functions/Localize.js';
-import TitanDocumentSheet from '~/document/DocumentSheet';
+import TitanDocumentSheet from '~/document/sheet/DocumentSheet';
 export default class TitanItemSheet extends TitanDocumentSheet {
 
    constructor(document, options = {}) {

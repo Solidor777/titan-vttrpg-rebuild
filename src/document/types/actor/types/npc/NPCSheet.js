@@ -15,8 +15,9 @@ export default class TitanNPCSheet extends TitanCharacterSheet {
          width: 750,
          height: 845,
          svelte: {
-            class: NPCSheetShell,
-            target: document.body
+            props: {
+               shell: NPCSheetShell,
+            }
          },
       });
    }

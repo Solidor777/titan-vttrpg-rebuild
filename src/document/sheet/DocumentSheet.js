@@ -3,6 +3,7 @@ import { TJSDocument } from '@typhonjs-fvtt/runtime/svelte/store/fvtt/document';
 import { writable } from 'svelte/store';
 import getSetting from '~/helpers/utility-functions/GetSetting.js';
 import localize from '~/helpers/utility-functions/Localize.js';
+import DocumentSheetShell from '~/document/sheet/DocumentSheetShell.svelte';
 export default class TitanDocumentSheet extends SvelteApplication {
 
    // Constructor for the document sheet
@@ -19,7 +20,8 @@ export default class TitanDocumentSheet extends SvelteApplication {
             svelte: {
                props: {
                   document: null,
-               }
+               },
+               class: DocumentSheetShell
             }
          }
       ));

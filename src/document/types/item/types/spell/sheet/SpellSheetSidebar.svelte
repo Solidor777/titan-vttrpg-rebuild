@@ -34,24 +34,18 @@
 
 <style lang="scss">
    .sidebar {
+      @include border;
       @include flex-column;
       @include flex-group-top;
-      @include border;
       @include panel-2;
+      min-width: 13rem;
       width: 100%;
       height: 100%;
-      padding-bottom: var(--padding-standard);
 
       .section {
-         @include flex-column;
-         @include flex-group-top;
-
-         &:not(:first-child) {
-            margin-top: var(--padding-large);
-         }
-
          &:not(:first-child) {
             @include border-top;
+            margin-top: var(--padding-large);
          }
       }
    }

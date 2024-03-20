@@ -16,7 +16,9 @@ export default class TitanWeaponSheet extends TitanItemSheet {
          width: 650,
          height: 650,
          svelte: {
-            class: WeaponSheetShell,
+            props: {
+               shell: WeaponSheetShell
+            }
          }
       });
    }

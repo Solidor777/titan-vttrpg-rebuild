@@ -14,7 +14,9 @@ export default class TitanPlayerSheet extends TitanCharacterSheet {
          width: 750,
          height: 845,
          svelte: {
-            class: PlayerSheetShell,
+            props: {
+               shell: PlayerSheetShell,
+            }
          },
       });
    }

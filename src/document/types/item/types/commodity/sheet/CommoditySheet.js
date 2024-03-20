@@ -14,8 +14,9 @@ export default class TitanCommoditySheet extends TitanItemSheet {
          width: 650,
          height: 650,
          svelte: {
-            class: CommoditySheetShell,
-            target: document.body
+            props: {
+               shell: CommoditySheetShell
+            },
          }
       });
    }

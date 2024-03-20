@@ -37,9 +37,6 @@
       height: 100%;
 
       .section {
-         @include flex-column;
-         @include flex-group-top;
-
          &:not(:first-child) {
             @include border-top;
             margin-top: var(--padding-large);

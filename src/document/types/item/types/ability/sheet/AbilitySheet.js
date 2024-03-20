@@ -14,8 +14,9 @@ export default class TitanAbilitySheet extends TitanItemSheet {
          width: 650,
          height: 650,
          svelte: {
-            class: AbilitySheetShell,
-            target: document.body
+            props: {
+               shell: AbilitySheetShell,
+            },
          }
       });
    }

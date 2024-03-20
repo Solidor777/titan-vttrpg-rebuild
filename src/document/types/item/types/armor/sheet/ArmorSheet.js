@@ -14,8 +14,9 @@ export default class TitanArmorSheet extends TitanItemSheet {
          width: 650,
          height: 650,
          svelte: {
-            class: ArmorSheetShell,
-            target: document.body
+            props: {
+               shell: ArmorSheetShell
+            },
          }
       });
    }

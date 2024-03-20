@@ -2,8 +2,8 @@
    import { getContext } from 'svelte';
    import localize from '~/utility-functions/Localize.js';
    import Tabs from '~/helpers/svelte-components/Tabs.svelte';
-   import WeaponSheetAttackNotesTab from './WeaponSheetAttackNotesTab.svelte';
-   import WeaponSheetItemDescriptionTab from './WeaponSheetItemDescriptionTab.svelte';
+   import WeaponSheetAttackNotesTab from '~/item/types/weapon/sheet/WeaponSheetAttackNotesTab.svelte';
+   import WeaponSheetItemDescriptionTab from '~/item/types/weapon/sheet/WeaponSheetItemDescriptionTab.svelte';
 
    // Setup context variables
    const appState = getContext('applicationState');

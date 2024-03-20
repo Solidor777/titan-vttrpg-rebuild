@@ -8,10 +8,10 @@
    import Tabs from '~/helpers/svelte-components/Tabs.svelte';
    import ItemSheetChecksTab from '~/item/component/check/ItemSheetChecksTab.svelte';
    import ItemSheetRulesElementsTab from '~/item/component/rules-element/ItemSheetRulesElementsTab.svelte';
-   import WeaponSheetAttacksTab from './WeaponSheetAttacksTab.svelte';
-   import WeaponSheetDescriptionTab from './WeaponSheetDescriptionTab.svelte';
-   import WeaponSheetHeader from './WeaponSheetHeader.svelte';
-   import WeaponSheetSidebar from './WeaponSheetSidebar.svelte';
+   import WeaponSheetAttacksTab from '~/item/types/weapon/sheet/WeaponSheetAttacksTab.svelte';
+   import WeaponSheetDescriptionTab from '~/item/types/weapon/sheet/WeaponSheetDescriptionTab.svelte';
+   import WeaponSheetHeader from '~/item/types/weapon/sheet/WeaponSheetHeader.svelte';
+   import WeaponSheetSidebar from '~/item/types/weapon/sheet/WeaponSheetSidebar.svelte';
 
    // Setup context variables
    export let elementRoot;

@@ -1,5 +1,5 @@
 <script>
-   import CharacterSheetMod from './CharacterSheetMod.svelte';
+   import CharacterSheetMod from '~/actor/types/character/sheet/sidebar/CharacterSheetMod.svelte';
 </script>
 
 <div class="mods">

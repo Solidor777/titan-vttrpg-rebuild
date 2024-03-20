@@ -2,7 +2,7 @@
    import { getContext } from 'svelte';
    import localize from '~/utility-functions/Localize.js';
    import { slide } from 'svelte/transition';
-   import SpellSheetEnableAspectButton from './SpellSheetEnableAspectButton.svelte';
+   import SpellSheetEnableAspectButton from '~/item/types/spell/sheet/SpellSheetEnableAspectButton.svelte';
    import DocumentSelect from '~/documents/components/select/DocumentSelect.svelte';
    import DocumentResistanceSelect from '~/documents/components/select/DocumentResistanceSelect.svelte';
    import DocumentCheckboxInput from '~/documents/components/input/DocumentCheckboxInput.svelte';

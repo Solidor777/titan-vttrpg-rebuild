@@ -2,7 +2,7 @@
    import { getContext } from 'svelte';
    import localize from '~/utility-functions/Localize.js';
    import ChatResource from '~/chat-message/ChatResource.svelte';
-   import ReportDoubleHeader from './components/ReportDoubleHeader.svelte';
+   import ReportDoubleHeader from '~/chat-message/report/components/ReportDoubleHeader.svelte';
 
    // Document reference
    const document = getContext('document');

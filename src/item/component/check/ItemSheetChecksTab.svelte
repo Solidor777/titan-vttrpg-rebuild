@@ -5,7 +5,7 @@
    import Button from '~/helpers/svelte-components/button/Button.svelte';
    import ScrollingContainer from '~/helpers/svelte-components/ScrollingContainer.svelte';
    import TopFilter from '~/helpers/svelte-components/TopFilter.svelte';
-   import ItemSheetCheckSettings from './ItemSheetCheckSettings.svelte';
+   import ItemSheetCheckSettings from '~/item/component/check/ItemSheetCheckSettings.svelte';
 
    // Setup context variables
    const document = getContext('document');

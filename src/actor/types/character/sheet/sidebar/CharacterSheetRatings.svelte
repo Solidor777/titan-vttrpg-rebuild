@@ -1,9 +1,8 @@
 <script>
    import { getContext } from 'svelte';
-   import CharacterSheetRating from './CharacterSheetRating.svelte';
-   import CharacterSheetRatingButton from './CharacterSheetRatingButton.svelte';
+   import CharacterSheetRating from '~/actor/types/character/sheet/sidebar/CharacterSheetRating.svelte';
+   import CharacterSheetRatingButton from '~/actor/types/character/sheet/sidebar/CharacterSheetRatingButton.svelte';
 
-   // Setup context variables
    const document = getContext('document');
 </script>
 

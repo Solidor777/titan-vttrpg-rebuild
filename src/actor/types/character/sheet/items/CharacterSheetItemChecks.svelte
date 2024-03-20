@@ -1,7 +1,5 @@
 <script>
-   import { getContext } from 'svelte';
-   import CharacterSheetItemCheck from './CharacterSheetItemCheck.svelte';
-
+   import CharacterSheetItemCheck from '~/actor/types/character/sheet/items/CharacterSheetItemCheck.svelte';
    // Reference to the item
    export let item = void 0;
 

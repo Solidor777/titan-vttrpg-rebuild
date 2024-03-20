@@ -7,11 +7,11 @@
    import localize from '~/utility-functions/Localize.js';
    import Tabs from '~/helpers/svelte-components/Tabs.svelte';
    import ItemSheetChecksTab from '~/item/component/check/ItemSheetChecksTab.svelte';
-   import SpellSheetSidebar from './SpellSheetSidebar.svelte';
-   import SpellSheetHeader from './SpellSheetHeader.svelte';
-   import SpellSheetCastingCheckTab from './SpellSheetCastingCheckTab.svelte';
-   import SpellSheetStandardAspectsTab from './SpellSheetStandardAspectsTab.svelte';
-   import SpellSheetCustomAspectsTab from './SpellSheetCustomAspectsTab.svelte';
+   import SpellSheetSidebar from '~/item/types/spell/sheet/SpellSheetSidebar.svelte';
+   import SpellSheetHeader from '~/item/types/spell/sheet/SpellSheetHeader.svelte';
+   import SpellSheetCastingCheckTab from '~/item/types/spell/sheet/SpellSheetCastingCheckTab.svelte';
+   import SpellSheetStandardAspectsTab from '~/item/types/spell/sheet/SpellSheetStandardAspectsTab.svelte';
+   import SpellSheetCustomAspectsTab from '~/item/types/spell/sheet/SpellSheetCustomAspectsTab.svelte';
    import ItemSheetDescriptionTab from '~/item/sheet/ItemSheetDescriptionTab.svelte';
 
    // Setup context variables

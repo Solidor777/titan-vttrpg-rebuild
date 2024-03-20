@@ -2,7 +2,7 @@
    import localize from '~/utility-functions/Localize.js';
    import { getContext } from 'svelte';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
-   import CheckChatResetExpertiseButton from './CheckChatResetExpertiseButton.svelte';
+   import CheckChatResetExpertiseButton from '~/check/chat-message/CheckChatResetExpertiseButton.svelte';
 
    // Document reference
    const document = getContext('document');

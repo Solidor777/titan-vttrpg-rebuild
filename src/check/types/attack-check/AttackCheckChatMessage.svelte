@@ -2,8 +2,8 @@
    import { getContext } from 'svelte';
    import CheckChatDiceContainer from '~/check/chat-message/CheckChatDiceContainer.svelte';
    import CheckChatResults from '~/check/chat-message/CheckChatResults.svelte';
-   import AttackCheckChatHeader from './AttackCheckChatHeader.svelte';
-   import AttackCheckChatStats from './AttackCheckChatStats.svelte';
+   import AttackCheckChatHeader from '~/check/types/attack-check/AttackCheckChatHeader.svelte';
+   import AttackCheckChatStats from '~/check/types/attack-check/AttackCheckChatStats.svelte';
    import RichText from '~/helpers/svelte-components/RichText.svelte';
    import CheckChatMesssages from '~/check/chat-message/CheckChatMesssages.svelte';
    import ChatRendButtons from '~/chat-message/ChatRendButtons.svelte';

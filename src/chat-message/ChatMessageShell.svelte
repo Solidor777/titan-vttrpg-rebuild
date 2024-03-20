@@ -26,8 +26,8 @@
    import TurnStartReportChatMessage from '~/chat-message/report/TurnStartReportChatMessage.svelte';
    import TurnEndReportChatMessage from '~/chat-message/report/TurnEndReportChatMessage.svelte';
    import EffectsExpiredReportChatMessage from '~/chat-message/report/EffectsExpiredReportChatMessage.svelte';
-   import RendReportChatMessage from './report/RendReportChatMessage.svelte';
-   import RepairReportChatMessage from './report/RepairReportChatMessage.svelte';
+   import RendReportChatMessage from '~/chat-message/report/RendReportChatMessage.svelte';
+   import RepairReportChatMessage from '~/chat-message/report/RepairReportChatMessage.svelte';
 
    // Context object
    export let documentStore = void 0;

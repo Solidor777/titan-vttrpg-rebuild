@@ -5,7 +5,7 @@
    import Button from '~/helpers/svelte-components/button/Button.svelte';
    import ScrollingContainer from '~/helpers/svelte-components/ScrollingContainer.svelte';
    import TopFilter from '~/helpers/svelte-components/TopFilter.svelte';
-   import WeaponSheetAttackSettings from './WeaponSheetAttackSettings.svelte';
+   import WeaponSheetAttackSettings from '~/item/types/weapon/sheet/WeaponSheetAttackSettings.svelte';
 
    // Setup context variables
    const document = getContext('document');

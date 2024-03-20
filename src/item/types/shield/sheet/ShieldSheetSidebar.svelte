@@ -3,7 +3,7 @@
    import { slide } from 'svelte/transition';
    import ScrollingContainer from '~/helpers/svelte-components/ScrollingContainer.svelte';
    import ItemSheetSidebarChecks from '~/item/component/check/ItemSheetSidebarChecks.svelte';
-   import ShieldSheetSidebarTraits from './ShieldSheetSidebarTraits.svelte';
+   import ShieldSheetSidebarTraits from '~/item/types/shield/sheet/ShieldSheetSidebarTraits.svelte';
 
    // Application statee reference
    const appState = getContext('applicationState');

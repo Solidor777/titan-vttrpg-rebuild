@@ -4,7 +4,7 @@
    import localize from '~/utility-functions/Localize.js';
    import DocumentSelect from '~/documents/components/select/DocumentSelect.svelte';
    import IconButton from '~/helpers/svelte-components/button/IconButton.svelte';
-   import onRulesElementOperationChanged from './RulesElementUpdateOperation';
+   import onRulesElementOperationChanged from '~/item/component/rules-element/RulesElementUpdateOperation';
    import DocumentIntegerInput from '~/documents/components/input/DocumentIntegerInput.svelte';
 
    // Setup context variables

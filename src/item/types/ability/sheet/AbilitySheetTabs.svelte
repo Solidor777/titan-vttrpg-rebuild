@@ -5,6 +5,7 @@
     import ItemSheetDescriptionTab from '~/item/sheet/ItemSheetDescriptionTab.svelte';
     import ItemSheetRulesElementsTab from '~/item/component/rules-element/ItemSheetRulesElementsTab.svelte';
     import BorderedTabs from '~/helpers/svelte-components/BorderedTabs.svelte';
+
     const appState = getContext('applicationState');
 
     // Setup tabs

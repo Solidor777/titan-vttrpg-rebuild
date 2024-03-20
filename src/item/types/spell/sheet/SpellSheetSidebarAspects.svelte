@@ -1,8 +1,8 @@
 <script>
    import { getContext } from 'svelte';
    import { slide } from 'svelte/transition';
-   import SpellSheetSidebarCustomAspect from './SpellSheetSidebarCustomAspect.svelte';
-   import SpellSheetSidebarStandardAspect from './SpellSheetSidebarStandardAspect.svelte';
+   import SpellSheetSidebarCustomAspect from '~/item/types/spell/sheet/SpellSheetSidebarCustomAspect.svelte';
+   import SpellSheetSidebarStandardAspect from '~/item/types/spell/sheet/SpellSheetSidebarStandardAspect.svelte';
 
    // Application statee reference
    const document = getContext('document');

@@ -3,8 +3,8 @@
    import { slide } from 'svelte/transition';
    import ScrollingContainer from '~/helpers/svelte-components/ScrollingContainer.svelte';
    import ItemSheetSidebarChecks from '~/item/component/check/ItemSheetSidebarChecks.svelte';
-   import ItemSheetSidebarTraits from '../../../sheet/ItemSheetSidebarTraits.svelte';
-   import SpellSheetSidebarCastingCheck from './SpellSheetSidebarCastingCheck.svelte';
+   import ItemSheetSidebarTraits from '~/item/sheet/ItemSheetSidebarTraits.svelte';
+   import SpellSheetSidebarCastingCheck from '~/item/types/spell/sheet/SpellSheetSidebarCastingCheck.svelte';
 
    // Application statee reference
    const appState = getContext('applicationState');

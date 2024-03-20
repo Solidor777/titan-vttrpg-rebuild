@@ -1,7 +1,7 @@
 <script>
    import preventDefault from '~/helpers/svelte-actions/PreventDefault.js';
    import { getContext } from 'svelte';
-   import recalculateCheckResults from './RecalculateCheckResults';
+   import recalculateCheckResults from '~/check/chat-message/RecalculateCheckResults';
 
    export let idx = void 0;
 

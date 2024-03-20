@@ -4,7 +4,7 @@
    import { slide } from 'svelte/transition';
    import DocumentSelect from '~/documents/components/select/DocumentSelect.svelte';
    import IconButton from '~/helpers/svelte-components/button/IconButton.svelte';
-   import onRulesElementOperationChanged from './RulesElementUpdateOperation';
+   import onRulesElementOperationChanged from '~/item/component/rules-element/RulesElementUpdateOperation';
    import DocumentRangeTypeSelect from '~/documents/components/select/DocumentRangeTypeSelect.svelte';
    import DocumentAttackTraitSelect from '~/documents/components/select/DocumentAttackTraitSelect.svelte';
    import DocumentTextInput from '~/documents/components/input/DocumentTextInput.svelte';

@@ -13,7 +13,7 @@
    import CharacterSheetItemDeleteButton from '~/actor/types/character/sheet/items/CharacterSheetItemDeleteButton.svelte';
    import CharacterSheetItemImage from '~/actor/types/character/sheet/items/CharacterSheetItemImage.svelte';
    import CharacterSheetCheckButton from '~/actor/types/character/sheet/CharacterSheetCheckButton.svelte';
-   import CharacterSheetSpellCastingCheck from './CharacterSheetSpellCastingCheck.svelte';
+   import CharacterSheetSpellCastingCheck from '~/actor/types/character/sheet/items/spell/CharacterSheetSpellCastingCheck.svelte';
    import CharacterSheetItemChecks from '~/actor/types/character/sheet/items/CharacterSheetItemChecks.svelte';
    import Tag from '~/helpers/svelte-components/tag/Tag.svelte';
 

@@ -5,7 +5,7 @@
    import ScrollingContainer from '~/helpers/svelte-components/ScrollingContainer.svelte';
    import TopFilter from '~/helpers/svelte-components/TopFilter.svelte';
    import Button from '~/helpers/svelte-components/button/Button.svelte';
-   import SpellSheetCustomAspectSettings from './SpellSheetCustomAspectSettings.svelte';
+   import SpellSheetCustomAspectSettings from '~/item/types/spell/sheet/SpellSheetCustomAspectSettings.svelte';
 
    // Setup context variables
    const document = getContext('document');

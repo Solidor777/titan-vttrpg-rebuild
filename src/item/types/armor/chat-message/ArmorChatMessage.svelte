@@ -3,7 +3,7 @@
    import RichText from '~/helpers/svelte-components/RichText.svelte';
    import ItemChatChecks from '~/item/chat-message/ItemChatChecks.svelte';
    import ItemChatLabel from '~/item/chat-message/ItemChatLabel.svelte';
-   import ArmorChatStats from './ArmorChatStats.svelte';
+   import ArmorChatStats from '~/item/types/armor/chat-message/ArmorChatStats.svelte';
 
    // Chat context reference
    const document = getContext('document');

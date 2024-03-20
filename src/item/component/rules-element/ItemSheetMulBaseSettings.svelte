@@ -11,7 +11,7 @@
    import DocumentResistanceSelect from '~/documents/components/select/DocumentResistanceSelect.svelte';
    import DocumentResourceSelect from '~/documents/components/select/DocumentResourceSelect.svelte';
    import DocumentSpeedSelect from '~/documents/components/select/DocumentSpeedSelect.svelte';
-   import onRulesElementOperationChanged from './RulesElementUpdateOperation';
+   import onRulesElementOperationChanged from '~/item/component/rules-element/RulesElementUpdateOperation';
    import DocumentFloatInput from '~/documents/components/input/DocumentFloatInput.svelte';
 
    // Setup context variables

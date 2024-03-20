@@ -4,7 +4,7 @@
    import SpellAspects from '~/item/types/spell/SpellAspects.js';
    import ScrollingContainer from '~/helpers/svelte-components/ScrollingContainer.svelte';
    import TopFilter from '~/helpers/svelte-components/TopFilter.svelte';
-   import SpellSheetStandardAspectSettings from './SpellSheetStandardAspectSettings.svelte';
+   import SpellSheetStandardAspectSettings from '~/item/types/spell/sheet/SpellSheetStandardAspectSettings.svelte';
 
    // Setup context variables
    const appState = getContext('applicationState');

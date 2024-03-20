@@ -3,7 +3,7 @@
    import { slide } from 'svelte/transition';
    import ScrollingContainer from '~/helpers/svelte-components/ScrollingContainer.svelte';
    import ItemSheetSidebarChecks from '~/item/component/check/ItemSheetSidebarChecks.svelte';
-   import ArmorSheetSidebarTraits from './ArmorSheetSidebarTraits.svelte';
+   import ArmorSheetSidebarTraits from '~/item/types/armor/sheet/ArmorSheetSidebarTraits.svelte';
 
    // Application statee reference
    const appState = getContext('applicationState');
@@ -29,6 +29,7 @@
 
 <style lang="scss">
    .sidebar {
+      @include border;
       @include flex-column;
       @include flex-group-top;
       @include border;

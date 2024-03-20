@@ -1,6 +1,6 @@
 <script>
-   import SpellCustomAspectTag from './SpellCustomAspectTag.svelte';
-   import SpellStandardAspectTag from './SpellStandardAspectTag.svelte';
+   import SpellCustomAspectTag from '~/helpers/svelte-components/tag/SpellCustomAspectTag.svelte';
+   import SpellStandardAspectTag from '~/helpers/svelte-components/tag/SpellStandardAspectTag.svelte';
 
    // Aspects list
    export let standardAspects = void 0;

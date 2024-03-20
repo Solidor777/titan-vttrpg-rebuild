@@ -3,13 +3,13 @@
 <script>
    import { ApplicationShell } from '@typhonjs-fvtt/runtime/svelte/component/core';
    import { setContext } from 'svelte';
-   import { getContext } from 'svelte';
    import localize from '~/utility-functions/Localize.js';
-   import Tabs from '~/helpers/svelte-components/Tabs.svelte';
    import ItemSheetChecksTab from '~/item/component/check/ItemSheetChecksTab.svelte';
    import ItemSheetDescriptionTab from '~/item/sheet/ItemSheetDescriptionTab.svelte';
    import ItemSheetSidebar from '~/item/sheet/ItemSheetSidebar.svelte';
-   import CommoditySheetHeader from './CommoditySheetHeader.svelte';
+   import ItemSheetBase from '~/item/sheet/ItemSheetBase.svelte';
+   import CommoditySheetHeader from '~/item/types/commodity/sheet/CommoditySheetHeader.svelte';
+   import CommoditySheetTabs from '~/item/types/commodity/sheet/CommoditySheetTabs.svelte';
 
    // Setup context variables
    export let elementRoot;
@@ -17,7 +17,6 @@
    export let applicationState;
    setContext('document', document);
    setContext('applicationState', applicationState);
-   const appState = getContext('applicationState');
 
    // Tabs
    const tabs = [
@@ -35,49 +34,9 @@
 </script>
 
 <ApplicationShell bind:elementRoot>
-   <div class="item-sheet">
-      <!--Header-->
-      <div class="header">
-         <CommoditySheetHeader />
-      </div>
-
-      <!--Content-->
-      <div class="body">
-         <!--Sidebar-->
-         <div class="sidebar"><ItemSheetSidebar /></div>
-
-         <!--Tabs-->
-         <div class="tabs">
-            <Tabs {tabs} bind:activeTab={$appState.activeTab} />
-         </div>
-      </div>
-   </div>
+   <ItemSheetBase
+      header={CommoditySheetHeader}
+      sidebar={ItemSheetSidebar}
+      tabs={CommoditySheetTabs}
+   />
 </ApplicationShell>
-
-<style lang="scss">
-   .item-sheet {
-      @include flex-column;
-      @include font-size-normal;
-      display: flex;
-      flex: 1;
-
-      .body {
-         @include flex-row;
-         height: 100%;
-         width: 100%;
-
-         .sidebar {
-            @include flex-row;
-            width: 13rem;
-            min-width: 13rem;
-            margin: var(--padding-large) var(--padding-large) 0 0;
-         }
-
-         .tabs {
-            @include border;
-            margin-top: var(--padding-large);
-            flex-grow: 1;
-         }
-      }
-   }
-</style>

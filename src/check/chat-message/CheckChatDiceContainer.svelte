@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import CheckChatDie from './CheckChatDie.svelte';
+   import CheckChatDie from '~/check/chat-message/CheckChatDie.svelte';
 
    const document = getContext('document');
 </script>

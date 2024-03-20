@@ -7,7 +7,7 @@
    import DocumentSkillSelect from '~/documents/components/select/DocumentSkillSelect.svelte';
    import DocumentAttributeSelect from '~/documents/components/select/DocumentAttributeSelect.svelte';
    import DocumentResistanceSelect from '~/documents/components/select/DocumentResistanceSelect.svelte';
-   import onRulesElementOperationChanged from './RulesElementUpdateOperation';
+   import onRulesElementOperationChanged from '~/item/component/rules-element/RulesElementUpdateOperation';
    import DocumentBoundEditorInput from '~/documents/components/input/DocumentBoundEditorInput.svelte';
    import DocumentRangeTypeSelect from '~/documents/components/select/DocumentRangeTypeSelect.svelte';
    import DocumentAttackTraitSelect from '~/documents/components/select/DocumentAttackTraitSelect.svelte';

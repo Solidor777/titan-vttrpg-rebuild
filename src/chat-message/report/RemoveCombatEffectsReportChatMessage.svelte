@@ -1,6 +1,6 @@
 <script>
    import localize from '~/utility-functions/Localize.js';
-   import ReportHeader from './components/ReportHeader.svelte';
+   import ReportHeader from '~/chat-message/report/components/ReportHeader.svelte';
 </script>
 
 <div class="report">

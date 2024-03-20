@@ -1,5 +1,5 @@
 <script>
-   import CharacterSheetWeaponAttack from './CharacterSheetWeaponAttack.svelte';
+   import CharacterSheetWeaponAttack from '~/actor/types/character/sheet/items/weapon/CharacterSheetWeaponAttack.svelte';
 
    // Reference to the weapon id
    export let item = void 0;

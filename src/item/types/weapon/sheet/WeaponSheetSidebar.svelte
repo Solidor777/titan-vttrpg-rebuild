@@ -4,7 +4,7 @@
    import ScrollingContainer from '~/helpers/svelte-components/ScrollingContainer.svelte';
    import ItemSheetSidebarChecks from '~/item/component/check/ItemSheetSidebarChecks.svelte';
    import ItemSheetSidebarTraits from '~/item/sheet/ItemSheetSidebarTraits.svelte';
-   import WeaponSheetSidebarAttacks from './WeaponSheetSidebarAttacks.svelte';
+   import WeaponSheetSidebarAttacks from '~/item/types/weapon/sheet/WeaponSheetSidebarAttacks.svelte';
 
    // Application statee reference
    const appState = getContext('applicationState');

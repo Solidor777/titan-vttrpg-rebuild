@@ -12,7 +12,7 @@
    import DocumentResistanceSelect from '~/documents/components/select/DocumentResistanceSelect.svelte';
    import DocumentResourceSelect from '~/documents/components/select/DocumentResourceSelect.svelte';
    import DocumentSpeedSelect from '~/documents/components/select/DocumentSpeedSelect.svelte';
-   import onRulesElementOperationChanged from './RulesElementUpdateOperation';
+   import onRulesElementOperationChanged from '~/item/component/rules-element/RulesElementUpdateOperation';
 
    // Setup context variables
    const document = getContext('document');

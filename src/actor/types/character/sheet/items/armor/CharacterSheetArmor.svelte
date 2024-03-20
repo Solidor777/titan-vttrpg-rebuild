@@ -12,7 +12,7 @@
    import CharacterSheetItemEquipButton from '~/actor/types/character/sheet/items/CharacterSheetItemEquipButton.svelte';
    import CharacterSheetItemImage from '~/actor/types/character/sheet/items/CharacterSheetItemImage.svelte';
    import CharacterSheetItemChecks from '~/actor/types/character/sheet/items/CharacterSheetItemChecks.svelte';
-   import CharacterSheetArmorStats from './CharacterSheetArmorStats.svelte';
+   import CharacterSheetArmorStats from '~/actor/types/character/sheet/items/armor/CharacterSheetArmorStats.svelte';
 
    // Reference to the armor id
    export let id = void 0;

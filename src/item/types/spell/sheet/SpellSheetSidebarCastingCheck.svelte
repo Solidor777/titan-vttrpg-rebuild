@@ -3,7 +3,7 @@
    import localize from '~/utility-functions/Localize.js';
    import { slide } from 'svelte/transition';
    import IconButton from '~/helpers/svelte-components/button/IconButton.svelte';
-   import SpellSheetSidebarAspects from './SpellSheetSidebarAspects.svelte';
+   import SpellSheetSidebarAspects from '~/item/types/spell/sheet/SpellSheetSidebarAspects.svelte';
 
    // Application statee reference
    const appState = getContext('applicationState');

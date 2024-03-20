@@ -1,20 +1,19 @@
 import { TJSDialog } from '@typhonjs-fvtt/runtime/svelte/application';
-import getSetting from '~/utility-functions/GetSetting.js';
-import DocumentEditCustomTraitDialogShell from '~/documents/DocumentEditCustomTraitDialogShell.svelte';
-export default class DocumenEditCustomTraitDialog extends TJSDialog {
-   constructor(document, traitIdx) {
+import getSetting from '~/helpers/utility-functions/GetSetting.js';
+import DocumentAddCustomTraitDialogShell from '~/documents/dialogs/DocumentAddCustomTraitDialogShell.svelte';
+export default class DocumentAddCustomTraitDialog extends TJSDialog {
+   constructor(document) {
       super(
          {
             title: `${document.name}`,
             content: {
-               class: DocumentEditCustomTraitDialogShell,
+               class: DocumentAddCustomTraitDialogShell,
                props: {
                   document: document,
-                  traitIdx: traitIdx
                },
             },
             zIndex: null,
-            id: `edit-custom-trait-dialog-${document._id}`,
+            id: `add-custom-trait-dialog-${document._id}`,
          },
          {
             width: 300,

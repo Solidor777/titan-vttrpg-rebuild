@@ -1,4 +1,4 @@
-import isModifierActive from '~/utility-functions/IsModifierActive.js';
+import isModifierActive from '~/helpers/utility-functions/IsModifierActive.js';
 
 export default function shouldConfirmDeletingItems() {
    // If confirm deleting items is true, return true unless the modifier key is pressed.

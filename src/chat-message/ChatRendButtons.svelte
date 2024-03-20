@@ -1,9 +1,9 @@
 <script>
-   import applyRendToTargets from '~/utility-functions/ApplyRendToTargets.js';
-   import applyRepairsToTargets from '~/utility-functions/ApplyRepairsToTarget.js';
+   import applyRendToTargets from '~/helpers/utility-functions/ApplyRendToTargets.js';
+   import applyRepairsToTargets from '~/helpers/utility-functions/ApplyRepairsToTarget.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import Button from '~/helpers/svelte-components/button/Button.svelte';
-   import localize from '~/utility-functions/Localize.js';
+   import localize from '~/helpers/utility-functions/Localize.js';
 
    export let rend = void 0;
    export let magical = false;

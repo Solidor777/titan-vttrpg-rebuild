@@ -1,7 +1,7 @@
 <script>
-   import getCombatTargets from '~/utility-functions/GetCombatTargets.js';
+   import getCombatTargets from '~/helpers/utility-functions/GetCombatTargets.js';
    import Button from '~/helpers/svelte-components/button/Button.svelte';
-   import localize from '~/utility-functions/Localize.js';
+   import localize from '~/helpers/utility-functions/Localize.js';
 
    export let attribute = 'body';
    export let skill = 'arcana';

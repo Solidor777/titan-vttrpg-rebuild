@@ -1,5 +1,5 @@
 <script>
-   import localize from '~/utility-functions/Localize.js';
+   import localize from '~/helpers/utility-functions/Localize.js';
    import { SHIELD_TRAIT_DESCRIPTIONS } from '~/item/types/shield/ShieldTraits.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import IconStatTag from '~/helpers/svelte-components/tag/IconStatTag.svelte';

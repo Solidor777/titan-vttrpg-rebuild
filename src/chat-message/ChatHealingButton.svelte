@@ -1,7 +1,7 @@
 <script>
    import { getContext } from 'svelte';
-   import applyHealingToTargets from '~/utility-functions/ApplyHealingToTargets.js';
-   import localize from '~/utility-functions/Localize.js';
+   import applyHealingToTargets from '~/helpers/utility-functions/ApplyHealingToTargets.js';
+   import localize from '~/helpers/utility-functions/Localize.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import Button from '~/helpers/svelte-components/button/Button.svelte';
 

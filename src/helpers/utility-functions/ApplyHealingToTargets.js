@@ -1,4 +1,4 @@
-import getCombatTargets from '~/utility-functions/GetCombatTargets.js';
+import getCombatTargets from '~/helpers/utility-functions/GetCombatTargets.js';
 
 export default function applyHealingToTargets(healing = 1, options) {
    // Get targets

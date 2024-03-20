@@ -1,4 +1,4 @@
-import localize from '~/utility-functions/Localize.js';
+import localize from '~/helpers/utility-functions/Localize.js';
 import { Hashing } from '@typhonjs-fvtt/runtime/util';
 import TitanTypeComponent from '~/helpers/TypeComponent';
 import SpellAspects from '~/item/types/spell/SpellAspects';

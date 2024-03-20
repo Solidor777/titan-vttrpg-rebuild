@@ -1,8 +1,8 @@
 import { SvelteApplication } from '@typhonjs-fvtt/runtime/svelte/application';
 import { TJSDocument } from '@typhonjs-fvtt/runtime/svelte/store/fvtt/document';
 import { writable } from 'svelte/store';
-import getSetting from '~/utility-functions/GetSetting.js';
-import localize from '~/utility-functions/Localize.js';
+import getSetting from '~/helpers/utility-functions/GetSetting.js';
+import localize from '~/helpers/utility-functions/Localize.js';
 export default class TitanDocumentSheet extends SvelteApplication {
 
    // Constructor for the document sheet

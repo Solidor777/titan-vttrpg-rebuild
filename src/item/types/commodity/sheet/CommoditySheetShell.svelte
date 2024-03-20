@@ -3,7 +3,7 @@
 <script>
    import { ApplicationShell } from '@typhonjs-fvtt/runtime/svelte/component/core';
    import { setContext } from 'svelte';
-   import localize from '~/utility-functions/Localize.js';
+   import localize from '~/helpers/utility-functions/Localize.js';
    import ItemSheetChecksTab from '~/item/component/check/ItemSheetChecksTab.svelte';
    import ItemSheetDescriptionTab from '~/item/sheet/ItemSheetDescriptionTab.svelte';
    import ItemSheetSidebar from '~/item/sheet/ItemSheetSidebar.svelte';

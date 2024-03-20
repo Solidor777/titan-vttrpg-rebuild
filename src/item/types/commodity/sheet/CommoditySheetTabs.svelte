@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import localize from '~/utility-functions/Localize.js';
+   import localize from '~/helpers/utility-functions/Localize.js';
    import BorderedTabs from '~/helpers/svelte-components/BorderedTabs.svelte';
    import ItemSheetChecksTab from '~/item/component/check/ItemSheetChecksTab.svelte';
    import ItemSheetDescriptionTab from '~/item/sheet/ItemSheetDescriptionTab.svelte';

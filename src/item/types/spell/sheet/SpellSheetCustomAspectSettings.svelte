@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import localize from '~/utility-functions/Localize.js';
+   import localize from '~/helpers/utility-functions/Localize.js';
    import { slide } from 'svelte/transition';
    import DocumentCheckboxInput from '~/documents/components/input/DocumentCheckboxInput.svelte';
    import DocumentResistanceSelect from '~/documents/components/select/DocumentResistanceSelect.svelte';
@@ -20,7 +20,7 @@
 </script>
 
 {#if aspect}
-   <div class='aspect' transition:slide|local>
+   <div class="aspect" transition:slide|local>
       <!--Header-->
       <div class="header">
          <!--Expand Toggle-->

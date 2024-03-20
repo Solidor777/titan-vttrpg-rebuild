@@ -1,6 +1,6 @@
 import { Hashing } from '@typhonjs-fvtt/runtime/util';
-import sortObjectsIntoContainerByKeyValue from '~/utility-functions/SortObjectsIntoContainerByKeyValue.js';
-import camelize from '~/utility-functions/Camelize.js';
+import sortObjectsIntoContainerByKeyValue from '~/helpers/utility-functions/SortObjectsIntoContainerByKeyValue.js';
+import camelize from '~/helpers/utility-functions/Camelize.js';
 
 export function getConditionalCheckModifierTemplate(uuid, type) {
    return {

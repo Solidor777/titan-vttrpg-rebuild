@@ -1,4 +1,4 @@
-import isModifierActive from '~/utility-functions/IsModifierActive.js';
+import isModifierActive from '~/helpers/utility-functions/IsModifierActive.js';
 
 export default async function onUpdateCombat(combat, data, diff) {
    // Ensure that this is the result of advancing in turn order

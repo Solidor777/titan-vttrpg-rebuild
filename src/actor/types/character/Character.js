@@ -32,19 +32,19 @@ import {
    getItemCheckMod,
    getAttributeCheckMod
 } from '~/rules-element/ConditionalCheckModifier';
-import clamp from '~/utility-functions/Clamp.js';
-import localize from '~/utility-functions/Localize.js';
-import shouldGetCheckOptions from '~/utility-functions/ShouldGetCheckOptions.js';
-import shouldConfirmDeletingItems from '~/utility-functions/ShouldConfirmDeletingItems.js';
-import getSetting from '~/utility-functions/GetSetting.js';
-import isCurrentUserFirstOwner from '~/utility-functions/IsCurrentUserFirstOwner.js';
-import isHTMLBlank from '~/utility-functions/IsHTMLBlank.js';
-import getCombatTargets from '~/utility-functions/GetCombatTargets.js';
-import sort from '~/utility-functions/Sort.js';
-import sortObjectsIntoContainerByFunctionValue from '~/utility-functions/SortObjectsIntoContainerByFunctionValue.js';
-import getSumOfObjectValues from '~/utility-functions/GetSumOfObjectValues.js';
-import getOwners from '~/utility-functions/GetOwners.js';
-import getBestPlayerOwner from '~/utility-functions/GetBestPlayerOwner.js';
+import clamp from '~/helpers/utility-functions/Clamp.js';
+import localize from '~/helpers/utility-functions/Localize.js';
+import shouldGetCheckOptions from '~/helpers/utility-functions/ShouldGetCheckOptions.js';
+import shouldConfirmDeletingItems from '~/helpers/utility-functions/ShouldConfirmDeletingItems.js';
+import getSetting from '~/helpers/utility-functions/GetSetting.js';
+import isCurrentUserFirstOwner from '~/helpers/utility-functions/IsCurrentUserFirstOwner.js';
+import isHTMLBlank from '~/helpers/utility-functions/IsHTMLBlank.js';
+import getCombatTargets from '~/helpers/utility-functions/GetCombatTargets.js';
+import sort from '~/helpers/utility-functions/Sort.js';
+import sortObjectsIntoContainerByFunctionValue from '~/helpers/utility-functions/SortObjectsIntoContainerByFunctionValue.js';
+import getSumOfObjectValues from '~/helpers/utility-functions/GetSumOfObjectValues.js';
+import getOwners from '~/helpers/utility-functions/GetOwners.js';
+import getBestPlayerOwner from '~/helpers/utility-functions/GetBestPlayerOwner.js';
 
 export default class TitanCharacterComponent extends TitanTypeComponent {
 

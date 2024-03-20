@@ -1,7 +1,7 @@
 <script>
    import { getContext } from 'svelte';
    import { slide } from 'svelte/transition';
-   import sort from '~/utility-functions/Sort.js';
+   import sort from '~/helpers/utility-functions/Sort.js';
 
    // Component class for the item
    export let itemComponents = void 0;

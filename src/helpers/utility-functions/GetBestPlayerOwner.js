@@ -1,4 +1,4 @@
-import getPlayerOwners from '~/utility-functions/GetPlayerOwners.js';
+import getPlayerOwners from '~/helpers/utility-functions/GetPlayerOwners.js';
 
 // Gets the first player owner of this document, prioritizing active players
 export default function getBestPlayerOwner(document) {

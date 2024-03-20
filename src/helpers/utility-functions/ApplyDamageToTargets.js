@@ -1,4 +1,4 @@
-import getCombatTargets from '~/utility-functions/GetCombatTargets.js';
+import getCombatTargets from '~/helpers/utility-functions/GetCombatTargets.js';
 
 export default function applyDamageToTargets(damage, options) {
    // Get targets

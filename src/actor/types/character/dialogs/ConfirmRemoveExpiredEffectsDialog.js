@@ -1,4 +1,4 @@
-import localize from '~/utility-functions/Localize.js';
+import localize from '~/helpers/utility-functions/Localize.js';
 import ConfirmationDialog from '~/helpers/dialogs/ConfirmationDialog';
 export default class ConfirmRemoveExpiredEffectsDialog extends ConfirmationDialog {
    constructor(character, confirmationCallback, confirmationContext) {

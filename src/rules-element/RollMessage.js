@@ -1,8 +1,8 @@
 import { Hashing } from '@typhonjs-fvtt/runtime/util';
-import sortObjectsIntoContainerByKeyValue from '~/utility-functions/SortObjectsIntoContainerByKeyValue.js';
-import camelize from '~/utility-functions/Camelize.js';
-import appendUnique from '~/utility-functions/AppendUnique.js';
-import isHTMLBlank from '~/utility-functions/IsHTMLBlank.js';
+import sortObjectsIntoContainerByKeyValue from '~/helpers/utility-functions/SortObjectsIntoContainerByKeyValue.js';
+import camelize from '~/helpers/utility-functions/Camelize.js';
+import appendUnique from '~/helpers/utility-functions/AppendUnique.js';
+import isHTMLBlank from '~/helpers/utility-functions/IsHTMLBlank.js';
 
 export function getRollMessageTemplate(uuid, type) {
    return {

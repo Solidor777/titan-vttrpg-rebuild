@@ -2,8 +2,8 @@
 
 <script>
    import { getContext } from 'svelte';
-   import getCombatTargets from '~/utility-functions/GetCombatTargets.js';
-   import localize from '~/utility-functions/Localize.js';
+   import getCombatTargets from '~/helpers/utility-functions/GetCombatTargets.js';
+   import localize from '~/helpers/utility-functions/Localize.js';
    import AttributeSelect from '~/helpers/svelte-components/select/AttributeSelect.svelte';
    import SkillSelect from '~/helpers/svelte-components/select/SkillSelect.svelte';
    import IntegerInput from '~/helpers/svelte-components/input/IntegerInput.svelte';

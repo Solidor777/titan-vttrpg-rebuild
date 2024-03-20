@@ -1,5 +1,5 @@
-import localize from '~/utility-functions/Localize.js';
-import regenerateDocumentUUID from '~/utility-functions/RegenerateDocumentUUID.js';
+import localize from '~/helpers/utility-functions/Localize.js';
+import regenerateDocumentUUID from '~/helpers/utility-functions/RegenerateDocumentUUID.js';
 import ConfirmationDialog from '~/helpers/dialogs/ConfirmationDialog';
 export default class ConfirmRegenerateUUIDDialog extends ConfirmationDialog {
    constructor(document) {

@@ -1,5 +1,5 @@
-import localize from '~/utility-functions/Localize.js';
-import sort from '~/utility-functions/Sort.js';
+import localize from '~/helpers/utility-functions/Localize.js';
+import sort from '~/helpers/utility-functions/Sort.js';
 
 export default function setupConditions() {
    // Create list of conditions

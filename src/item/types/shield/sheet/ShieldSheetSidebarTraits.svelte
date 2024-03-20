@@ -1,12 +1,12 @@
 <script>
    import { getContext } from 'svelte';
    import { slide } from 'svelte/transition';
-   import localize from '~/utility-functions/Localize.js';
+   import localize from '~/helpers/utility-functions/Localize.js';
    import { SHIELD_TRAIT_DESCRIPTIONS } from '~/item/types/shield/ShieldTraits.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import Button from '~/helpers/svelte-components/button/Button.svelte';
    import Tag from '~/helpers/svelte-components/tag/Tag.svelte';
-   import DocumentAddCustomTraitDialog from '~/documents/DocumentAddCustomTraitDialog';
+   import DocumentAddCustomTraitDialog from '~/documents/dialogs/DocumentAddCustomTraitDialog';
    import EditDeleteTag from '~/helpers/svelte-components/tag/EditDeleteTag.svelte';
 
    // Application statee reference

@@ -1,5 +1,5 @@
-import localize from '~/utility-functions/Localize.js';
-import shouldConfirmDeletingItems from '~/utility-functions/ShouldConfirmDeletingItems.js';
+import localize from '~/helpers/utility-functions/Localize.js';
+import shouldConfirmDeletingItems from '~/helpers/utility-functions/ShouldConfirmDeletingItems.js';
 import { Hashing } from '@typhonjs-fvtt/runtime/util';
 import TitanPlayerComponent from '~/actor/types/player/Player.js';
 import TitanNPCComponent from '~/actor/types/npc/NPC.js';

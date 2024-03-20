@@ -1,8 +1,8 @@
 <script>
-   import isHTMLBlank from '~/utility-functions/IsHTMLBlank.js';
-   import checkAddDarkSVGClass from '~/utility-functions/CheckAddDarkSVGClass.js';
+   import isHTMLBlank from '~/helpers/utility-functions/IsHTMLBlank.js';
+   import checkAddDarkSVGClass from '~/helpers/utility-functions/CheckAddDarkSVGClass.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
-   import localize from '~/utility-functions/Localize.js';
+   import localize from '~/helpers/utility-functions/Localize.js';
 
    export let label = void 0;
    export let img = void 0;

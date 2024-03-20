@@ -1,8 +1,8 @@
 <script>
    import { getContext } from 'svelte';
-   import getActor from '~/utility-functions/GetActor.js';
+   import getActor from '~/helpers/utility-functions/GetActor.js';
    import Button from '~/helpers/svelte-components/button/Button.svelte';
-   import localize from '~/utility-functions/Localize.js';
+   import localize from '~/helpers/utility-functions/Localize.js';
 
    // Context variables
    const document = getContext('document');

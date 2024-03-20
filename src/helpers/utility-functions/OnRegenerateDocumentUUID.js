@@ -1,5 +1,5 @@
 import ConfirmRegenerateUUIDDialog from '~/documents/dialogs/ConfirmRegenerateUUIDDialog.js';
-import getSetting from '~/utility-functions/GetSetting.js';
+import getSetting from '~/helpers/utility-functions/GetSetting.js';
 
 // Randomly regenerate the UUID of an document
 export default function onRegenerateDocumentUUID(document) {

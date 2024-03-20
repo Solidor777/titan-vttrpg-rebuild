@@ -1,5 +1,5 @@
-import getOwners from '~/utility-functions/GetOwners.js';
-import getSetting from '~/utility-functions/GetSetting.js';
+import getOwners from '~/helpers/utility-functions/GetOwners.js';
+import getSetting from '~/helpers/utility-functions/GetSetting.js';
 import TitanCharacterComponent from '~/actor/types/character/Character';
 
 export default class TitanNPCComponent extends TitanCharacterComponent {

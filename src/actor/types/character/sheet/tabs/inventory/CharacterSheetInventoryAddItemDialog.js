@@ -1,6 +1,6 @@
 import { TJSDialog } from '@typhonjs-fvtt/runtime/svelte/application';
-import getSetting from '~/utility-functions/GetSetting.js';
-import localize from '~/utility-functions/Localize.js';
+import getSetting from '~/helpers/utility-functions/GetSetting.js';
+import localize from '~/helpers/utility-functions/Localize.js';
 import CharacterSheetInventoryAddItemDialogShell from '~/actor/types/character/sheet/tabs/inventory/CharacterSheetInventoryAddItemDialogShell.svelte';
 export default class CharacterSheetInventoryAddItemDialog extends TJSDialog {
    constructor(actor) {

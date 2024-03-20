@@ -1,4 +1,4 @@
-import isModifierActive from '~/utility-functions/IsModifierActive.js';
+import isModifierActive from '~/helpers/utility-functions/IsModifierActive.js';
 
 export default function shouldGetCheckOptions() {
    // If Get Check Options is true by default, return true if modifier is not pressed.

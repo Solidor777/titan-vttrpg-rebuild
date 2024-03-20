@@ -1,5 +1,5 @@
 <script>
-   import checkAddDarkSVGClass from '~/utility-functions/CheckAddDarkSVGClass.js';
+   import checkAddDarkSVGClass from '~/helpers/utility-functions/CheckAddDarkSVGClass.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
 
    export let label = void 0;

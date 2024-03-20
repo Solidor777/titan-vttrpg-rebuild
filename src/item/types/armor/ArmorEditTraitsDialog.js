@@ -1,6 +1,6 @@
 import { TJSDialog } from '@typhonjs-fvtt/runtime/svelte/application';
-import getSetting from '~/utility-functions/GetSetting.js';
-import localize from '~/utility-functions/Localize.js';
+import getSetting from '~/helpers/utility-functions/GetSetting.js';
+import localize from '~/helpers/utility-functions/Localize.js';
 import ArmorEditTrainsDialogShell from '~/item/types/armor/ArmorEditTraitsDialogShell.svelte';
 export default class ArmorEditTraitsDialog extends TJSDialog {
    constructor(document) {

@@ -1,7 +1,7 @@
 <svelte:options accessors={true} />
 
 <script>
-   import localize from '~/utility-functions/Localize.js';
+   import localize from '~/helpers/utility-functions/Localize.js';
    import { getContext } from 'svelte';
    import Button from '~/helpers/svelte-components/button/Button.svelte';
 

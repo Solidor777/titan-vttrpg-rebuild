@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import localize from '~/utility-functions/Localize.js';
+   import localize from '~/helpers/utility-functions/Localize.js';
    import { slide } from 'svelte/transition';
    import ResistanceTag from '~/helpers/svelte-components/tag/ResistanceTag.svelte';
    import StatTag from '~/helpers/svelte-components/tag/StatTag.svelte';

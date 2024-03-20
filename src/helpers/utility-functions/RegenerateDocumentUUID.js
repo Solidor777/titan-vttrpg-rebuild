@@ -1,5 +1,5 @@
 import { Hashing } from '@typhonjs-fvtt/runtime/util';
-import localize from '~/utility-functions/Localize.js';
+import localize from '~/helpers/utility-functions/Localize.js';
 
 // Randomly regenerates the UUID of the document
 export default async function regenerateDocumentUUID(document) {

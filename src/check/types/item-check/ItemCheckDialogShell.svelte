@@ -1,9 +1,9 @@
 <svelte:options accessors={true} />
 
 <script>
-   import localize from '~/utility-functions/Localize.js';
+   import localize from '~/helpers/utility-functions/Localize.js';
    import { getContext } from 'svelte';
-   import clamp from '~/utility-functions/Clamp.js';
+   import clamp from '~/helpers/utility-functions/Clamp.js';
    import AttributeSelect from '~/helpers/svelte-components/select/AttributeSelect.svelte';
    import SkillSelect from '~/helpers/svelte-components/select/SkillSelect.svelte';
    import CheckDifficultySelect from '~/helpers/svelte-components/select/CheckDifficultySelect.svelte';

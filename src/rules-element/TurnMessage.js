@@ -1,6 +1,6 @@
 import { Hashing } from '@typhonjs-fvtt/runtime/util';
-import sortObjectsIntoContainerByKeyValue from '~/utility-functions/SortObjectsIntoContainerByKeyValue.js';
-import isHTMLBlank from '~/utility-functions/IsHTMLBlank.js';
+import sortObjectsIntoContainerByKeyValue from '~/helpers/utility-functions/SortObjectsIntoContainerByKeyValue.js';
+import isHTMLBlank from '~/helpers/utility-functions/IsHTMLBlank.js';
 
 export function getTurnMessageTemplate(uuid, type) {
    return {

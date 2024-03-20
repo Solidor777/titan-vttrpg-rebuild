@@ -1,7 +1,7 @@
 <svelte:options accessors={true} />
 
 <script>
-   import localize from '~/utility-functions/Localize.js';
+   import localize from '~/helpers/utility-functions/Localize.js';
    import { getContext } from 'svelte';
    import TextInput from '~/helpers/svelte-components/input/TextInput.svelte';
    import TextArea from '~/helpers/svelte-components/input/TextArea.svelte';

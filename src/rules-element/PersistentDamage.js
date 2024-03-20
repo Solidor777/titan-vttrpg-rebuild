@@ -1,5 +1,5 @@
 import { Hashing } from '@typhonjs-fvtt/runtime/util';
-import sortObjectsIntoContainerByKeyValue from '~/utility-functions/SortObjectsIntoContainerByKeyValue.js';
+import sortObjectsIntoContainerByKeyValue from '~/helpers/utility-functions/SortObjectsIntoContainerByKeyValue.js';
 
 export function getPersistentDamageTemplate(uuid, type) {
    return {

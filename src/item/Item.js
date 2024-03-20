@@ -1,4 +1,4 @@
-import localize from '~/utility-functions/Localize.js';
+import localize from '~/helpers/utility-functions/Localize.js';
 import { Hashing } from '@typhonjs-fvtt/runtime/util';
 import TitanAbility from '~/item/types/ability/Ability.js';
 import TitanArmor from '~/item/types/armor/Armor.js';
@@ -7,8 +7,8 @@ import TitanEquipment from '~/item/types/equipment/Equipment.js';
 import TitanShield from '~/item/types/shield/Shield.js';
 import TitanSpell from '~/item/types/spell/Spell.js';
 import TitanWeapon from '~/item/types/weapon/Weapon.js';
-import DocumentAddCustomTraitDialog from '~/documents/DocumentAddCustomTraitDialog';
-import DocumentEditCustomTraitDialog from '~/documents/DocumentEditCustomTraitDialog';
+import DocumentAddCustomTraitDialog from '~/documents/dialogs/DocumentAddCustomTraitDialog';
+import DocumentEditCustomTraitDialog from '~/documents/dialogs/DocumentEditCustomTraitDialog';
 
 export default class TitanItem extends Item {
    async _preCreate(data, options, user) {

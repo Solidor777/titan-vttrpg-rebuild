@@ -1,9 +1,8 @@
 <svelte:options accessors={true} />
 
 <script>
-   import localize from '~/utility-functions/Localize.js';
+   import localize from '~/helpers/utility-functions/Localize.js';
    import { getContext } from 'svelte';
-   import { Hashing } from '@typhonjs-fvtt/runtime/util';
    import TextInput from '~/helpers/svelte-components/input/TextInput.svelte';
    import TextArea from '~/helpers/svelte-components/input/TextArea.svelte';
    import Button from '~/helpers/svelte-components/button/Button.svelte';
@@ -14,17 +13,15 @@
    // Application reference
    const application = getContext('#external').application;
 
-   const newTrait = {
-      name: localize('newTrait'),
-      description: '',
-      uuid: Hashing.uuidv4(),
-   };
+   export let traitIdx = void 0;
 
-   function addTrait() {
+   const trait = document.system.customTrait[traitIdx];
+
+   function editTrait() {
       const customTrait = document.system.customTrait;
 
-      if (customTrait) {
-         customTrait.push(newTrait);
+      if (customTrait && customTrait[traitIdx]) {
+         customTrait[traitIdx] = trait;
 
          document.update({
             system: {
@@ -47,7 +44,7 @@
 
       <!--Input-->
       <div class="input">
-         <TextInput bind:value={newTrait.name} />
+         <TextInput bind:value={trait.name} />
       </div>
    </div>
 
@@ -60,7 +57,7 @@
 
       <!--Input-->
       <div class="input">
-         <TextArea bind:value={newTrait.description} />
+         <TextArea bind:value={trait.description} />
       </div>
    </div>
 
@@ -70,10 +67,10 @@
       <div class="button">
          <Button
             on:click={() => {
-               addTrait();
+               editTrait();
             }}
          >
-            {localize('addTrait')}
+            {localize('applyEdits')}
          </Button>
       </div>
 

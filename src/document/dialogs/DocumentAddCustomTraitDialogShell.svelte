@@ -2,7 +2,7 @@
 
 <script>
    import localize from '~/helpers/utility-functions/Localize.js';
-   import { getContext } from 'svelte';
+   import getApplication from '~/helpers/utility-functions/GetApplication';
    import { Hashing } from '@typhonjs-fvtt/runtime/util';
    import TextInput from '~/helpers/svelte-components/input/TextInput.svelte';
    import TextArea from '~/helpers/svelte-components/input/TextArea.svelte';
@@ -12,7 +12,7 @@
    export let document = void 0;
 
    // Application reference
-   const application = getContext('#external').application;
+   const application = getApplication();
 
    const newTrait = {
       name: localize('newTrait'),

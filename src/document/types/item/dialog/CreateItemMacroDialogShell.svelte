@@ -1,6 +1,6 @@
 <script>
    import localize from '~/helpers/utility-functions/Localize.js';
-   import { getContext } from 'svelte';
+   import getApplication from '~/helpers/utility-functions/GetApplication';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import Button from '~/helpers/svelte-components/button/Button.svelte';
    import ImagePicker from '~/helpers/svelte-components/ImagePicker.svelte';
@@ -17,7 +17,7 @@
    export let uuid = void 0;
 
    // Application reference
-   const application = getContext('#external').application;
+   const application = getApplication();
 
    // Macro type
    let macroType = 'toggleDocumentSheet';

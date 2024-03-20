@@ -1,7 +1,6 @@
 <svelte:options accessors={true} />
 
 <script>
-   import { getContext } from 'svelte';
    import getCombatTargets from '~/helpers/utility-functions/GetCombatTargets.js';
    import localize from '~/helpers/utility-functions/Localize.js';
    import AttributeSelect from '~/helpers/svelte-components/select/AttributeSelect.svelte';
@@ -10,6 +9,7 @@
    import Select from '~/helpers/svelte-components/select/Select.svelte';
    import Button from '~/helpers/svelte-components/button/Button.svelte';
    import CheckboxInput from '~/helpers/svelte-components/input/CheckboxInput.svelte';
+   import getApplication from '~/helpers/utility-functions/GetApplication';
 
    // The actor document making this check
    export let actor;
@@ -90,7 +90,7 @@
       },
    ];
 
-   const application = getContext('#external').application;
+   const application = getApplication();
 
    async function onRoll() {
       actor.typeComponent.rollAttackCheck(checkParameters, true);

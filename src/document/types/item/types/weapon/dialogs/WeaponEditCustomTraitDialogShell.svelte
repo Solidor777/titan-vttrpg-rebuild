@@ -2,7 +2,7 @@
 
 <script>
    import localize from '~/helpers/utility-functions/Localize.js';
-   import { getContext } from 'svelte';
+   import getApplication from '~/helpers/utility-functions/GetApplication';
    import TextInput from '~/helpers/svelte-components/input/TextInput.svelte';
    import TextArea from '~/helpers/svelte-components/input/TextArea.svelte';
    import Button from '~/helpers/svelte-components/button/Button.svelte';
@@ -17,7 +17,7 @@
    export let traitIdx = void 0;
 
    // Application reference
-   const application = getContext('#external').application;
+   const application = getApplication();
 
    const trait = document.system.attack[attackIdx].customTrait[traitIdx];
 

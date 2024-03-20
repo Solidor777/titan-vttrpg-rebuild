@@ -1,46 +1,16 @@
 <script>
    import { getContext } from 'svelte';
-   import { slide } from 'svelte/transition';
-   import ScrollingContainer from '~/helpers/svelte-components/ScrollingContainer.svelte';
    import ItemSheetSidebarChecks from '~/document/types/item/component/check/ItemSheetSidebarChecks.svelte';
+   import ItemSheetSidebarBase from '~/document/types/item/sheet/ItemSheetSidebarBase.svelte';
    import ShieldSheetSidebarTraits from '~/document/types/item/types/shield/sheet/ShieldSheetSidebarTraits.svelte';
 
    // Application statee reference
-   const appState = getContext('applicationState');
    const document = getContext('document');
+
+   $: sections =
+      $document.system.check.length > 0
+         ? [ShieldSheetSidebarTraits, ItemSheetSidebarChecks]
+         : [ShieldSheetSidebarTraits];
 </script>
 
-<div class="sidebar">
-   <!--Attacks-->
-   <ScrollingContainer bind:scrollTop={$appState.scrollTop.sidebar}>
-      <!--Traits-->
-      <div class="section" transition:slide|local>
-         <ShieldSheetSidebarTraits />
-      </div>
-
-      <!--Checks-->
-      {#if $document.system.check.length > 0}
-         <div class="section" transition:slide|local>
-            <ItemSheetSidebarChecks />
-         </div>
-      {/if}
-   </ScrollingContainer>
-</div>
-
-<style lang="scss">
-   .sidebar {
-      @include flex-column;
-      @include flex-group-top;
-      @include border;
-      @include panel-2;
-      width: 100%;
-      height: 100%;
-
-      .section {
-         &:not(:first-child) {
-            @include border-top;
-            margin-top: var(--padding-large);
-         }
-      }
-   }
-</style>
+<ItemSheetSidebarBase {sections} />

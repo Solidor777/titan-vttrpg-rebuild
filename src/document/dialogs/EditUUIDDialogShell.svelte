@@ -1,6 +1,6 @@
 <script>
    import localize from '~/helpers/utility-functions/Localize.js';
-   import { getContext } from 'svelte';
+   import getApplication from '~/helpers/utility-functions/GetApplication';
    import TextArea from '~/helpers/svelte-components/input/TextArea.svelte';
    import Button from '~/helpers/svelte-components/button/Button.svelte';
 
@@ -11,7 +11,7 @@
    let uuid = document.flags?.titan?.uuid;
 
    // Application reference
-   const application = getContext('#external').application;
+   const application = getApplication();
 
    async function onApplyEdits() {
       if (document) {

@@ -1,7 +1,7 @@
 <svelte:options accessors={true} />
 
 <script>
-   import { getContext } from 'svelte';
+   import getApplication from '~/helpers/utility-functions/GetApplication';
    import localize from '~/helpers/utility-functions/Localize.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import IntegerInput from '~/helpers/svelte-components/input/IntegerInput.svelte';
@@ -21,7 +21,7 @@
    export let traitDescriptions = void 0;
 
    // Application reference
-   const application = getContext('#external').application;
+   const application = getApplication();
 
    // Initialize trait options to the current value of the traits
    documentTraits.forEach((trait) => {

@@ -1,5 +1,6 @@
 <script>
    import { getContext } from 'svelte';
+   import getApplication from '~/helpers/utility-functions/GetApplication';
    import localize from '~/helpers/utility-functions/Localize.js';
    import ScrollingContainer from '~/helpers/svelte-components/ScrollingContainer.svelte';
    import ToggleOptionButton from '~/helpers/svelte-components/button/ToggleOptionButton.svelte';
@@ -15,7 +16,7 @@
 
    // Application reference
    const appState = getContext('applicationState');
-   const application = getContext('#external').application;
+   const application = getApplication();
 
    const itemComponents = {
       weapon: CharacterSheetWeapon,

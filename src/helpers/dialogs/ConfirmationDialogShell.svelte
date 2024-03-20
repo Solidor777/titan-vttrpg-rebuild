@@ -2,7 +2,7 @@
 
 <script>
    import localize from '~/helpers/utility-functions/Localize.js';
-   import { getContext } from 'svelte';
+   import getApplication from '~/helpers/utility-functions/GetApplication';
    import Button from '~/helpers/svelte-components/button/Button.svelte';
 
    // Character Sheet
@@ -10,7 +10,7 @@
    export let message = void 0;
    export let confirmLabel = void 0;
 
-   const application = getContext('#external').application;
+   const application = getApplication();
 </script>
 
 <div class="add-item-dialog">

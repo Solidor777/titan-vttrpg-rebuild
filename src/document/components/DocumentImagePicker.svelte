@@ -1,25 +1,31 @@
 <script>
-   import { getContext } from 'svelte';
+   import getApplication from '~/helpers/utility-functions/GetApplication';
 
-   // Path to the image
-   export let path;
-   export let alt;
+   // Property path of the document to change
+   export let path = void 0;
+
+   // Alt text for if the path is not a valid image
+   export let alt = 'img';
 
    // Get the aplication
-   const application = getContext('#external').application;
+   const application = getApplication();
 
    // Get the contained document
    const document = getContext('document');
 
+   // Get the image path from the property
    let src = getProperty($document, path);
+
    function onEditImage() {
+      // If the current user owns this actor
       if ($document.isOwner) {
+         // Create a file picker pointing to the source
          const current = src;
          const filePicker = new FilePicker({
             type: 'image',
             current: current,
-            callback: async (newVal) => {
-               src = newVal;
+            callback: async (newPath) => {
+               src = newPath;
                let updateData = {};
                updateData[path] = src;
                await $document.update(updateData);
@@ -33,11 +39,19 @@
 </script>
 
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-<img {alt} {src} on:keypress={onEditImage} on:click={onEditImage} />
+<img
+   class={$document.isOwner ? 'active' : ''}
+   {alt}
+   {src}
+   on:keypress={onEditImage}
+   on:click={onEditImage}
+/>
 
 <style>
    img {
       border-style: var(--border-style);
-      cursor: pointer;
+      &.active {
+         cursor: pointer;
+      }
    }
 </style>

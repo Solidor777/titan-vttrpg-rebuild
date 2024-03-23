@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import CheckChatScalingAspect from './CheckChatScalingAspect.svelte';
+   import CheckChatScalingAspect from '~/check/chat-message/CheckChatScalingAspect.svelte';
 
    // Document reference
    const document = getContext('document');

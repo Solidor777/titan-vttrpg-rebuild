@@ -1,5 +1,5 @@
 <script>
-   import localize from '~/utility-functions/Localize.js';
+   import localize from '~/helpers/utility-functions/Localize.js';
 
    export let resistance = void 0;
 </script>

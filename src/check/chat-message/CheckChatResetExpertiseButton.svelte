@@ -1,7 +1,7 @@
 <script>
    import { getContext } from 'svelte';
    import IconButton from '~/helpers/svelte-components/button/IconButton.svelte';
-   import recalculateCheckResults from './RecalculateCheckResults';
+   import recalculateCheckResults from '~/check/chat-message/RecalculateCheckResults';
 
    const document = getContext('document');
    async function resetExpertise() {

@@ -1,4 +1,4 @@
-import calculateCheckResults from "~/check/CalculateCheckResults.js";
+import calculateCheckResults from '~/check/CalculateCheckResults.js';
 
 export default function calculateResistanceCheckResults(inResults, parameters) {
    const results = calculateCheckResults(inResults, parameters);

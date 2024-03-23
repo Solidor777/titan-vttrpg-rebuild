@@ -1,6 +1,6 @@
 <script>
    import { getContext } from 'svelte';
-   import RichText from '../../helpers/svelte-components/RichText.svelte';
+   import RichText from '~/helpers/svelte-components/RichText.svelte';
 
    // Document reference
    const document = getContext('document');

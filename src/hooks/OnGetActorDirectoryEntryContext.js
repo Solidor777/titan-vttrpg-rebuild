@@ -1,6 +1,6 @@
-import localize from '~/utility-functions/Localize.js';
-import onRegenerateDocumentUUID from '~/utility-functions/OnRegenerateDocumentUUID.js';
-import onEditDocumentUUID from '~/utility-functions/OnEditDocumentUUID.js';
+import localize from '~/helpers/utility-functions/Localize.js';
+import onRegenerateDocumentUUID from '~/helpers/utility-functions/OnRegenerateDocumentUUID.js';
+import onEditDocumentUUID from '~/helpers/utility-functions/OnEditDocumentUUID.js';
 
 export default function onGetActorDirectoryEntryContext(html, options) {
 

@@ -1,8 +1,7 @@
 <svelte:options accessors={true} />
 
 <script>
-   import localize from '~/utility-functions/Localize.js';
-   import { getContext } from 'svelte';
+   import localize from '~/helpers/utility-functions/Localize.js';
    import ResistanceSelect from '~/helpers/svelte-components/select/ResistanceSelect.svelte';
    import CheckDifficultySelect from '~/helpers/svelte-components/select/CheckDifficultySelect.svelte';
    import IntegerInput from '~/helpers/svelte-components/input/IntegerInput.svelte';
@@ -22,7 +21,7 @@
       resistance: options.resistance ?? 'reflexes',
    };
 
-   const application = getContext('#external').application;
+   const application = getApplication();
 
    async function onRoll() {
       actor.typeComponent.rollResistanceCheck(checkParameters, true);

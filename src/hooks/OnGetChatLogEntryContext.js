@@ -1,6 +1,6 @@
-import getActor from '~/utility-functions/GetActor.js';
-import localize from '~/utility-functions/Localize.js';
-import getSetting from '~/utility-functions/GetSetting.js';
+import getActor from '~/helpers/utility-functions/GetActor.js';
+import localize from '~/helpers/utility-functions/Localize.js';
+import getSetting from '~/helpers/utility-functions/GetSetting.js';
 import recalculateCheckResults from '~/check/chat-message/RecalculateCheckResults';
 
 export default function onGetChatLogEntryContext(html, options) {

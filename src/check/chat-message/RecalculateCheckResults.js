@@ -1,7 +1,7 @@
-import calculateCheckResults from "~/check/CalculateCheckResults";
-import calculateAttackCheckResults from "~/check/types/attack-check/CalculateAttackCheckResults";
-import calculateCastingCheckResults from "~/check/types/casting-check/CalculateCastingCheckResults";
-import calculateItemCheckResults from "~/check/types/item-check/CalculateItemCheckResults";
+import calculateCheckResults from '~/check/CalculateCheckResults';
+import calculateAttackCheckResults from '~/check/types/attack-check/CalculateAttackCheckResults';
+import calculateCastingCheckResults from '~/check/types/casting-check/CalculateCastingCheckResults';
+import calculateItemCheckResults from '~/check/types/item-check/CalculateItemCheckResults';
 import calculateAttributeCheckResults from '~/check/types/attribute-check/CalculateAttributeCheckResults';
 import calculateResistanceCheckResults from '~/check/types/resistance-check/CalculateResistanceCheckResults';
 

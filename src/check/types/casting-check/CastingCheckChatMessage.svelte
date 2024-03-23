@@ -1,11 +1,11 @@
 <script>
    import { getContext } from 'svelte';
    import CheckChatDiceContainer from '~/check/chat-message/CheckChatDiceContainer.svelte';
-   import CastingCheckChatHeader from './CastingCheckChatHeader.svelte';
+   import CastingCheckChatHeader from '~/check/types/casting-check/CastingCheckChatHeader.svelte';
    import CheckChatResults from '~/check/chat-message/CheckChatResults.svelte';
-   import ChatDamageButtons from '~/chat-message/ChatDamageButtons.svelte';
-   import ChatHealingButton from '~/chat-message/ChatHealingButton.svelte';
-   import ChatResistanceCheckButtons from '~/chat-message/ChatResistanceCheckButtons.svelte';
+   import ChatDamageButtons from '~/document/types/chat-message/ChatDamageButtons.svelte';
+   import ChatHealingButton from '~/document/types/chat-message/ChatHealingButton.svelte';
+   import ChatResistanceCheckButtons from '~/document/types/chat-message/ChatResistanceCheckButtons.svelte';
    import CheckChatScalingAspects from '~/check/chat-message/CheckChatScalingAspects.svelte';
    import RichText from '~/helpers/svelte-components/RichText.svelte';
    import CheckChatMesssages from '~/check/chat-message/CheckChatMesssages.svelte';

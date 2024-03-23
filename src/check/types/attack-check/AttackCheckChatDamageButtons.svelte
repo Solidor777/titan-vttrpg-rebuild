@@ -1,9 +1,9 @@
 <script>
-   import applyDamageToTargets from '~/utility-functions/ApplyDamageToTargets.js';
-   import applyHealingToTargets from '~/utility-functions/ApplyHealingToTargets.js';
+   import applyDamageToTargets from '~/helpers/utility-functions/ApplyDamageToTargets.js';
+   import applyHealingToTargets from '~/helpers/utility-functions/ApplyHealingToTargets.js';
    import tooltip from '~/helpers/svelte-actions/Tooltip.js';
    import Button from '~/helpers/svelte-components/button/Button.svelte';
-   import localize from '~/utility-functions/Localize.js';
+   import localize from '~/helpers/utility-functions/Localize.js';
 
    export let damage = void 0;
    export let ineffective = false;

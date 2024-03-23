@@ -1,15 +1,15 @@
 <svelte:options accessors={true} />
 
 <script>
-   import localize from '~/utility-functions/Localize.js';
-   import { getContext } from 'svelte';
-   import clamp from '~/utility-functions/Clamp.js';
+   import localize from '~/helpers/utility-functions/Localize.js';
+   import clamp from '~/helpers/utility-functions/Clamp.js';
    import AttributeSelect from '~/helpers/svelte-components/select/AttributeSelect.svelte';
    import SkillSelect from '~/helpers/svelte-components/select/SkillSelect.svelte';
    import CheckDifficultySelect from '~/helpers/svelte-components/select/CheckDifficultySelect.svelte';
    import IntegerInput from '~/helpers/svelte-components/input/IntegerInput.svelte';
    import Button from '~/helpers/svelte-components/button/Button.svelte';
    import CheckboxInput from '~/helpers/svelte-components/input/CheckboxInput.svelte';
+   import getApplication from '~/helpers/utility-functions/GetApplication';
 
    // The actor document making this check
    export let actor = void 0;
@@ -42,7 +42,7 @@
       trainingMod: options.trainingMod ?? 0,
    };
 
-   const application = getContext('#external').application;
+   const application = getApplication();
 
    async function onRoll() {
       await actor.typeComponent.rollCastingCheck(checkParameters, true);

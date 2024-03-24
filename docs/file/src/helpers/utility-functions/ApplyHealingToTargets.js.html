@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">src/helpers/utility-functions/ApplyHealingToTargets.js | titan-rebuild</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Provides a bare-bones Foundry System for TITAN."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="titan-rebuild"><meta property="twitter:description" content="Provides a bare-bones Foundry System for TITAN."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#check">check</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-calculateCheckResults">calculateCheckResults</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#check-chat-message">check/chat-message</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-recalculateCheckResults">recalculateCheckResults</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#check-types-attack-check">check/types/attack-check</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/check/types/attack-check/AttackCheckDialog.js~AttackCheckDialog.html">AttackCheckDialog</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-calculateAttackCheckResults">calculateAttackCheckResults</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#check-types-attribute-check">check/types/attribute-check</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/check/types/attribute-check/AttributeCheckDialog.js~AttributeCheckDialog.html">AttributeCheckDialog</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-calculateAttributeCheckResults">calculateAttributeCheckResults</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#check-types-casting-check">check/types/casting-check</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/check/types/casting-check/CastingCheckDialog.js~CastingCheckDialog.html">CastingCheckDialog</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#check-types-item-check">check/types/item-check</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/check/types/item-check/ItemCheckDialog.js~ItemCheckDialog.html">ItemCheckDialog</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-calculateItemCheckResults">calculateItemCheckResults</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#check-types-resistance-check">check/types/resistance-check</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/check/types/resistance-check/ResistanceCheckDialog.js~ResistanceCheckDialog.html">ResistanceCheckDialog</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-calculateResistanceCheckResults">calculateResistanceCheckResults</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#document">document</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/TokenDocument.js~TitanTokenDocument.html">TitanTokenDocument</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#document-dialogs">document/dialogs</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/dialogs/ConfirmRegenerateUUIDDialog.js~ConfirmRegenerateUUIDDialog.html">ConfirmRegenerateUUIDDialog</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/dialogs/DocumentAddCustomTraitDialog.js~DocumentAddCustomTraitDialog.html">DocumentAddCustomTraitDialog</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/dialogs/DocumentEditCustomTraitDialog.js~DocumenEditCustomTraitDialog.html">DocumenEditCustomTraitDialog</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/dialogs/EditUUIDDialog.js~EditUUIDDialog.html">EditUUIDDialog</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#document-types-actor-dialogs">document/types/actor/dialogs</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/types/actor/dialogs/ConfirmDeleteItemDialog.js~ConfirmDeleteItemDialog.html">ConfirmDeleteItemDialog</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#document-types-actor-types-character-dialogs">document/types/actor/types/character/dialogs</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/types/actor/types/character/dialogs/ConfirmRemoveExpiredEffectsDialog.js~ConfirmRemoveExpiredEffectsDialog.html">ConfirmRemoveExpiredEffectsDialog</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#document-types-actor-types-character-sheet">document/types/actor/types/character/sheet</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/types/actor/types/character/sheet/CharacterSheet.js~TitanCharacterSheet.html">TitanCharacterSheet</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createCharacterSheetState">createCharacterSheetState</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#document-types-actor-types-character-sheet-tabs-inventory">document/types/actor/types/character/sheet/tabs/inventory</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/types/actor/types/character/sheet/tabs/inventory/CharacterSheetInventoryAddItemDialog.js~CharacterSheetInventoryAddItemDialog.html">CharacterSheetInventoryAddItemDialog</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#document-types-actor-types-npc">document/types/actor/types/npc</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/types/actor/types/npc/NPCSheet.js~TitanNPCSheet.html">TitanNPCSheet</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createNPCSheetState">createNPCSheetState</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#document-types-actor-types-player">document/types/actor/types/player</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/types/actor/types/player/Player.js~TitanPlayerComponent.html">TitanPlayerComponent</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/types/actor/types/player/PlayerSheet.js~TitanPlayerSheet.html">TitanPlayerSheet</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createPlayerSheetState">createPlayerSheetState</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#document-types-item-component-rules-element">document/types/item/component/rules-element</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addRulesElement">addRulesElement</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeRulesElement">removeRulesElement</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-onRulesElementOperationChanged">onRulesElementOperationChanged</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#document-types-item-dialog">document/types/item/dialog</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/types/item/dialog/CreateItemMacroDialog.js~CreateItemMacroDialog.html">CreateItemMacroDialog</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#document-types-item-sheet">document/types/item/sheet</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/types/item/sheet/ItemSheet.js~TitanItemSheet.html">TitanItemSheet</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#document-types-item-types-ability-sheet">document/types/item/types/ability/sheet</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/types/item/types/ability/sheet/AbilitySheet.js~TitanAbilitySheet.html">TitanAbilitySheet</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createAbilitySheetState">createAbilitySheetState</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#document-types-item-types-armor">document/types/item/types/armor</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/types/item/types/armor/ArmorEditTraitsDialog.js~ArmorEditTraitsDialog.html">ArmorEditTraitsDialog</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ARMOR_TRAITS">ARMOR_TRAITS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ARMOR_TRAIT_DESCRIPTIONS">ARMOR_TRAIT_DESCRIPTIONS</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#document-types-item-types-armor-sheet">document/types/item/types/armor/sheet</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/types/item/types/armor/sheet/ArmorSheet.js~TitanArmorSheet.html">TitanArmorSheet</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createArmorSheetState">createArmorSheetState</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#document-types-item-types-commodity">document/types/item/types/commodity</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/types/item/types/commodity/Commodity.js~TitanCommodity.html">TitanCommodity</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#document-types-item-types-commodity-sheet">document/types/item/types/commodity/sheet</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/types/item/types/commodity/sheet/CommoditySheet.js~TitanCommoditySheet.html">TitanCommoditySheet</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createCommoditySheetState">createCommoditySheetState</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#document-types-item-types-effect-sheet">document/types/item/types/effect/sheet</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/types/item/types/effect/sheet/EffectSheet.js~TitanEffectSheet.html">TitanEffectSheet</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createEffectSheetState">createEffectSheetState</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#document-types-item-types-equipment-sheet">document/types/item/types/equipment/sheet</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/types/item/types/equipment/sheet/EquipmentSheet.js~TitanEquipmentSheet.html">TitanEquipmentSheet</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createEquipmentSheetState">createEquipmentSheetState</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#document-types-item-types-shield">document/types/item/types/shield</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/types/item/types/shield/ShieldEditTraitsDialog.js~ShieldEditTraitsDialog.html">ShieldEditTraitsDialog</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SHIELD_TRAITS">SHIELD_TRAITS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SHIELD_TRAIT_DESCRIPTIONS">SHIELD_TRAIT_DESCRIPTIONS</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#document-types-item-types-shield-sheet">document/types/item/types/shield/sheet</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/types/item/types/shield/sheet/ShieldSheet.js~TitanShieldSheet.html">TitanShieldSheet</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createShieldSheetState">createShieldSheetState</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#document-types-item-types-spell-sheet">document/types/item/types/spell/sheet</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/types/item/types/spell/sheet/SpellSheet.js~TitanSpellSheet.html">TitanSpellSheet</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createSpellSheetState">createSpellSheetState</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#document-types-item-types-weapon">document/types/item/types/weapon</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ATTACK_TRAITS">ATTACK_TRAITS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ATTACK_TRAIT_DESCRIPTIONS">ATTACK_TRAIT_DESCRIPTIONS</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#document-types-item-types-weapon-dialogs">document/types/item/types/weapon/dialogs</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/types/item/types/weapon/dialogs/WeaponAddCustomAttackTraitDialog.js~WeaponAddCustomAttackTraitDialog.html">WeaponAddCustomAttackTraitDialog</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/types/item/types/weapon/dialogs/WeaponEditAttackTraitsDialog.js~WeaponEditAttackTraitsDialog.html">WeaponEditAttackTraitsDialog</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/types/item/types/weapon/dialogs/WeaponEditCustomTraitDialog.js~WeaponEditCustomTraitDialog.html">WeaponEditCustomTraitDialog</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#document-types-item-types-weapon-sheet">document/types/item/types/weapon/sheet</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/document/types/item/types/weapon/sheet/WeaponSheet.js~TitanWeaponSheet.html">TitanWeaponSheet</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createWeaponSheetState">createWeaponSheetState</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#helpers">helpers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helpers/TypeComponent.js~TitanTypeComponent.html">TitanTypeComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#helpers-dialogs">helpers/dialogs</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helpers/dialogs/ConfirmationDialog.js~ConfirmationDialog.html">ConfirmationDialog</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#helpers-svelte-actions">helpers/svelte-actions</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-autoScroll">autoScroll</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-preventDefault">preventDefault</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#helpers-utility-functions">helpers/utility-functions</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-appendUnique">appendUnique</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-appendUniqueWithFilter">appendUniqueWithFilter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-applyDamageToTargets">applyDamageToTargets</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-applyHealingToTargets">applyHealingToTargets</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-applyRendToTargets">applyRendToTargets</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-applyRepairsToTargets">applyRepairsToTargets</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-camelize">camelize</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-checkAddDarkSVGClass">checkAddDarkSVGClass</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-checkAddSVGClass">checkAddSVGClass</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-clamp">clamp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deepFreeze">deepFreeze</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-error">error</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getApplication">getApplication</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getBestPlayerOwner">getBestPlayerOwner</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getCombatTargets">getCombatTargets</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getControlledTokens">getControlledTokens</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getGMs">getGMs</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getOwners">getOwners</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getPlayerOwners">getPlayerOwners</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getSetting">getSetting</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getSumOfObjectValues">getSumOfObjectValues</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isCurrentUserFirstOwner">isCurrentUserFirstOwner</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isCurrentUserGM">isCurrentUserGM</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isHTMLBlank">isHTMLBlank</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isModifierActive">isModifierActive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-localize">localize</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-log">log</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-onEditDocumentUUID">onEditDocumentUUID</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-onRegenerateDocumentUUID">onRegenerateDocumentUUID</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pushUnique">pushUnique</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-regenerateDocumentUUID">regenerateDocumentUUID</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shouldConfirmDeletingItems">shouldConfirmDeletingItems</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shouldGetCheckOptions">shouldGetCheckOptions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sort">sort</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sortObjectsIntoContainerByFunctionValue">sortObjectsIntoContainerByFunctionValue</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sortObjectsIntoContainerByKeyValue">sortObjectsIntoContainerByKeyValue</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-warn">warn</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#hooks">hooks</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-onHotbarDrop">onHotbarDrop</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-onRenderJournalSheet">onRenderJournalSheet</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-onRenderJournalTextPageSheet">onRenderJournalTextPageSheet</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-onceInit">onceInit</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-onceReady">onceReady</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-onceSetup">onceSetup</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#system">system</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setupConditions">setupConditions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-registerInitiativeFormula">registerInitiativeFormula</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-registerSystemSettings">registerSystemSettings</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/helpers/utility-functions/ApplyHealingToTargets.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import getCombatTargets from &apos;~/helpers/utility-functions/GetCombatTargets.js&apos;;
+
+export default function applyHealingToTargets(healing = 1, options) {
+   // Get targets
+   const targets = getCombatTargets();
+
+   // Apply healing to each target
+   targets.forEach((target) =&gt; {
+      if (target &amp;&amp; target.character) {
+         target.character.applyHealing(healing, options);
+      }
+   });
+}</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

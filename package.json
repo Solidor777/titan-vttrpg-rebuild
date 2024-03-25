@@ -20,6 +20,7 @@
       "@typhonjs-config/eslint-config": "^0.6.0",
       "@typhonjs-fvtt/eslint-config-foundry.js": "^0.8.0",
       "esdoc": "^1.1.0",
+      "esdoc-ecmascript-proposal-plugin": "^1.0.0",
       "esdoc-standard-plugin": "^1.0.0",
       "eslint": "^8",
       "eslint-plugin-unused-imports": "^3.1.0",
@@ -33,7 +34,6 @@
    "scripts": {
       "build": "vite build",
       "dev": "vite",
-      "eslint": "eslint .",
-      "docs": "esdoc -c .esdoc.json"
+      "eslint": "eslint ."
    }
 }

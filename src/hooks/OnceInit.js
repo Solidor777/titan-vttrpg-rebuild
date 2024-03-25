@@ -1,7 +1,7 @@
 import TitanActor from '~/document/types/actor/Actor.js';
 import TitanItem from '~/document/types/item/Item.js';
-import TitanPlayerSheet from '~/document/types/actor/types/player/PlayerSheet.js';
-import TitanNPCSheet from '~/document/types/actor/types/npc/NPCSheet.js';
+import TitanPlayerSheet from '~/document/types/actor/types/character/types/player/PlayerSheet.js';
+import TitanNPCSheet from '~/document/types/actor/types/character/types/npc/NPCSheet.js';
 import TitanAbilitySheet from '~/document/types/item/types/ability/sheet/AbilitySheet.js';
 import TitanArmorSheet from '~/document/types/item/types/armor/sheet/ArmorSheet.js';
 import TitanCommoditySheet from '~/document/types/item/types/commodity/sheet/CommoditySheet.js';
@@ -21,6 +21,14 @@ import error from '~/helpers/utility-functions/Error.js';
 export default function onceInit() {
    log('Starting Titan VTTRPG System');
 
+   // Initialize titan namespace
+   game.titan = {
+      macros: new TitanMacros(),
+      warn: warn,
+      log: log,
+      error: error,
+   };
+
    // Register system settings
    registerSystemSettings();
 
@@ -33,56 +41,68 @@ export default function onceInit() {
    CONFIG.Token.documentClass = TitanTokenDocument;
    CONFIG.time.roundTime = 6;
 
-   // Initialize titan specific game settings
-   game.titan = {};
-
-   // Add titan macros class
-   game.titan.macros = new TitanMacros();
-   game.titan.warn = warn;
-   game.titan.log = log;
-   game.titan.error = error;
 
    // Register Sheet Classes
-   Actors.registerSheet('titan', TitanPlayerSheet, {
-      types: ['player'],
-      makeDefault: true,
-   });
-   Actors.registerSheet('titan', TitanNPCSheet, {
-      types: ['npc'],
-      makeDefault: true,
-   });
-   Items.registerSheet('titan', TitanAbilitySheet, {
-      types: ['ability'],
-      makeDefault: true,
-   });
-   Items.registerSheet('titan', TitanArmorSheet, {
-      types: ['armor'],
-      makeDefault: true,
-   });
-   Items.registerSheet('titan', TitanCommoditySheet, {
-      types: ['commodity'],
-      makeDefault: true,
-   });
-   Items.registerSheet('titan', TitanEffectSheet, {
-      types: ['effect'],
-      makeDefault: true,
-   });
-   Items.registerSheet('titan', TitanEquipmentSheet, {
-      types: ['equipment'],
-      makeDefault: true,
-   });
-   Items.registerSheet('titan', TitanShieldSheet, {
-      types: ['shield'],
-      makeDefault: true,
-   });
-   Items.registerSheet('titan', TitanSpellSheet, {
-      types: ['spell'],
-      makeDefault: true,
-   });
-   Items.registerSheet('titan', TitanWeaponSheet, {
-      types: ['weapon'],
-      makeDefault: true,
-   });
+   Actors.registerSheet([
+      'titan', TitanPlayerSheet, {
+         types: ['player'],
+         makeDefault: true,
+      },
+   ]);
+   Actors.registerSheet([
+      'titan', TitanNPCSheet, {
+         types: ['npc'],
+         makeDefault: true,
+      },
+   ]);
+   Items.registerSheet([
+      'titan', TitanAbilitySheet, {
+         types: ['ability'],
+         makeDefault: true,
+      },
+   ]);
+   Items.registerSheet([
+      'titan', TitanArmorSheet, {
+         types: ['armor'],
+         makeDefault: true,
+      },
+   ]);
+   Items.registerSheet([
+      'titan', TitanCommoditySheet, {
+         types: ['commodity'],
+         makeDefault: true,
+      },
+   ]);
+   Items.registerSheet([
+      'titan', TitanEffectSheet, {
+         types: ['effect'],
+         makeDefault: true,
+      },
+   ]);
+   Items.registerSheet([
+      'titan', TitanEquipmentSheet, {
+         types: ['equipment'],
+         makeDefault: true,
+      },
+   ]);
+   Items.registerSheet([
+      'titan', TitanShieldSheet, {
+         types: ['shield'],
+         makeDefault: true,
+      },
+   ]);
+   Items.registerSheet([
+      'titan', TitanSpellSheet, {
+         types: ['spell'],
+         makeDefault: true,
+      },
+   ]);
+   Items.registerSheet([
+      'titan', TitanWeaponSheet, {
+         types: ['weapon'],
+         makeDefault: true,
+      },
+   ]);
 
    return;
 }

@@ -1,11 +1,18 @@
 import localize from '~/helpers/utility-functions/Localize.js';
 import shouldConfirmDeletingItems from '~/helpers/utility-functions/ShouldConfirmDeletingItems.js';
 import { Hashing } from '@typhonjs-fvtt/runtime/util';
-import TitanPlayerComponent from '~/document/types/actor/types/player/Player';
-import TitanNPCComponent from '~/document/types/actor/types/npc/NPC';
+import TitanPlayerComponent from '~/document/types/actor/types/character/types/player/Player';
+import TitanNPCComponent from '~/document/types/actor/types/character/types/npc/NPC';
 import ConfirmDeleteItemDialog from '~/document/types/actor/dialogs/ConfirmDeleteItemDialog';
+
 export default class TitanActor extends Actor {
 
+   /**
+    * Extend the base Actor class to implement additional system-specific logic.
+    * @param {object} data                   The initial data object provided to the document creation request
+    * @param {object} options                Additional options which modify the creation request
+    * @param {documents.BaseUser} user       The User requesting the document creation
+    */
    async _preCreate(data, options, user) {
       await super._preCreate(data, options, user);
 
@@ -20,9 +27,9 @@ export default class TitanActor extends Actor {
          const initialData = {
             flags: {
                titan: {
-                  uuid: Hashing.uuidv4()
-               }
-            }
+                  uuid: Hashing.uuidv4(),
+               },
+            },
          };
 
          // Type specific data
@@ -34,7 +41,7 @@ export default class TitanActor extends Actor {
       }
    }
 
-   // Prepare calculated data
+   /** @inheritDoc */
    prepareDerivedData() {
       // Create type component if necessary
       if (!this.typeComponent) {
@@ -125,7 +132,7 @@ export default class TitanActor extends Actor {
 
    async addItem(type) {
       if (this.isOwner) {
-         let itemName = '';
+         let itemName;
          switch (type) {
             case 'ability': {
                itemName = localize('newAbility');

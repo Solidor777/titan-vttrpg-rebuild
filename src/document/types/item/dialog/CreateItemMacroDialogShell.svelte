@@ -202,12 +202,12 @@
    <div class="row">
       <!--Image-->
       <div class="image">
-         <ImagePicker bind:src={img} />
+         <ImagePicker bind:src={img}/>
       </div>
 
       <!--Name-->
       <div class="input">
-         <TextInput bind:value={name} />
+         <TextInput bind:value={name}/>
       </div>
    </div>
 
@@ -220,7 +220,7 @@
 
       <!--Input-->
       <div class="input">
-         <Select bind:value={macroType} options={macroTypeOptions} />
+         <Select bind:value={macroType} options={macroTypeOptions}/>
       </div>
    </div>
 
@@ -234,7 +234,7 @@
 
          <!--Input-->
          <div class="input">
-            <Select bind:value={itemCheckIdx} options={itemCheckOptions} />
+            <Select bind:value={itemCheckIdx} options={itemCheckOptions}/>
          </div>
       </div>
    {:else if macroType === 'attackCheck'}
@@ -247,7 +247,7 @@
 
          <!--Input-->
          <div class="input">
-            <Select bind:value={attackIdx} options={attackOptions} />
+            <Select bind:value={attackIdx} options={attackOptions}/>
          </div>
       </div>
    {/if}
@@ -261,7 +261,7 @@
 
       <!--Input-->
       <div class="input">
-         <Select bind:value={idMethod} options={idMethodOptions} />
+         <Select bind:value={idMethod} options={idMethodOptions}/>
       </div>
    </div>
 
@@ -280,55 +280,55 @@
 </div>
 
 <style lang="scss">
-   .create-macro-dialog {
-      @include flex-column;
-      @include font-size-normal;
-      justify-items: flex-end;
+  .create-macro-dialog {
+    @include flex-column;
+    @include font-size-normal;
+    justify-items: flex-end;
 
-      .row {
-         @include flex-row;
-         @include flex-group-center;
-         height: 100%;
-         width: 100%;
+    .row {
+      @include flex-row;
+      @include flex-group-center;
+      height: 100%;
+      width: 100%;
 
-         &:not(:first-child) {
-            border-top: solid;
-            padding-top: var(--padding-standard);
-            margin-top: var(--padding-standard);
-            border-width: var(--border-width);
-         }
-
-         .image {
-            width: 5rem;
-            --border-style: none;
-         }
-
-         .label {
-            @include flex-group-right;
-            font-weight: bold;
-            height: 100%;
-            width: 100%;
-            margin-right: var(--padding-large);
-         }
-
-         .input {
-            @include flex-group-left;
-            margin-left: var(--padding-large);
-            height: 100%;
-            width: 100%;
-            --input-height: 1.8rem;
-            --input-width: 100%;
-         }
-
-         .button {
-            @include flex-row;
-            width: 100%;
-            margin-top: var(--padding-large);
-
-            &:not(:first-child) {
-               margin-left: var(--padding-standard);
-            }
-         }
+      &:not(:first-child) {
+        border-top: solid;
+        padding-top: var(--padding-standard);
+        margin-top: var(--padding-standard);
+        border-width: var(--border-width);
       }
-   }
+
+      .image {
+        width: 5rem;
+        --border-style: none;
+      }
+
+      .label {
+        @include flex-group-right;
+        font-weight: bold;
+        height: 100%;
+        width: 100%;
+        margin-right: var(--padding-large);
+      }
+
+      .input {
+        @include flex-group-left;
+        margin-left: var(--padding-large);
+        height: 100%;
+        width: 100%;
+        --input-height: 1.8rem;
+        --input-width: 100%;
+      }
+
+      .button {
+        @include flex-row;
+        width: 100%;
+        margin-top: var(--padding-large);
+
+        &:not(:first-child) {
+          margin-left: var(--padding-standard);
+        }
+      }
+    }
+  }
 </style>

@@ -13,7 +13,11 @@ export default class TitanDataModel extends foundry.abstract.TypeDataModel {
       const components = {};
       for (const [key, component] of this._prototypeComponents) {
          components[key] = new component(this);
-         this[key] = components[key];
+         Object.defineProperty(this, key, {
+            get() {
+               return this.#components[key];
+            },
+         });
       }
       this.#components = Object.freeze(components);
    }

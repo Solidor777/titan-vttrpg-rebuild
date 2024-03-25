@@ -4,10 +4,10 @@ import getNumberField from '~/helpers/utility-functions/GetNumberField.js';
 import getBooleanField from '~/helpers/utility-functions/GetBooleanField.js';
 
 /**
- * Data model for NPC actors.
+ * Data model for player actors.
  * @augments CharacterDataModel
  */
-export default class NPCDataModel extends CharacterDataModel {
+export default class PlayerDataModel extends CharacterDataModel {
    static _defineDocumentSchema() {
       const schema = super._defineDocumentSchema();
       schema.xp = getSchemaField({

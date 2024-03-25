@@ -11,7 +11,7 @@ export default class TitanDataModel extends foundry.abstract.TypeDataModel {
 
       // Construct the document components
       const components = {};
-      for (const [key, component] of this._prototypeComponents) {
+      for (const [key, component] of Object.entries(this.constructor._prototypeComponents)) {
          components[key] = new component(this);
          Object.defineProperty(this, key, {
             get() {
@@ -54,7 +54,7 @@ export default class TitanDataModel extends foundry.abstract.TypeDataModel {
       const documentSchema = this._defineDocumentSchema();
 
       // Add each component's schema to the document schema
-      for (const [key, component] of this._prototypeComponents) {
+      for (const [key, component] of Object.entries(this._prototypeComponents)) {
          if (component.defineSchema !== undefined) {
             documentSchema[key] = component.defineSchema();
          }
@@ -85,7 +85,7 @@ export default class TitanDataModel extends foundry.abstract.TypeDataModel {
     * @protected
     */
    static _migrateComponentData(source) {
-      for (const component of this.components) {
+      for (const component of Object.entries(this._prototypeComponents)) {
          if (typeof component.migrateData === 'function') {
             component.migrateData(source);
          }

@@ -5,13 +5,16 @@ import { applyPersistentDamageElements } from '~/document/types/item/rules-eleme
 import { applyTurnMessageElements } from '~/document/types/item/rules-element/TurnMessage';
 import {
    applyRollMessageElements,
-   getAttributeCheckMessages,
-   getResistanceCheckMessages,
    getAttackCheckMessages,
+   getAttributeCheckMessages,
    getCastingCheckMessages,
-   getItemCheckMessages
+   getItemCheckMessages,
+   getResistanceCheckMessages,
 } from '~/document/types/item/rules-element/RollMessage';
-import { applyConditionalRatingModifierElements, getAttackRatingModifier } from '~/document/types/item/rules-element/ConditionalRatingModifier';
+import {
+   applyConditionalRatingModifierElements,
+   getAttackRatingModifier,
+} from '~/document/types/item/rules-element/ConditionalRatingModifier';
 import ResistanceCheckDialog from '~/check/types/resistance-check/ResistanceCheckDialog.js';
 import AttributeCheckDialog from '~/check/types/attribute-check/AttributeCheckDialog.js';
 import AttackCheckDialog from '~/check/types/attack-check/AttackCheckDialog.js';
@@ -24,13 +27,14 @@ import TitanItemCheck from '~/check/types/item-check/ItemCheck.js';
 import TitanTypeComponent from '~/helpers/TypeComponent.js';
 import ItemCheckDialog from '~/check/types/item-check/ItemCheckDialog';
 import ConfirmDeleteItemDialog from '~/document/types/actor/dialogs/ConfirmDeleteItemDialog';
-import ConfirmRemoveExpiredEffectsDialog from '~/document/types/actor/types/character/dialogs/ConfirmRemoveExpiredEffectsDialog';
+import ConfirmRemoveExpiredEffectsDialog
+   from '~/document/types/actor/types/character/dialogs/ConfirmRemoveExpiredEffectsDialog';
 import {
    applyConditionalCheckModifierElements,
    getAttackCheckMod,
+   getAttributeCheckMod,
    getCastingCheckMod,
    getItemCheckMod,
-   getAttributeCheckMod
 } from '~/document/types/item/rules-element/ConditionalCheckModifier';
 import clamp from '~/helpers/utility-functions/Clamp.js';
 import localize from '~/helpers/utility-functions/Localize.js';
@@ -41,7 +45,8 @@ import isCurrentUserFirstOwner from '~/helpers/utility-functions/IsCurrentUserFi
 import isHTMLBlank from '~/helpers/utility-functions/IsHTMLBlank.js';
 import getCombatTargets from '~/helpers/utility-functions/GetCombatTargets.js';
 import sort from '~/helpers/utility-functions/Sort.js';
-import sortObjectsIntoContainerByFunctionValue from '~/helpers/utility-functions/SortObjectsIntoContainerByFunctionValue.js';
+import sortObjectsIntoContainerByFunctionValue
+   from '~/helpers/utility-functions/SortObjectsIntoContainerByFunctionValue.js';
 import getSumOfObjectValues from '~/helpers/utility-functions/GetSumOfObjectValues.js';
 import getOwners from '~/helpers/utility-functions/GetOwners.js';
 import getBestPlayerOwner from '~/helpers/utility-functions/GetBestPlayerOwner.js';
@@ -100,7 +105,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
       // Add cost of spells and abilities
 
       this.parent.items.forEach((item) => {
-         if (item.type === "spell" || item.type === "ability") {
+         if (item.type === 'spell' || item.type === 'ability') {
             spentXp += item.system.xpCost;
          }
       });
@@ -218,7 +223,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
       systemData.resource.stamina.maxBase = Math.max(Math.ceil(totalBaseAttributeValue * getSetting('staminaBaseMultiplier')), 1);
 
       // Resolve = Soul / 2 rounded up
-      systemData.resource.resolve.maxBase = Math.ceil(Math.ceil(systemData.attribute.soul.baseValue * getSetting('resolveBaseMultiplier')), 1);
+      systemData.resource.resolve.maxBase = Math.max(Math.ceil(systemData.attribute.soul.baseValue * getSetting('resolveBaseMultiplier')), 1);
 
       // Wounds = Total Attribute mod / 2 rounded up
       systemData.resource.wounds.maxBase = Math.max(Math.ceil(totalBaseAttributeValue * getSetting('woundsBaseMultiplier')), 1);
@@ -227,6 +232,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
    _resetDynamicMods() {
       // Reference to the parent system data
       const systemData = this.parent.system;
+
       function resetMods(mods) {
          mods.equipment = 0;
          mods.effect = 0;
@@ -267,11 +273,6 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
       // Mod
       for (const mod of Object.values(systemData.mod)) {
          resetMods(mod.mod);
-      }
-
-      // Conditions
-      for (const condition of Object.keys(systemData.condition)) {
-         systemData.condition[condition] = false;
       }
 
       return;
@@ -409,7 +410,6 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                // Blinded
                case 'blinded': {
                   const systemData = this.parent.system;
-                  systemData.condition.blinded = true;
 
                   // Decrease Melee, Accuracy, and Defense by 1
                   systemData.rating.melee.mod.effect -= 1;
@@ -423,7 +423,6 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                case 'contaminated': {
                   // Apply the effect
                   const systemData = this.parent.system;
-                  systemData.condition.contaminated = true;
 
                   // Decrease all Skills and Resistances by 1
                   for (const attribute of Object.values(systemData.attribute)) {
@@ -438,21 +437,18 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                // Defeaned
                case 'deafened': {
                   // Apply the effect
-                  this.parent.system.condition.deafened = true;
                   break;
                }
 
                // Frightened
                case 'frightened': {
                   // Apply the effect
-                  this.parent.system.condition.frightened = true;
                   break;
                }
 
                // Paralysis
                case 'incapacitated': {
                   // Apply the effect
-                  this.parent.system.condition.incapacitated = true;
                   break;
                }
 
@@ -460,7 +456,6 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                case 'prone': {
                   // Apply the effect
                   const systemData = this.parent.system;
-                  systemData.condition.prone = true;
 
                   // Decrease Speed by half
                   for (const speed of Object.values(systemData.speed)) {
@@ -483,7 +478,6 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                case 'restrained': {
                   // Apply the effect
                   const systemData = this.parent.system;
-                  systemData.condition.restrained = true;
 
                   // Decrease Melee, Accuracy, and Defense by 1
                   systemData.rating.melee.mod.effect -= 1;
@@ -498,7 +492,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                         speedValue += mod;
                      }
 
-                     // Set the effect speed so that the total speed is 0 
+                     // Set the effect speed so that the total speed is 0
                      if (speedValue > 0) {
                         speed.mod.effect -= speedValue;
                      }
@@ -511,7 +505,6 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                case 'sleep': {
                   // Apply the effect
                   const systemData = this.parent.system;
-                  systemData.condition.sleeping = true;
 
                   // Calculate the total awareness
                   const awareness = this.parent.system.rating.awareness;
@@ -532,7 +525,6 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                case 'stunned': {
                   // Apply the effect
                   const systemData = this.parent.system;
-                  systemData.condition.stunned = true;
 
                   // Decrease Defense by 1
                   systemData.rating.defense.mod.effect -= 1;
@@ -734,7 +726,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
             if (effect.duration.turns !== remaining) {
                shouldUpdateEffect = true;
                updateData.duration = {
-                  turns: remaining
+                  turns: remaining,
                };
             }
 
@@ -747,7 +739,10 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
 
             // Update visual active effects description if appropriate
             const description = effectItem.system.description === '' ||
-               effectItem.system.description === '<p></p>' ? '' : TextEditor.enrichHTML(effectItem.system.description, { async: false, secrets: true });
+            effectItem.system.description === '<p></p>' ? '' : TextEditor.enrichHTML(effectItem.system.description, {
+               async: false,
+               secrets: true,
+            });
             if (description !== effect['flags.visual-active-effects.data.content']) {
                shouldUpdateEffect = true;
                updateData['flags.visual-active-effects.data.content'] = description;
@@ -762,25 +757,30 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
          // Otherwise, create an effect
          else {
             await this.parent.createEmbeddedDocuments('ActiveEffect',
-               [{
-                  label: effectItem.name,
-                  icon: effectItem.img,
-                  origin: effectItem._id,
-                  disabled: false,
-                  duration: {
-                     turns: effectItem.system.duration.turns
-                  },
-                  statuses: [
-                     `${effectItem._id}`
-                  ],
-                  flags: {
-                     titan: {
-                        type: 'effect',
-                        origin: effectItem._id,
+               [
+                  {
+                     label: effectItem.name,
+                     icon: effectItem.img,
+                     origin: effectItem._id,
+                     disabled: false,
+                     duration: {
+                        turns: effectItem.system.duration.turns,
                      },
-                     'visual-active-effects.data.content': TextEditor.enrichHTML(effectItem.system.description, { async: false, secrets: true })
+                     statuses: [
+                        `${effectItem._id}`,
+                     ],
+                     flags: {
+                        titan: {
+                           type: 'effect',
+                           origin: effectItem._id,
+                        },
+                        'visual-active-effects.data.content': TextEditor.enrichHTML(effectItem.system.description, {
+                           async: false,
+                           secrets: true,
+                        }),
+                     },
                   },
-               }],
+               ],
             );
          }
       }
@@ -806,10 +806,10 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                speaker: ChatMessage.getSpeaker({
                   actor: this.parent,
                   token: this.parent.token,
-                  alias: this.parent.name
+                  alias: this.parent.name,
                }),
-               flavor: game.i18n.format("COMBAT.RollsInitiative", { name: this.parent.name }),
-               flags: { "core.initiativeRoll": true }
+               flavor: game.i18n.format('COMBAT.RollsInitiative', { name: this.parent.name }),
+               flags: { 'core.initiativeRoll': true },
             });
             const chatData = await roll.toMessage(messageData, { create: false });
             chatData.rollMode = options?.rollMode ?
@@ -869,7 +869,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                   user: game.user.id,
                   speaker: ChatMessage.getSpeaker({ actor: this.parent }),
                   rollMode: game.settings.get('core', 'rollMode'),
-                  message: this._getAttributeCheckMessages(check)
+                  message: this._getAttributeCheckMessages(check),
                });
             }
          }
@@ -906,7 +906,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                   user: game.user.id,
                   speaker: ChatMessage.getSpeaker({ actor: this.parent }),
                   rollMode: game.settings.get('core', 'rollMode'),
-                  message: this._getResistanceCheckMessages(check)
+                  message: this._getResistanceCheckMessages(check),
                });
             }
          }
@@ -1023,7 +1023,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                   user: game.user.id,
                   speaker: ChatMessage.getSpeaker({ actor: this.parent }),
                   rollMode: game.settings.get('core', 'rollMode'),
-                  message: this._getAttackCheckMessages(check)
+                  message: this._getAttackCheckMessages(check),
                });
             }
          }
@@ -1103,7 +1103,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                   user: game.user.id,
                   speaker: ChatMessage.getSpeaker({ actor: this.parent }),
                   rollMode: game.settings.get('core', 'rollMode'),
-                  message: this._getCastingCheckMessages(check)
+                  message: this._getCastingCheckMessages(check),
                });
             }
          }
@@ -1194,7 +1194,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                   user: game.user.id,
                   speaker: ChatMessage.getSpeaker({ actor: this.parent }),
                   rollMode: game.settings.get('core', 'rollMode'),
-                  message: this._getItemCheckMessages(check)
+                  message: this._getItemCheckMessages(check),
                });
             }
          }
@@ -1276,13 +1276,13 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                system: {
                   resource: {
                      stamina: {
-                        value: stamina.value
+                        value: stamina.value,
                      },
                      wounds: {
-                        value: wounds.value
-                     }
-                  }
-               }
+                        value: wounds.value,
+                     },
+                  },
+               },
             });
          }
 
@@ -1297,14 +1297,14 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                damageTaken: damageTaken,
                stamina: {
                   value: stamina.value,
-                  max: stamina.max
+                  max: stamina.max,
                },
             };
 
             if (wounds.max > 0) {
                chatContext.wounds = {
                   value: wounds.value,
-                  max: wounds.max
+                  max: wounds.max,
                };
             }
 
@@ -1361,10 +1361,10 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                   system: {
                      resource: {
                         stamina: {
-                           value: stamina.value
-                        }
-                     }
-                  }
+                           value: stamina.value,
+                        },
+                     },
+                  },
                });
             }
 
@@ -1379,14 +1379,14 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                   damageHealed: damageHealed,
                   stamina: {
                      value: stamina.value,
-                     max: stamina.max
+                     max: stamina.max,
                   },
                };
 
                if (wounds.max > 0) {
                   chatContext.wounds = {
                      value: wounds.value,
-                     max: wounds.max
+                     max: wounds.max,
                   };
                }
 
@@ -1426,9 +1426,9 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                await armor.update({
                   system: {
                      armor: {
-                        value: armor.system.armor.value
-                     }
-                  }
+                        value: armor.system.armor.value,
+                     },
+                  },
                });
             }
 
@@ -1443,9 +1443,9 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                   itemName: armor.name,
                   armor: {
                      value: armor.system.armor.value,
-                     max: armor.system.armor.max
+                     max: armor.system.armor.max,
                   },
-                  rend: rend
+                  rend: rend,
                };
 
                if (rendResisted) {
@@ -1474,9 +1474,9 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
             await armor.update({
                system: {
                   armor: {
-                     value: armor.system.armor.value
-                  }
-               }
+                     value: armor.system.armor.value,
+                  },
+               },
             });
 
             // Report
@@ -1490,9 +1490,9 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                   itemName: armor.name,
                   armor: {
                      value: armor.system.armor.value,
-                     max: armor.system.armor.max
+                     max: armor.system.armor.max,
                   },
-                  armorRepaired: armor.system.armor.value - armorValue
+                  armorRepaired: armor.system.armor.value - armorValue,
                };
 
                // Send the report to chat
@@ -1513,9 +1513,9 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
             await this.parent.update({
                system: {
                   resource: {
-                     resolve: resolve
-                  }
-               }
+                     resolve: resolve,
+                  },
+               },
             });
          }
       }
@@ -1535,10 +1535,10 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                system: {
                   resource: {
                      resolve: {
-                        value: resolve.value
-                     }
-                  }
-               }
+                        value: resolve.value,
+                     },
+                  },
+               },
             });
          }
 
@@ -1554,8 +1554,8 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                   resolveSpent: resolveSpent,
                   resolve: {
                      value: resolve.value,
-                     max: resolve.max
-                  }
+                     max: resolve.max,
+                  },
                };
                if (initialResolve < resolveSpent) {
                   chatContext.resolveShortage = resolveSpent - initialResolve;
@@ -1631,7 +1631,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
 
          // Update the actor
          await actor.update({
-            system: actor.system
+            system: actor.system,
          });
 
          // Delete all combat effects
@@ -1650,7 +1650,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                const chatContext = {
                   type: 'removeCombatEffectsReport',
                   img: actor.img,
-                  name: actor.name
+                  name: actor.name,
                };
 
                // Send the report to chat
@@ -1721,7 +1721,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                   chatContext.woundsHealed = woundsHealed;
                   chatContext.wounds = {
                      value: wounds.value,
-                     max: wounds.max
+                     max: wounds.max,
                   };
                }
 
@@ -1762,9 +1762,9 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                   await effect.update({
                      system: {
                         duration: {
-                           remaining: effect.system.duration.remaining
-                        }
-                     }
+                           remaining: effect.system.duration.remaining,
+                        },
+                     },
                   });
 
                   if (effect.system.duration.remaining <= 0) {
@@ -1849,7 +1849,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
          // Update actor if appropriate
          if (shouldUpdateActor) {
             actor.update({
-               system: actor.system
+               system: actor.system,
             });
          }
 
@@ -1913,7 +1913,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
          await this._calculateTurnEndEffects(chatContext);
          if (await this._calculateTurnHealingAndDamage(chatContext, 'turnEnd') === true) {
             actor.update({
-               system: actor.system
+               system: actor.system,
             });
          }
 
@@ -1948,9 +1948,9 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                await effect.update({
                   system: {
                      duration: {
-                        remaining: effect.system.duration.remaining
-                     }
-                  }
+                        remaining: effect.system.duration.remaining,
+                     },
+                  },
                });
             }
          }
@@ -2041,9 +2041,9 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                await effect.update({
                   system: {
                      duration: {
-                        remaining: effect.system.duration.remaining
-                     }
-                  }
+                        remaining: effect.system.duration.remaining,
+                     },
+                  },
                });
 
                // Add to expired effects if it expired
@@ -2156,7 +2156,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
             // Update the chat context
             chatContext.healingApplied = {
                total: turnStaminaMod,
-               confirmed: confirmed
+               confirmed: confirmed,
             };
          }
 
@@ -2166,7 +2166,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
             if (wounds.max > 0) {
                chatContext.wounds = {
                   max: wounds.max,
-                  value: wounds.value
+                  value: wounds.value,
                };
             }
 
@@ -2180,14 +2180,14 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
             // Update the chat context
             chatContext.damageApplied = {
                total: -turnStaminaMod,
-               confirmed: confirmed
+               confirmed: confirmed,
             };
          }
 
          // Update the chat contaxt
          chatContext.stamina = {
             max: stamina.max,
-            value: stamina.value
+            value: stamina.value,
          };
       }
 
@@ -2219,7 +2219,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
                // Update the chat context
                chatContext.resolve = {
                   value: resolve.value,
-                  max: resolve.max
+                  max: resolve.max,
                };
                chatContext.resolveRegain = {
                   total: maxResolveRegained,
@@ -2239,8 +2239,8 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
          type: CONST.CHAT_MESSAGE_TYPES.OTHER,
          whisper: users,
          flags: {
-            titan: chatContext
-         }
+            titan: chatContext,
+         },
       };
 
       if (playSound) {
@@ -2257,8 +2257,8 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
          if (item && item.type === 'weapon') {
             await item.update({
                system: {
-                  multiAttack: !item.system.multiAttack
-               }
+                  multiAttack: !item.system.multiAttack,
+               },
             });
          }
       }
@@ -2323,8 +2323,8 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
             item.system.active = newActive;
             return await item.update({
                system: {
-                  active: newActive
-               }
+                  active: newActive,
+               },
             });
          }
       }
@@ -2338,9 +2338,9 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
             return await item.update({
                system: {
                   duration: {
-                     remaining: item.system.duration.remaining
-                  }
-               }
+                     remaining: item.system.duration.remaining,
+                  },
+               },
             });
          }
       }
@@ -2354,9 +2354,9 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
             return await item.update({
                system: {
                   duration: {
-                     remaining: item.system.duration.remaining
-                  }
-               }
+                     remaining: item.system.duration.remaining,
+                  },
+               },
             });
          }
       }
@@ -2384,7 +2384,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
          await this.parent.update({
             system: {
                equipped: {
-                  armor: armorId
+                  armor: armorId,
                },
             },
          });
@@ -2400,7 +2400,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
          await this.parent.update({
             system: {
                equipped: {
-                  armor: null
+                  armor: null,
                },
             },
          });
@@ -2433,7 +2433,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
          this.parent.update({
             system: {
                equipped: {
-                  shield: shieldId
+                  shield: shieldId,
                },
             },
          });
@@ -2449,7 +2449,7 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
          await this.parent.update({
             system: {
                equipped: {
-                  shield: null
+                  shield: null,
                },
             },
          });
@@ -2522,8 +2522,8 @@ export default class TitanCharacterComponent extends TitanTypeComponent {
          this.parent.system.inspiration = !this.parent.system.inspiration;
          await this.parent.update({
             system: {
-               inspiration: this.parent.system.inspiration
-            }
+               inspiration: this.parent.system.inspiration,
+            },
          });
       }
 

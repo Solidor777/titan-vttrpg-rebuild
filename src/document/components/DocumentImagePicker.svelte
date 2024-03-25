@@ -1,4 +1,5 @@
 <script>
+   import { getContext } from 'svelte';
    import getApplication from '~/helpers/utility-functions/GetApplication';
 
    // Property path of the document to change
@@ -50,6 +51,7 @@
 <style>
    img {
       border-style: var(--border-style);
+
       &.active {
          cursor: pointer;
       }

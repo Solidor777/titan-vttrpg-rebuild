@@ -59,13 +59,13 @@ export default class CharacterDataModel extends TitanDataModel {
 
       // Add resources
       schema.resource = getSchemaField({
-         stamina: getResourceSchema(3 * getSetting('staminaBaseMultiplier')),
-         resolve: getResourceSchema(1 * getSetting('resolveBaseMultiplier')),
+         stamina: getResourceSchema(Math.ceil(3 * getSetting('staminaBaseMultiplier'))),
+         resolve: getResourceSchema(Math.ceil(1 * getSetting('resolveBaseMultiplier'))),
          wounds: getResourceSchema(0),
       });
 
       // Add speeds
-      schema.speeds = getSchemaField({
+      schema.speed = getSchemaField({
          stride: getBaseStatSchema(),
          fly: getBaseStatSchema(),
          climb: getBaseStatSchema(),
@@ -75,11 +75,11 @@ export default class CharacterDataModel extends TitanDataModel {
 
       // Add mods
       schema.mod = getSchemaField({
-         armor: getStatModSchema(),
-         damage: getStatModSchema(),
-         healing: getStatModSchema(),
-         resolveRegain: getStatModSchema(),
-         woundRegain: getStatModSchema(),
+         armor: getDerivedStatSchema(),
+         damage: getDerivedStatSchema(),
+         healing: getDerivedStatSchema(),
+         resolveRegain: getDerivedStatSchema(),
+         woundRegain: getDerivedStatSchema(),
       });
 
       // Add equipment

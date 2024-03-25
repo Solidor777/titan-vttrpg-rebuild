@@ -12,6 +12,8 @@ import TitanSpellSheet from '~/document/types/item/types/spell/sheet/SpellSheet.
 import TitanWeaponSheet from '~/document/types/item/types/weapon/sheet/WeaponSheet.js';
 import TitanTokenDocument from '~/document/TokenDocument.js';
 import TitanMacros from '~/system/Macros';
+import PlayerDataModel from '~/document/types/actor/types/character/types/player/PlayerDataModel.js';
+import NPCDataModel from '~/document/types/actor/types/character/types/npc/NPCDataModel.js';
 import registerSystemSettings from '~/system/SystemSettings.js';
 import registerInitiativeFormula from '~/system/Initiative.js';
 import log from '~/helpers/utility-functions/Log';
@@ -37,72 +39,74 @@ export default function onceInit() {
 
    // Register Document Classes
    CONFIG.Actor.documentClass = TitanActor;
+   CONFIG.Actor.dataModels.player = PlayerDataModel;
+   CONFIG.Actor.dataModels.npc = NPCDataModel;
    CONFIG.Item.documentClass = TitanItem;
    CONFIG.Token.documentClass = TitanTokenDocument;
    CONFIG.time.roundTime = 6;
 
 
    // Register Sheet Classes
-   Actors.registerSheet([
+   Actors.registerSheet(
       'titan', TitanPlayerSheet, {
          types: ['player'],
          makeDefault: true,
       },
-   ]);
-   Actors.registerSheet([
+   );
+   Actors.registerSheet(
       'titan', TitanNPCSheet, {
          types: ['npc'],
          makeDefault: true,
       },
-   ]);
-   Items.registerSheet([
+   );
+   Items.registerSheet(
       'titan', TitanAbilitySheet, {
          types: ['ability'],
          makeDefault: true,
       },
-   ]);
-   Items.registerSheet([
+   );
+   Items.registerSheet(
       'titan', TitanArmorSheet, {
          types: ['armor'],
          makeDefault: true,
       },
-   ]);
-   Items.registerSheet([
+   );
+   Items.registerSheet(
       'titan', TitanCommoditySheet, {
          types: ['commodity'],
          makeDefault: true,
       },
-   ]);
-   Items.registerSheet([
+   );
+   Items.registerSheet(
       'titan', TitanEffectSheet, {
          types: ['effect'],
          makeDefault: true,
       },
-   ]);
-   Items.registerSheet([
+   );
+   Items.registerSheet(
       'titan', TitanEquipmentSheet, {
          types: ['equipment'],
          makeDefault: true,
       },
-   ]);
-   Items.registerSheet([
+   );
+   Items.registerSheet(
       'titan', TitanShieldSheet, {
          types: ['shield'],
          makeDefault: true,
       },
-   ]);
-   Items.registerSheet([
+   );
+   Items.registerSheet(
       'titan', TitanSpellSheet, {
          types: ['spell'],
          makeDefault: true,
       },
-   ]);
-   Items.registerSheet([
+   );
+   Items.registerSheet(
       'titan', TitanWeaponSheet, {
          types: ['weapon'],
          makeDefault: true,
       },
-   ]);
+   );
 
    return;
 }

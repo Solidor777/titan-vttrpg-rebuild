@@ -1,16 +1,55 @@
-import TitanDataModel from '~/document/data-model/DataModel.js';
 import getStringField from '~/helpers/utility-functions/GetStringField.js';
 import getIntegerField from '~/helpers/utility-functions/GetIntegerField.js';
 import getSchemaField from '~/helpers/utility-functions/GetSchemaField.js';
 import getSetting from '~/helpers/utility-functions/GetSetting.js';
+import ActorDataModel from '~/document/types/actor/ActorDataModel.js';
 
 /**
- * Data model for Character actors.
- * @augments TitanDataModel
+ * Actor data model with extra functionality for characters.
+ * @augments ActorDataModel
  */
-export default class CharacterDataModel extends TitanDataModel {
+export default class CharacterDataModel extends ActorDataModel {
    static _defineDocumentSchema() {
       const schema = super._defineDocumentSchema();
+
+      // Gets a schema field formatted as a mod for a character state (skills, attributes, resistances, etc.).
+      function getStatModSchema() {
+         return getSchemaField({
+            static: getIntegerField(0),
+         });
+      }
+
+      // Gets a schema field formatted as a character attribute (body, mind, or soul).
+      function getBaseStatSchema() {
+         return getSchemaField({
+            baseValue: getIntegerField(1),
+            mod: getStatModSchema(),
+         });
+      }
+
+      // Gets a schema field formatted as a character resistance (reflexes, resilience, or willpower).
+      function getDerivedStatSchema() {
+         return getSchemaField({
+            mod: getStatModSchema(),
+         });
+      }
+
+      // Gets a schema field formatted as a character skill (athletics, perception, etc.).
+      function getSkillSchema(defaultAttribute) {
+         return getSchemaField({
+            defaultAttribute: getStringField(defaultAttribute),
+            training: getBaseStatSchema(),
+            expertise: getBaseStatSchema(),
+         });
+      }
+
+      // Gets a schema field formatted as a character resource (stamina, resolve, or wounds).
+      function getResourceSchema(initial) {
+         return getSchemaField({
+            value: getIntegerField(initial),
+            mod: getStatModSchema(),
+         });
+      }
 
       // Add attributes
       schema.attribute = getSchemaField({
@@ -84,8 +123,8 @@ export default class CharacterDataModel extends TitanDataModel {
 
       // Add equipment
       schema.equipped = getSchemaField({
-         armor: getStringField(null, true),
-         shield: getStringField(null, true),
+         armor: getStringField(null),
+         shield: getStringField(null),
       });
 
       // Add description
@@ -93,62 +132,46 @@ export default class CharacterDataModel extends TitanDataModel {
 
       return schema;
    }
+
+   _getInitialPrototypeTokenData(data) {
+      const retVal = {
+         displayName: data.prototypeToken?.displayName ?? CONST.TOKEN_DISPLAY_MODES.OWNER_HOVER,
+         displayBars: data.prototypeToken?.displayBars ?? CONST.TOKEN_DISPLAY_MODES.OWNER_HOVER,
+      };
+
+      return retVal;
+   }
+
+   _calculateBaseRatings() {
+      const systemData = this.parent.system;
+
+      // Calculate the base value of ratings
+      // Initiative = (Mind + Perception + Dexterity) / 2 rounded up
+      systemData.rating.initiative.baseValue =
+         Math.ceil((systemData.attribute.mind.baseValue +
+            systemData.skill.perception.training.baseValue +
+            systemData.skill.dexterity.training.baseValue) / 2);
+
+      // Awareness = (Mind + Perception) / 2 rounded up
+      systemData.rating.awareness.baseValue =
+         Math.ceil((systemData.attribute.mind.baseValue +
+            systemData.skill.perception.training.baseValue) / 2);
+
+      // Defense = (Body + Dexterity) / 2 rounded up
+      systemData.rating.defense.baseValue =
+         Math.ceil((systemData.attribute.body.baseValue +
+            systemData.skill.dexterity.training.baseValue) / 2);
+
+      // Accuracy = (Mind + Training in Ranged Weapons) / 2 rounded up
+      systemData.rating.accuracy.baseValue =
+         Math.ceil((systemData.attribute.mind.baseValue +
+            systemData.skill.rangedWeapons.training.baseValue) / 2);
+
+      // Melee = (Body + Training in Melee Weapons) / 2 rounded up
+      systemData.rating.melee.baseValue =
+         Math.ceil((systemData.attribute.body.baseValue +
+            systemData.skill.meleeWeapons.training.baseValue) / 2);
+
+      return;
+   }
 }
-
-/**
- * Gets a schema field formatted as a mod for a character state (skills, attributes, resistances, etc.).
- * @returns {SchemaField}  The complete stat mod schema field.
- */
-function getStatModSchema() {
-   return getSchemaField({
-      static: getIntegerField(0),
-   });
-}
-
-/**
- * Gets a schema field formatted as a character attribute (body, mind, or soul).
- * @returns {SchemaField}  The complete attribute schema field.
- */
-function getBaseStatSchema() {
-   return getSchemaField({
-      baseValue: getIntegerField(1),
-      mod: getStatModSchema(),
-   });
-}
-
-/**
- * Gets a schema field formatted as a character resistance (reflexes, resilience, or willpower).
- * @returns {SchemaField}      The complete resistance schema field.
- */
-function getDerivedStatSchema() {
-   return getSchemaField({
-      mod: getStatModSchema(),
-   });
-}
-
-/**
- * Gets a schema field formatted as a character skill (athletics, perception, etc.).
- * @param {string} defaultAttribute    The default attribute for the skill.
- * @returns {SchemaField}              The complete skill schema field.
- */
-function getSkillSchema(defaultAttribute) {
-   return getSchemaField({
-      defaultAttribute: getStringField(defaultAttribute),
-      training: getBaseStatSchema(),
-      expertise: getBaseStatSchema(),
-   });
-}
-
-/**
- * Gets a schema field formatted as a character resource (stamina, resolve, or wounds).
- * @param {number} initial    The initial value for the resource.
- * @returns {SchemaField}     The complete skill schema field.
- */
-function getResourceSchema(initial) {
-   return getSchemaField({
-      value: getIntegerField(initial),
-      mod: getStatModSchema(),
-   });
-}
-
-

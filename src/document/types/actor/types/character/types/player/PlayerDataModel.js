@@ -17,4 +17,15 @@ export default class PlayerDataModel extends CharacterDataModel {
 
       return schema;
    }
+
+   _getInitialPrototypeTokenData(data) {
+      const retVal = super._getInitialPrototypeTokenData(data);
+      retVal.actorLink = data.prototypeToken?.actorLink ?? true;
+      retVal.disposition = data.prototypeToken?.disposition ?? CONST.TOKEN_DISPOSITIONS.FRIENDLY;
+      retVal.sight = {
+         enabled: data.prototypeToken?.sight?.enabled ?? true,
+      };
+
+      return retVal;
+   }
 }

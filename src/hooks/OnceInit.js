@@ -19,6 +19,7 @@ import registerInitiativeFormula from '~/system/Initiative.js';
 import log from '~/helpers/utility-functions/Log';
 import warn from '~/helpers/utility-functions/Warn.js';
 import error from '~/helpers/utility-functions/Error.js';
+import getTrackableAttributes from '~/system/TrackableAttributes.js';
 
 export default function onceInit() {
    log('Starting Titan VTTRPG System');
@@ -41,6 +42,7 @@ export default function onceInit() {
    CONFIG.Actor.documentClass = TitanActor;
    CONFIG.Actor.dataModels.player = PlayerDataModel;
    CONFIG.Actor.dataModels.npc = NPCDataModel;
+   CONFIG.Actor.trackableAttributes = getTrackableAttributes();
    CONFIG.Item.documentClass = TitanItem;
    CONFIG.Token.documentClass = TitanTokenDocument;
    CONFIG.time.roundTime = 6;

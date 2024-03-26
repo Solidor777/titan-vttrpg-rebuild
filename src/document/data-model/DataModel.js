@@ -13,7 +13,7 @@ export default class TitanDataModel extends foundry.abstract.TypeDataModel {
       const components = {};
       for (const [key, component] of Object.entries(this.constructor._prototypeComponents)) {
          components[key] = new component(this);
-         Object.defineProperty(this, key, {
+         Object.defineProperty(this.parent, key, {
             get() {
                return this.#components[key];
             },
@@ -29,15 +29,6 @@ export default class TitanDataModel extends foundry.abstract.TypeDataModel {
     */
    static get latestVersion() {
       return 0;
-   }
-
-   /**
-    * Static getter for the type of document used by this data model.
-    * @type {string}
-    * @private
-    */
-   static get documentType() {
-      return 'document';
    }
 
    /**
@@ -105,5 +96,55 @@ export default class TitanDataModel extends foundry.abstract.TypeDataModel {
     */
    get components() {
       return this.#components;
+   }
+
+   /**
+    * Perform preliminary operations before a data model of this type is created.
+    * Pre-creation operations only occur for the client which requested the operation.
+    * Modifications to the pending document before it is persisted should be performed with this.parent.updateSource().
+    * @param {object} data    The initial data object provided to the document creation request.
+    */
+   onPreCreate(data) {
+      // Initialize document data
+      const documentData = this._getInitialDocumentData(data);
+      if (documentData) {
+         this.parent.updateSource(documentData);
+      }
+
+      return;
+   }
+
+   /**
+    * Gets the initial data for this document.
+    * @param {object} data            The initial data object provided to the document creation request.
+    * @returns {object|boolean}       The initial data for the character,
+    *                                 or false if there is no data to initialize.
+    * @protected
+    */
+   // eslint-disable-next-line unused-imports/no-unused-vars
+   _getInitialDocumentData(data) {
+      return false;
+   }
+
+
+   prepareDerivedData() {
+      this._prepareComponentDerivedData();
+      super.prepareDerivedData();
+
+      return;
+   }
+
+   /**
+    * Prepares the data for each data model component.
+    * @protected
+    */
+   _prepareComponentDerivedData() {
+      for (const component of Object.entries(this.components)) {
+         if (typeof component.prepareDerivedData === 'function') {
+            component.prepareDerivedData();
+         }
+      }
+
+      return;
    }
 }

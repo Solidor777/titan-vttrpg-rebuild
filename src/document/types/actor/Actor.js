@@ -1,109 +1,37 @@
 import localize from '~/helpers/utility-functions/Localize.js';
 import shouldConfirmDeletingItems from '~/helpers/utility-functions/ShouldConfirmDeletingItems.js';
-import { Hashing } from '@typhonjs-fvtt/runtime/util';
-import TitanPlayerComponent from '~/document/types/actor/types/character/types/player/Player';
-import TitanNPCComponent from '~/document/types/actor/types/character/types/npc/NPC';
 import ConfirmDeleteItemDialog from '~/document/types/actor/dialogs/ConfirmDeleteItemDialog';
 
+/**
+ * Extends the base Actor class to implement additional system-specific logic.
+ * @augments {Actor}
+ * @param {object} data                   The initial data object provided to the document creation request
+ * @param {object} options                Additional options which modify the creation request
+ * @param {documents.BaseUser} user       The User requesting the document creation
+ */
 export default class TitanActor extends Actor {
+   async _preCreate(data, options, user) {
+      const retVal = await super._preCreate(data, options, user);
+
+      // Update initial data if provided by the data model
+      if (retVal !== false && typeof this.system.onPreCreate === 'function') {
+         this.system.onPreCreate(data);
+      }
+
+      return retVal;
+   }
 
    /**
-    * Extend the base Actor class to implement additional system-specific logic.
-    * @param {object} data                   The initial data object provided to the document creation request
-    * @param {object} options                Additional options which modify the creation request
-    * @param {documents.BaseUser} user       The User requesting the document creation
+    * Deletes an item from the actor,
+    * with a dialog to confirm deletion if appropriate
+    * @param {string} itemId        The ID of the item being deleted.
+    * @param {confirmed} confirmed  Whether deletion of the item is already confirmed.
+    * @returns {boolean}            Returns true if the item was deleted or a dialog was created
+    *                               or false if the item was invalid.
     */
-   async _preCreate(data, options, user) {
-      await super._preCreate(data, options, user);
-
-      // Initialize type component
-      this._initializeTypeComponent();
-
-      // Initialize creation data
-      const uuid = this.flags?.titan?.uuid;
-      if (!uuid) {
-
-         // UUID
-         const initialData = {
-            flags: {
-               titan: {
-                  uuid: Hashing.uuidv4(),
-               },
-            },
-         };
-
-         // Type specific data
-         if (this.typeComponent) {
-            this.typeComponent.setInitialData(initialData);
-         }
-
-         this.updateSource(initialData);
-      }
-   }
-
-   /** @inheritDoc */
-   prepareDerivedData() {
-      // Create type component if necessary
-      if (!this.typeComponent) {
-         this._initializeTypeComponent();
-      }
-
-      // Prepare type specific data
-      if (this.typeComponent) {
-         this.typeComponent.prepareDerivedData();
-      }
-
-      return;
-   }
-
-   _initializeTypeComponent() {
-      switch (this.type) {
-         // Player
-         case 'player': {
-            this.typeComponent = new TitanPlayerComponent(this);
-            this.character = this.typeComponent;
-            this.player = this.typeComponent;
-            break;
-         }
-
-         // NPC
-         case 'npc': {
-            this.typeComponent = new TitanNPCComponent(this);
-            this.character = this.typeComponent;
-            this.npc = this.typeComponent;
-            break;
-         }
-
-         // Default is an error
-         default: {
-            console.error('TITAN: Invalid actor type when preparing derived data.');
-            console.trace();
-            break;
-         }
-      }
-   }
-
-   _onCreate(data, options, userId) {
-      super._onCreate(data, options, userId);
-      this._initializeTypeComponent();
-      if (this.typeComponent) {
-         this.typeComponent.onCreate();
-      }
-   }
-
-   _onDelete(options, userId) {
-      if (this.typeComponent) {
-         this.typeComponent.onDelete();
-      }
-      super._onDelete(options, userId);
-   }
-
    async deleteItem(itemId, confirmed) {
+      // Ensure that the user is an item owner
       if (this.isOwner) {
-         // Handle type specific deletion
-         if (this.type === 'player' || this.type === 'npc') {
-            return this.typeComponent.deleteItem(itemId, confirmed);
-         }
 
          // Ensure the item is valid
          const item = this.items.get(itemId);
@@ -119,17 +47,22 @@ export default class TitanActor extends Actor {
                this._sheet.deleteItem(itemId);
             }
 
-            return await item.delete();
+            await item.delete();
+            return true;
          }
 
          // Otherwise, confirm deleting the item
          const dialog = new ConfirmDeleteItemDialog(this, item);
          dialog.render(true);
 
-         return;
+         return true;
       }
    }
 
+   /**
+    * Adds an item of the inputted type to the actor.
+    * @param {string} type          The type of item to add.
+    */
    async addItem(type) {
       if (this.isOwner) {
          let itemName;
@@ -177,7 +110,8 @@ export default class TitanActor extends Actor {
             type: type,
          };
 
-         return await this.createEmbeddedDocuments('Item', [itemData]);
+         await this.createEmbeddedDocuments('Item', [itemData]);
+         return;
       }
    }
 }
